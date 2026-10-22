@@ -340,7 +340,7 @@ footer { margin-top: 40px; font-size: 14px; color: var(--muted); }
 
 <script>
 /* Add more contact buttons here. Empty values are skipped. */
-var CONTACT = { github: "https://github.com/hanennkam", email: "", linkedin: "" };
+var CONTACT = { github: "https://github.com/hanennkam", email: "", linkedin: "", cv: "" };
 
 (function () {
   var box = document.getElementById("links");
@@ -351,6 +351,7 @@ var CONTACT = { github: "https://github.com/hanennkam", email: "", linkedin: "" 
   }
   if (CONTACT.github && !box.querySelector('a[href="' + CONTACT.github + '"]')) addLink("GitHub: hanennkam", CONTACT.github);
   if (CONTACT.linkedin) addLink("LinkedIn", CONTACT.linkedin);
+  if (CONTACT.cv) addLink("CV", CONTACT.cv);
   if (CONTACT.email) {
     var b = document.createElement("button");
     b.type = "button"; b.className = "btn"; b.textContent = "Copy email: " + CONTACT.email;
