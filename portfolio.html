@@ -1,0 +1,273 @@
+<title>Suhaib Portfolio</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Instrument+Sans:wght@400;500;600&display=swap">
+<style>
+/* Direction (antislop Design Read): ENERGY 2, RHYTHM 2, MOTION 1.
+   One calm column. The name is the single focal point. Hairline rules are the recurring motif.
+   Palette: two neutrals plus text, one blue accent. Radius: 6px controls, 12px blocks. */
+:root {
+  --bg: #eef1f5;
+  --surface: #f8fafc;
+  --fg: #11161d;
+  --muted: #4d5867;
+  --line: #cbd3dd;
+  --accent: #2740d0;
+  --accent-ink: #ffffff;
+  --f-display: "Bricolage Grotesque", "Helvetica Neue", Arial, sans-serif;
+  --f-body: "Instrument Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --r-sm: 6px;
+  --r-lg: 12px;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0d1117; --surface: #151b24; --fg: #e8ecf2; --muted: #a0abba;
+    --line: #2b3441; --accent: #8ea0ff; --accent-ink: #0d1117;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0d1117; --surface: #151b24; --fg: #e8ecf2; --muted: #a0abba;
+  --line: #2b3441; --accent: #8ea0ff; --accent-ink: #0d1117;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body {
+  background: var(--bg); color: var(--fg);
+  font-family: var(--f-body); font-size: 16px; line-height: 1.6;
+  padding-inline: 20px; padding-block: 0 56px;
+  -webkit-font-smoothing: antialiased;
+}
+.wrap { max-width: 880px; margin-inline: auto; }
+a { color: inherit; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: var(--r-sm); }
+
+/* top bar */
+.bar { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 4px 16px; padding-block: 12px; font-size: 15px; }
+.bar .me { font-weight: 600; }
+.bar nav { display: flex; flex-wrap: wrap; gap: 0 4px; }
+.bar nav a { display: inline-flex; align-items: center; min-height: 44px; padding-inline: 10px; text-decoration: none; color: var(--muted); border-radius: var(--r-sm); }
+.bar nav a:hover { color: var(--fg); background: var(--surface); }
+.theme { font: inherit; color: var(--muted); background: none; border: 1px solid var(--line); border-radius: var(--r-sm); min-height: 44px; min-width: 44px; padding-inline: 14px; cursor: pointer; }
+.theme:hover { color: var(--fg); border-color: var(--muted); }
+
+/* hero */
+.hero { padding-block: 40px 32px; }
+.kicker { font-size: 15px; color: var(--muted); margin: 0 0 12px; }
+h1 { font-family: var(--f-display); font-weight: 800; font-size: clamp(3.4rem, 16vw, 8rem); line-height: .92; letter-spacing: -.035em; margin: 0 0 24px; }
+h1::after { content: ""; display: block; width: .6em; height: 6px; background: var(--accent); margin-top: .18em; border-radius: 3px; }
+.lede { font-size: clamp(1.1rem, 2.6vw, 1.4rem); line-height: 1.45; max-width: 36em; margin: 0; text-wrap: pretty; }
+
+.status { margin: 32px 0 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); border-block: 1px solid var(--line); }
+.status > div { padding: 14px 0; min-width: 0; }
+@media (min-width: 700px) { .status > div + div { padding-left: 20px; border-left: 1px solid var(--line); } }
+@media (max-width: 699px) { .status > div + div { border-top: 1px solid var(--line); } }
+.status dt { font-size: 14px; font-weight: 600; color: var(--muted); margin-bottom: 2px; }
+.status dd { margin: 0; font-weight: 500; }
+
+/* sections */
+section { padding-block: 56px 8px; }
+h2 { font-family: var(--f-display); font-weight: 700; font-size: clamp(1.7rem, 4vw, 2.3rem); letter-spacing: -.02em; line-height: 1.1; margin: 0 0 8px; text-wrap: balance; }
+.sub { color: var(--muted); max-width: 38em; margin: 0 0 28px; }
+
+/* project rows */
+.rows { border-top: 1px solid var(--line); }
+.row { display: grid; grid-template-columns: 150px minmax(0, 1fr); gap: 8px 32px; padding-block: 26px; border-bottom: 1px solid var(--line); }
+@media (max-width: 640px) { .row { grid-template-columns: minmax(0, 1fr); } }
+.tag { font-size: 15px; font-weight: 600; color: var(--accent); padding-top: 4px; }
+.row h3 { font-family: var(--f-display); font-weight: 700; font-size: 1.35rem; letter-spacing: -.01em; line-height: 1.2; margin: 0 0 8px; }
+.row p { margin: 0 0 12px; max-width: 40em; color: var(--muted); }
+.chips { display: flex; flex-wrap: wrap; gap: 6px; padding: 0; margin: 0; list-style: none; }
+.chips li { font-size: 14px; padding: 2px 10px; border: 1px solid var(--line); border-radius: var(--r-sm); background: var(--surface); }
+
+/* business */
+.ventures { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; }
+.venture { background: var(--surface); border: 1px solid var(--line); border-radius: var(--r-lg); padding: 24px; min-width: 0; display: flex; flex-direction: column; align-items: flex-start; gap: 4px; }
+.venture h3 { font-family: var(--f-display); font-weight: 700; font-size: 1.3rem; margin: 0; }
+.venture .meta { font-size: 14px; color: var(--muted); margin: 0 0 10px; }
+.venture p { margin: 0; }
+.venture .go { margin-top: 12px; }
+.legal { margin: 16px 0 0; font-size: 14px; color: var(--muted); }
+
+/* background */
+.cols { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 32px 48px; }
+.cols > * { min-width: 0; }
+.cols h3 { font-family: var(--f-display); font-weight: 700; font-size: 1.15rem; margin: 0 0 12px; }
+.list { margin: 0; padding: 0; list-style: none; border-top: 1px solid var(--line); }
+.list li { padding-block: 12px; border-bottom: 1px solid var(--line); }
+.list b { display: block; font-weight: 600; }
+.list span { color: var(--muted); font-size: 15px; }
+
+/* contact */
+.contact { margin-top: 24px; background: var(--fg); color: var(--bg); border-radius: var(--r-lg); padding: clamp(24px, 5vw, 44px); }
+.contact h2 { color: var(--bg); }
+.contact p { margin: 0 0 20px; max-width: 34em; }
+.contact :focus-visible { outline-color: var(--bg); }
+.links { display: flex; flex-wrap: wrap; gap: 10px; }
+.btn { display: inline-flex; align-items: center; min-height: 44px; font: inherit; font-weight: 500; background: var(--bg); color: var(--fg); border: 0; border-radius: var(--r-sm); padding: 0 18px; text-decoration: none; cursor: pointer; }
+.btn:hover { background: var(--accent); color: var(--accent-ink); }
+.venture .btn { background: transparent; border: 1px solid var(--line); }
+.venture .btn:hover { border-color: var(--accent); }
+
+footer { margin-top: 40px; font-size: 14px; color: var(--muted); }
+</style>
+
+<div class="wrap">
+  <header class="bar">
+    <span class="me">Suhaib</span>
+    <nav aria-label="Sections">
+      <a href="#projects">Projects</a>
+      <a href="#business">Business</a>
+      <a href="#background">Background</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <button class="theme" id="themeBtn" type="button" aria-pressed="false">Dark mode</button>
+  </header>
+
+  <main>
+    <div class="hero">
+      <p class="kicker">Computer Science (Graphic &amp; Multimedia Technology), UMPSA</p>
+      <h1>Suhaib</h1>
+      <p class="lede">Third-year student. I build backend tools and AI agents in Python, and I run a small IT and media business with a team of four.</p>
+
+      <dl class="status">
+        <div><dt>Looking for</dt><dd>Software engineering internship from end of February 2027</dd></div>
+        <div><dt>Works in</dt><dd>Python, FastAPI, Supabase, Cloudflare Workers, Anthropic API</dd></div>
+        <div><dt>Based in</dt><dd>Ipoh, Perak, Malaysia</dd></div>
+      </dl>
+    </div>
+
+    <section id="projects">
+      <h2>Projects</h2>
+      <p class="sub">Five projects, strongest first.</p>
+      <div class="rows">
+        <article class="row">
+          <div class="tag">Deployed app</div>
+          <div>
+            <h3>Duits: receipt-to-expense tracker</h3>
+            <p>Logging a purchase usually means typing it into a spreadsheet and remembering it later. Duits takes a receipt photo, a bank screenshot or one line of text, extracts the amount, merchant and items with Claude, and stores it in Supabase behind per-user auth. It ships as an iPhone-first PWA with budgets, recurring bills and month insights, and is live at <a href="https://duits-money-tracking.onrender.com" target="_blank" rel="noopener">duits-money-tracking.onrender.com</a>.</p>
+            <ul class="chips"><li>FastAPI</li><li>Claude vision</li><li>Supabase</li><li>PWA</li><li>Docker</li></ul>
+          </div>
+        </article>
+        <article class="row">
+          <div class="tag">Final year project</div>
+          <div>
+            <h3>Breast cancer detection from histology images</h3>
+            <p>My final-year project classifies BreaKHis histology slides as benign or malignant. I trained an EfficientNetV2-S backbone with a CBAM attention module on a patient-level split, then served it through FastAPI with Grad-CAM overlays that show which tissue regions drove each prediction. On the held-out test set it reaches 96.5% malignant recall and 0.874 AUC at a calibrated 0.51 threshold, with a Streamlit demo for single and batch analysis.</p>
+            <ul class="chips"><li>EfficientNetV2-S</li><li>CBAM</li><li>Grad-CAM</li><li>FastAPI</li><li>Streamlit</li></ul>
+          </div>
+        </article>
+        <article class="row">
+          <div class="tag">AI agents</div>
+          <div>
+            <h3>Agent systems in Python</h3>
+            <p>A self-directed build curriculum: File, Invoice and Content agents with an orchestrator on top, using Claude Haiku through the Anthropic API and local models through Ollama. It includes a PDF invoice engine built with ReportLab. Separately, I run Hermes on my MacBook, an agent with a Telegram gateway that starts as a launchd background service.</p>
+            <ul class="chips"><li>Anthropic API</li><li>Ollama</li><li>ReportLab</li><li>Telegram</li></ul>
+          </div>
+        </article>
+        <article class="row">
+          <div class="tag">Business tool</div>
+          <div>
+            <h3>DevXMedia invoice app</h3>
+            <p>Invoicing for my own business. I moved it from browser localStorage to Cloudflare Workers with a D1 database, so it syncs across devices, and added a full CRUD API. Line items carry notes, and PDFs are generated in the browser and from a WhatsApp bot; quotations are partly built.</p>
+            <ul class="chips"><li>Cloudflare Workers</li><li>D1</li><li>WhatsApp bot</li><li>PDF</li></ul>
+          </div>
+        </article>
+        <article class="row">
+          <div class="tag">Trading tool</div>
+          <div>
+            <h3>XAUUSD signal bot</h3>
+            <p>Reads gold price data and sends Telegram alerts on an EMA 9/21 cross, filtered by RSI and the active trading session. A backtest engine writes results to CSV, 38 tests cover the strategy and news filter, and the news filter fails closed — it blocks signals when the economic calendar cannot be checked. It runs on a demo account only.</p>
+            <ul class="chips"><li>Python</li><li>TwelveData</li><li>Telegram</li><li>Backtesting</li></ul>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="business">
+      <h2>Business</h2>
+      <p class="sub">Two brands under Hanennkam Rise Ventures, a registered sole proprietorship.</p>
+      <div class="ventures">
+        <div class="venture">
+          <h3>DevXMedia</h3>
+          <p class="meta">Founded September 2023, team of four</p>
+          <p>IT and media services: software development, web design, graphic design, photography and video.</p>
+        </div>
+        <div class="venture">
+          <h3>BVRCODE Apparel</h3>
+          <p class="meta">Custom sublimation jerseys, 5 pieces minimum</p>
+          <p>Jerseys and custom apparel. I have supplied a corporate client since 2024.</p>
+          <a class="btn go" href="https://bvrcodeapparel.com" target="_blank" rel="noopener">Visit bvrcodeapparel.com</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="background">
+      <h2>Background</h2>
+      <p class="sub">Awards and certification, then where I studied.</p>
+      <div class="cols">
+        <div>
+          <h3>Recognition</h3>
+          <ul class="list">
+            <li><b>Silver medal, DICE 3.0</b><span>Waspada Banjir mobile app, ASEAN level, September 2025</span></li>
+            <li><b>Bronze award, Citrex 2026</b><span>Waspada Banjir mobile app, May 2026</span></li>
+            <li><b>Top 10, UMPSA Innovatech Challenge</b><span>AI Photobooth, June 2025</span></li>
+            <li><b>Ikon Keusahawanan award</b><span>Faculty of Computing, UMPSA, December 2025</span></li>
+            <li><b>Dean's List</b><span>First time, August 2026</span></li>
+            <li><b>Adobe Certified Professional</b><span>Visual Design (Illustrator and Photoshop)</span></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Education</h3>
+          <ul class="list">
+            <li><b>Computer Science (Graphic &amp; Multimedia Technology)</b><span>UMPSA, Pekan, Pahang. Third year.</span></li>
+            <li><b>Matriculation, CGPA 3.50</b><span>Kolej Matrikulasi Perak</span></li>
+            <li><b>SPM: 4A 4B 1C</b><span>MRSM Tun Ghafar Baba</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="contact">
+        <h2>Open to internships from February 2027</h2>
+        <p>I am a third-year student, available from the end of February 2027. My code is on GitHub.</p>
+        <div class="links" id="links"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer>Suhaib, Ipoh, Perak, Malaysia</footer>
+</div>
+
+<script>
+/* Add more contact buttons here. Empty values are skipped. */
+var CONTACT = { github: "https://github.com/hanennkam", email: "", linkedin: "" };
+
+(function () {
+  var box = document.getElementById("links");
+  function addLink(label, href) {
+    var a = document.createElement("a");
+    a.className = "btn"; a.href = href; a.textContent = label; a.target = "_blank"; a.rel = "noopener";
+    box.appendChild(a);
+  }
+  if (CONTACT.github) addLink("GitHub: hanennkam", CONTACT.github);
+  if (CONTACT.linkedin) addLink("LinkedIn", CONTACT.linkedin);
+  if (CONTACT.email) {
+    var b = document.createElement("button");
+    b.type = "button"; b.className = "btn"; b.textContent = "Copy email: " + CONTACT.email;
+    b.addEventListener("click", function () {
+      var done = function () { b.textContent = "Copied"; setTimeout(function () { b.textContent = "Copy email: " + CONTACT.email; }, 1600); };
+      try { navigator.clipboard.writeText(CONTACT.email).then(done, function () {}); } catch (e) {}
+    });
+    box.appendChild(b);
+  }
+
+  var root = document.documentElement, btn = document.getElementById("themeBtn");
+  function isDark() {
+    var t = root.getAttribute("data-theme");
+    return t === "dark" || (!t && window.matchMedia("(prefers-color-scheme: dark)").matches);
+  }
+  function sync() { var d = isDark(); btn.textContent = d ? "Light mode" : "Dark mode"; btn.setAttribute("aria-pressed", d ? "true" : "false"); }
+  btn.addEventListener("click", function () { root.setAttribute("data-theme", isDark() ? "light" : "dark"); sync(); });
+  sync();
+})();
+</script>
