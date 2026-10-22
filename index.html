@@ -3,6 +3,25 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<script>
+document.documentElement.classList.add("js");
+(function () {
+  function check() {
+    if (window.__revealCount) return;
+    if (document.visibilityState === "hidden") {
+      document.addEventListener("visibilitychange", function onVisible() {
+        if (document.visibilityState === "visible") {
+          document.removeEventListener("visibilitychange", onVisible);
+          setTimeout(check, 600);
+        }
+      });
+      return;
+    }
+    document.documentElement.classList.add("reveal-fallback");
+  }
+  setTimeout(check, 2000);
+})();
+</script>
 <title>Suhaib Portfolio</title>
 <meta name="description" content="Third-year student. I build backend tools and AI agents in Python, and I run a small IT and media business with a team of four.">
 <meta name="theme-color" content="#eef1f5" media="(prefers-color-scheme: light)">
@@ -134,10 +153,63 @@ h2 { font-family: var(--f-display); font-weight: 700; font-size: clamp(1.7rem, 4
 .venture .btn:hover { border-color: var(--accent); }
 
 footer { margin-top: 40px; font-size: 14px; color: var(--muted); }
+
+/* scroll progress */
+.progress { position: fixed; inset: 0 0 auto; height: 2px; z-index: 50; pointer-events: none; }
+.progress span { display: block; height: 100%; background: var(--accent); transform: scaleX(0); transform-origin: 0 50%; }
+
+/* scroll reveals (only when JS is running; see head script) */
+.js:not(.reveal-fallback) [data-reveal]:not(.is-in) { opacity: 0; transform: translateY(10px); }
+[data-reveal].is-in { opacity: 1; transform: none; transition: opacity .42s ease, transform .42s cubic-bezier(.22,.61,.36,1); transition-delay: var(--reveal-delay, 0ms); }
+
+/* nav active state */
+.bar nav a { position: relative; }
+.bar nav a::after { content: ""; position: absolute; left: 10px; right: 10px; bottom: 8px; height: 2px; border-radius: 2px; background: var(--accent); transform: scaleX(0); transform-origin: 0 50%; transition: transform .22s ease; }
+.bar nav a[aria-current] { color: var(--fg); }
+.bar nav a[aria-current]::after { transform: scaleX(1); }
+
+/* sticky bar on wide screens only */
+@media (min-width: 720px) {
+  .bar { position: sticky; top: 0; z-index: 30; background: var(--bg); box-shadow: 0 1px 0 var(--line); }
+  section { scroll-margin-top: 84px; }
+}
+
+/* compact two-row bar on narrow screens */
+@media (max-width: 595px) {
+  .bar nav { order: 3; flex-basis: 100%; justify-content: center; gap: 0; }
+  .bar nav a { padding-inline: 6px; font-size: 14px; }
+  .theme { order: 2; margin-left: auto; }
+}
+@media (max-width: 360px) {
+  .bar nav a { padding-inline: 4px; font-size: 13px; }
+}
+
+/* micro-interactions */
+.btn, .theme { transition: transform .16s ease; }
+.btn:hover, .theme:hover { transform: translateY(-1px); }
+.btn:active, .theme:active { transform: scale(.98); }
+.row p a { text-decoration: none; background-image: linear-gradient(currentColor, currentColor), linear-gradient(var(--accent), var(--accent)); background-size: 100% 1px, 0% 2px; background-position: 0 100%, 0 100%; background-repeat: no-repeat; transition: background-size .22s ease; }
+.row p a:hover, .row p a:focus-visible { background-size: 100% 1px, 100% 2px; }
+
+/* theme crossfade */
+::view-transition-old(root), ::view-transition-new(root) { animation-duration: .2s; }
+
+@media (prefers-reduced-motion: no-preference) {
+  html { scroll-behavior: smooth; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .js:not(.reveal-fallback) [data-reveal]:not(.is-in) { opacity: 1; transform: none; }
+  [data-reveal].is-in { transition: none; }
+  .btn, .theme, .row p a, .bar nav a::after { transition: none; }
+  .btn:hover, .theme:hover, .btn:active, .theme:active { transform: none; }
+}
 </style>
+<noscript><style>.theme { display: none; }</style></noscript>
 </head>
 
 <body>
+<div class="progress" aria-hidden="true"><span></span></div>
 <div class="wrap">
   <header class="bar">
     <span class="me">Suhaib</span>
@@ -152,22 +224,22 @@ footer { margin-top: 40px; font-size: 14px; color: var(--muted); }
 
   <main>
     <div class="hero">
-      <p class="kicker">Computer Science (Graphic &amp; Multimedia Technology), UMPSA</p>
+      <p class="kicker" data-reveal data-reveal-group="hero">Computer Science (Graphic &amp; Multimedia Technology), UMPSA</p>
       <h1>Suhaib</h1>
-      <p class="lede">Third-year student. I build backend tools and AI agents in Python, and I run a small IT and media business with a team of four.</p>
+      <p class="lede" data-reveal data-reveal-group="hero">Third-year student. I build backend tools and AI agents in Python, and I run a small IT and media business with a team of four.</p>
 
       <dl class="status">
-        <div><dt>Looking for</dt><dd>Software engineering internship from end of February 2027</dd></div>
-        <div><dt>Works in</dt><dd>Python, FastAPI, Supabase, Cloudflare Workers, Anthropic API</dd></div>
-        <div><dt>Based in</dt><dd>Ipoh, Perak, Malaysia</dd></div>
+        <div data-reveal data-reveal-group="status"><dt>Looking for</dt><dd>Software engineering internship from end of February 2027</dd></div>
+        <div data-reveal data-reveal-group="status"><dt>Works in</dt><dd>Python, FastAPI, Supabase, Cloudflare Workers, Anthropic API</dd></div>
+        <div data-reveal data-reveal-group="status"><dt>Based in</dt><dd>Ipoh, Perak, Malaysia</dd></div>
       </dl>
     </div>
 
     <section id="projects">
-      <h2>Projects</h2>
-      <p class="sub">Five projects, strongest first.</p>
+      <h2 data-reveal>Projects</h2>
+      <p class="sub" data-reveal>Five projects, strongest first.</p>
       <div class="rows">
-        <article class="row">
+        <article class="row" data-reveal data-reveal-group="rows">
           <div class="tag">Deployed app</div>
           <div>
             <h3>Duits: receipt-to-expense tracker</h3>
@@ -175,7 +247,7 @@ footer { margin-top: 40px; font-size: 14px; color: var(--muted); }
             <ul class="chips"><li>FastAPI</li><li>Claude vision</li><li>Supabase</li><li>PWA</li><li>Docker</li></ul>
           </div>
         </article>
-        <article class="row">
+        <article class="row" data-reveal data-reveal-group="rows">
           <div class="tag">Final year project</div>
           <div>
             <h3>Breast cancer detection from histology images</h3>
@@ -183,7 +255,7 @@ footer { margin-top: 40px; font-size: 14px; color: var(--muted); }
             <ul class="chips"><li>EfficientNetV2-S</li><li>CBAM</li><li>Grad-CAM</li><li>FastAPI</li><li>Streamlit</li></ul>
           </div>
         </article>
-        <article class="row">
+        <article class="row" data-reveal data-reveal-group="rows">
           <div class="tag">AI agents</div>
           <div>
             <h3>Agent systems in Python</h3>
@@ -191,7 +263,7 @@ footer { margin-top: 40px; font-size: 14px; color: var(--muted); }
             <ul class="chips"><li>Anthropic API</li><li>Ollama</li><li>ReportLab</li><li>Telegram</li></ul>
           </div>
         </article>
-        <article class="row">
+        <article class="row" data-reveal data-reveal-group="rows">
           <div class="tag">Business tool</div>
           <div>
             <h3>DevXMedia invoice app</h3>
@@ -199,7 +271,7 @@ footer { margin-top: 40px; font-size: 14px; color: var(--muted); }
             <ul class="chips"><li>Cloudflare Workers</li><li>D1</li><li>WhatsApp bot</li><li>PDF</li></ul>
           </div>
         </article>
-        <article class="row">
+        <article class="row" data-reveal data-reveal-group="rows">
           <div class="tag">Trading tool</div>
           <div>
             <h3>XAUUSD signal bot</h3>
@@ -211,15 +283,15 @@ footer { margin-top: 40px; font-size: 14px; color: var(--muted); }
     </section>
 
     <section id="business">
-      <h2>Business</h2>
-      <p class="sub">Two brands under Hanennkam Rise Ventures, a registered sole proprietorship.</p>
+      <h2 data-reveal>Business</h2>
+      <p class="sub" data-reveal>Two brands under Hanennkam Rise Ventures, a registered sole proprietorship.</p>
       <div class="ventures">
-        <div class="venture">
+        <div class="venture" data-reveal data-reveal-group="ventures">
           <h3>DevXMedia</h3>
           <p class="meta">Founded September 2023, team of four</p>
           <p>IT and media services: software development, web design, graphic design, photography and video.</p>
         </div>
-        <div class="venture">
+        <div class="venture" data-reveal data-reveal-group="ventures">
           <h3>BVRCODE Apparel</h3>
           <p class="meta">Custom sublimation jerseys, 5 pieces minimum</p>
           <p>Jerseys and custom apparel. I have supplied a corporate client since 2024.</p>
@@ -229,36 +301,36 @@ footer { margin-top: 40px; font-size: 14px; color: var(--muted); }
     </section>
 
     <section id="background">
-      <h2>Background</h2>
-      <p class="sub">Awards and certification, then where I studied.</p>
+      <h2 data-reveal>Background</h2>
+      <p class="sub" data-reveal>Awards and certification, then where I studied.</p>
       <div class="cols">
         <div>
           <h3>Recognition</h3>
           <ul class="list">
-            <li><b>Silver medal, DICE 3.0</b><span>Waspada Banjir mobile app, ASEAN level, September 2025</span></li>
-            <li><b>Bronze award, Citrex 2026</b><span>Waspada Banjir mobile app, May 2026</span></li>
-            <li><b>Top 10, UMPSA Innovatech Challenge</b><span>AI Photobooth, June 2025</span></li>
-            <li><b>Ikon Keusahawanan award</b><span>Faculty of Computing, UMPSA, December 2025</span></li>
-            <li><b>Dean's List</b><span>First time, August 2026</span></li>
-            <li><b>Adobe Certified Professional</b><span>Visual Design (Illustrator and Photoshop)</span></li>
+            <li data-reveal data-reveal-group="awards"><b>Silver medal, DICE 3.0</b><span>Waspada Banjir mobile app, ASEAN level, September 2025</span></li>
+            <li data-reveal data-reveal-group="awards"><b>Bronze award, Citrex 2026</b><span>Waspada Banjir mobile app, May 2026</span></li>
+            <li data-reveal data-reveal-group="awards"><b>Top 10, UMPSA Innovatech Challenge</b><span>AI Photobooth, June 2025</span></li>
+            <li data-reveal data-reveal-group="awards"><b>Ikon Keusahawanan award</b><span>Faculty of Computing, UMPSA, December 2025</span></li>
+            <li data-reveal data-reveal-group="awards"><b>Dean's List</b><span>First time, August 2026</span></li>
+            <li data-reveal data-reveal-group="awards"><b>Adobe Certified Professional</b><span>Visual Design (Illustrator and Photoshop)</span></li>
           </ul>
         </div>
         <div>
           <h3>Education</h3>
           <ul class="list">
-            <li><b>Computer Science (Graphic &amp; Multimedia Technology)</b><span>UMPSA, Pekan, Pahang. Third year.</span></li>
-            <li><b>Matriculation, CGPA 3.50</b><span>Kolej Matrikulasi Perak</span></li>
-            <li><b>SPM: 4A 4B 1C</b><span>MRSM Tun Ghafar Baba</span></li>
+            <li data-reveal data-reveal-group="education"><b>Computer Science (Graphic &amp; Multimedia Technology)</b><span>UMPSA, Pekan, Pahang. Third year.</span></li>
+            <li data-reveal data-reveal-group="education"><b>Matriculation, CGPA 3.50</b><span>Kolej Matrikulasi Perak</span></li>
+            <li data-reveal data-reveal-group="education"><b>SPM: 4A 4B 1C</b><span>MRSM Tun Ghafar Baba</span></li>
           </ul>
         </div>
       </div>
     </section>
 
     <section id="contact">
-      <div class="contact">
+      <div class="contact" data-reveal>
         <h2>Open to internships from February 2027</h2>
         <p>I am a third-year student, available from the end of February 2027. My code is on GitHub.</p>
-        <div class="links" id="links"></div>
+        <div class="links" id="links"><a class="btn" href="https://github.com/hanennkam" target="_blank" rel="noopener">GitHub: hanennkam</a></div>
       </div>
     </section>
   </main>
@@ -277,7 +349,7 @@ var CONTACT = { github: "https://github.com/hanennkam", email: "", linkedin: "" 
     a.className = "btn"; a.href = href; a.textContent = label; a.target = "_blank"; a.rel = "noopener";
     box.appendChild(a);
   }
-  if (CONTACT.github) addLink("GitHub: hanennkam", CONTACT.github);
+  if (CONTACT.github && !box.querySelector('a[href="' + CONTACT.github + '"]')) addLink("GitHub: hanennkam", CONTACT.github);
   if (CONTACT.linkedin) addLink("LinkedIn", CONTACT.linkedin);
   if (CONTACT.email) {
     var b = document.createElement("button");
@@ -290,13 +362,127 @@ var CONTACT = { github: "https://github.com/hanennkam", email: "", linkedin: "" 
   }
 
   var root = document.documentElement, btn = document.getElementById("themeBtn");
+  var themeMQ = window.matchMedia("(prefers-color-scheme: dark)");
+  var reduceMQ = window.matchMedia("(prefers-reduced-motion: reduce)");
   function isDark() {
     var t = root.getAttribute("data-theme");
-    return t === "dark" || (!t && window.matchMedia("(prefers-color-scheme: dark)").matches);
+    return t === "dark" || (!t && themeMQ.matches);
   }
-  function sync() { var d = isDark(); btn.textContent = d ? "Light mode" : "Dark mode"; btn.setAttribute("aria-pressed", d ? "true" : "false"); }
-  btn.addEventListener("click", function () { root.setAttribute("data-theme", isDark() ? "light" : "dark"); sync(); });
+  function sync() {
+    var d = isDark();
+    btn.textContent = d ? "Light mode" : "Dark mode";
+    btn.setAttribute("aria-pressed", d ? "true" : "false");
+    var bg = getComputedStyle(document.body).backgroundColor;
+    var metas = document.querySelectorAll('meta[name="theme-color"]');
+    for (var i = 0; i < metas.length; i++) metas[i].setAttribute("content", bg);
+  }
+  function setTheme(next) { root.setAttribute("data-theme", next); sync(); }
+  btn.addEventListener("click", function () {
+    var next = isDark() ? "light" : "dark";
+    if (typeof document.startViewTransition === "function" && !reduceMQ.matches) {
+      document.startViewTransition(function () { setTheme(next); });
+    } else {
+      setTheme(next);
+    }
+  });
+  if (themeMQ.addEventListener) themeMQ.addEventListener("change", sync);
+  else if (themeMQ.addListener) themeMQ.addListener(sync);
   sync();
+
+  /* iOS only applies :active to buttons when a touch listener exists. */
+  document.addEventListener("touchstart", function () {}, { passive: true });
+
+  /* Scroll reveals. CSS hides them only while html.js is set; the head timeout
+     adds reveal-fallback and shows everything if this block never runs. */
+  var reveals = [].slice.call(document.querySelectorAll("[data-reveal]"));
+  function showAll() {
+    for (var i = 0; i < reveals.length; i++) reveals[i].classList.add("is-in");
+    window.__revealCount = reveals.length;
+  }
+  if (reduceMQ.matches || !("IntersectionObserver" in window)) {
+    showAll();
+  } else {
+    var groups = {};
+    for (var r = 0; r < reveals.length; r++) {
+      var g = reveals[r].getAttribute("data-reveal-group");
+      if (g) {
+        var n = groups[g] || 0;
+        reveals[r].style.setProperty("--reveal-delay", Math.min(n, 5) * 45 + "ms");
+        groups[g] = n + 1;
+      }
+    }
+    var io = new IntersectionObserver(function (entries) {
+      for (var i = 0; i < entries.length; i++) {
+        if (entries[i].isIntersecting) {
+          entries[i].target.classList.add("is-in");
+          window.__revealCount = (window.__revealCount || 0) + 1;
+          io.unobserve(entries[i].target);
+        }
+      }
+    }, { threshold: 0.01, rootMargin: "0px 0px -24px 0px" });
+    for (var o = 0; o < reveals.length; o++) io.observe(reveals[o]);
+  }
+
+  /* Scroll progress. One passive listener, one rAF per frame. */
+  var progress = document.querySelector(".progress span");
+  var ticking = false;
+  function paintProgress() {
+    ticking = false;
+    var max = document.documentElement.scrollHeight - window.innerHeight;
+    var p = max > 0 ? Math.min(1, Math.max(0, window.scrollY / max)) : 0;
+    if (progress) progress.style.transform = "scaleX(" + p.toFixed(4) + ")";
+  }
+  function queueProgress() {
+    if (!ticking) { ticking = true; window.requestAnimationFrame(paintProgress); }
+  }
+  window.addEventListener("scroll", queueProgress, { passive: true });
+  window.addEventListener("resize", queueProgress, { passive: true });
+  paintProgress();
+
+  /* Active section in the nav. */
+  var navLinks = [].slice.call(document.querySelectorAll('.bar nav a[href^="#"]'));
+  var navSections = [];
+  for (var l = 0; l < navLinks.length; l++) {
+    var target = document.getElementById(navLinks[l].getAttribute("href").slice(1));
+    if (target) navSections.push(target);
+  }
+  function setActive(id) {
+    for (var i = 0; i < navLinks.length; i++) {
+      if (navLinks[i].getAttribute("href") === "#" + id) navLinks[i].setAttribute("aria-current", "location");
+      else navLinks[i].removeAttribute("aria-current");
+    }
+  }
+  for (var k = 0; k < navLinks.length; k++) {
+    navLinks[k].addEventListener("click", function () {
+      setActive(this.getAttribute("href").slice(1));
+    });
+  }
+  function atBottom() {
+    var max = document.documentElement.scrollHeight - window.innerHeight;
+    return max > 0 && window.scrollY >= max - 2;
+  }
+  var lastNavSection = navSections.length ? navSections[navSections.length - 1] : null;
+  var firstNavSection = navSections.length ? navSections[0] : null;
+  if ("IntersectionObserver" in window && navSections.length) {
+    var navIO = new IntersectionObserver(function (entries) {
+      for (var i = 0; i < entries.length; i++) {
+        if (!entries[i].isIntersecting) continue;
+        if (atBottom() && entries[i].target !== lastNavSection) continue;
+        setActive(entries[i].target.id);
+      }
+    }, { rootMargin: "-45% 0px -50% 0px", threshold: 0 });
+    for (var s = 0; s < navSections.length; s++) navIO.observe(navSections[s]);
+  }
+  function syncNavEdges() {
+    if (!firstNavSection) return;
+    if (window.scrollY + window.innerHeight * 0.45 < firstNavSection.offsetTop) {
+      setActive("");
+      return;
+    }
+    if (atBottom() && lastNavSection) setActive(lastNavSection.id);
+  }
+  window.addEventListener("scroll", syncNavEdges, { passive: true });
+  syncNavEdges();
 })();
 </script>
 </body>
