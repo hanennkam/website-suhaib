@@ -1,0 +1,14 @@
+# macOS
+.DS_Store
+
+# design reference material (local only)
+reference/
+
+# editor / tooling
+.vscode/
+.idea/
+*.swp
+
+# env & secrets
+.env
+.env.*
