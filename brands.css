@@ -1,0 +1,959 @@
+/* ==========================================================================
+   OFFICIAL BRAND LAYER
+   BVRCODE palette: black/transparent logo; official site secondary palette
+   verified at bvrcodeapparel.com (#0E0F0A / #565C3F / #C9A66B / #F2EDE0).
+   Duits palette: sampled from the official wallet logo.
+   ========================================================================== */
+
+:root {
+  --brand-bvr-ink: #0e0f0a;
+  --brand-bvr-panel: #17190f;
+  --brand-bvr-olive: #565c3f;
+  --brand-bvr-olive-light: #7a8358;
+  --brand-bvr-cream: #f2ede0;
+  --brand-bvr-gold: #c9a66b;
+
+  --brand-duits-primary: #6fa6f2;
+  --brand-duits-secondary: #bed8fb;
+  --brand-duits-deep: #2f65d3;
+  --brand-duits-ice: #e3edfb;
+  --brand-duits-bg: #f1f7ff;
+  --brand-duits-ink: #0b1a33;
+
+  /* Dev X Media, Sejenak, Tinta and Hannenkam keep their existing
+     section palettes until their official logos are supplied. Those
+     palettes are explicitly provisional; no colours are guessed. */
+}
+
+/* ==========================================================================
+   WORLD INDEX — six cards
+   ========================================================================== */
+.worlds-strip {
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+}
+
+.worlds-strip-card--duits img {
+  object-fit: cover;
+  object-position: 50% 24%;
+  background: var(--brand-duits-bg);
+}
+
+.worlds-strip-card--duits:hover img {
+  filter: grayscale(0) contrast(1.02) brightness(0.95);
+}
+
+/* ==========================================================================
+   HANNENKAM — Duits node in the ecosystem map
+   ========================================================================== */
+.eco-duits {
+  left: 37%;
+  bottom: 1%;
+}
+
+.eco-duits em {
+  font-family: var(--font-mono);
+  font-style: normal;
+  font-size: 5px;
+  letter-spacing: 0.08em;
+  color: var(--brand-duits-primary);
+}
+
+/* ==========================================================================
+   DEV X MEDIA — real Instagram reel card
+   ========================================================================== */
+.devx-reel-card {
+  top: 8%;
+  right: 3%;
+  width: 27%;
+  height: 72%;
+  aspect-ratio: auto;
+  display: block;
+  background: #05090b;
+  border: 1px solid rgba(118, 231, 255, 0.38);
+  box-shadow: 0 25px 55px rgba(0, 0, 0, 0.45);
+  text-decoration: none;
+  transition: transform 0.45s var(--ease), border-color 0.3s ease;
+}
+
+.devx-reel-card:hover {
+  transform: rotate(1.5deg) translateY(-4px);
+  border-color: rgba(255, 90, 42, 0.75);
+}
+
+.devx-reel-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: saturate(0.9) contrast(1.04) brightness(0.86);
+}
+
+.devx-reel-play {
+  position: absolute;
+  left: 50%;
+  top: 44%;
+  z-index: 2;
+  width: 42px;
+  height: 42px;
+  display: grid;
+  place-items: center;
+  padding-left: 3px;
+  border: 1px solid rgba(223, 248, 255, 0.65);
+  border-radius: 50%;
+  background: rgba(4, 10, 13, 0.55);
+  color: #dff8ff;
+  font-size: 11px;
+  backdrop-filter: blur(8px);
+  transform: translate(-50%, -50%);
+}
+
+.devx-reel-meta {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 2;
+  padding: 7px 8px;
+  background: rgba(4, 10, 13, 0.82);
+  color: rgba(223, 248, 255, 0.72);
+  font-family: var(--font-mono);
+  font-size: 5.5px;
+  line-height: 1.4;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* ==========================================================================
+   BVRCODE — official mark + official product photography
+   ========================================================================== */
+.world-bvrcode {
+  background:
+    radial-gradient(80% 55% at 78% 16%, rgba(201, 166, 107, 0.11), transparent 65%),
+    linear-gradient(145deg, #12140b 0%, #0e0f0a 58%, #181a10 100%);
+  color: var(--brand-bvr-cream);
+}
+
+.bvr-lines {
+  background-image: repeating-linear-gradient(115deg, rgba(242, 237, 224, 0.055) 0 1px, transparent 1px 48px);
+  opacity: 0.7;
+}
+
+.bvr-glow {
+  background: radial-gradient(circle, rgba(86, 92, 63, 0.38), transparent 66%);
+  opacity: 0.7;
+}
+
+.world-bvrcode .world-kicker,
+.world-bvrcode .world-index {
+  border-color: rgba(242, 237, 224, 0.26);
+  opacity: 0.68;
+}
+
+.world-bvrcode .world-title {
+  color: var(--brand-bvr-cream);
+}
+
+.world-bvrcode .world-title span {
+  color: var(--brand-bvr-gold);
+}
+
+.world-bvrcode .world-sub {
+  color: var(--brand-bvr-gold);
+}
+
+.world-bvrcode .world-body {
+  color: rgba(242, 237, 224, 0.72);
+  opacity: 1;
+}
+
+.world-bvrcode .world-facts span {
+  color: rgba(242, 237, 224, 0.82);
+  border-color: rgba(242, 237, 224, 0.32);
+  opacity: 1;
+}
+
+.world-bvrcode .world-link {
+  color: var(--brand-bvr-cream);
+}
+
+.world-bvrcode .world-link:hover {
+  color: var(--brand-bvr-gold);
+}
+
+.world-bvrcode .world-link-muted {
+  opacity: 0.58;
+}
+
+.bvr-brandline {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 24px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid rgba(242, 237, 224, 0.2);
+}
+
+.bvr-logo-plaque {
+  display: grid;
+  place-items: center;
+  width: 116px;
+  height: 78px;
+  padding: 9px;
+  background: var(--brand-bvr-cream);
+  border: 1px solid rgba(201, 166, 107, 0.65);
+  flex: 0 0 auto;
+}
+
+.bvr-logo-plaque img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.bvr-brandline span {
+  max-width: 150px;
+  font-family: var(--font-mono);
+  font-size: 7px;
+  line-height: 1.6;
+  letter-spacing: 0.12em;
+  color: rgba(201, 166, 107, 0.8);
+}
+
+.bvr-studio {
+  height: clamp(560px, 74vh, 720px);
+}
+
+.bvr-photo {
+  border-color: rgba(242, 237, 224, 0.34);
+  background: var(--brand-bvr-ink);
+  box-shadow: 0 28px 56px rgba(0, 0, 0, 0.48);
+}
+
+.bvr-photo img {
+  filter: saturate(0.96) contrast(1.03) brightness(0.94);
+}
+
+.bvr-photo-print {
+  width: 64%;
+  height: 74%;
+  top: 0;
+  right: 0;
+  clip-path: polygon(0 0, 100% 0, 100% 88%, 88% 100%, 0 100%);
+  transform: rotate(0.6deg);
+}
+
+.bvr-photo-print figcaption {
+  color: rgba(242, 237, 224, 0.84);
+}
+
+.bvr-photo-jersey {
+  left: 0;
+  top: 20%;
+  width: 31%;
+  aspect-ratio: 3 / 4;
+  border-color: rgba(201, 166, 107, 0.55);
+  transform: rotate(-4deg);
+}
+
+.bvr-photo-jersey figcaption {
+  background: rgba(14, 15, 10, 0.82);
+  color: rgba(242, 237, 224, 0.86);
+}
+
+.bvr-customizer {
+  width: 46%;
+  right: 1%;
+  bottom: 0;
+  background: rgba(14, 15, 10, 0.94);
+  border-color: rgba(201, 166, 107, 0.36);
+}
+
+.bvr-customizer .bvr-jersey {
+  width: 52%;
+}
+
+.bvr-customizer .bvr-label,
+.bvr-customizer .bvr-hint {
+  color: rgba(242, 237, 224, 0.6);
+}
+
+.bvr-customizer .bvr-swatch {
+  border-color: rgba(242, 237, 224, 0.3);
+  color: rgba(242, 237, 224, 0.82);
+}
+
+.bvr-customizer .bvr-swatch:hover,
+.bvr-customizer .bvr-swatch.is-active {
+  background: var(--brand-bvr-cream);
+  color: var(--brand-bvr-ink);
+}
+
+.bvr-customizer .jersey-small {
+  fill: rgba(14, 15, 10, 0.55);
+}
+
+/* ==========================================================================
+   DUITS — official light-blue glass identity
+   ========================================================================== */
+.world-duits {
+  background:
+    radial-gradient(60% 52% at 78% 18%, rgba(255, 255, 255, 0.92), transparent 62%),
+    radial-gradient(70% 60% at 12% 88%, rgba(190, 216, 251, 0.55), transparent 64%),
+    linear-gradient(135deg, #f3f8ff 0%, #e6f0ff 48%, #d7e7ff 100%);
+  color: var(--brand-duits-ink);
+}
+
+.duits-world-orb {
+  position: absolute;
+  right: 8%;
+  top: 8%;
+  width: 38vw;
+  height: 38vw;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(111, 166, 242, 0.22), rgba(190, 216, 251, 0.08) 42%, transparent 70%);
+  filter: blur(20px);
+}
+
+.duits-world-grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(47, 101, 211, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(47, 101, 211, 0.06) 1px, transparent 1px);
+  background-size: 82px 82px;
+  mask-image: radial-gradient(ellipse at 72% 44%, #000 10%, transparent 70%);
+  -webkit-mask-image: radial-gradient(ellipse at 72% 44%, #000 10%, transparent 70%);
+}
+
+.world-duits .world-kicker,
+.world-duits .world-index {
+  border-color: rgba(11, 26, 51, 0.2);
+  opacity: 0.72;
+}
+
+.world-duits .world-title {
+  color: var(--brand-duits-ink);
+}
+
+.duits-world-title {
+  font-size: clamp(4.5rem, 10vw, 11rem);
+  letter-spacing: -0.09em;
+}
+
+.world-duits .world-sub {
+  color: var(--brand-duits-deep);
+}
+
+.world-duits .world-body {
+  color: rgba(11, 26, 51, 0.7);
+  opacity: 1;
+}
+
+.world-duits .world-facts span {
+  border-color: rgba(47, 101, 211, 0.28);
+  color: rgba(11, 26, 51, 0.72);
+  opacity: 1;
+}
+
+.world-duits .world-link {
+  color: var(--brand-duits-deep);
+}
+
+.world-duits .world-link:hover {
+  color: var(--brand-duits-ink);
+}
+
+.world-duits .world-link-muted {
+  opacity: 0.6;
+}
+
+.world-duits .world-note {
+  color: rgba(11, 26, 51, 0.52);
+  opacity: 1;
+}
+
+.duits-brandline {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 18px;
+}
+
+.duits-live-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 6px 10px;
+  border: 1px solid rgba(47, 101, 211, 0.32);
+  border-radius: 99px;
+  background: rgba(255, 255, 255, 0.58);
+  color: var(--brand-duits-deep);
+  font-family: var(--font-mono);
+  font-size: 8px;
+  letter-spacing: 0.1em;
+}
+
+.duits-live-pill i,
+.duits-status-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #36a269;
+  box-shadow: 0 0 0 3px rgba(54, 162, 105, 0.12);
+}
+
+.duits-brand-note {
+  color: rgba(11, 26, 51, 0.48);
+  font-family: var(--font-mono);
+  font-size: 7px;
+  letter-spacing: 0.12em;
+}
+
+.duits-world-layout {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 0.96fr 1.04fr;
+  gap: 4vw;
+  align-items: center;
+  padding: 4vh 0;
+}
+
+.duits-world-visual {
+  position: relative;
+  width: min(100%, 680px);
+  height: clamp(560px, 74vh, 700px);
+  margin-left: auto;
+}
+
+.duits-mark-card {
+  position: absolute;
+  left: 0;
+  top: 3%;
+  z-index: 3;
+  width: 40%;
+  aspect-ratio: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  background: rgba(255, 255, 255, 0.58);
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  border-radius: 24px;
+  box-shadow: 0 25px 60px rgba(47, 101, 211, 0.16);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
+
+.duits-mark-card img {
+  width: 54%;
+  height: auto;
+}
+
+.duits-mark-card span {
+  color: rgba(11, 26, 51, 0.5);
+  font-family: var(--font-mono);
+  font-size: 6px;
+  letter-spacing: 0.12em;
+}
+
+.duits-device {
+  position: absolute;
+  right: 4%;
+  top: 0;
+  z-index: 2;
+  width: 45%;
+  aspect-ratio: 430 / 932;
+  overflow: hidden;
+  border: 5px solid rgba(255, 255, 255, 0.86);
+  border-radius: 30px;
+  background: #fff;
+  box-shadow: 0 35px 80px rgba(47, 101, 211, 0.22);
+  transform: rotate(2deg);
+}
+
+.duits-device img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.duits-device figcaption {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 9px 11px;
+  background: rgba(255, 255, 255, 0.88);
+  color: rgba(11, 26, 51, 0.58);
+  font-family: var(--font-mono);
+  font-size: 6px;
+  letter-spacing: 0.08em;
+  backdrop-filter: blur(12px);
+}
+
+.duits-status-card {
+  position: absolute;
+  left: 0;
+  bottom: 4%;
+  z-index: 4;
+  width: 61%;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.62);
+  border: 1px solid rgba(255, 255, 255, 0.92);
+  border-radius: 20px;
+  box-shadow: 0 24px 50px rgba(47, 101, 211, 0.15);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
+
+.duits-status-head {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: rgba(11, 26, 51, 0.52);
+  font-family: var(--font-mono);
+  font-size: 6.5px;
+  letter-spacing: 0.11em;
+}
+
+.duits-status-head span:last-child {
+  margin-left: auto;
+  color: var(--brand-duits-deep);
+}
+
+.duits-status-card strong {
+  display: block;
+  margin-top: 22px;
+  font-size: clamp(1.5rem, 2.4vw, 2.3rem);
+  line-height: 0.95;
+  letter-spacing: -0.055em;
+  font-weight: 600;
+}
+
+.duits-status-card p {
+  margin-top: 10px;
+  max-width: 310px;
+  color: rgba(11, 26, 51, 0.62);
+  font-size: 10.5px;
+  line-height: 1.5;
+}
+
+.duits-status-card a {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 16px;
+  padding-bottom: 3px;
+  border-bottom: 1px solid var(--brand-duits-deep);
+  color: var(--brand-duits-deep);
+  font-family: var(--font-mono);
+  font-size: 8px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* ==========================================================================
+   DUITS — live project scene
+   ========================================================================== */
+.project-duits {
+  background:
+    radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.98), transparent 34%),
+    radial-gradient(circle at 62% 72%, rgba(190, 216, 251, 0.7), transparent 46%),
+    linear-gradient(135deg, #f2f8ff 0%, #e4efff 55%, #d3e5ff 100%);
+  color: var(--brand-duits-ink);
+}
+
+.project-duits .project-kicker,
+.project-duits .project-body,
+.project-duits .project-facts span,
+.project-duits .project-tags span,
+.project-duits .inline-action {
+  color: rgba(11, 26, 51, 0.68);
+}
+
+.project-duits .project-kicker span:first-child,
+.project-duits .project-tags span {
+  border-color: rgba(47, 101, 211, 0.3);
+}
+
+.project-duits .project-facts {
+  border-color: rgba(47, 101, 211, 0.22);
+}
+
+.project-duits .project-sub {
+  color: rgba(11, 26, 51, 0.9);
+}
+
+.project-duits .project-sub em {
+  color: var(--brand-duits-deep);
+}
+
+.project-duits .project-link {
+  color: var(--brand-duits-ink);
+}
+
+.project-duits .project-link span,
+.project-duits .inline-action.is-on {
+  color: var(--brand-duits-deep);
+}
+
+.project-duits .inline-action:hover {
+  color: var(--brand-duits-deep);
+}
+
+.project-duits .project-art {
+  background: rgba(255, 255, 255, 0.32);
+  border-color: rgba(47, 101, 211, 0.22);
+}
+
+.project-duits .art-label {
+  color: rgba(11, 26, 51, 0.6);
+}
+
+.project-live-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-left: 12px;
+  padding: 4px 8px;
+  border: 1px solid rgba(47, 101, 211, 0.32);
+  border-radius: 99px;
+  color: var(--brand-duits-deep);
+  font-family: var(--font-mono);
+  font-size: 7px;
+  letter-spacing: 0.1em;
+}
+
+.project-live-pill i {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #36a269;
+}
+
+.duits-project-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 16px;
+  padding: 6px 9px;
+  background: rgba(255, 255, 255, 0.62);
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  border-radius: 999px;
+  box-shadow: 0 4px 16px rgba(47, 101, 211, 0.08);
+}
+
+.duits-project-brand img {
+  width: 30px;
+  height: 30px;
+  display: block;
+}
+
+.duits-project-brand span {
+  color: rgba(11, 26, 51, 0.55);
+  font-family: var(--font-mono);
+  font-size: 6.5px;
+  letter-spacing: 0.1em;
+}
+
+.project-duits .duits-phone {
+  background: #0b1a33;
+  border-color: #d8e8ff;
+  box-shadow: 24px 30px 60px rgba(47, 101, 211, 0.25);
+}
+
+.project-duits .duits-app-body {
+  background: #f3f8ff;
+}
+
+.project-duits .duits-bar {
+  background: var(--brand-duits-deep);
+}
+
+.project-duits .duits-bars i {
+  background: var(--brand-duits-primary);
+}
+
+.project-duits .duits-bars i:nth-child(2n) {
+  background: rgba(47, 101, 211, 0.18);
+}
+
+.project-duits .duits-cats {
+  color: rgba(11, 26, 51, 0.65);
+}
+
+.project-duits .duits-cats span::before {
+  color: var(--brand-duits-deep);
+}
+
+.project-duits .duits-receipt {
+  background: rgba(255, 255, 255, 0.82);
+  border: 1px solid rgba(255, 255, 255, 0.95);
+  box-shadow: 18px 22px 44px rgba(47, 101, 211, 0.18);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+
+.project-duits .receipt-head,
+.project-duits .receipt-line b {
+  color: var(--brand-duits-ink);
+}
+
+.project-duits .receipt-line span,
+.project-duits .receipt-foot {
+  color: rgba(11, 26, 51, 0.72);
+}
+
+.project-duits .receipt-line b.is-filled {
+  color: var(--brand-duits-deep);
+}
+
+.project-duits .receipt-bar {
+  background: rgba(47, 101, 211, 0.12);
+}
+
+.project-duits .receipt-bar span {
+  background: var(--brand-duits-primary);
+}
+
+.project-duits .art-duits {
+  background:
+    radial-gradient(circle at 70% 36%, rgba(255, 255, 255, 0.95), transparent 35%),
+    linear-gradient(135deg, #f5faff 0%, #dcebff 100%);
+}
+
+.duits-app-live {
+  display: inline-block;
+  margin-left: 5px;
+  padding: 2px 4px;
+  border: 1px solid rgba(111, 166, 242, 0.7);
+  border-radius: 3px;
+  color: var(--brand-duits-primary);
+  font-family: var(--font-mono);
+  font-style: normal;
+  font-size: 5px;
+  letter-spacing: 0.08em;
+}
+
+/* ==========================================================================
+   RESPONSIVE
+   ========================================================================== */
+@media (max-width: 1280px) and (min-width: 1101px) {
+  .duits-world-layout {
+    grid-template-columns: 1fr;
+    gap: 4vh;
+    align-items: start;
+  }
+
+  .duits-world-visual {
+    margin: 0 auto;
+    width: min(100%, 680px);
+  }
+}
+
+@media (max-width: 1100px) {
+  .duits-world-layout {
+    grid-template-columns: 1fr;
+    gap: 4vh;
+    align-items: start;
+  }
+
+  .duits-world-visual {
+    width: min(100%, 640px);
+    height: 620px;
+    margin: 0 auto;
+  }
+
+  .bvr-studio {
+    height: 620px;
+  }
+}
+
+@media (max-width: 760px) {
+  .worlds-strip-card--duits {
+    flex-basis: 42vw;
+  }
+
+  .world-bvrcode .world-cta-row {
+    gap: 14px;
+  }
+
+  .bvr-brandline {
+    margin-bottom: 18px;
+  }
+
+  .bvr-logo-plaque {
+    width: 92px;
+    height: 64px;
+    padding: 7px;
+  }
+
+  .bvr-studio {
+    height: auto;
+  }
+
+  .bvr-photo-print {
+    position: relative;
+    width: 100%;
+    height: 46vh;
+    min-height: 320px;
+    clip-path: none;
+    transform: none;
+    margin-bottom: 8px;
+  }
+
+  .bvr-photo-jersey {
+    position: relative;
+    top: auto;
+    left: auto;
+    width: 42%;
+    margin: -18% 0 0 auto;
+    transform: rotate(-2deg);
+  }
+
+  .bvr-customizer {
+    position: relative;
+    right: auto;
+    bottom: auto;
+    width: 100%;
+    margin-top: 8px;
+  }
+
+  .bvr-customizer .bvr-jersey {
+    width: 58%;
+  }
+
+  .devx-reel-card {
+    position: absolute;
+    top: auto;
+    right: 4%;
+    bottom: 150px;
+    width: 31%;
+    height: auto;
+    aspect-ratio: 9 / 16;
+    transform: rotate(3deg);
+    z-index: 5;
+  }
+
+  .duits-world-visual {
+    height: auto;
+    margin-top: 10px;
+  }
+
+  .duits-mark-card {
+    position: relative;
+    top: auto;
+    left: auto;
+    width: 100%;
+    aspect-ratio: auto;
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 12px;
+    padding: 12px 14px;
+    border-radius: 16px;
+  }
+
+  .duits-mark-card img {
+    width: 64px;
+  }
+
+  .duits-device {
+    position: relative;
+    top: auto;
+    right: auto;
+    width: min(74vw, 300px);
+    margin: 14px auto 0;
+    transform: rotate(1.4deg);
+  }
+
+  .duits-status-card {
+    position: relative;
+    left: auto;
+    bottom: auto;
+    width: 100%;
+    margin-top: 14px;
+    padding: 16px;
+  }
+
+  .duits-status-card strong {
+    margin-top: 14px;
+  }
+
+  .project-live-pill {
+    margin-left: 8px;
+  }
+}
+
+@media (max-width: 420px) {
+  .duits-world-title {
+    font-size: 19vw;
+  }
+
+  .bvr-photo-print {
+    height: 40vh;
+  }
+
+  .devx-reel-card {
+    bottom: 120px;
+    width: 34%;
+  }
+}
+
+/* Picture wrappers must fill their media frames. */
+.worlds-strip-card picture,
+.devx-photo picture,
+.bvr-photo picture,
+.duits-device picture {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.worlds-strip-card--duits {
+  background:
+    radial-gradient(circle at 50% 38%, rgba(255, 255, 255, 0.9), transparent 55%),
+    linear-gradient(135deg, #f3f8ff 0%, #d8e8ff 100%);
+  border-color: rgba(47, 101, 211, 0.22);
+}
+
+.worlds-strip-card--duits::after {
+  background: linear-gradient(to top, rgba(11, 26, 51, 0.12), transparent 55%);
+}
+
+.duits-strip-mark {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+}
+
+.duits-strip-mark img {
+  width: 56%;
+  height: auto;
+  object-fit: contain;
+  filter: none;
+  transition: transform 0.8s var(--ease);
+}
+
+.worlds-strip-card--duits:hover .duits-strip-mark img {
+  transform: scale(1.05);
+}
+
+.worlds-strip-card--duits > span {
+  color: var(--brand-duits-ink);
+}
+
+@media (min-width: 1241px) {
+  .ecosystem,
+  .devx-visual,
+  .sejenak-visual,
+  .tinta-stage,
+  .bvr-studio,
+  .duits-world-visual {
+    margin-right: 20px;
+  }
+}

@@ -4,21 +4,21 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Ahmad Suhaib — The Signal Archive</title>
-<meta name="description" content="Ahmad Suhaib — Software Engineer, Creative Technologist and Founder. An interactive archive of AI systems, product engineering, creative media and five ventures.">
+<meta name="description" content="Ahmad Suhaib — Software Engineer, Creative Technologist and Founder. An interactive archive of AI systems, product engineering, creative media, five ventures and the live Duits product.">
 <meta name="theme-color" content="#070707">
 <link rel="canonical" href="https://website-suhaib.vercel.app/">
 <meta property="og:url" content="https://website-suhaib.vercel.app/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Ahmad Suhaib — The Signal Archive">
 <meta property="og:title" content="Ahmad Suhaib — The Signal Archive">
-<meta property="og:description" content="An interactive archive of AI systems, product engineering, creative media and five ventures. Built at the intersection of technology, design and business.">
+<meta property="og:description" content="An interactive archive of AI systems, product engineering, creative media, five ventures and the live Duits product. Built at the intersection of technology, design and business.">
 <meta property="og:image" content="og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="Ahmad Suhaib — The Signal Archive. A crystalline monolith and editorial typography.">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Ahmad Suhaib — The Signal Archive">
-<meta name="twitter:description" content="An interactive archive of AI systems, product engineering, creative media and five ventures.">
+<meta name="twitter:description" content="An interactive archive of AI systems, product engineering, creative media, five ventures and the live Duits product.">
 <meta name="twitter:image" content="og-image.png">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23070707'/%3E%3Cpath d='M20 44L32 18L44 44M24 37H40' stroke='%23ff5a2a' stroke-width='4' stroke-linecap='round' stroke-linejoin='round' fill='none'/%3E%3Ccircle cx='32' cy='18' r='3' fill='%23bdefff'/%3E%3C/svg%3E">
 
@@ -28,6 +28,8 @@
 
 <link rel="stylesheet" href="styles.css">
 <link rel="stylesheet" href="artefacts.css">
+<link rel="stylesheet" href="photos.css">
+<link rel="stylesheet" href="brands.css">
 <script>document.documentElement.classList.remove('no-js');document.documentElement.classList.add('js');</script>
 </head>
 <body>
@@ -206,6 +208,26 @@
           <span>Technology</span><i></i><span>Design</span><i></i><span>Business</span>
         </div>
       </div>
+
+      <figure class="op-collage" aria-label="Creative studio context imagery">
+        <div class="op-photo op-photo-main" data-parallax="0.09">
+          <img src="assets/photos/operator-mood-800.jpg"
+               srcset="assets/photos/operator-mood-400.jpg 400w, assets/photos/operator-mood-800.jpg 800w"
+               sizes="(max-width: 760px) 74vw, 24vw"
+               width="800" height="800" loading="lazy" decoding="async"
+               alt="Moodboard, notes and studio materials on a desk — representative context image">
+          <span class="photo-tag">STUDIO CONTEXT / STOCK</span>
+        </div>
+        <div class="op-photo op-photo-detail" data-parallax="0.16">
+          <img src="assets/photos/operator-shelf-500.jpg"
+               srcset="assets/photos/operator-shelf-500.jpg 500w, assets/photos/operator-shelf-1000.jpg 1000w"
+               sizes="(max-width: 760px) 40vw, 12vw"
+               width="500" height="625" loading="lazy" decoding="async"
+               alt="Studio shelf with art supplies and camera — representative context image">
+        </div>
+        <figcaption><span>PLATE 01 — THE STUDIO AS A SYSTEM</span><span>LICENSED CONTEXT</span></figcaption>
+      </figure>
+
       <div class="operator-watermark" aria-hidden="true">01</div>
     </div>
 
@@ -362,24 +384,36 @@
             <div class="histo-meta">
               <span>PATIENT-LEVEL SPLIT</span><span>·</span><span>NO DATA LEAKAGE</span><span>·</span><span>EXPLAINABLE</span>
             </div>
+            <figure class="context-photo context-lab">
+              <img src="assets/photos/histo-lab-600.jpg"
+                   srcset="assets/photos/histo-lab-600.jpg 600w, assets/photos/histo-lab-1200.jpg 1200w"
+                   sizes="(max-width: 760px) 30vw, 15vw"
+                   width="600" height="450" loading="lazy" decoding="async"
+                   alt="Scientist working with a microscope — representative pathology context">
+              <figcaption>PATHOLOGY CONTEXT / STOCK</figcaption>
+            </figure>
           </div>
         </article>
 
         <!-- 02 Duits -->
-        <article class="project project-duits" data-category="MULTIMODAL AI" data-project-index="1">
+        <article class="project project-duits" data-category="LIVE PRODUCT" data-project-index="1" data-brand="duits">
           <div class="project-copy">
-            <div class="project-kicker"><span>02</span><span>Deployed Production PWA</span></div>
+            <div class="project-kicker"><span>02</span><span>LIVE PRODUCT · INVITE-ONLY</span><span class="project-live-pill"><i></i>LIVE</span></div>
+            <div class="duits-project-brand">
+              <img src="assets/brands/duits/logo/duits-logo-transparent.png" alt="Duits official wallet logo" width="64" height="64">
+              <span>OFFICIAL PRODUCT</span>
+            </div>
             <h3 class="project-title">Duits</h3>
             <p class="project-sub">Receipts in.<br><em>Expenses out.</em></p>
             <p class="project-body">A receipt-to-expense tracker that turns photos, bank screenshots or plain text into structured spending data. Claude Vision parses merchant, total, tax and category; Supabase stores it behind authenticated per-user Row Level Security.</p>
             <div class="project-facts">
-              <div><strong>PWA</strong><span>iPhone-first</span></div>
+              <div><strong>LIVE</strong><span>Invite-only PWA</span></div>
               <div><strong>RLS</strong><span>Supabase security</span></div>
               <div><strong>Vision</strong><span>Claude multimodal</span></div>
             </div>
             <div class="project-tags"><span>FastAPI</span><span>Claude 3.5 Sonnet</span><span>Supabase</span><span>PostgreSQL</span><span>Docker</span><span>Render</span></div>
             <div class="project-actions">
-              <a class="project-link" href="https://duits-money-tracking.onrender.com" target="_blank" rel="noopener" data-cursor="LIVE">Live app <span>↗</span></a>
+              <a class="project-link" href="https://duits-money-tracking.onrender.com" target="_blank" rel="noopener" data-cursor="LIVE">Open live product <span>↗</span></a>
               <button type="button" class="inline-action" id="duitsScan" data-cursor="SCAN"><i></i>Parse a receipt</button>
             </div>
           </div>
@@ -387,7 +421,7 @@
             <div class="duits-stage">
               <div class="duits-phone">
                 <div class="duits-notch"></div>
-                <div class="duits-app-top"><span>DUITS</span><span>− RM 142.50</span></div>
+                <div class="duits-app-top"><span>DUITS <i class="duits-app-live">LIVE</i></span><span>− RM 142.50</span></div>
                 <div class="duits-app-body">
                   <div class="duits-bar"><span></span></div>
                   <div class="duits-bars"><i style="height:28%"></i><i style="height:54%"></i><i style="height:39%"></i><i style="height:72%"></i><i style="height:58%"></i><i style="height:88%"></i><i style="height:66%"></i></div>
@@ -404,7 +438,7 @@
                 <div class="receipt-bar" aria-hidden="true"><span></span></div>
                 <div class="receipt-foot"><span>CLAUDE VISION</span><span>200 OK</span></div>
               </div>
-              <div class="art-label"><span>RECEIPT → STRUCTURE</span><span>INTERFACE STUDY</span></div>
+              <div class="art-label"><span>LIVE PRODUCT / RECEIPT → STRUCTURE</span><span>INTERFACE STUDY</span></div>
             </div>
           </div>
         </article>
@@ -504,6 +538,14 @@
               </div>
               <div class="art-label"><span>MULTI-AGENT ORCHESTRATION</span><span>SCHEMATIC</span></div>
             </div>
+            <figure class="context-photo context-agents">
+              <img src="assets/photos/agents-desk-500.jpg"
+                   srcset="assets/photos/agents-desk-500.jpg 500w, assets/photos/agents-desk-1000.jpg 1000w"
+                   sizes="(max-width: 760px) 24vw, 12vw"
+                   width="500" height="625" loading="lazy" decoding="async"
+                   alt="Developer working at a multi-monitor setup — representative workspace context">
+              <figcaption>WORKSPACE CONTEXT / STOCK</figcaption>
+            </figure>
           </div>
         </article>
 
@@ -602,12 +644,45 @@
        ===================================================================== -->
   <section class="worlds" id="worlds" data-chapter="04" data-chapter-name="WORLDS" data-theme="dark">
     <header class="worlds-cover">
-      <div class="worlds-cover-top"><span class="eyebrow">04 / WORLDS</span><span>FIVE BRANDS · ONE OPERATOR</span></div>
+      <div class="worlds-cover-top"><span class="eyebrow">04 / WORLDS</span><span>SIX IDENTITIES · ONE OPERATOR</span></div>
       <h2>Different worlds.<br><em>Same standard.</em></h2>
-      <p>Every venture has its own visual identity, its own audience, its own operating logic. What they share is a refusal to ship anything generic.</p>
+      <p>Every venture and product has its own visual identity, its own audience, its own operating logic. What they share is a refusal to ship anything generic.</p>
       <div class="worlds-cover-index" aria-hidden="true">
-        <span>01 HANNENKAM</span><span>02 DEVXMEDIA</span><span>03 SEJENAK</span><span>04 TINTA</span><span>05 BVRCODE</span>
+        <span>01 HANNENKAM</span><span>02 DEVXMEDIA</span><span>03 SEJENAK</span><span>04 TINTA</span><span>05 BVRCODE</span><span>06 DUITS</span>
       </div>
+
+      <nav class="worlds-strip" aria-label="World context index">
+        <span class="worlds-strip-note">FIELD NOTES / OFFICIAL ASSETS + LICENSED CONTEXT <i>SEE CREDITS</i></span>
+        <a class="worlds-strip-card" href="#worlds" data-jump-world="hannenkam" aria-label="01 / Hannenkam — jump to Hannenkam Rise Ventures">
+          <img src="assets/photos/operator-mood-400.jpg" srcset="assets/photos/operator-mood-400.jpg 400w, assets/photos/operator-mood-800.jpg 800w" sizes="(max-width: 1100px) 42vw, 18vw" width="800" height="800" loading="lazy" decoding="async" alt="Studio moodboard context">
+          <span>01 / HANNENKAM</span>
+        </a>
+        <a class="worlds-strip-card" href="#worlds" data-jump-world="devxmedia" aria-label="02 / DevXMedia — jump to the DevXMedia world">
+          <img src="assets/photos/devx-workspace-700.jpg" srcset="assets/photos/devx-workspace-700.jpg 700w, assets/photos/devx-workspace-1400.jpg 1400w" sizes="(max-width: 1100px) 42vw, 18vw" width="1400" height="933" loading="lazy" decoding="async" alt="Software development workspace context">
+          <span>02 / DEVXMEDIA</span>
+        </a>
+        <a class="worlds-strip-card" href="#worlds" data-jump-world="sejenak" aria-label="03 / Sejenak — jump to the Sejenak Photobooth world">
+          <img src="assets/photos/sejenak-event-700.jpg" srcset="assets/photos/sejenak-event-700.jpg 700w, assets/photos/sejenak-event-1400.jpg 1400w" sizes="(max-width: 1100px) 42vw, 18vw" width="700" height="875" loading="lazy" decoding="async" alt="Event photobooth context">
+          <span>03 / SEJENAK</span>
+        </a>
+        <a class="worlds-strip-card" href="#worlds" data-jump-world="tinta" aria-label="04 / Tinta — jump to the Tinta Visuals world">
+          <img src="assets/photos/tinta-set-800.jpg" srcset="assets/photos/tinta-set-800.jpg 800w, assets/photos/tinta-set-1600.jpg 1600w" sizes="(max-width: 1100px) 42vw, 18vw" width="1600" height="1000" loading="lazy" decoding="async" alt="Film production set context">
+          <span>04 / TINTA</span>
+        </a>
+        <a class="worlds-strip-card" href="#worlds" data-jump-world="bvrcode" aria-label="05 / BVRCODE — jump to the BVRCODE Apparel world">
+          <picture>
+            <source type="image/webp" srcset="assets/brands/bvrcode-apparel/photos/asphalt-blue-700.webp 700w, assets/brands/bvrcode-apparel/photos/asphalt-blue-1400.webp 1400w" sizes="(max-width: 1100px) 42vw, 18vw">
+            <img src="assets/brands/bvrcode-apparel/photos/asphalt-blue-700.jpg" srcset="assets/brands/bvrcode-apparel/photos/asphalt-blue-700.jpg 700w, assets/brands/bvrcode-apparel/photos/asphalt-blue-1400.jpg 1400w" sizes="(max-width: 1100px) 42vw, 18vw" width="1856" height="2300" loading="lazy" decoding="async" alt="BVRCODE custom blue jersey product photography">
+          </picture>
+          <span>05 / BVRCODE</span>
+        </a>
+        <a class="worlds-strip-card worlds-strip-card--duits" href="#worlds" data-jump-world="duits" aria-label="06 / Duits — jump to the Duits live product world">
+          <div class="duits-strip-mark">
+            <img src="assets/brands/duits/logo/duits-logo-transparent.png" width="180" height="180" loading="lazy" decoding="async" alt="Duits official wallet logo">
+          </div>
+          <span>06 / DUITS</span>
+        </a>
+      </nav>
     </header>
 
     <!-- WORLD 01 — Hannenkam Rise Ventures -->
@@ -620,7 +695,7 @@
             <h3 class="world-title">Hannenkam<br><em>Rise Ventures</em></h3>
             <p class="world-body">The parent holding entity for digital platforms, manufacturing and creative media. A single operating ecosystem connecting software, events, film and apparel.</p>
             <div class="world-facts"><span>Digital platforms</span><span>Manufacturing</span><span>Creative media</span></div>
-            <p class="world-note">Five brands. One registered business ecosystem.</p>
+            <p class="world-note">Five ventures. One live product. One registered ecosystem.</p>
           </div>
           <div class="ecosystem" aria-label="Hannenkam ecosystem map">
             <div class="eco-center"><span>HRV</span><b>HANNENKAM<br>RISE VENTURES</b></div>
@@ -630,9 +705,10 @@
             <button type="button" class="eco-node eco-sejenak" data-jump-world="sejenak"><span>02</span>Sejenak</button>
             <button type="button" class="eco-node eco-tinta" data-jump-world="tinta"><span>03</span>Tinta Visuals</button>
             <button type="button" class="eco-node eco-bvr" data-jump-world="bvrcode"><span>04</span>BVRCODE</button>
+            <button type="button" class="eco-node eco-duits" data-jump-world="duits"><span>05</span>Duits <em>LIVE</em></button>
           </div>
         </div>
-        <div class="world-index"><span>01 — 05</span><span>ECOSYSTEM / ENTITY</span></div>
+        <div class="world-index"><span>01 — 06</span><span>ECOSYSTEM / ENTITY</span></div>
       </div>
     </article>
 
@@ -648,25 +724,48 @@
             <div class="world-facts"><span>Custom web engineering</span><span>Automation bots</span><span>SaaS prototyping</span><span>Cloud tooling</span></div>
             <div class="world-cta-row">
               <a class="world-link" href="#work" data-jump-project="4" data-cursor="WORK">View the invoicing engine <span>↗</span></a>
+              <a class="world-link" href="https://www.instagram.com/devx.media/" target="_blank" rel="noopener" data-cursor="INSTAGRAM">Official Instagram <span>↗</span></a>
               <a class="world-link world-link-muted" href="#contact" data-cursor="TALK">Start a build <span>↗</span></a>
             </div>
           </div>
-          <div class="devx-terminal" aria-label="Interactive DevXMedia terminal demo">
-            <div class="terminal-top"><span><i></i><i></i><i></i></span><b>devxmedia — shell</b><span>zsh</span></div>
-            <div class="terminal-body" id="devxTerminal">
-              <p><span class="t-prompt">devx@studio ~ %</span> agency --status</p>
-              <p class="t-out">Full-spectrum software · 4-person team</p>
-              <p class="t-out">Web / automation / internal tools / cloud</p>
-              <p><span class="t-prompt">devx@studio ~ %</span> <span class="t-cursor"></span></p>
-            </div>
-            <div class="terminal-actions" role="group" aria-label="Terminal commands">
-              <button type="button" data-cmd="deploy">deploy</button>
-              <button type="button" data-cmd="automate">automate</button>
-              <button type="button" data-cmd="prototype">prototype</button>
+          <div class="devx-visual">
+            <figure class="devx-photo devx-photo-main" data-parallax="0.07">
+              <img src="assets/photos/devx-workspace-700.jpg"
+                   srcset="assets/photos/devx-workspace-700.jpg 700w, assets/photos/devx-workspace-1400.jpg 1400w"
+                   sizes="(max-width: 1100px) 86vw, 34vw"
+                   width="1400" height="933" loading="lazy" decoding="async"
+                   alt="Hands typing on a laptop in a software workspace — representative context image">
+              <figcaption><span>STUDIO CONTEXT</span><span>LICENSED STOCK</span></figcaption>
+            </figure>
+            <a class="devx-photo devx-photo-detail devx-reel-card" href="https://www.instagram.com/reel/DKAROWSgwPW/" target="_blank" rel="noopener" data-parallax="0.13" data-cursor="WATCH" aria-label="Watch the COMBAT 2025 reel by Dev X Media on Instagram">
+              <picture>
+                <source type="image/webp" srcset="assets/brands/dev-x-media/photos/devx-combat-2025-500.webp 500w, assets/brands/dev-x-media/photos/devx-combat-2025-1000.webp 1000w" sizes="(max-width: 1100px) 34vw, 12vw">
+                <img src="assets/brands/dev-x-media/photos/devx-combat-2025-500.jpg"
+                     srcset="assets/brands/dev-x-media/photos/devx-combat-2025-500.jpg 500w, assets/brands/dev-x-media/photos/devx-combat-2025-1000.jpg 1000w"
+                     sizes="(max-width: 1100px) 34vw, 12vw"
+                     width="640" height="1138" loading="lazy" decoding="async"
+                     alt="COMBAT 2025 event-film title card by Dev X Media">
+              </picture>
+              <span class="devx-reel-play" aria-hidden="true">▶</span>
+              <span class="devx-reel-meta">INSTAGRAM REEL / COMBAT 2025</span>
+            </a>
+            <div class="devx-terminal" aria-label="Interactive DevXMedia terminal demo">
+              <div class="terminal-top"><span><i></i><i></i><i></i></span><b>devxmedia — shell</b><span>zsh</span></div>
+              <div class="terminal-body" id="devxTerminal">
+                <p><span class="t-prompt">devx@studio ~ %</span> agency --status</p>
+                <p class="t-out">Full-spectrum software · 4-person team</p>
+                <p class="t-out">Web / automation / internal tools / cloud</p>
+                <p><span class="t-prompt">devx@studio ~ %</span> <span class="t-cursor"></span></p>
+              </div>
+              <div class="terminal-actions" role="group" aria-label="Terminal commands">
+                <button type="button" data-cmd="deploy">deploy</button>
+                <button type="button" data-cmd="automate">automate</button>
+                <button type="button" data-cmd="prototype">prototype</button>
+              </div>
             </div>
           </div>
         </div>
-        <div class="world-index"><span>02 — 05</span><span>AGENCY / DIGITAL</span></div>
+        <div class="world-index"><span>02 — 06</span><span>AGENCY / DIGITAL</span></div>
       </div>
     </article>
 
@@ -683,24 +782,42 @@
             <div class="world-facts"><span>Event photobooths</span><span>AI image transformation</span><span>Instant printing</span><span>Interactive rigging</span></div>
             <div class="world-cta-row">
               <a class="world-link" href="#contact" data-cursor="BOOK">Book an activation <span>↗</span></a>
+              <a class="world-link" href="https://www.instagram.com/sejenakphotobooth/" target="_blank" rel="noopener" data-cursor="INSTAGRAM">Official Instagram <span>↗</span></a>
               <a class="world-link world-link-muted" href="https://github.com/hanennkam" target="_blank" rel="noopener" data-cursor="GITHUB">Terabooth recognition <span>↗</span></a>
               <button type="button" class="world-link" data-artefact-jump="photobooth" data-cursor="INSPECT">Inspect the kiosk in 3D <span>↗</span></button>
             </div>
           </div>
-          <div class="sejenak-booth">
-            <div class="booth-head"><span>SEJENAK / TERABOOTH</span><span id="boothCount">0 FRAMES</span></div>
-            <div class="booth-strip" id="boothStrip">
-              <div class="booth-frame frame-a"><span>01</span><i></i><b>STAY<br>A WHILE</b></div>
-              <div class="booth-frame frame-b"><span>02</span><i></i><b>KEEP<br>THE MOMENT</b></div>
-              <div class="booth-frame frame-c"><span>03</span><i></i><b>MAKE<br>IT STRANGE</b></div>
-            </div>
-            <div class="booth-controls">
-              <button type="button" class="shutter" id="boothShutter" data-cursor="SNAP"><span></span>Take a frame</button>
-              <span class="booth-hint">INTERACTIVE DEMO</span>
+          <div class="sejenak-visual">
+            <figure class="sejenak-photo" data-parallax="0.055">
+              <img src="assets/photos/sejenak-event-700.jpg"
+                   srcset="assets/photos/sejenak-event-700.jpg 700w, assets/photos/sejenak-event-1400.jpg 1400w"
+                   sizes="(max-width: 1100px) 86vw, 32vw"
+                   width="700" height="875" loading="lazy" decoding="async"
+                   alt="Guests posing inside a photobooth — representative event context image">
+              <figcaption><span>REPRESENTATIVE EVENT CONTEXT</span><span>LICENSED STOCK</span></figcaption>
+            </figure>
+            <figure class="sejenak-photo-detail" data-parallax="0.1">
+              <img src="assets/photos/sejenak-sign-600.jpg"
+                   srcset="assets/photos/sejenak-sign-600.jpg 600w, assets/photos/sejenak-sign-1200.jpg 1200w"
+                   sizes="(max-width: 1100px) 40vw, 13vw"
+                   width="600" height="400" loading="lazy" decoding="async"
+                   alt="Neon photobooth sign — representative event detail">
+            </figure>
+            <div class="sejenak-booth">
+              <div class="booth-head"><span>SEJENAK / TERABOOTH</span><span id="boothCount">0 FRAMES</span></div>
+              <div class="booth-strip" id="boothStrip">
+                <div class="booth-frame frame-a"><span>01</span><i></i><b>STAY<br>A WHILE</b></div>
+                <div class="booth-frame frame-b"><span>02</span><i></i><b>KEEP<br>THE MOMENT</b></div>
+                <div class="booth-frame frame-c"><span>03</span><i></i><b>MAKE<br>IT STRANGE</b></div>
+              </div>
+              <div class="booth-controls">
+                <button type="button" class="shutter" id="boothShutter" data-cursor="SNAP"><span></span>Take a frame</button>
+                <span class="booth-hint">INTERACTIVE DEMO</span>
+              </div>
             </div>
           </div>
         </div>
-        <div class="world-index"><span>03 — 05</span><span>EVENTS / EXPERIENCE</span></div>
+        <div class="world-index"><span>03 — 06</span><span>EVENTS / EXPERIENCE</span></div>
       </div>
     </article>
 
@@ -716,86 +833,190 @@
             <div class="world-facts"><span>Commercial video</span><span>Event coverage</span><span>Brand identity</span><span>Colour grading</span></div>
             <div class="world-cta-row">
               <a class="world-link" href="#contact" data-cursor="INQUIRE">Inquire about coverage <span>↗</span></a>
+              <a class="world-link" href="https://www.instagram.com/tintavisuals/" target="_blank" rel="noopener" data-cursor="INSTAGRAM">Official Instagram <span>↗</span></a>
               <button type="button" class="world-link" data-artefact-jump="camera" data-cursor="INSPECT">Inspect the camera in 3D <span>↗</span></button>
             </div>
           </div>
           <div class="tinta-stage">
             <div class="tinta-viewport">
-              <div class="tinta-still still-1 is-active" data-still="0"><div class="still-shape s1"></div><div class="still-shape s2"></div><div class="still-shape s3"></div><span class="still-label">FRAME 01 / EVENT</span></div>
-              <div class="tinta-still still-2" data-still="1"><div class="still-shape s1"></div><div class="still-shape s2"></div><div class="still-shape s3"></div><span class="still-label">FRAME 02 / PRODUCT</span></div>
-              <div class="tinta-still still-3" data-still="2"><div class="still-shape s1"></div><div class="still-shape s2"></div><div class="still-shape s3"></div><span class="still-label">FRAME 03 / IDENTITY</span></div>
+              <div class="tinta-still still-1 is-active" data-still="0">
+                <img src="assets/photos/tinta-set-800.jpg"
+                     srcset="assets/photos/tinta-set-800.jpg 800w, assets/photos/tinta-set-1600.jpg 1600w"
+                     sizes="(max-width: 1100px) 92vw, 42vw"
+                     width="1600" height="1000" loading="lazy" decoding="async"
+                     alt="Film crew on a red-lit production set — representative production context">
+                <span class="still-label">FRAME 01 / ON SET</span>
+              </div>
+              <div class="tinta-still still-2" data-still="1">
+                <img src="assets/photos/tinta-rig-800.jpg"
+                     srcset="assets/photos/tinta-rig-800.jpg 800w, assets/photos/tinta-rig-1600.jpg 1600w"
+                     sizes="(max-width: 1100px) 92vw, 42vw"
+                     width="1600" height="1000" loading="lazy" decoding="async"
+                     alt="Cinema camera rig on location — representative production context">
+                <span class="still-label">FRAME 02 / CAMERA</span>
+              </div>
+              <div class="tinta-still still-3" data-still="2">
+                <img src="assets/photos/tinta-field-700.jpg"
+                     srcset="assets/photos/tinta-field-700.jpg 700w, assets/photos/tinta-field-1400.jpg 1400w"
+                     sizes="(max-width: 1100px) 92vw, 42vw"
+                     width="700" height="875" loading="lazy" decoding="async"
+                     alt="Filmmaker filming on location — representative field-production context">
+                <span class="still-label">FRAME 03 / FIELD</span>
+              </div>
               <div class="tinta-frame-line"></div>
-              <div class="tinta-caption"><span>TINTA / VISUAL STUDIES</span><span>SELECT A FRAME</span></div>
+              <div class="tinta-caption"><span>TINTA / CONTEXT STILLS</span><span>LICENSED STOCK</span></div>
             </div>
             <div class="filmstrip" id="filmstrip" role="group" aria-label="Select a visual study">
-              <button type="button" class="film-cell is-active" data-frame="0" data-cursor="VIEW"><span>01</span><i class="mini-a"></i></button>
-              <button type="button" class="film-cell" data-frame="1" data-cursor="VIEW"><span>02</span><i class="mini-b"></i></button>
-              <button type="button" class="film-cell" data-frame="2" data-cursor="VIEW"><span>03</span><i class="mini-c"></i></button>
+              <button type="button" class="film-cell is-active" data-frame="0" data-cursor="VIEW" aria-label="01 — view on-set production still"><span>01</span><i class="mini-a"></i></button>
+              <button type="button" class="film-cell" data-frame="1" data-cursor="VIEW" aria-label="02 — view camera-rig production still"><span>02</span><i class="mini-b"></i></button>
+              <button type="button" class="film-cell" data-frame="2" data-cursor="VIEW" aria-label="03 — view field-production still"><span>03</span><i class="mini-c"></i></button>
               <button type="button" class="film-cell film-cell-ghost" aria-hidden="true" tabindex="-1"><span>04</span><i></i></button>
             </div>
           </div>
         </div>
-        <div class="world-index"><span>04 — 05</span><span>FILM / IMAGE</span></div>
+        <div class="world-index"><span>04 — 06</span><span>FILM / IMAGE</span></div>
       </div>
     </article>
 
     <!-- WORLD 05 — BVRCODE -->
-    <article class="world world-bvrcode" data-world="bvrcode">
+    <article class="world world-bvrcode" data-world="bvrcode" data-brand="bvrcode-apparel">
       <div class="world-bg" aria-hidden="true"><div class="bvr-lines"></div><div class="bvr-glow"></div></div>
       <div class="world-inner">
         <div class="world-kicker"><span>WORLD 05 / TEXTILE &amp; APPAREL</span><span>SUPPLYING SINCE 2024</span></div>
         <div class="bvr-layout">
           <div class="world-copy">
+            <div class="bvr-brandline">
+              <span class="bvr-logo-plaque"><img src="assets/brands/bvrcode-apparel/logo/logo-bvrcode-black.png" alt="BVRCODE Apparel official logo" width="220" height="128"></span>
+              <span>OFFICIAL BRAND / SINCE 2024</span>
+            </div>
             <h3 class="world-title bvr-title">BVR<span>CODE</span></h3>
             <p class="world-sub">Apparel / Sublimation</p>
             <p class="world-body">Custom athletic jersey manufacturing and sublimation print production. Premium teamwear and corporate identity apparel, built around a 5-piece minimum order quantity.</p>
             <div class="world-facts"><span>Full sublimation</span><span>Custom teamwear</span><span>Corporate orders</span><span>Vector design</span></div>
             <div class="world-cta-row">
               <a class="world-link" href="https://bvrcodeapparel.com" target="_blank" rel="noopener" data-cursor="VISIT">bvrcodeapparel.com <span>↗</span></a>
+              <a class="world-link" href="https://www.instagram.com/bvrcode.apparel/" target="_blank" rel="noopener" data-cursor="INSTAGRAM">Official Instagram <span>↗</span></a>
               <a class="world-link world-link-muted" href="#contact" data-cursor="ORDER">Place an order <span>↗</span></a>
               <button type="button" class="world-link" data-artefact-jump="jersey" data-cursor="INSPECT">Inspect the jersey in 3D <span>↗</span></button>
             </div>
           </div>
           <div class="bvr-studio">
-            <div class="bvr-jersey" id="bvrJersey">
-              <svg viewBox="0 0 400 480" aria-hidden="true">
-                <defs>
-                  <clipPath id="jerseyClip">
-                    <path d="M130 42 L166 22 L234 22 L270 42 L352 98 L316 156 L284 136 L284 438 L116 438 L116 136 L84 156 L48 98 Z"/>
-                  </clipPath>
-                  <pattern id="jerseyGrid" width="26" height="26" patternUnits="userSpaceOnUse">
-                    <rect width="26" height="26" fill="#f5ead7"/>
-                    <path d="M26 0H0V26" fill="none" stroke="#100b06" stroke-width="1.4" opacity=".65"/>
-                  </pattern>
-                  <pattern id="jerseyCamo" width="48" height="48" patternUnits="userSpaceOnUse">
-                    <rect width="48" height="48" fill="#f5ead7"/>
-                    <path d="M4 8c10-8 18 4 27 0s12 10 4 15-6 15-18 11S2 28 8 22 10 12 4 8Z" fill="#100b06" opacity=".18"/>
-                    <circle cx="37" cy="34" r="7" fill="#100b06" opacity=".15"/>
-                    <circle cx="15" cy="40" r="4" fill="#ff5a00" opacity=".45"/>
-                  </pattern>
-                </defs>
-                <path class="jersey-body" d="M130 42 L166 22 L234 22 L270 42 L352 98 L316 156 L284 136 L284 438 L116 438 L116 136 L84 156 L48 98 Z"/>
-                <rect class="jersey-grid-fill" x="40" y="18" width="320" height="424" fill="url(#jerseyGrid)" clip-path="url(#jerseyClip)" opacity="0"/>
-                <rect class="jersey-camo-fill" x="40" y="18" width="320" height="424" fill="url(#jerseyCamo)" clip-path="url(#jerseyClip)" opacity="0"/>
-                <path class="jersey-panel" d="M166 22 L200 92 L234 22"/>
-                <path class="jersey-stripe" d="M116 250 L284 250"/>
-                <path class="jersey-line" d="M116 136 L116 438 M284 136 L284 438"/>
-                <text x="200" y="320" text-anchor="middle" class="jersey-code">BVR</text>
-                <text x="200" y="352" text-anchor="middle" class="jersey-small">05 / APPAREL</text>
-              </svg>
-            </div>
-            <div class="bvr-controls">
-              <span class="bvr-label">PATTERN /</span>
-              <div role="group" aria-label="Jersey pattern">
-                <button type="button" class="bvr-swatch is-active" data-pattern="stripe" data-cursor="APPLY"><i class="sw-stripe"></i>Stripe</button>
-                <button type="button" class="bvr-swatch" data-pattern="grid" data-cursor="APPLY"><i class="sw-grid"></i>Grid</button>
-                <button type="button" class="bvr-swatch" data-pattern="camo" data-cursor="APPLY"><i class="sw-camo"></i>Camo</button>
+            <figure class="bvr-photo bvr-photo-print" data-parallax="0.06">
+              <picture>
+                <source type="image/webp" srcset="assets/brands/bvrcode-apparel/photos/workshop-white-700.webp 700w, assets/brands/bvrcode-apparel/photos/workshop-white-1400.webp 1400w" sizes="(max-width: 1100px) 82vw, 33vw">
+                <img src="assets/brands/bvrcode-apparel/photos/workshop-white-700.jpg"
+                     srcset="assets/brands/bvrcode-apparel/photos/workshop-white-700.jpg 700w, assets/brands/bvrcode-apparel/photos/workshop-white-1400.jpg 1400w"
+                     sizes="(max-width: 1100px) 82vw, 33vw"
+                     width="1848" height="2304" loading="lazy" decoding="async"
+                     alt="BVRCODE custom sublimated jersey hanging in the production workshop">
+              </picture>
+              <figcaption><span>BVRCODE / SUBLIMATED TEAMWEAR</span><span>OFFICIAL PRODUCT</span></figcaption>
+            </figure>
+            <figure class="bvr-photo bvr-photo-jersey" data-parallax="0.12">
+              <picture>
+                <source type="image/webp" srcset="assets/brands/bvrcode-apparel/photos/teamkit-green-700.webp 700w, assets/brands/bvrcode-apparel/photos/teamkit-green-1400.webp 1400w" sizes="(max-width: 1100px) 34vw, 12vw">
+                <img src="assets/brands/bvrcode-apparel/photos/teamkit-green-700.jpg"
+                     srcset="assets/brands/bvrcode-apparel/photos/teamkit-green-700.jpg 700w, assets/brands/bvrcode-apparel/photos/teamkit-green-1400.jpg 1400w"
+                     sizes="(max-width: 1100px) 34vw, 12vw"
+                     width="833" height="1024" loading="lazy" decoding="async"
+                     alt="BVRCODE green custom sublimated team jersey">
+              </picture>
+              <figcaption>CUSTOM TEAM KIT / BVRCODE</figcaption>
+            </figure>
+            <div class="bvr-customizer">
+              <div class="bvr-jersey" id="bvrJersey">
+                <svg viewBox="0 0 400 480" aria-hidden="true">
+                  <defs>
+                    <clipPath id="jerseyClip">
+                      <path d="M130 42 L166 22 L234 22 L270 42 L352 98 L316 156 L284 136 L284 438 L116 438 L116 136 L84 156 L48 98 Z"/>
+                    </clipPath>
+                    <pattern id="jerseyGrid" width="26" height="26" patternUnits="userSpaceOnUse">
+                      <rect width="26" height="26" fill="#f5ead7"/>
+                      <path d="M26 0H0V26" fill="none" stroke="#100b06" stroke-width="1.4" opacity=".65"/>
+                    </pattern>
+                    <pattern id="jerseyCamo" width="48" height="48" patternUnits="userSpaceOnUse">
+                      <rect width="48" height="48" fill="#f5ead7"/>
+                      <path d="M4 8c10-8 18 4 27 0s12 10 4 15-6 15-18 11S2 28 8 22 10 12 4 8Z" fill="#100b06" opacity=".18"/>
+                      <circle cx="37" cy="34" r="7" fill="#100b06" opacity=".15"/>
+                      <circle cx="15" cy="40" r="4" fill="#ff5a00" opacity=".45"/>
+                    </pattern>
+                  </defs>
+                  <path class="jersey-body" d="M130 42 L166 22 L234 22 L270 42 L352 98 L316 156 L284 136 L284 438 L116 438 L116 136 L84 156 L48 98 Z"/>
+                  <rect class="jersey-grid-fill" x="40" y="18" width="320" height="424" fill="url(#jerseyGrid)" clip-path="url(#jerseyClip)" opacity="0"/>
+                  <rect class="jersey-camo-fill" x="40" y="18" width="320" height="424" fill="url(#jerseyCamo)" clip-path="url(#jerseyClip)" opacity="0"/>
+                  <path class="jersey-panel" d="M166 22 L200 92 L234 22"/>
+                  <path class="jersey-stripe" d="M116 250 L284 250"/>
+                  <path class="jersey-line" d="M116 136 L116 438 M284 136 L284 438"/>
+                  <text x="200" y="320" text-anchor="middle" class="jersey-code">BVR</text>
+                  <text x="200" y="352" text-anchor="middle" class="jersey-small">05 / APPAREL</text>
+                </svg>
               </div>
-              <span class="bvr-hint">5 PCS MOQ · FULL SUBLIMATION</span>
+              <div class="bvr-controls">
+                <span class="bvr-label">PATTERN STUDY /</span>
+                <div role="group" aria-label="Jersey pattern">
+                  <button type="button" class="bvr-swatch is-active" data-pattern="stripe" data-cursor="APPLY"><i class="sw-stripe"></i>Stripe</button>
+                  <button type="button" class="bvr-swatch" data-pattern="grid" data-cursor="APPLY"><i class="sw-grid"></i>Grid</button>
+                  <button type="button" class="bvr-swatch" data-pattern="camo" data-cursor="APPLY"><i class="sw-camo"></i>Camo</button>
+                </div>
+                <span class="bvr-hint">5 PCS MOQ · FULL SUBLIMATION</span>
+              </div>
             </div>
           </div>
         </div>
-        <div class="world-index"><span>05 — 05</span><span>TEXTILE / MANUFACTURE</span></div>
+        <div class="world-index"><span>05 — 06</span><span>TEXTILE / MANUFACTURE</span></div>
+      </div>
+    </article>
+
+
+    <!-- WORLD 06 — Duits, live product -->
+    <article class="world world-duits" data-world="duits" data-brand="duits">
+      <div class="world-bg" aria-hidden="true"><div class="duits-world-orb"></div><div class="duits-world-grid"></div></div>
+      <div class="world-inner">
+        <div class="world-kicker"><span>WORLD 06 / LIVE PRODUCT</span><span>INVITE-ONLY · LIVE</span></div>
+        <div class="duits-world-layout">
+          <div class="world-copy">
+            <div class="duits-brandline">
+              <span class="duits-live-pill"><i></i>LIVE PRODUCT</span>
+              <span class="duits-brand-note">OFFICIAL WALLET MARK</span>
+            </div>
+            <h3 class="world-title duits-world-title">Duits</h3>
+            <p class="world-sub">Personal finance, parsed.</p>
+            <p class="world-body">Duits turns receipt photos, bank screenshots and plain text into structured spending data. Claude Vision extracts the merchant, total, tax and category; Supabase keeps each account behind per-user Row Level Security.</p>
+            <div class="world-facts"><span>LIVE PWA</span><span>Receipt → expense</span><span>Claude Vision</span><span>Supabase RLS</span></div>
+            <div class="world-cta-row">
+              <a class="world-link" href="https://duits-money-tracking.onrender.com" target="_blank" rel="noopener" data-cursor="OPEN">Open live app <span>↗</span></a>
+              <a class="world-link world-link-muted" href="#work" data-jump-project="1" data-cursor="BUILD">Read the build <span>↗</span></a>
+            </div>
+            <p class="world-note">Live, invite-only build. Product screenshots are from the public sign-in screen; no account data is shown.</p>
+          </div>
+
+          <div class="duits-world-visual">
+            <div class="duits-mark-card">
+              <img src="assets/brands/duits/logo/duits-logo-transparent.png" alt="Duits official light-blue glassmorphism wallet logo" width="180" height="180" loading="lazy" decoding="async">
+              <span>DUITS / OFFICIAL MARK</span>
+            </div>
+
+            <figure class="duits-device">
+              <picture>
+                <source type="image/webp" srcset="assets/brands/duits/screenshots/duits-live-signin-430.webp 430w, assets/brands/duits/screenshots/duits-live-signin-860.webp 860w" sizes="(max-width: 1100px) 46vw, 22vw">
+                <img src="assets/brands/duits/screenshots/duits-live-signin-430.jpg"
+                     srcset="assets/brands/duits/screenshots/duits-live-signin-430.jpg 430w, assets/brands/duits/screenshots/duits-live-signin-860.jpg 860w"
+                     sizes="(max-width: 1100px) 46vw, 22vw"
+                     width="430" height="932" loading="lazy" decoding="async"
+                     alt="Live Duits app sign-in screen from the public product">
+              </picture>
+              <figcaption><span>LIVE BUILD</span><span>INVITE-ONLY SIGN-IN</span></figcaption>
+            </figure>
+
+            <div class="duits-status-card">
+              <div class="duits-status-head"><span class="duits-status-dot"></span><span>LIVE NOW</span><span>INVITE ONLY</span></div>
+              <strong>Receipts in.<br>Clarity out.</strong>
+              <p>One home for personal and business expenses, with AI parsing and per-user security.</p>
+              <a href="https://duits-money-tracking.onrender.com" target="_blank" rel="noopener" data-cursor="OPEN">Open duits <span>↗</span></a>
+            </div>
+          </div>
+        </div>
+        <div class="world-index"><span>06 — 06</span><span>PRODUCT / FINANCE</span></div>
       </div>
     </article>
 
@@ -810,34 +1031,44 @@
           <span class="eyebrow">STUDIO OBJECTS</span>
           <h2 id="artefactsTitle">Objects from<br><em>the workshop.</em></h2>
         </div>
-        <p>The kit behind the five worlds &mdash; a mirrorless body, the Sejenak kiosk and a BVRCODE jersey. Each one is <b>modelled geometry</b>, not a photograph: built in Blender, lit with a three-point rig, exported as glTF. <b>Drag to orbit. Scroll to zoom.</b></p>
+        <p>The kit behind the ecosystem &mdash; the Sejenak kiosk, a mirrorless body and a BVRCODE jersey. Each is an authored object study: built in Blender, lit as a studio exhibit and exported as glTF. <b>Drag to orbit. Scroll to zoom.</b> Beside the viewer, a real gear reference grounds the digital object in the physical studio.</p>
       </div>
 
-      <div class="artefacts-stage is-loading" id="artefactStage">
-        <canvas id="artefactCanvas" role="img" aria-label="Interactive 3D model viewer"></canvas>
-        <div class="artefacts-fallback" id="artefactFallback" hidden>
-          <img id="artefactFallbackImg" src="assets/models/camera.jpg" alt="Blender render of the mirrorless camera" width="760" height="760">
-          <span>AUTHORED RENDER / 3D UNAVAILABLE</span>
+      <div class="artefacts-exhibit">
+        <div class="artefacts-stage is-loading" id="artefactStage">
+          <canvas id="artefactCanvas" role="img" aria-label="Interactive 3D model viewer"></canvas>
+          <div class="artefacts-fallback" id="artefactFallback" hidden>
+            <img id="artefactFallbackImg" src="assets/models/photobooth.jpg" alt="Blender render of the photobooth kiosk" width="760" height="760">
+            <span>AUTHORED RENDER / 3D UNAVAILABLE</span>
+          </div>
+          <div class="artefacts-loader" id="artefactLoader"><span>LOADING GEOMETRY</span><i></i></div>
+          <span class="artefacts-corner">REALTIME / WEBGL</span>
+          <div class="artefacts-hud">
+            <span id="artefactIndex">01 / 03</span>
+            <span id="artefactSpec">KIOSK · 25K TRIS · EMISSIVE UI</span>
+            <span>DRAG TO ORBIT</span>
+          </div>
         </div>
-        <div class="artefacts-loader" id="artefactLoader"><span>LOADING GEOMETRY</span><i></i></div>
-        <span class="artefacts-corner">REALTIME / WEBGL</span>
-        <div class="artefacts-hud">
-          <span id="artefactIndex">01 / 03</span>
-          <span id="artefactSpec">CAMERA · 41.9K TRIS · 8 PBR MATERIALS</span>
-          <span>DRAG TO ORBIT</span>
-        </div>
+        <figure class="artefacts-photo" data-parallax="0.05">
+          <img src="assets/photos/artefacts-gear-600.jpg"
+               srcset="assets/photos/artefacts-gear-600.jpg 600w, assets/photos/artefacts-gear-1200.jpg 1200w"
+               sizes="(max-width: 1100px) 86vw, 20vw"
+               width="1200" height="800" loading="lazy" decoding="async"
+               alt="Camera bodies and lenses arranged as a flat lay — representative studio gear reference">
+          <figcaption><span>WORKSHOP REFERENCE</span><span>LICENSED STOCK</span></figcaption>
+        </figure>
       </div>
 
       <div class="artefacts-tabs" role="tablist" aria-label="Studio objects">
-        <button type="button" class="artefacts-tab" role="tab" data-artefact="camera" aria-selected="true" tabindex="0">
+        <button type="button" class="artefacts-tab" role="tab" data-artefact="photobooth" aria-selected="true" tabindex="0">
           <span class="tab-num">01</span>
-          <span class="tab-name">Mirrorless camera</span>
-          <span class="tab-sub">Body &amp; 35 mm prime</span>
-        </button>
-        <button type="button" class="artefacts-tab" role="tab" data-artefact="photobooth" aria-selected="false" tabindex="-1">
-          <span class="tab-num">02</span>
           <span class="tab-name">Photobooth kiosk</span>
           <span class="tab-sub">Sejenak / Terabooth</span>
+        </button>
+        <button type="button" class="artefacts-tab" role="tab" data-artefact="camera" aria-selected="false" tabindex="-1">
+          <span class="tab-num">02</span>
+          <span class="tab-name">Mirrorless camera</span>
+          <span class="tab-sub">Body &amp; 35 mm prime</span>
         </button>
         <button type="button" class="artefacts-tab" role="tab" data-artefact="jersey" aria-selected="false" tabindex="-1">
           <span class="tab-num">03</span>
@@ -962,7 +1193,7 @@
         <div class="contact-footer-info">
           <div><span>LOCATION</span><p>Ipoh, Perak<br>Malaysia</p></div>
           <div><span>STATUS</span><p>Available for internship<br>from end Feb 2027</p></div>
-          <div><span>ECOSYSTEM</span><p>DevXMedia · Sejenak<br>Tinta Visuals · BVRCODE</p></div>
+          <div><span>ECOSYSTEM</span><p>DevXMedia · Sejenak<br>Tinta Visuals · BVRCODE · Duits</p></div>
         </div>
       </div>
     </div>
@@ -971,7 +1202,7 @@
 
 <footer class="site-footer">
   <div class="footer-left"><span>© MMXXVI AHMAD SUHAIB</span><span>HANNENKAM RISE VENTURES</span></div>
-  <div class="footer-center">DESIGNED &amp; ENGINEERED IN IPOH, MALAYSIA</div>
+  <div class="footer-center">DESIGNED &amp; ENGINEERED IN IPOH, MALAYSIA<a class="footer-context" href="https://www.pexels.com/license/" target="_blank" rel="noopener">CONTEXT PHOTOGRAPHY / PEXELS LICENSE</a></div>
   <div class="footer-right"><a href="#intro" data-cursor="TOP">BACK TO TOP <span>↑</span></a></div>
 </footer>
 
@@ -980,9 +1211,11 @@
 <noscript>
   <style>
     .boot,.cursor,.chapter-rail,.scroll-line,.work-hud-center,.work-hud-right,.work-nav,.contact-signal,.grain,.menu-toggle,.mobile-menu{display:none!important}
-    #introCanvas,#universeCanvas{display:none!important}
+    #introCanvas,#universeCanvas,#artefactCanvas{display:none!important}
     .intro{min-height:100svh}.intro-bg{opacity:.45}.intro-static{display:grid!important}
     .universe-fallback{display:grid!important}
+    .artefacts-loader,.artefacts-corner,.artefacts-hud{display:none!important}
+    .artefacts-fallback,.artefacts-fallback[hidden]{display:flex!important;position:absolute!important;inset:0!important}
     .work-pin{height:auto!important;overflow:visible!important}.work-track{display:block!important;width:100%!important;transform:none!important}.project{width:100%!important;height:auto!important;min-height:100svh}
   </style>
 </noscript>

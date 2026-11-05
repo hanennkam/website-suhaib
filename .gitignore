@@ -18,3 +18,8 @@ tools/assets/previews/
 # env & secrets
 .env
 .env.*
+
+# Brand asset inbox and preserved source originals (optimised derivatives are committed)
+assets/brands/_inbox/*
+!assets/brands/_inbox/README.md
+assets/brands/**/source/

@@ -1,0 +1,169 @@
+{
+  "lastUpdated": "2026-11-06",
+  "accessNotes": {
+    "instagram": "The four public profile pages were inspected without authentication. Instagram blocks profile media behind a login wall, so no private media was accessed, no session/cookies were used and no scraper was built. Public post oEmbed was used only for the Dev X Media COMBAT 2025 reel.",
+    "installedSources": [
+      "https://www.instagram.com/devx.media/",
+      "https://www.instagram.com/sejenakphotobooth/",
+      "https://www.instagram.com/bvrcode.apparel/",
+      "https://www.instagram.com/tintavisuals/",
+      "https://bvrcodeapparel.com/",
+      "https://duits-money-tracking.onrender.com/"
+    ],
+    "secrets": "No access tokens or credentials are stored in the repository. If Instagram Graph API access is added later, use server-side environment variables only."
+  },
+  "brands": {
+    "hannenkam-rise-ventures": {
+      "officialName": "Hannenkam Rise Ventures",
+      "officialInstagram": null,
+      "paletteStatus": "provisional \u2014 current site palette; no official logo supplied",
+      "logo": null,
+      "assets": [],
+      "missing": [
+        "Official logo (SVG or transparent PNG)",
+        "Brand guidelines / preferred colours",
+        "Official Instagram URL (if one exists)"
+      ]
+    },
+    "dev-x-media": {
+      "officialName": "Dev X Media",
+      "officialInstagram": "https://www.instagram.com/devx.media/",
+      "paletteStatus": "provisional \u2014 current site palette; no official logo supplied",
+      "logo": null,
+      "assets": [
+        {
+          "file": "assets/brands/dev-x-media/photos/devx-combat-2025-500.jpg",
+          "type": "photo",
+          "source": "https://www.instagram.com/reel/DKAROWSgwPW/",
+          "sourceType": "official public Instagram oEmbed still",
+          "intendedSection": "Worlds / Dev X Media \u2014 recent work",
+          "usageNotes": "COMBAT 2025 event-film title card. Thumbnail is the public oEmbed preview; link to the original reel."
+        }
+      ],
+      "missing": [
+        "Official logo (SVG or transparent PNG)",
+        "Profile avatar / brand mark",
+        "6\u201310 original photos or reels of actual work",
+        "Brand colours from the official logo"
+      ]
+    },
+    "sejenak-photobooth": {
+      "officialName": "Sejenak Photobooth",
+      "officialInstagram": "https://www.instagram.com/sejenakphotobooth/",
+      "paletteStatus": "provisional \u2014 current site palette; no official logo supplied",
+      "logo": null,
+      "assets": [],
+      "missing": [
+        "Official logo (SVG or transparent PNG)",
+        "Original event photographs (setups, guests, prints, equipment)",
+        "Reels / short event films",
+        "Brand colours from the official logo"
+      ]
+    },
+    "tinta-visuals": {
+      "officialName": "Tinta Visuals",
+      "officialInstagram": "https://www.instagram.com/tintavisuals/",
+      "paletteStatus": "provisional \u2014 current site palette; no official logo supplied",
+      "logo": null,
+      "assets": [],
+      "missing": [
+        "Official logo (SVG or transparent PNG)",
+        "Original photography / videography stills",
+        "Production BTS images or reel links",
+        "Brand colours from the official logo"
+      ]
+    },
+    "bvrcode-apparel": {
+      "officialName": "BVRCODE Apparel",
+      "officialInstagram": "https://www.instagram.com/bvrcode.apparel/",
+      "officialWebsite": "https://bvrcodeapparel.com/",
+      "paletteStatus": "official \u2014 logo is black/transparent; secondary site palette verified from bvrcodeapparel.com",
+      "logo": {
+        "file": "assets/brands/bvrcode-apparel/logo/logo-bvrcode-transparent.png",
+        "source": "https://bvrcodeapparel.com/logo-bvrcode.png",
+        "type": "logo",
+        "intendedSection": "Worlds / BVRCODE and worlds cover",
+        "usageNotes": "Official brand mark; original black/transparent asset. Cream/black derivatives created for dark and light surfaces."
+      },
+      "palette": {
+        "logoBase": [
+          "#000000",
+          "#FFFFFF"
+        ],
+        "siteInk": "#0E0F0A",
+        "sitePanel": "#17190F",
+        "olive": "#565C3F",
+        "oliveLight": "#7A8358",
+        "cream": "#F2EDE0",
+        "gold": "#C9A66B"
+      },
+      "assets": [
+        {
+          "file": "assets/brands/bvrcode-apparel/photos/workshop-white-700.jpg",
+          "type": "photo",
+          "source": "https://bvrcodeapparel.com/images/3.png",
+          "sourceType": "official brand website",
+          "intendedSection": "Worlds / BVRCODE \u2014 main product",
+          "usageNotes": "Sublimated teamwear photographed in the production workshop."
+        },
+        {
+          "file": "assets/brands/bvrcode-apparel/photos/teamkit-green-700.jpg",
+          "type": "photo",
+          "source": "https://bvrcodeapparel.com/images/1.png",
+          "sourceType": "official brand website",
+          "intendedSection": "Worlds / BVRCODE \u2014 layered product",
+          "usageNotes": "Custom green sublimated team kit."
+        },
+        {
+          "file": "assets/brands/bvrcode-apparel/photos/asphalt-blue-700.jpg",
+          "type": "photo",
+          "source": "https://bvrcodeapparel.com/images/5.png",
+          "sourceType": "official brand website",
+          "intendedSection": "Worlds cover / BVRCODE card",
+          "usageNotes": "Blue custom jersey product photography."
+        }
+      ],
+      "missing": [
+        "Vector SVG logo (if available)",
+        "Official profile avatar (optional)",
+        "Additional high-resolution product or factory photographs (optional)"
+      ]
+    },
+    "duits": {
+      "officialName": "Duits",
+      "officialInstagram": null,
+      "officialWebsite": "https://duits-money-tracking.onrender.com/",
+      "paletteStatus": "official \u2014 extracted from the official wallet logo",
+      "logo": {
+        "file": "assets/brands/duits/logo/duits-logo-transparent.png",
+        "source": "https://duits-money-tracking.onrender.com/logo.png",
+        "type": "logo",
+        "intendedSection": "Duits world, Duits work scene, worlds cover strip",
+        "usageNotes": "Official wallet mark from the live app. Transparent background derivative created; original preserved."
+      },
+      "palette": {
+        "primary": "#6FA6F2",
+        "secondary": "#BED8FB",
+        "deep": "#2F65D3",
+        "ice": "#E3EDFB",
+        "background": "#F1F7FF",
+        "ink": "#0B1A33"
+      },
+      "assets": [
+        {
+          "file": "assets/brands/duits/screenshots/duits-live-signin-430.jpg",
+          "type": "screenshot",
+          "source": "https://duits-money-tracking.onrender.com/",
+          "sourceType": "live product capture",
+          "intendedSection": "Worlds / Duits \u2014 live product proof",
+          "usageNotes": "Public invite-only sign-in screen captured from the live app. No authenticated data is shown."
+        }
+      ],
+      "missing": [
+        "Official Instagram URL (not supplied)",
+        "Post-login dashboard screenshots if they can be shared publicly",
+        "Additional brand guidelines / logo lockups"
+      ]
+    }
+  }
+}

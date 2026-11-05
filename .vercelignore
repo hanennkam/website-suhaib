@@ -1,0 +1,6 @@
+# Local source material / preserved originals — not needed by the public site.
+reference/
+journey-website/
+assets/brands/**/source/
+assets/brands/_inbox/
+tools/

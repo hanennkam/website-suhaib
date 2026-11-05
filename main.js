@@ -1525,7 +1525,7 @@
     var selectors = [
       ".ledger-head", ".ledger-row", ".ops-metrics",
       ".worlds-cover h2", ".worlds-cover > p", ".worlds-cover-index",
-      ".world-copy", ".ecosystem", ".devx-terminal", ".sejenak-booth", ".tinta-stage", ".bvr-studio",
+      ".world-copy", ".ecosystem", ".devx-terminal", ".sejenak-booth", ".tinta-stage", ".bvr-studio", ".duits-world-visual",
       ".record-head", ".record-column", ".availability-card",
       ".contact-kicker", ".contact-title", ".contact-actions", ".contact-bottom"
     ];
@@ -1571,6 +1571,22 @@
         scrollTrigger: { trigger: introSection, start: "top top", end: "bottom top", scrub: true }
       });
     }
+
+    // Editorial photography: subtle scroll depth + reveal
+    $$("[data-parallax]").forEach(function (el) {
+      var speed = parseFloat(el.getAttribute("data-parallax")) || 0.06;
+      window.gsap.fromTo(el, { y: -speed * 120 }, {
+        y: speed * 120,
+        ease: "none",
+        scrollTrigger: { trigger: el, start: "top bottom", end: "bottom top", scrub: 0.9 }
+      });
+      window.gsap.from(el, {
+        opacity: 0,
+        duration: 0.9,
+        ease: "power2.out",
+        scrollTrigger: { trigger: el, start: "top 92%", toggleActions: "play none none none" }
+      });
+    });
 
     // Manifesto word reveal
     var manifesto = $("#manifesto");
@@ -1692,7 +1708,7 @@
     if (el) el.setAttribute("data-tone", pair[1]);
   });
   $$(".world").forEach(function (el) {
-    el.setAttribute("data-tone", el.classList.contains("world-sejenak") || el.classList.contains("world-bvrcode") ? "light" : "dark");
+    el.setAttribute("data-tone", el.classList.contains("world-sejenak") || el.classList.contains("world-duits") ? "light" : "dark");
   });
   workPanels = $$(".project");
   projectCount = workPanels.length;

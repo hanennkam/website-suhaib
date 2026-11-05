@@ -26,19 +26,6 @@
 
   var MODELS = [
     {
-      id: "camera",
-      file: "assets/models/camera.glb",
-      still: "assets/models/camera.jpg",
-      label: "Mirrorless camera",
-      hud: "CAMERA · 41.9K TRIS · 8 PBR MATERIALS",
-      specs: {
-        object: "Mirrorless camera + 35 mm prime",
-        build: "Modelled in Blender 5.2",
-        geometry: "41,966 triangles · 1.2 MB glTF",
-        materials: "Anodised alloy, rubber, chrome, coated glass"
-      }
-    },
-    {
       id: "photobooth",
       file: "assets/models/photobooth.glb",
       still: "assets/models/photobooth.jpg",
@@ -49,6 +36,19 @@
         build: "Modelled in Blender 5.2",
         geometry: "25,122 triangles · 1.2 MB glTF",
         materials: "Painted shell, emissive ring flash, printed paper"
+      }
+    },
+    {
+      id: "camera",
+      file: "assets/models/camera.glb",
+      still: "assets/models/camera.jpg",
+      label: "Mirrorless camera",
+      hud: "CAMERA · 41.9K TRIS · 8 PBR MATERIALS",
+      specs: {
+        object: "Mirrorless camera + 35 mm prime",
+        build: "Modelled in Blender 5.2",
+        geometry: "41,966 triangles · 1.2 MB glTF",
+        materials: "Anodised alloy, rubber, chrome, coated glass"
       }
     },
     {
