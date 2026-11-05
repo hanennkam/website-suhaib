@@ -5,6 +5,11 @@
 reference/
 journey-website/
 
+# python build tooling output
+__pycache__/
+*.pyc
+tools/assets/previews/
+
 # editor / tooling
 .vscode/
 .idea/
