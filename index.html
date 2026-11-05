@@ -1,2903 +1,936 @@
 <!doctype html>
-<html lang="en" class="dark">
+<html lang="en" class="no-js">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Ahmad Suhaib — Software Engineer, Creative Technologist &amp; Founder</title>
-<meta name="description" content="Ahmad Suhaib — Software Engineer, Creative Technologist &amp; Founder. Building at the intersection of AI, backend engineering, interactive 3D, and multidisciplinary ventures.">
-<meta name="theme-color" content="#040507">
+<title>Ahmad Suhaib — The Signal Archive</title>
+<meta name="description" content="Ahmad Suhaib — Software Engineer, Creative Technologist and Founder. An interactive archive of AI systems, product engineering, creative media and five ventures.">
+<meta name="theme-color" content="#070707">
+<link rel="canonical" href="https://website-suhaib.vercel.app/">
+<meta property="og:url" content="https://website-suhaib.vercel.app/">
 <meta property="og:type" content="website">
-<meta property="og:site_name" content="Ahmad Suhaib — Digital Universe">
-<meta property="og:title" content="Ahmad Suhaib — Software Engineer, Creative Technologist &amp; Founder">
-<meta property="og:description" content="Building at the intersection of Technology, Design &amp; Business. Software engineering student at UMPSA, venture founder, and AI systems architect.">
+<meta property="og:site_name" content="Ahmad Suhaib — The Signal Archive">
+<meta property="og:title" content="Ahmad Suhaib — The Signal Archive">
+<meta property="og:description" content="An interactive archive of AI systems, product engineering, creative media and five ventures. Built at the intersection of technology, design and business.">
 <meta property="og:image" content="og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Ahmad Suhaib — The Signal Archive. A crystalline monolith and editorial typography.">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Ahmad Suhaib — Software Engineer, Creative Technologist &amp; Founder">
-<meta name="twitter:description" content="Building at the intersection of Technology, Design &amp; Business.">
+<meta name="twitter:title" content="Ahmad Suhaib — The Signal Archive">
+<meta name="twitter:description" content="An interactive archive of AI systems, product engineering, creative media and five ventures.">
 <meta name="twitter:image" content="og-image.png">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2305070a'/%3E%3Cpath d='M20 44L32 18L44 44M24 37H40' stroke='%2338bdf8' stroke-width='4' stroke-linecap='round' stroke-linejoin='round' fill='none'/%3E%3Ccircle cx='32' cy='18' r='3' fill='%23818cf8'/%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23070707'/%3E%3Cpath d='M20 44L32 18L44 44M24 37H40' stroke='%23ff5a2a' stroke-width='4' stroke-linecap='round' stroke-linejoin='round' fill='none'/%3E%3Ccircle cx='32' cy='18' r='3' fill='%23bdefff'/%3E%3C/svg%3E">
 
-<!-- Typography: Plus Jakarta Sans, Space Grotesk & JetBrains Mono -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,100..900;1,62..125,100..900&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
 
-<!-- High Performance Libraries: Three.js, GSAP 3.12 + ScrollTrigger, Lenis Smooth Scroll -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-<script src="https://unpkg.com/lenis@1.1.14/dist/lenis.min.js"></script>
-
-<style>
-/* ==========================================================================
-   DESIGN SYSTEM TOKENS & RESET — AWWWARDS / APPLE EDITORIAL UNIVERSE
-   ========================================================================== */
-:root {
-  --bg-void: #030407;
-  --bg-base: #06080e;
-  --bg-elevated: #0b0e17;
-  --surface-card: rgba(12, 16, 25, 0.72);
-  --surface-hover: rgba(20, 27, 42, 0.88);
-  --surface-glass: rgba(18, 24, 38, 0.55);
-
-  --border-subtle: rgba(255, 255, 255, 0.07);
-  --border-medium: rgba(255, 255, 255, 0.14);
-  --border-strong: rgba(255, 255, 255, 0.24);
-
-  --text-primary: #f8fafc;
-  --text-secondary: #94a3b8;
-  --text-tertiary: #64748b;
-  --text-muted: #475569;
-
-  /* Venture Specific Colors */
-  --accent-cyan: #38bdf8;
-  --accent-blue: #3b82f6;
-  --accent-indigo: #6366f1;
-  --accent-violet: #a855f7;
-  --accent-emerald: #10b981;
-  --accent-amber: #f59e0b;
-  --accent-rose: #f43f5e;
-
-  --venture-devx: #38bdf8;
-  --venture-bvrcode: #f59e0b;
-  --venture-tinta: #a855f7;
-  --venture-sejenak: #10b981;
-
-  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  --font-display: 'Space Grotesk', -apple-system, sans-serif;
-  --font-mono: 'JetBrains Mono', monospace;
-
-  --ease-apple: cubic-bezier(0.16, 1, 0.3, 1);
-  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
-  --radius-xs: 6px;
-  --radius-sm: 10px;
-  --radius-md: 16px;
-  --radius-lg: 24px;
-  --radius-xl: 32px;
-  --radius-full: 9999px;
-}
-
-*, *::before, *::after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-html {
-  font-family: var(--font-sans);
-  background-color: var(--bg-void);
-  color: var(--text-primary);
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-html.lenis, html.lenis body {
-  height: auto;
-}
-
-.lenis.lenis-smooth {
-  scroll-behavior: auto !important;
-}
-
-body {
-  position: relative;
-  overflow-x: hidden;
-  min-height: 100vh;
-  background-color: var(--bg-void);
-  color: var(--text-primary);
-  line-height: 1.6;
-}
-
-/* ==========================================================================
-   CUSTOM CURSOR (Desktop only)
-   ========================================================================== */
-.cursor-dot, .cursor-ring {
-  pointer-events: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  border-radius: 50%;
-  z-index: 99999;
-  opacity: 0;
-  transition: opacity 0.3s ease, transform 0.15s ease-out;
-  transform: translate(-50%, -50%);
-}
-
-.cursor-dot {
-  width: 7px;
-  height: 7px;
-  background-color: #ffffff;
-  box-shadow: 0 0 10px rgba(56, 189, 248, 0.8);
-}
-
-.cursor-ring {
-  width: 36px;
-  height: 36px;
-  border: 1px solid rgba(255, 255, 255, 0.4);
-  background: rgba(255, 255, 255, 0.02);
-  backdrop-filter: blur(1px);
-  transition: width 0.3s var(--ease-apple), height 0.3s var(--ease-apple), border-color 0.3s ease, background-color 0.3s ease, opacity 0.3s ease;
-}
-
-body.cursor-hover .cursor-ring {
-  width: 60px;
-  height: 60px;
-  border-color: rgba(56, 189, 248, 0.8);
-  background-color: rgba(56, 189, 248, 0.08);
-}
-
-@media (hover: none) or (max-width: 900px) {
-  .cursor-dot, .cursor-ring {
-    display: none !important;
-  }
-}
-
-/* ==========================================================================
-   ATMOSPHERIC LIGHTING & SUBTLE GRID
-   ========================================================================== */
-.bg-ambient-layer {
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  z-index: 0;
-  overflow: hidden;
-}
-
-.overhead-spotlight {
-  position: absolute;
-  top: -150px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 1200px;
-  height: 750px;
-  background: radial-gradient(ellipse 60% 50% at 50% 30%, rgba(56, 189, 248, 0.15), rgba(99, 102, 241, 0.06) 50%, transparent 80%);
-  filter: blur(40px);
-}
-
-.ambient-orb {
-  position: absolute;
-  border-radius: 50%;
-  filter: blur(140px);
-  opacity: 0.18;
-}
-
-.orb-violet {
-  top: 30vh;
-  left: -200px;
-  width: 650px;
-  height: 650px;
-  background: radial-gradient(circle, var(--accent-violet) 0%, transparent 70%);
-}
-
-.orb-cyan {
-  top: 110vh;
-  right: -250px;
-  width: 700px;
-  height: 700px;
-  background: radial-gradient(circle, var(--accent-cyan) 0%, transparent 70%);
-}
-
-.orb-emerald {
-  top: 240vh;
-  left: -150px;
-  width: 550px;
-  height: 550px;
-  background: radial-gradient(circle, var(--accent-emerald) 0%, transparent 70%);
-}
-
-.subtle-grid {
-  position: absolute;
-  inset: 0;
-  background-image: linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
-                    linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
-  background-size: 80px 80px;
-  mask-image: radial-gradient(ellipse 80% 60% at 50% 40%, black 20%, transparent 85%);
-  -webkit-mask-image: radial-gradient(ellipse 80% 60% at 50% 40%, black 20%, transparent 85%);
-}
-
-/* ==========================================================================
-   LAYOUT CONTAINERS & TYPOGRAPHY
-   ========================================================================== */
-.container {
-  width: 100%;
-  max-width: 1280px;
-  margin-inline: auto;
-  padding-inline: 32px;
-  position: relative;
-  z-index: 2;
-}
-
-@media (max-width: 768px) {
-  .container {
-    padding-inline: 20px;
-  }
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-button {
-  font-family: inherit;
-  border: none;
-  background: none;
-  cursor: pointer;
-}
-
-/* Scroll Progress Line */
-.scroll-progress-bar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 2.5px;
-  background: linear-gradient(90deg, var(--accent-cyan), var(--accent-indigo), var(--accent-violet));
-  z-index: 9999;
-  width: 0%;
-  box-shadow: 0 0 12px var(--accent-cyan);
-}
-
-/* ==========================================================================
-   SITE HEADER & EDITORIAL NAVIGATION PILL
-   ========================================================================== */
-.site-header {
-  position: fixed;
-  top: 20px;
-  left: 0;
-  right: 0;
-  z-index: 1000;
-  display: flex;
-  justify-content: center;
-  padding-inline: 24px;
-  pointer-events: none;
-}
-
-.nav-pill {
-  pointer-events: auto;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
-  max-width: 1180px;
-  padding: 8px 16px;
-  background: rgba(8, 11, 18, 0.78);
-  backdrop-filter: blur(28px) saturate(190%);
-  -webkit-backdrop-filter: blur(28px) saturate(190%);
-  border: 1px solid var(--border-subtle);
-  border-radius: var(--radius-full);
-  box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.85), inset 0 1px 0 rgba(255, 255, 255, 0.08);
-  transition: transform 0.3s ease, border-color 0.3s ease;
-}
-
-.brand-wrapper {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-}
-
-.brand-mark {
-  font-family: var(--font-display);
-  font-weight: 700;
-  font-size: 14.5px;
-  letter-spacing: -0.01em;
-  color: #fff;
-  display: flex;
-  align-items: center;
-  gap: 9px;
-  padding: 4px 6px;
-}
-
-.brand-status-dot {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: var(--accent-emerald);
-  box-shadow: 0 0 10px var(--accent-emerald);
-  animation: pulse-dot 2.5s infinite ease-in-out;
-}
-
-@keyframes pulse-dot {
-  0%, 100% { opacity: 1; transform: scale(1); }
-  50% { opacity: 0.35; transform: scale(0.8); }
-}
-
-.nav-center-time {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  font-family: var(--font-mono);
-  font-size: 11.5px;
-  color: var(--text-secondary);
-  background: rgba(255, 255, 255, 0.04);
-  padding: 4px 12px;
-  border-radius: var(--radius-full);
-  border: 1px solid rgba(255, 255, 255, 0.06);
-}
-
-.nav-links {
-  display: flex;
-  align-items: center;
-  gap: 4px;
-  list-style: none;
-}
-
-.nav-link {
-  font-size: 13.5px;
-  font-weight: 500;
-  color: var(--text-secondary);
-  padding: 6px 14px;
-  border-radius: var(--radius-full);
-  transition: all 0.22s var(--ease-apple);
-  position: relative;
-}
-
-.nav-link:hover, .nav-link.active {
-  color: #ffffff;
-  background: rgba(255, 255, 255, 0.08);
-}
-
-.nav-action-wrapper {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.nav-cta-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 7px;
-  font-size: 13px;
-  font-weight: 600;
-  background: #ffffff;
-  color: #040507;
-  padding: 8px 18px;
-  border-radius: var(--radius-full);
-  transition: all 0.25s var(--ease-apple);
-  box-shadow: 0 2px 14px rgba(255, 255, 255, 0.2);
-}
-
-.nav-cta-btn:hover {
-  background: #f1f5f9;
-  transform: translateY(-1px);
-  box-shadow: 0 4px 22px rgba(255, 255, 255, 0.38);
-}
-
-.mobile-menu-btn {
-  display: none;
-  width: 38px;
-  height: 38px;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-  color: #fff;
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid var(--border-subtle);
-  transition: background-color 0.2s ease;
-}
-
-@media (max-width: 900px) {
-  .nav-center-time, .nav-links {
-    display: none;
-  }
-  .mobile-menu-btn {
-    display: flex;
-  }
-}
-
-/* Mobile Drawer */
-.mobile-drawer {
-  position: fixed;
-  inset: 0;
-  z-index: 998;
-  background: rgba(4, 5, 8, 0.96);
-  backdrop-filter: blur(32px);
-  -webkit-backdrop-filter: blur(32px);
-  padding: 120px 32px 48px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  opacity: 0;
-  pointer-events: none;
-  transform: translateY(-10px);
-  transition: opacity 0.35s var(--ease-apple), transform 0.35s var(--ease-apple);
-}
-
-.mobile-drawer.open {
-  opacity: 1;
-  transform: translateY(0);
-  pointer-events: auto;
-}
-
-.mobile-nav-list {
-  display: flex;
-  flex-direction: column;
-  gap: 22px;
-  list-style: none;
-}
-
-.mobile-nav-list a {
-  font-family: var(--font-display);
-  font-size: 28px;
-  font-weight: 700;
-  color: var(--text-secondary);
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  transition: color 0.2s ease, transform 0.2s ease;
-}
-
-.mobile-nav-list a span.num {
-  font-family: var(--font-mono);
-  font-size: 14px;
-  color: var(--accent-cyan);
-}
-
-.mobile-nav-list a:hover {
-  color: #fff;
-  transform: translateX(6px);
-}
-
-/* ==========================================================================
-   HERO SECTION — AWWWARDS IMMERSIVE CINEMATIC CENTERPIECE
-   ========================================================================== */
-.hero-universe {
-  position: relative;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding-top: 140px;
-  padding-bottom: 80px;
-  overflow: hidden;
-}
-
-/* Background 3D Canvas Layer */
-.hero-canvas-container {
-  position: absolute;
-  inset: 0;
-  pointer-events: auto;
-  z-index: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-#canvas-3d {
-  width: 100% !important;
-  height: 100% !important;
-  outline: none;
-  cursor: grab;
-}
-
-#canvas-3d:active {
-  cursor: grabbing;
-}
-
-.hero-content-wrapper {
-  position: relative;
-  z-index: 3;
-  pointer-events: none;
-}
-
-.hero-content-wrapper a,
-.hero-content-wrapper button,
-.hero-3d-hint {
-  pointer-events: auto;
-}
-
-.hero-eyebrow-row {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 14px;
-  margin-bottom: 24px;
-}
-
-.hero-pill-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  font-family: var(--font-mono);
-  font-size: 11.5px;
-  font-weight: 600;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-  color: var(--accent-cyan);
-  padding: 5px 14px;
-  border-radius: var(--radius-full);
-  background: rgba(56, 189, 248, 0.08);
-  border: 1px solid rgba(56, 189, 248, 0.25);
-  box-shadow: 0 0 15px rgba(56, 189, 248, 0.15);
-}
-
-.hero-geo-tag {
-  font-size: 13px;
-  color: var(--text-tertiary);
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  background: rgba(255, 255, 255, 0.03);
-  padding: 4px 12px;
-  border-radius: var(--radius-full);
-  border: 1px solid rgba(255, 255, 255, 0.06);
-}
-
-.hero-headline {
-  font-family: var(--font-display);
-  font-size: clamp(3.2rem, 8.5vw, 7.5rem);
-  font-weight: 800;
-  letter-spacing: -0.04em;
-  line-height: 0.95;
-  color: #ffffff;
-  margin-bottom: 24px;
-  text-transform: uppercase;
-}
-
-.hero-headline .name-highlight {
-  background: linear-gradient(135deg, #ffffff 30%, rgba(255, 255, 255, 0.4) 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  display: inline-block;
-}
-
-.hero-manifesto-sub {
-  font-family: var(--font-display);
-  font-size: clamp(1.3rem, 2.6vw, 2.2rem);
-  font-weight: 600;
-  line-height: 1.3;
-  letter-spacing: -0.025em;
-  color: #e2e8f0;
-  max-width: 820px;
-  margin-bottom: 22px;
-}
-
-.hero-manifesto-sub span.gradient-text {
-  background: linear-gradient(90deg, #38bdf8, #818cf8, #c084fc);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  font-weight: 700;
-}
-
-.hero-editorial-bio {
-  font-size: clamp(1.05rem, 1.35vw, 1.2rem);
-  color: var(--text-secondary);
-  line-height: 1.75;
-  max-width: 650px;
-  margin-bottom: 40px;
-}
-
-.hero-actions-cluster {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 16px;
-  margin-bottom: 50px;
-}
-
-.btn-universe-primary {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  background: #ffffff;
-  color: #040507;
-  font-size: 15px;
-  font-weight: 700;
-  padding: 14px 30px;
-  border-radius: var(--radius-full);
-  box-shadow: 0 4px 24px rgba(255, 255, 255, 0.28);
-  transition: all 0.28s var(--ease-apple);
-}
-
-.btn-universe-primary:hover {
-  background: #f8fafc;
-  transform: translateY(-2px);
-  box-shadow: 0 8px 36px rgba(255, 255, 255, 0.45);
-}
-
-.btn-universe-secondary {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  background: rgba(255, 255, 255, 0.05);
-  color: #ffffff;
-  font-size: 15px;
-  font-weight: 600;
-  padding: 14px 28px;
-  border-radius: var(--radius-full);
-  border: 1px solid var(--border-medium);
-  backdrop-filter: blur(12px);
-  transition: all 0.28s var(--ease-apple);
-}
-
-.btn-universe-secondary:hover {
-  background: rgba(255, 255, 255, 0.12);
-  border-color: rgba(255, 255, 255, 0.3);
-  transform: translateY(-2px);
-}
-
-.hero-spec-strip {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 24px;
-  max-width: 720px;
-  padding-top: 28px;
-  border-top: 1px solid var(--border-subtle);
-}
-
-@media (max-width: 640px) {
-  .hero-spec-strip {
-    grid-template-columns: 1fr;
-    gap: 16px;
-  }
-}
-
-.spec-cell {
-  display: flex;
-  flex-direction: column;
-}
-
-.spec-kicker {
-  font-size: 11px;
-  font-family: var(--font-mono);
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: var(--text-tertiary);
-  margin-bottom: 4px;
-}
-
-.spec-val {
-  font-size: 14.5px;
-  font-weight: 600;
-  color: #e2e8f0;
-}
-
-.hero-3d-hint {
-  position: absolute;
-  bottom: 28px;
-  right: 32px;
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 6px 14px;
-  background: rgba(10, 14, 22, 0.7);
-  border: 1px solid var(--border-subtle);
-  border-radius: var(--radius-full);
-  font-family: var(--font-mono);
-  font-size: 11px;
-  color: var(--text-secondary);
-  backdrop-filter: blur(10px);
-  z-index: 4;
-}
-
-@media (max-width: 768px) {
-  .hero-3d-hint {
-    display: none;
-  }
-}
-
-/* ==========================================================================
-   SECTION HEADERS & EDITORIAL TITLES
-   ========================================================================== */
-.section-block {
-  padding-block: 120px 40px;
-  position: relative;
-}
-
-@media (max-width: 768px) {
-  .section-block {
-    padding-block: 80px 20px;
-  }
-}
-
-.section-head {
-  margin-bottom: 56px;
-}
-
-.section-numeral {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  font-family: var(--font-mono);
-  font-size: 12px;
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--accent-cyan);
-  margin-bottom: 12px;
-}
-
-.section-h2 {
-  font-family: var(--font-display);
-  font-size: clamp(2.4rem, 4.8vw, 4rem);
-  font-weight: 800;
-  letter-spacing: -0.035em;
-  line-height: 1.08;
-  color: #ffffff;
-  margin-bottom: 18px;
-}
-
-.section-paragraph {
-  font-size: clamp(1.05rem, 1.4vw, 1.25rem);
-  color: var(--text-secondary);
-  max-width: 680px;
-  line-height: 1.65;
-}
-
-/* ==========================================================================
-   ABOUT SECTION — BEYOND THE CODE
-   ========================================================================== */
-.about-grid {
-  display: grid;
-  grid-template-columns: 1.3fr 1fr;
-  gap: 28px;
-}
-
-@media (max-width: 960px) {
-  .about-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-.interactive-card {
-  position: relative;
-  background: var(--surface-card);
-  border: 1px solid var(--border-subtle);
-  border-radius: var(--radius-xl);
-  padding: clamp(32px, 4vw, 44px);
-  backdrop-filter: blur(24px);
-  -webkit-backdrop-filter: blur(24px);
-  overflow: hidden;
-  transition: border-color 0.35s ease, transform 0.35s var(--ease-apple), box-shadow 0.35s ease;
-}
-
-.interactive-card:hover {
-  border-color: var(--border-strong);
-  transform: translateY(-3px);
-  box-shadow: 0 24px 60px -15px rgba(0, 0, 0, 0.85);
-}
-
-.card-spotlight {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  background: radial-gradient(650px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(56, 189, 248, 0.07), transparent 40%);
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-.interactive-card:hover .card-spotlight {
-  opacity: 1;
-}
-
-.about-headline {
-  font-family: var(--font-display);
-  font-size: clamp(1.4rem, 2.2vw, 1.95rem);
-  font-weight: 600;
-  line-height: 1.38;
-  letter-spacing: -0.02em;
-  color: #ffffff;
-  margin-bottom: 24px;
-}
-
-.about-headline em {
-  font-style: normal;
-  color: var(--accent-cyan);
-}
-
-.about-p {
-  font-size: 15.5px;
-  color: var(--text-secondary);
-  line-height: 1.8;
-  margin-bottom: 20px;
-}
-
-.metrics-strip {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 16px;
-  margin-top: 36px;
-  padding-top: 26px;
-  border-top: 1px solid var(--border-subtle);
-}
-
-@media (max-width: 600px) {
-  .metrics-strip {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-  }
-}
-
-.metric-unit {
-  display: flex;
-  flex-direction: column;
-}
-
-.metric-big {
-  font-family: var(--font-display);
-  font-size: 28px;
-  font-weight: 800;
-  color: #ffffff;
-  line-height: 1.1;
-}
-
-.metric-label {
-  font-size: 12.5px;
-  color: var(--text-tertiary);
-  margin-top: 4px;
-}
-
-.pillars-column {
-  display: flex;
-  flex-direction: column;
-  gap: 18px;
-}
-
-.pillar-box {
-  display: flex;
-  gap: 20px;
-  padding: 24px;
-  background: rgba(255, 255, 255, 0.02);
-  border: 1px solid rgba(255, 255, 255, 0.06);
-  border-radius: var(--radius-lg);
-  transition: all 0.28s var(--ease-apple);
-}
-
-.pillar-box:hover {
-  background: rgba(255, 255, 255, 0.05);
-  border-color: rgba(255, 255, 255, 0.15);
-  transform: translateX(6px);
-}
-
-.pillar-icon-wrap {
-  width: 48px;
-  height: 48px;
-  border-radius: var(--radius-md);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: rgba(56, 189, 248, 0.1);
-  color: var(--accent-cyan);
-  flex-shrink: 0;
-}
-
-.pillar-icon-wrap.violet {
-  background: rgba(168, 85, 247, 0.1);
-  color: var(--accent-violet);
-}
-
-.pillar-icon-wrap.emerald {
-  background: rgba(16, 185, 129, 0.1);
-  color: var(--accent-emerald);
-}
-
-.pillar-title {
-  font-family: var(--font-display);
-  font-size: 17px;
-  font-weight: 700;
-  color: #ffffff;
-  margin-bottom: 5px;
-}
-
-.pillar-text {
-  font-size: 13.5px;
-  color: var(--text-secondary);
-  line-height: 1.6;
-}
-
-/* ==========================================================================
-   VENTURES SECTION — DISTINCT MULTI-INDUSTRY TREATMENTS
-   ========================================================================== */
-.umbrella-banner {
-  display: inline-flex;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 12px;
-  padding: 10px 22px;
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid var(--border-subtle);
-  border-radius: var(--radius-full);
-  margin-bottom: 36px;
-}
-
-.umbrella-name {
-  font-family: var(--font-display);
-  font-size: 14.5px;
-  font-weight: 700;
-  color: #ffffff;
-}
-
-.ventures-quad-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 28px;
-}
-
-@media (max-width: 900px) {
-  .ventures-quad-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-.venture-card {
-  position: relative;
-  background: var(--surface-card);
-  border: 1px solid var(--border-subtle);
-  border-radius: var(--radius-xl);
-  padding: 38px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  min-height: 360px;
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  overflow: hidden;
-  transition: transform 0.35s var(--ease-apple), border-color 0.35s ease, box-shadow 0.35s ease;
-}
-
-.venture-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 24px 60px -15px rgba(0, 0, 0, 0.85);
-}
-
-/* Individual Venture Identity Accents */
-.venture-card.devx {
-  border-top: 2px solid var(--venture-devx);
-}
-.venture-card.devx:hover {
-  border-color: rgba(56, 189, 248, 0.4);
-}
-
-.venture-card.bvrcode {
-  border-top: 2px solid var(--venture-bvrcode);
-}
-.venture-card.bvrcode:hover {
-  border-color: rgba(245, 158, 11, 0.4);
-}
-
-.venture-card.tinta {
-  border-top: 2px solid var(--venture-tinta);
-}
-.venture-card.tinta:hover {
-  border-color: rgba(168, 85, 247, 0.4);
-}
-
-.venture-card.sejenak {
-  border-top: 2px solid var(--venture-sejenak);
-}
-.venture-card.sejenak:hover {
-  border-color: rgba(16, 185, 129, 0.4);
-}
-
-.venture-header-row {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  margin-bottom: 20px;
-}
-
-.venture-badge {
-  font-family: var(--font-mono);
-  font-size: 11.5px;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  padding: 4px 12px;
-  border-radius: var(--radius-full);
-}
-
-.badge-devx { background: rgba(56, 189, 248, 0.1); color: var(--venture-devx); border: 1px solid rgba(56, 189, 248, 0.25); }
-.badge-bvrcode { background: rgba(245, 158, 11, 0.1); color: var(--venture-bvrcode); border: 1px solid rgba(245, 158, 11, 0.25); }
-.badge-tinta { background: rgba(168, 85, 247, 0.1); color: var(--venture-tinta); border: 1px solid rgba(168, 85, 247, 0.25); }
-.badge-sejenak { background: rgba(16, 185, 129, 0.1); color: var(--venture-sejenak); border: 1px solid rgba(16, 185, 129, 0.25); }
-
-.venture-h3 {
-  font-family: var(--font-display);
-  font-size: 28px;
-  font-weight: 800;
-  letter-spacing: -0.02em;
-  color: #ffffff;
-  margin-bottom: 12px;
-}
-
-.venture-desc {
-  font-size: 15px;
-  color: var(--text-secondary);
-  line-height: 1.65;
-  margin-bottom: 26px;
-}
-
-.venture-tags-row {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin-bottom: 28px;
-}
-
-.v-tag {
-  font-size: 12.5px;
-  font-weight: 500;
-  color: #cbd5e1;
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.07);
-  padding: 5px 12px;
-  border-radius: var(--radius-sm);
-}
-
-.venture-foot-row {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding-top: 20px;
-  border-top: 1px solid var(--border-subtle);
-}
-
-.venture-link-action {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  font-size: 14px;
-  font-weight: 600;
-  color: #ffffff;
-  transition: all 0.2s ease;
-}
-
-.venture-link-action:hover {
-  gap: 12px;
-  color: var(--accent-cyan);
-}
-
-/* ==========================================================================
-   SELECTED WORK — PROJECTS WITH 3D TILT CARDS & TERMINALS
-   ========================================================================== */
-.projects-filter-bar {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin-bottom: 40px;
-  padding-bottom: 18px;
-  border-bottom: 1px solid var(--border-subtle);
-}
-
-.filter-btn {
-  font-size: 13.5px;
-  font-weight: 600;
-  color: var(--text-secondary);
-  padding: 8px 20px;
-  border-radius: var(--radius-full);
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.06);
-  transition: all 0.22s var(--ease-apple);
-}
-
-.filter-btn:hover {
-  color: #ffffff;
-  background: rgba(255, 255, 255, 0.08);
-}
-
-.filter-btn.active {
-  color: #040507;
-  background: #ffffff;
-  border-color: #ffffff;
-  box-shadow: 0 4px 18px rgba(255, 255, 255, 0.25);
-}
-
-.projects-stack {
-  display: flex;
-  flex-direction: column;
-  gap: 32px;
-}
-
-.project-feature-card {
-  position: relative;
-  background: var(--surface-card);
-  border: 1px solid var(--border-subtle);
-  border-radius: var(--radius-xl);
-  padding: clamp(32px, 4vw, 44px);
-  display: grid;
-  grid-template-columns: 1.35fr 1fr;
-  gap: 36px;
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  overflow: hidden;
-  transition: transform 0.4s var(--ease-apple), border-color 0.35s ease, box-shadow 0.35s ease;
-  transform-style: preserve-3d;
-}
-
-.project-feature-card:hover {
-  border-color: var(--border-strong);
-  box-shadow: 0 32px 70px -18px rgba(0, 0, 0, 0.9);
-}
-
-@media (max-width: 960px) {
-  .project-feature-card {
-    grid-template-columns: 1fr;
-    gap: 28px;
-  }
-}
-
-.project-pill-label {
-  display: inline-block;
-  font-family: var(--font-mono);
-  font-size: 11.5px;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  color: var(--accent-cyan);
-  padding: 4px 12px;
-  border-radius: var(--radius-full);
-  background: rgba(56, 189, 248, 0.08);
-  border: 1px solid rgba(56, 189, 248, 0.2);
-  margin-bottom: 14px;
-}
-
-.project-title {
-  font-family: var(--font-display);
-  font-size: clamp(1.6rem, 2.5vw, 2.2rem);
-  font-weight: 800;
-  letter-spacing: -0.025em;
-  color: #ffffff;
-  margin-bottom: 16px;
-}
-
-.project-body {
-  font-size: 15.5px;
-  color: var(--text-secondary);
-  line-height: 1.75;
-  margin-bottom: 24px;
-}
-
-.project-stats-grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-  margin-bottom: 24px;
-}
-
-.stat-chip {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  font-size: 13px;
-  font-weight: 600;
-  color: #e2e8f0;
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  padding: 6px 14px;
-  border-radius: var(--radius-md);
-}
-
-.stat-chip span.label {
-  color: var(--accent-cyan);
-}
-
-.project-tech-chips {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin-bottom: 30px;
-}
-
-.tech-chip {
-  font-family: var(--font-mono);
-  font-size: 12px;
-  color: #94a3b8;
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.06);
-  padding: 4px 10px;
-  border-radius: var(--radius-xs);
-}
-
-.project-btns-row {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 14px;
-}
-
-.btn-card-action {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  font-size: 13.5px;
-  font-weight: 600;
-  color: #ffffff;
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  padding: 10px 20px;
-  border-radius: var(--radius-full);
-  transition: all 0.22s var(--ease-apple);
-}
-
-.btn-card-action:hover {
-  background: #ffffff;
-  color: #040507;
-  transform: translateY(-2px);
-}
-
-.btn-card-action.highlight {
-  background: #ffffff;
-  color: #040507;
-  border-color: #ffffff;
-}
-
-.btn-card-action.highlight:hover {
-  background: #e2e8f0;
-}
-
-.project-visual-preview {
-  background: linear-gradient(145deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0.01));
-  border: 1px solid rgba(255, 255, 255, 0.07);
-  border-radius: var(--radius-lg);
-  padding: 24px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  min-height: 260px;
-}
-
-.code-console {
-  width: 100%;
-  background: rgba(3, 5, 8, 0.94);
-  border: 1px solid rgba(255, 255, 255, 0.09);
-  border-radius: var(--radius-md);
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.7);
-  overflow: hidden;
-}
-
-.console-bar {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  padding: 10px 14px;
-  background: rgba(255, 255, 255, 0.03);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-}
-
-.bar-dot {
-  width: 9px;
-  height: 9px;
-  border-radius: 50%;
-}
-.dot-red { background: #f43f5e; }
-.dot-amber { background: #f59e0b; }
-.dot-emerald { background: #10b981; }
-
-.console-text {
-  padding: 18px;
-  font-family: var(--font-mono);
-  font-size: 12px;
-  line-height: 1.7;
-  color: #cbd5e1;
-}
-
-.c-kw { color: var(--accent-violet); }
-.c-fn { color: var(--accent-cyan); }
-.c-str { color: #86efac; }
-.c-num { color: #fda4af; }
-
-/* ==========================================================================
-   EXPERIENCE & ACHIEVEMENTS — SCROLL-DRIVEN TIMELINE
-   ========================================================================== */
-.experience-layout {
-  display: grid;
-  grid-template-columns: 1.15fr 0.85fr;
-  gap: 36px;
-}
-
-@media (max-width: 960px) {
-  .experience-layout {
-    grid-template-columns: 1fr;
-  }
-}
-
-.timeline-column-box {
-  background: var(--surface-card);
-  border: 1px solid var(--border-subtle);
-  border-radius: var(--radius-xl);
-  padding: clamp(32px, 4vw, 44px);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-}
-
-.box-title-row {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  font-family: var(--font-display);
-  font-size: 22px;
-  font-weight: 700;
-  color: #ffffff;
-  margin-bottom: 28px;
-}
-
-.timeline-track {
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-  position: relative;
-}
-
-.timeline-event {
-  position: relative;
-  padding-left: 32px;
-  border-left: 1px solid var(--border-medium);
-  transition: border-color 0.3s ease;
-}
-
-.timeline-event::before {
-  content: '';
-  position: absolute;
-  left: -5.5px;
-  top: 5px;
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background: var(--accent-cyan);
-  box-shadow: 0 0 12px var(--accent-cyan);
-  transition: transform 0.25s ease;
-}
-
-.timeline-event:hover::before {
-  transform: scale(1.3);
-}
-
-.timeline-event.amber::before {
-  background: var(--accent-amber);
-  box-shadow: 0 0 12px var(--accent-amber);
-}
-
-.timeline-event.violet::before {
-  background: var(--accent-violet);
-  box-shadow: 0 0 12px var(--accent-violet);
-}
-
-.event-title {
-  font-family: var(--font-display);
-  font-size: 16.5px;
-  font-weight: 700;
-  color: #ffffff;
-  margin-bottom: 5px;
-}
-
-.event-description {
-  font-size: 13.5px;
-  color: var(--text-secondary);
-  line-height: 1.55;
-}
-
-.event-date {
-  display: inline-block;
-  font-family: var(--font-mono);
-  font-size: 11.5px;
-  color: var(--text-tertiary);
-  margin-top: 6px;
-}
-
-.internship-highlight-card {
-  margin-top: 36px;
-  padding: 24px;
-  background: rgba(56, 189, 248, 0.05);
-  border: 1px solid rgba(56, 189, 248, 0.2);
-  border-radius: var(--radius-lg);
-  box-shadow: 0 0 25px rgba(56, 189, 248, 0.06);
-}
-
-.internship-head {
-  font-family: var(--font-display);
-  font-size: 15px;
-  font-weight: 700;
-  color: #ffffff;
-  margin-bottom: 6px;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.internship-body {
-  font-size: 13.5px;
-  color: var(--text-secondary);
-  line-height: 1.6;
-}
-
-/* ==========================================================================
-   CONTACT SECTION — EDITORIAL CINEMATIC CLOSING
-   ========================================================================== */
-.closing-editorial-banner {
-  position: relative;
-  background: linear-gradient(180deg, rgba(14, 20, 34, 0.5) 0%, rgba(4, 6, 10, 0.9) 100%);
-  border: 1px solid var(--border-medium);
-  border-radius: var(--radius-xl);
-  padding: clamp(52px, 7vw, 90px);
-  text-align: center;
-  overflow: hidden;
-  backdrop-filter: blur(32px);
-  -webkit-backdrop-filter: blur(32px);
-  margin-bottom: 60px;
-  box-shadow: 0 28px 70px -15px rgba(0, 0, 0, 0.9);
-}
-
-.closing-editorial-banner::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 20%;
-  right: 20%;
-  height: 1.5px;
-  background: linear-gradient(90deg, transparent, var(--accent-cyan), var(--accent-violet), transparent);
-}
-
-.closing-h2 {
-  font-family: var(--font-display);
-  font-size: clamp(2.6rem, 5.5vw, 4.6rem);
-  font-weight: 800;
-  line-height: 1.05;
-  letter-spacing: -0.035em;
-  color: #ffffff;
-  margin-bottom: 22px;
-  max-width: 860px;
-  margin-inline: auto;
-}
-
-.closing-p {
-  font-size: clamp(1.05rem, 1.4vw, 1.25rem);
-  color: var(--text-secondary);
-  max-width: 640px;
-  margin-inline: auto;
-  line-height: 1.65;
-  margin-bottom: 42px;
-}
-
-.closing-action-buttons {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 16px;
-  margin-bottom: 44px;
-}
-
-.btn-email-primary {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  font-size: 15px;
-  font-weight: 700;
-  background: #ffffff;
-  color: #040507;
-  padding: 15px 32px;
-  border-radius: var(--radius-full);
-  box-shadow: 0 4px 28px rgba(255, 255, 255, 0.3);
-  transition: all 0.28s var(--ease-apple);
-}
-
-.btn-email-primary:hover {
-  background: #f1f5f9;
-  transform: translateY(-2px);
-  box-shadow: 0 8px 36px rgba(255, 255, 255, 0.45);
-}
-
-.btn-github-pill {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  font-size: 15px;
-  font-weight: 600;
-  background: rgba(255, 255, 255, 0.05);
-  color: #ffffff;
-  padding: 15px 30px;
-  border-radius: var(--radius-full);
-  border: 1px solid var(--border-medium);
-  backdrop-filter: blur(12px);
-  transition: all 0.28s var(--ease-apple);
-}
-
-.btn-github-pill:hover {
-  background: rgba(255, 255, 255, 0.12);
-  border-color: rgba(255, 255, 255, 0.3);
-  transform: translateY(-2px);
-}
-
-.closing-availability-tag {
-  display: inline-flex;
-  align-items: center;
-  gap: 9px;
-  padding: 8px 22px;
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid var(--border-subtle);
-  border-radius: var(--radius-full);
-  font-family: var(--font-mono);
-  font-size: 12.5px;
-  color: var(--text-secondary);
-}
-
-/* ==========================================================================
-   FOOTER
-   ========================================================================== */
-.site-footer {
-  padding-block: 44px;
-  border-top: 1px solid var(--border-subtle);
-  position: relative;
-  z-index: 2;
-}
-
-.footer-inner {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 20px;
-}
-
-.footer-brand {
-  font-family: var(--font-display);
-  font-size: 14.5px;
-  font-weight: 600;
-  color: var(--text-secondary);
-}
-
-.footer-credits {
-  font-size: 13px;
-  color: var(--text-tertiary);
-}
-
-.footer-top-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  font-size: 13px;
-  font-weight: 600;
-  color: var(--text-secondary);
-  transition: color 0.2s ease, transform 0.2s ease;
-}
-
-.footer-top-link:hover {
-  color: #ffffff;
-  transform: translateY(-2px);
-}
-
-/* Toast Bar */
-.toast-bar {
-  position: fixed;
-  bottom: 30px;
-  left: 50%;
-  transform: translateX(-50%) translateY(100px);
-  background: rgba(15, 23, 42, 0.95);
-  color: #ffffff;
-  padding: 13px 26px;
-  border-radius: var(--radius-full);
-  border: 1px solid rgba(56, 189, 248, 0.35);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8), 0 0 15px rgba(56, 189, 248, 0.2);
-  font-size: 13.5px;
-  font-weight: 600;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  backdrop-filter: blur(18px);
-  -webkit-backdrop-filter: blur(18px);
-  z-index: 99999;
-  opacity: 0;
-  pointer-events: none;
-  transition: transform 0.4s var(--ease-spring), opacity 0.35s ease;
-}
-
-.toast-bar.show {
-  transform: translateX(-50%) translateY(0);
-  opacity: 1;
-}
-
-/* ==========================================================================
-   REDUCED MOTION & ACCESSIBILITY
-   ========================================================================== */
-@media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
-  }
-}
-</style>
+<link rel="stylesheet" href="styles.css">
+<script>document.documentElement.classList.remove('no-js');document.documentElement.classList.add('js');</script>
 </head>
-
 <body>
 
-<!-- Custom Cursor Elements -->
-<div class="cursor-dot" id="cursorDot" aria-hidden="true"></div>
-<div class="cursor-ring" id="cursorRing" aria-hidden="true"></div>
+<a class="skip-link" href="#operator">Skip to content</a>
 
-<!-- Scroll Progress Bar -->
-<div class="scroll-progress-bar" id="scrollProgress" aria-hidden="true"></div>
+<div class="grain" aria-hidden="true"></div>
+<div class="scroll-line" aria-hidden="true"><span id="scrollLine"></span></div>
 
-<!-- Ambient Lighting Layer -->
-<div class="bg-ambient-layer" aria-hidden="true">
-  <div class="overhead-spotlight"></div>
-  <div class="ambient-orb orb-violet"></div>
-  <div class="ambient-orb orb-cyan"></div>
-  <div class="ambient-orb orb-emerald"></div>
-  <div class="subtle-grid"></div>
+<!-- Cursor -->
+<div class="cursor" id="cursor" aria-hidden="true">
+  <span class="cursor-dot"></span>
+  <span class="cursor-ring"><span class="cursor-label" id="cursorLabel"></span></span>
 </div>
 
-<!-- SITE HEADER -->
-<header class="site-header">
-  <nav class="nav-pill" aria-label="Main Navigation">
-    <div class="brand-wrapper">
-      <a href="#" class="brand-mark magnetic-target" aria-label="Ahmad Suhaib Home">
-        <span class="brand-status-dot"></span>
-        <span>Ahmad Suhaib</span>
-      </a>
-      <div class="nav-center-time">
-        <span id="navClock">--:--:--</span>
-        <span style="color: var(--border-medium);">|</span>
-        <span>KUL</span>
-      </div>
-    </div>
+<!-- Boot / cinematic calibration -->
+<div class="boot" id="boot">
+  <div class="boot-top">
+    <span>AHMAD SUHAIB</span>
+    <span>THE SIGNAL ARCHIVE / 2026</span>
+  </div>
+  <div class="boot-center">
+    <div class="boot-mark">AS<span>®</span></div>
+    <div class="boot-counter"><span id="bootCount">000</span><i>%</i></div>
+  </div>
+  <div class="boot-bottom">
+    <div class="boot-status"><span class="status-dot"></span><span id="bootStatus">CALIBRATING SIGNAL</span></div>
+    <button type="button" class="boot-skip" id="bootSkip">SKIP INTRO</button>
+  </div>
+  <div class="boot-track"><span id="bootBar"></span></div>
+</div>
 
-    <ul class="nav-links">
-      <li><a href="#about" class="nav-link magnetic-target">About</a></li>
-      <li><a href="#ventures" class="nav-link magnetic-target">Ventures</a></li>
-      <li><a href="#work" class="nav-link magnetic-target">Selected Work</a></li>
-      <li><a href="#experience" class="nav-link magnetic-target">Honors</a></li>
-    </ul>
-
-    <div class="nav-action-wrapper">
-      <a href="#contact" class="nav-cta-btn magnetic-target">
-        <span>Get in Touch</span>
-        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-      </a>
-
-      <button type="button" class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle navigation drawer">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
-      </button>
-    </div>
+<!-- Header -->
+<header class="site-header" id="siteHeader">
+  <a class="brand" href="#intro" data-cursor="TOP">
+    <span class="brand-mark">AS<span>®</span></span>
+    <span class="brand-text"><b>Ahmad Suhaib</b><em>Signal Archive</em></span>
+  </a>
+  <div class="header-chapter" aria-hidden="true">
+    <span id="headerChapter">00</span>
+    <span class="header-slash">/</span>
+    <span id="headerChapterName">ARRIVAL</span>
+  </div>
+  <nav class="header-nav" aria-label="Primary">
+    <a href="#universe" data-cursor="EXPLORE">Universe</a>
+    <a href="#work" data-cursor="VIEW">Work</a>
+    <a href="#worlds" data-cursor="ENTER">Worlds</a>
+    <a href="#record" data-cursor="READ">Record</a>
   </nav>
+  <a class="header-cta" href="#contact" data-cursor="TALK"><span>Start a conversation</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+  <button type="button" class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+    <span></span><span></span>
+  </button>
 </header>
 
-<!-- Mobile Navigation Drawer -->
-<div class="mobile-drawer" id="mobileDrawer">
-  <ul class="mobile-nav-list">
-    <li><a href="#about" class="mobile-item"><span class="num">01</span> About &amp; Vision</a></li>
-    <li><a href="#ventures" class="mobile-item"><span class="num">02</span> Commercial Ecosystem</a></li>
-    <li><a href="#work" class="mobile-item"><span class="num">03</span> Selected Work</a></li>
-    <li><a href="#experience" class="mobile-item"><span class="num">04</span> Honors &amp; Milestones</a></li>
-    <li><a href="#contact" class="mobile-item"><span class="num">05</span> Contact</a></li>
-  </ul>
-  <div style="padding-top: 24px; border-top: 1px solid var(--border-subtle);">
-    <p style="font-size: 14px; color: var(--text-secondary); margin-bottom: 14px;">Ahmad Suhaib • Ipoh, Perak, Malaysia</p>
-    <a href="https://github.com/hanennkam" target="_blank" rel="noopener" class="btn-universe-secondary" style="width: 100%; justify-content: center;">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
-      <span>GitHub @hanennkam</span>
-    </a>
+<!-- Mobile menu -->
+<div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+  <div class="mobile-menu-top">
+    <span>INDEX / 2026</span>
+    <button type="button" class="mobile-menu-close" id="menuClose" aria-label="Close menu">Close</button>
+  </div>
+  <nav class="mobile-menu-nav" aria-label="Mobile primary">
+    <a href="#intro" data-menu-link><span>00</span>Arrival</a>
+    <a href="#operator" data-menu-link><span>01</span>Operator</a>
+    <a href="#universe" data-menu-link><span>02</span>Universe</a>
+    <a href="#work" data-menu-link><span>03</span>Selected Work</a>
+    <a href="#worlds" data-menu-link><span>04</span>Worlds</a>
+    <a href="#record" data-menu-link><span>05</span>Record</a>
+    <a href="#contact" data-menu-link><span>06</span>Transmit</a>
+  </nav>
+  <div class="mobile-menu-foot">
+    <p>Ipoh, Perak, Malaysia<br><span id="mobileClock">--:--:--</span> KUL</p>
+    <a href="mailto:suhaibhamidun@gmail.com">suhaibhamidun@gmail.com</a>
   </div>
 </div>
 
-<main>
-  <!-- HERO SECTION: CINEMATIC THREE.JS CENTERPIECE -->
-  <section class="hero-universe" id="hero">
-    <!-- WebGL 3D Canvas Background Engine -->
-    <div class="hero-canvas-container" id="heroCanvasWrapper">
-      <canvas id="canvas-3d"></canvas>
+<!-- Chapter rail -->
+<nav class="chapter-rail" aria-label="Chapters">
+  <a href="#intro" data-rail="intro"><span>00</span><i></i><b>Arrival</b></a>
+  <a href="#operator" data-rail="operator"><span>01</span><i></i><b>Operator</b></a>
+  <a href="#universe" data-rail="universe"><span>02</span><i></i><b>Universe</b></a>
+  <a href="#work" data-rail="work"><span>03</span><i></i><b>Work</b></a>
+  <a href="#worlds" data-rail="worlds"><span>04</span><i></i><b>Worlds</b></a>
+  <a href="#record" data-rail="record"><span>05</span><i></i><b>Record</b></a>
+  <a href="#contact" data-rail="contact"><span>06</span><i></i><b>Transmit</b></a>
+</nav>
+
+<main id="main">
+
+  <!-- =====================================================================
+       00 — ARRIVAL
+       ===================================================================== -->
+  <section class="intro" id="intro" data-chapter="00" data-chapter-name="ARRIVAL" data-theme="dark">
+    <div class="intro-bg" aria-hidden="true">
+      <div class="intro-aura"></div>
+      <div class="intro-horizon"></div>
+      <canvas id="introCanvas"></canvas>
+      <div class="intro-vignette"></div>
     </div>
 
-    <div class="container hero-content-wrapper">
-      <div class="hero-eyebrow-row gsap-hero-reveal">
-        <div class="hero-pill-badge">
-          <span class="brand-status-dot"></span>
-          <span>Available for Internship • End Feb 2027</span>
-        </div>
-        <div class="hero-geo-tag">
-          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a8 8 0 0 0-8 8c0 5.25 8 12 8 12s8-6.75 8-12a8 8 0 0 0-8-8z"></path><circle cx="12" cy="10" r="3"></circle></svg>
-          <span>Ipoh, Perak, Malaysia</span>
-        </div>
+    <div class="intro-static" aria-hidden="true">
+      <div class="static-monolith"><span></span></div>
+    </div>
+
+    <div class="intro-content">
+      <div class="intro-kicker">
+        <span class="status-pill"><span class="status-dot"></span>Available for internship · End Feb 2027</span>
+        <span class="intro-coord">03°09′N / 101°35′E</span>
       </div>
 
-      <h1 class="hero-headline gsap-hero-reveal">
-        AHMAD<br>
-        <span class="name-highlight">SUHAIB</span>
+      <h1 class="intro-title" aria-label="Ahmad Suhaib">
+        <span class="intro-line"><span class="intro-word" data-word="AHMAD">AHMAD</span></span>
+        <span class="intro-line intro-line-offset"><span class="intro-word intro-word-outline" data-word="SUHAIB">SUHAIB</span><span class="intro-reg">®</span></span>
       </h1>
 
-      <p class="hero-manifesto-sub gsap-hero-reveal">
-        Building at the intersection of <span class="gradient-text">Technology, Design &amp; Business</span>.
-      </p>
-
-      <p class="hero-editorial-bio gsap-hero-reveal">
-        Software Engineer, Creative Technologist, and Founder. 3rd-year Computer Science student at UMPSA specializing in Graphic &amp; Multimedia Technology. Architecting high-throughput Python backends, multimodal AI agent workflows, and steering cross-disciplinary commercial ventures.
-      </p>
-
-      <div class="hero-actions-cluster gsap-hero-reveal">
-        <a href="#work" class="btn-universe-primary magnetic-target">
-          <span>Explore Selected Work</span>
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-        </a>
-        <a href="#ventures" class="btn-universe-secondary magnetic-target">
-          <span>Business Ecosystem</span>
+      <div class="intro-lower">
+        <div class="intro-roles">
+          <p>Software Engineer</p>
+          <p>Creative Technologist</p>
+          <p>Founder</p>
+        </div>
+        <p class="intro-bio">I build at the intersection of <em>technology</em>, <em>design</em> and <em>business</em> — engineering AI systems, digital products and multidisciplinary ventures from concept to revenue.</p>
+        <a class="scroll-cue" href="#operator" data-cursor="ENTER">
+          <span class="scroll-cue-label">Enter the archive</span>
+          <span class="scroll-cue-ring"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v15M6 13l6 6 6-6"/></svg></span>
         </a>
       </div>
 
-      <div class="hero-spec-strip gsap-hero-reveal">
-        <div class="spec-cell">
-          <span class="spec-kicker">Core Specialization</span>
-          <span class="spec-val">AI Systems &amp; Backend Engineering</span>
-        </div>
-        <div class="spec-cell">
-          <span class="spec-kicker">Academic Track</span>
-          <span class="spec-val">UMPSA Computer Science (3rd Yr)</span>
-        </div>
-        <div class="spec-cell">
-          <span class="spec-kicker">Internship Placement</span>
-          <span class="spec-val">From End February 2027</span>
-        </div>
+      <div class="intro-side" aria-hidden="true">
+        <span>Technology</span><i></i><span>AI</span><i></i><span>Creative</span><i></i><span>Enterprise</span>
       </div>
     </div>
 
-    <div class="hero-3d-hint">
-      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="M16 12l-4-4-4 4M12 16V8"></path></svg>
-      <span>Interactive 3D Universe • Drag &amp; move cursor to inspect</span>
+    <div class="intro-foot">
+      <span>Portfolio / MMXXVI</span>
+      <span class="intro-foot-mid"><i></i> SIGNAL ACQUIRED</span>
+      <span>Ipoh, Perak, Malaysia</span>
     </div>
   </section>
 
-  <!-- ABOUT SECTION — BEYOND THE CODE -->
-  <section class="section-block" id="about">
-    <div class="container">
-      <div class="section-head gsap-reveal">
-        <span class="section-numeral">// 01. Vision &amp; Philosophy</span>
-        <h2 class="section-h2">Beyond the Code.</h2>
-        <p class="section-paragraph">
-          Bridging deep technical algorithms with aesthetic perfection and commercial venture execution.
+  <!-- =====================================================================
+       01 — OPERATOR / MANIFESTO
+       ===================================================================== -->
+  <section class="operator" id="operator" data-chapter="01" data-chapter-name="OPERATOR" data-theme="bone">
+    <h2 class="sr-only">Operator — a working philosophy</h2>
+    <div class="operator-stage">
+      <div class="stage-meta">
+        <span>01 / OPERATOR</span>
+        <span>A working philosophy</span>
+      </div>
+
+      <div class="manifesto" id="manifesto">
+        <p class="sr-only">I don’t just write software — I engineer products from concept to revenue, and build creative ventures that scale. Computer Science student at UMPSA, specialising in Graphic &amp; Multimedia Technology.</p>
+        <p class="manifesto-text" aria-hidden="true">
+          <span class="m-word">I</span>
+          <span class="m-word">don’t</span>
+          <span class="m-word">just</span>
+          <span class="m-word">write</span>
+          <span class="m-word">software</span>
+          <span class="m-word m-em">—</span>
+          <span class="m-word m-em">I</span>
+          <span class="m-word m-em">engineer</span>
+          <span class="m-word m-em">products</span>
+          <span class="m-word">from</span>
+          <span class="m-word">concept</span>
+          <span class="m-word">to</span>
+          <span class="m-word m-em">revenue</span><span class="m-dot">.</span>
+          <span class="manifesto-note">and build creative ventures that scale.</span>
         </p>
       </div>
 
-      <div class="about-grid">
-        <div class="interactive-card gsap-reveal">
-          <div class="card-spotlight"></div>
-          <p class="about-headline">
-            I don't just write software — <em>I engineer products from concept to revenue</em> and build creative ventures that scale.
-          </p>
-          <p class="about-p">
-            My foundation is built on deep technical curiosity and practical delivery. Studying Computer Science specializing in Graphic &amp; Multimedia Technology at UMPSA, I bridge mathematical algorithms and machine learning with visual polish.
-          </p>
-          <p class="about-p">
-            Beyond engineering, I manage a team of four at DevXMedia, manufacture custom athletic apparel for corporate clients via BVRCODE, and design deep learning models reaching 96.5% recall on oncology histology slides.
-          </p>
-
-          <div class="metrics-strip">
-            <div class="metric-unit">
-              <span class="metric-big">4+</span>
-              <span class="metric-label">Active Brands</span>
-            </div>
-            <div class="metric-unit">
-              <span class="metric-big" style="color: var(--accent-cyan);">96.5%</span>
-              <span class="metric-label">Recall (FYP)</span>
-            </div>
-            <div class="metric-unit">
-              <span class="metric-big" style="color: var(--accent-violet);">ASEAN</span>
-              <span class="metric-label">Silver Medalist</span>
-            </div>
-            <div class="metric-unit">
-              <span class="metric-big">Adobe Pro</span>
-              <span class="metric-label">Visual Design</span>
-            </div>
-          </div>
+      <div class="manifesto-foot">
+        <p>Computer Science student at UMPSA — specialising in Graphic &amp; Multimedia Technology. I bridge deep technical systems with visual craft and commercial execution.</p>
+        <div class="manifesto-ticker" aria-hidden="true">
+          <span>Technology</span><i></i><span>Design</span><i></i><span>Business</span><i></i>
+          <span>Technology</span><i></i><span>Design</span><i></i><span>Business</span>
         </div>
+      </div>
+      <div class="operator-watermark" aria-hidden="true">01</div>
+    </div>
 
-        <div class="pillars-column gsap-reveal">
-          <div class="pillar-box">
-            <div class="pillar-icon-wrap">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
-            </div>
-            <div>
-              <h3 class="pillar-title">Backend &amp; AI Systems</h3>
-              <p class="pillar-text">FastAPI microservices, Anthropic &amp; Ollama agent architectures, Cloudflare edge compute, and PyTorch deep neural networks.</p>
-            </div>
-          </div>
+    <div class="ledger">
+      <div class="ledger-head">
+        <span class="eyebrow">THE OPERATING SYSTEM</span>
+        <h2>Three disciplines.<br><em>One output.</em></h2>
+        <p>Not separate skillsets — a single feedback loop between engineering, visual systems and business.</p>
+      </div>
 
-          <div class="pillar-box">
-            <div class="pillar-icon-wrap violet">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 19l7-7 3 3-7 7-3-3z"></path><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"></path><path d="M2 2l7.586 7.586"></path><circle cx="11" cy="11" r="2"></circle></svg>
-            </div>
-            <div>
-              <h3 class="pillar-title">Creative Technology</h3>
-              <p class="pillar-text">Graphic &amp; multimedia systems, Adobe Certified Professional in Visual Design (Illustrator &amp; Photoshop), UI/UX craft, and 3D web experiences.</p>
-            </div>
-          </div>
+      <div class="ledger-rows">
+        <article class="ledger-row">
+          <span class="ledger-num">01</span>
+          <div class="ledger-title"><h3>Backend &amp; AI systems</h3><span>ENGINEERING</span></div>
+          <p>FastAPI microservices, Anthropic &amp; Ollama agent architectures, Cloudflare edge compute, and PyTorch deep neural networks.</p>
+          <span class="ledger-arrow" aria-hidden="true">↗</span>
+        </article>
+        <article class="ledger-row">
+          <span class="ledger-num">02</span>
+          <div class="ledger-title"><h3>Creative technology</h3><span>DESIGN</span></div>
+          <p>Graphic &amp; multimedia systems, Adobe Certified Professional in Visual Design, UI/UX craft and 3D web experiences.</p>
+          <span class="ledger-arrow" aria-hidden="true">↗</span>
+        </article>
+        <article class="ledger-row">
+          <span class="ledger-num">03</span>
+          <div class="ledger-title"><h3>Entrepreneurship</h3><span>BUSINESS</span></div>
+          <p>Ikon Keusahawanan awardee. Managing cross-functional teams, supply chains and production delivery across five brands.</p>
+          <span class="ledger-arrow" aria-hidden="true">↗</span>
+        </article>
+      </div>
 
-          <div class="pillar-box">
-            <div class="pillar-icon-wrap emerald">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
-            </div>
-            <div>
-              <h3 class="pillar-title">Entrepreneurship &amp; Leadership</h3>
-              <p class="pillar-text">Awarded Ikon Keusahawanan (UMPSA Faculty of Computing). Managing cross-functional teams, supply chains, and production delivery.</p>
-            </div>
-          </div>
-        </div>
+      <div class="ops-metrics">
+        <div class="ops-metric"><strong>4<span>+</span></strong><p>Active brands</p></div>
+        <div class="ops-metric"><strong>96.5<span>%</span></strong><p>Malignant recall — FYP</p></div>
+        <div class="ops-metric"><strong>ASEAN</strong><p>Silver medalist</p></div>
+        <div class="ops-metric"><strong>ACP</strong><p>Adobe Certified Pro</p></div>
       </div>
     </div>
   </section>
 
-  <!-- VENTURES SECTION — COMMERCIAL ECOSYSTEM -->
-  <section class="section-block" id="ventures">
-    <div class="container">
-      <div class="section-head gsap-reveal">
-        <span class="section-numeral">// 02. Commercial Ecosystem</span>
-        <h2 class="section-h2">Ventures &amp; Enterprise.</h2>
-        <p class="section-paragraph">
-          Multidisciplinary commercial brands established under registered sole proprietorship.
-        </p>
+  <!-- =====================================================================
+       02 — UNIVERSE
+       ===================================================================== -->
+  <section class="universe" id="universe" data-chapter="02" data-chapter-name="UNIVERSE" data-theme="dark">
+    <div class="universe-stage">
+      <canvas id="universeCanvas" aria-hidden="true"></canvas>
+      <div class="universe-aura" aria-hidden="true"></div>
+      <div class="universe-grid" aria-hidden="true"></div>
+
+      <div class="universe-head">
+        <span class="eyebrow">02 / THE UNIVERSE</span>
+        <h2>Four domains.<br><em>One operator.</em></h2>
+        <p>Select a node to explore the work behind it.</p>
       </div>
 
-      <div class="umbrella-banner gsap-reveal">
-        <span class="umbrella-name">Hannenkamm Rise Ventures</span>
-        <span style="color: var(--border-medium);">•</span>
-        <span style="font-size: 13.5px; color: var(--text-secondary);">Parent holding entity for digital platforms, manufacturing, and creative media</span>
+      <div class="universe-nodes" role="group" aria-label="Explore domains">
+        <button type="button" class="u-node u-node-code is-active" data-domain="code" aria-pressed="true" data-cursor="SELECT">
+          <span class="u-node-index">01</span>
+          <span class="u-node-name">Code</span>
+          <span class="u-node-sub">Systems / Product</span>
+          <i></i>
+        </button>
+        <button type="button" class="u-node u-node-ai" data-domain="ai" aria-pressed="false" data-cursor="SELECT">
+          <span class="u-node-index">02</span>
+          <span class="u-node-name">AI</span>
+          <span class="u-node-sub">Models / Agents</span>
+          <i></i>
+        </button>
+        <button type="button" class="u-node u-node-creative" data-domain="creative" aria-pressed="false" data-cursor="SELECT">
+          <span class="u-node-index">03</span>
+          <span class="u-node-name">Creative</span>
+          <span class="u-node-sub">Image / Motion</span>
+          <i></i>
+        </button>
+        <button type="button" class="u-node u-node-enterprise" data-domain="enterprise" aria-pressed="false" data-cursor="SELECT">
+          <span class="u-node-index">04</span>
+          <span class="u-node-name">Enterprise</span>
+          <span class="u-node-sub">Brands / Revenue</span>
+          <i></i>
+        </button>
       </div>
 
-      <div class="ventures-quad-grid">
-        <!-- Venture 1: DevXMedia -->
-        <article class="venture-card devx interactive-card gsap-reveal">
-          <div class="card-spotlight"></div>
-          <div>
-            <div class="venture-header-row">
-              <span class="venture-badge badge-devx">Software Development</span>
-              <span style="font-size: 13px; color: var(--text-tertiary);">Est. Sept 2023 • Team of 4</span>
-            </div>
-            <h3 class="venture-h3">DevXMedia</h3>
-            <p class="venture-desc">
-              Full-spectrum software agency delivering responsive web platforms, bespoke business automation, internal tooling, and digital transformation for SMEs.
-            </p>
-            <div class="venture-tags-row">
-              <span class="v-tag">Custom Web Engineering</span>
-              <span class="v-tag">Automation Bots</span>
-              <span class="v-tag">SaaS Prototyping</span>
-              <span class="v-tag">Cloud Tooling</span>
-            </div>
-          </div>
-          <div class="venture-foot-row">
-            <span style="font-size: 12.5px; color: var(--text-tertiary);">Core Agency</span>
-            <a href="#work" class="venture-link-action magnetic-target">
-              <span>View Projects</span>
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-            </a>
-          </div>
-        </article>
+      <div class="universe-panel" id="universePanel" aria-live="polite">
+        <div class="u-panel-top">
+          <span id="uPanelIndex">01 / CODE</span>
+          <span class="u-panel-status"><i></i>LINKED</span>
+        </div>
+        <h3 id="uPanelTitle">Systems that hold up.</h3>
+        <p id="uPanelBody">Production backends, edge architecture and product engineering — designed to ship, not to demo.</p>
+        <div class="u-panel-links" id="uPanelLinks">
+          <a href="#work" data-jump-project="1">Duits <span>↗</span></a>
+          <a href="#work" data-jump-project="4">DevXMedia Invoicing <span>↗</span></a>
+          <a href="#work" data-jump-project="5">XAUUSD Engine <span>↗</span></a>
+        </div>
+      </div>
 
-        <!-- Venture 2: BVRCODE Apparel -->
-        <article class="venture-card bvrcode interactive-card gsap-reveal">
-          <div class="card-spotlight"></div>
-          <div>
-            <div class="venture-header-row">
-              <span class="venture-badge badge-bvrcode">Apparel &amp; Sublimation</span>
-              <span style="font-size: 13px; color: var(--text-tertiary);">Supplying Since 2024</span>
-            </div>
-            <h3 class="venture-h3">BVRCODE Apparel</h3>
-            <p class="venture-desc">
-              Custom athletic jersey manufacturing and sublimation print production. Supplying premium teamwear and corporate identity apparel with low minimum order quantities (5 pieces MOQ).
-            </p>
-            <div class="venture-tags-row">
-              <span class="v-tag">Full Sublimation</span>
-              <span class="v-tag">Custom Teamwear</span>
-              <span class="v-tag">Corporate Orders</span>
-              <span class="v-tag">Vector Design</span>
-            </div>
-          </div>
-          <div class="venture-foot-row">
-            <span style="font-size: 12.5px; color: var(--text-tertiary);">Corporate Clients</span>
-            <a href="https://bvrcodeapparel.com" target="_blank" rel="noopener" class="venture-link-action magnetic-target">
-              <span>bvrcodeapparel.com</span>
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
-            </a>
-          </div>
-        </article>
+      <div class="universe-foot">
+        <span class="u-drag"><i></i>Drag to orbit · Select a domain</span>
+        <span class="u-coord" id="uCoord">X — · Y — · Z —</span>
+      </div>
 
-        <!-- Venture 3: Tinta Visuals -->
-        <article class="venture-card tinta interactive-card gsap-reveal">
-          <div class="card-spotlight"></div>
-          <div>
-            <div class="venture-header-row">
-              <span class="venture-badge badge-tinta">Media Production</span>
-              <span style="font-size: 13px; color: var(--text-tertiary);">Commercial Visuals</span>
-            </div>
-            <h3 class="venture-h3">Tinta Visuals</h3>
-            <p class="venture-desc">
-              Creative media studio handling corporate event cinematography, commercial product photography, brand identity systems, and high-impact visual storytelling.
-            </p>
-            <div class="venture-tags-row">
-              <span class="v-tag">Commercial Video</span>
-              <span class="v-tag">Event Coverage</span>
-              <span class="v-tag">Brand Identity</span>
-              <span class="v-tag">Color Grading</span>
-            </div>
-          </div>
-          <div class="venture-foot-row">
-            <span style="font-size: 12.5px; color: var(--text-tertiary);">Production Studio</span>
-            <a href="#contact" class="venture-link-action magnetic-target">
-              <span>Inquire Coverage</span>
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-            </a>
-          </div>
-        </article>
-
-        <!-- Venture 4: Sejenak Photobooth & Terabooth -->
-        <article class="venture-card sejenak interactive-card gsap-reveal">
-          <div class="card-spotlight"></div>
-          <div>
-            <div class="venture-header-row">
-              <span class="venture-badge badge-sejenak">Interactive Activations</span>
-              <span style="font-size: 13px; color: var(--text-tertiary);">Award-Winning Setup</span>
-            </div>
-            <h3 class="venture-h3">Sejenak Photobooth &amp; Terabooth</h3>
-            <p class="venture-desc">
-              Interactive physical event photobooth solutions combined with experimental AI generation software (Terabooth / AI Photobooth recognized in Top 10 UMPSA Innovatech).
-            </p>
-            <div class="venture-tags-row">
-              <span class="v-tag">Event Photobooths</span>
-              <span class="v-tag">AI Image Transformation</span>
-              <span class="v-tag">Instant Printing</span>
-              <span class="v-tag">Interactive Rigging</span>
-            </div>
-          </div>
-          <div class="venture-foot-row">
-            <span style="font-size: 12.5px; color: var(--text-tertiary);">Experiential Tech</span>
-            <a href="#experience" class="venture-link-action magnetic-target">
-              <span>View Award</span>
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-            </a>
-          </div>
-        </article>
+      <div class="universe-fallback" aria-hidden="true">
+        <div class="fallback-core">AS</div>
       </div>
     </div>
   </section>
 
-  <!-- SELECTED WORK — PROJECTS & TECHNOLOGY -->
-  <section class="section-block" id="work">
-    <div class="container">
-      <div class="section-head gsap-reveal">
-        <span class="section-numeral">// 03. Technical Portfolio</span>
-        <h2 class="section-h2">Selected Work.</h2>
-        <p class="section-paragraph">
-          High-impact software engineering, machine learning pipelines, and production systems.
-        </p>
+  <!-- =====================================================================
+       03 — SELECTED WORK
+       ===================================================================== -->
+  <section class="work" id="work" data-chapter="03" data-chapter-name="SELECTED WORK" data-theme="dark">
+    <h2 class="sr-only">Selected work</h2>
+    <div class="work-pin" id="workPin">
+      <div class="work-hud">
+        <div class="work-hud-left">
+          <span class="eyebrow">03 / SELECTED WORK</span>
+          <span class="work-hud-index"><b id="workIndex">01</b><i>/</i>06</span>
+        </div>
+        <div class="work-hud-center">
+          <span id="workCategory">COMPUTER VISION</span>
+        </div>
+        <div class="work-hud-right">
+          <span class="work-hud-hint" id="workHint">Scroll to traverse</span>
+          <span class="work-hud-progress"><i id="workProgress"></i></span>
+        </div>
       </div>
 
-      <div class="projects-filter-bar gsap-reveal">
-        <button type="button" class="filter-btn active magnetic-target" data-filter="all">All Projects</button>
-        <button type="button" class="filter-btn magnetic-target" data-filter="ai">AI &amp; Deep Learning</button>
-        <button type="button" class="filter-btn magnetic-target" data-filter="fullstack">Cloud &amp; Full-Stack</button>
-        <button type="button" class="filter-btn magnetic-target" data-filter="systems">Systems &amp; Automation</button>
+      <div class="work-track" id="workTrack">
+
+        <!-- 01 HistoScan -->
+        <article class="project project-histo" data-category="COMPUTER VISION" data-project-index="0">
+          <div class="project-copy">
+            <div class="project-kicker"><span>01</span><span>Final Year Project · Deep Learning</span></div>
+            <h3 class="project-title">HistoScan<span>-AI</span></h3>
+            <p class="project-sub">Breast cancer detection,<br><em>grounded in evidence.</em></p>
+            <p class="project-body">An end-to-end computer vision pipeline classifying BreaKHis biopsy slides as benign or malignant. EfficientNetV2-S with a CBAM attention module on a strict patient-level split, plus Grad-CAM heatmaps for clinical explainability.</p>
+            <div class="project-facts">
+              <div><strong>96.5%</strong><span>Malignant recall</span></div>
+              <div><strong>0.874</strong><span>AUC-ROC</span></div>
+              <div><strong>0.51</strong><span>Calibrated threshold</span></div>
+            </div>
+            <div class="project-tags"><span>PyTorch</span><span>EfficientNetV2-S</span><span>CBAM</span><span>Grad-CAM</span><span>FastAPI</span><span>Streamlit</span></div>
+            <a class="project-link" href="https://github.com/hanennkam" target="_blank" rel="noopener" data-cursor="GITHUB">View code <span>↗</span></a>
+          </div>
+          <div class="project-art art-histo" aria-label="Illustrative histology and Grad-CAM visualisation">
+            <div class="histo-frame">
+              <canvas id="histoCanvas" width="620" height="760"></canvas>
+              <div class="histo-scan" aria-hidden="true"></div>
+              <div class="histo-roi" aria-hidden="true"></div>
+              <div class="histo-crosshair" aria-hidden="true"></div>
+              <div class="art-label"><span>GRAD-CAM / ATTENTION</span><span>ILLUSTRATIVE</span></div>
+              <div class="histo-readout"><span>CLASS</span><strong>MALIGNANT</strong><span>p = 0.978</span></div>
+            </div>
+            <div class="histo-meta">
+              <span>PATIENT-LEVEL SPLIT</span><span>·</span><span>NO DATA LEAKAGE</span><span>·</span><span>EXPLAINABLE</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- 02 Duits -->
+        <article class="project project-duits" data-category="MULTIMODAL AI" data-project-index="1">
+          <div class="project-copy">
+            <div class="project-kicker"><span>02</span><span>Deployed Production PWA</span></div>
+            <h3 class="project-title">Duits</h3>
+            <p class="project-sub">Receipts in.<br><em>Expenses out.</em></p>
+            <p class="project-body">A receipt-to-expense tracker that turns photos, bank screenshots or plain text into structured spending data. Claude Vision parses merchant, total, tax and category; Supabase stores it behind authenticated per-user Row Level Security.</p>
+            <div class="project-facts">
+              <div><strong>PWA</strong><span>iPhone-first</span></div>
+              <div><strong>RLS</strong><span>Supabase security</span></div>
+              <div><strong>Vision</strong><span>Claude multimodal</span></div>
+            </div>
+            <div class="project-tags"><span>FastAPI</span><span>Claude 3.5 Sonnet</span><span>Supabase</span><span>PostgreSQL</span><span>Docker</span><span>Render</span></div>
+            <div class="project-actions">
+              <a class="project-link" href="https://duits-money-tracking.onrender.com" target="_blank" rel="noopener" data-cursor="LIVE">Live app <span>↗</span></a>
+              <button type="button" class="inline-action" id="duitsScan" data-cursor="SCAN"><i></i>Parse a receipt</button>
+            </div>
+          </div>
+          <div class="project-art art-duits">
+            <div class="duits-stage">
+              <div class="duits-phone">
+                <div class="duits-notch"></div>
+                <div class="duits-app-top"><span>DUITS</span><span>− RM 142.50</span></div>
+                <div class="duits-app-body">
+                  <div class="duits-bar"><span></span></div>
+                  <div class="duits-bars"><i style="height:28%"></i><i style="height:54%"></i><i style="height:39%"></i><i style="height:72%"></i><i style="height:58%"></i><i style="height:88%"></i><i style="height:66%"></i></div>
+                  <div class="duits-cats"><span>Groceries</span><span>Transport</span><span>Bills</span></div>
+                </div>
+                <div class="duits-home"></div>
+              </div>
+              <div class="duits-receipt" id="duitsReceipt">
+                <div class="receipt-head"><span>RECEIPT</span><span>SCAN_01</span></div>
+                <div class="receipt-line"><span>MERCHANT</span><b data-receipt="merchant">—</b></div>
+                <div class="receipt-line"><span>TOTAL</span><b data-receipt="total">—</b></div>
+                <div class="receipt-line"><span>TAX</span><b data-receipt="tax">—</b></div>
+                <div class="receipt-line"><span>CATEGORY</span><b data-receipt="category">—</b></div>
+                <div class="receipt-bar" aria-hidden="true"><span></span></div>
+                <div class="receipt-foot"><span>CLAUDE VISION</span><span>200 OK</span></div>
+              </div>
+              <div class="art-label"><span>RECEIPT → STRUCTURE</span><span>INTERFACE STUDY</span></div>
+            </div>
+          </div>
+        </article>
+
+        <!-- 03 Waspada Banjir -->
+        <article class="project project-banjir" data-category="CIVIC TECH" data-project-index="2">
+          <div class="project-copy">
+            <div class="project-kicker"><span>03</span><span>International Award Winner</span></div>
+            <h3 class="project-title">Waspada <span>Banjir</span></h3>
+            <p class="project-sub">Flood intelligence for the people<br><em>who need it first.</em></p>
+            <p class="project-body">A real-time regional flood-risk assessment and disaster alert mobile application for Malaysian communities. Interactive hydrological map overlays, emergency notification dispatch and community reporting.</p>
+            <div class="project-facts">
+              <div><strong>Silver</strong><span>DICE 3.0 — ASEAN</span></div>
+              <div><strong>Bronze</strong><span>CITREX 2026</span></div>
+              <div><strong>Mobile</strong><span>Community-first</span></div>
+            </div>
+            <div class="project-tags"><span>Mobile Application</span><span>Hydrological Telemetry</span><span>Geolocation</span><span>Push Dispatch</span></div>
+            <div class="project-actions">
+              <a class="project-link" href="#record" data-cursor="AWARD">View recognition <span>↗</span></a>
+              <button type="button" class="inline-action" id="banjirToggle" data-cursor="SIMULATE"><i></i>Raise alert state</button>
+            </div>
+          </div>
+          <div class="project-art art-banjir">
+            <div class="banjir-map" aria-hidden="true">
+              <svg viewBox="0 0 700 760" preserveAspectRatio="xMidYMid slice">
+                <g class="contours">
+                  <path d="M-40 610C80 520 150 590 240 520S420 410 520 470s160 120 240 70"/>
+                  <path d="M-40 660C80 570 160 630 250 570S430 470 530 520s150 110 230 80"/>
+                  <path d="M-40 710C90 620 170 670 270 620S440 530 540 570s140 100 220 90"/>
+                  <path d="M-40 560C70 470 140 540 230 470S410 360 510 420s170 120 250 50"/>
+                  <path d="M-40 510C60 420 130 490 220 420S400 310 500 370s180 130 260 40"/>
+                  <path d="M-40 460C50 370 120 440 210 370S390 260 490 320s190 140 270 30"/>
+                  <path d="M-40 410C40 320 110 390 200 320S380 210 480 270s200 150 280 20"/>
+                  <path d="M-40 360C30 270 100 340 190 270S370 160 470 220s210 160 290 10"/>
+                </g>
+                <g class="river">
+                  <path d="M330 -40C300 120 430 210 380 340S260 470 340 600s100 140 90 220"/>
+                  <path d="M330 -40C300 120 430 210 380 340S260 470 340 600s100 140 90 220" class="river-glow"/>
+                </g>
+                <g class="radar">
+                  <circle cx="360" cy="390" r="70"/><circle cx="360" cy="390" r="150"/><circle cx="360" cy="390" r="240"/>
+                </g>
+                <g class="map-pins">
+                  <circle cx="280" cy="280" r="6"/><circle cx="460" cy="340" r="6"/><circle cx="330" cy="520" r="6"/><circle cx="500" cy="590" r="6"/>
+                </g>
+              </svg>
+              <div class="banjir-readout">
+                <span>SIMULATED STATUS</span>
+                <strong id="banjirStatus">STANDBY</strong>
+                <i><b></b></i>
+              </div>
+              <div class="art-label"><span>HYDROLOGICAL OVERLAY</span><span>INTERFACE STUDY</span></div>
+            </div>
+            <div class="banjir-coords" aria-hidden="true">03°09′N / 101°35′E · TELEMETRY · 24H</div>
+          </div>
+        </article>
+
+        <!-- 04 Agents -->
+        <article class="project project-agents" data-category="AGENTIC AI" data-project-index="3">
+          <div class="project-copy">
+            <div class="project-kicker"><span>04</span><span>Distributed Automation</span></div>
+            <h3 class="project-title">Agent <span>Systems</span></h3>
+            <p class="project-sub">A team of agents,<br><em>running the boring work.</em></p>
+            <p class="project-body">Modular multi-agent architectures for enterprise automation. Specialised File, Invoice and Content intelligence agents orchestrated by a central planner, with Claude 3.5 Haiku in the cloud and local models via Ollama. Hermes runs as a macOS launchd daemon with a Telegram gateway.</p>
+            <div class="project-facts">
+              <div><strong>3</strong><span>Specialist agents</span></div>
+              <div><strong>Ollama</strong><span>Local inference</span></div>
+              <div><strong>24/7</strong><span>Daemon runtime</span></div>
+            </div>
+            <div class="project-tags"><span>Python</span><span>Anthropic API</span><span>Ollama</span><span>ReportLab</span><span>Telegram</span><span>launchd</span></div>
+            <div class="project-actions">
+              <a class="project-link" href="https://github.com/hanennkam" target="_blank" rel="noopener" data-cursor="GITHUB">View on GitHub <span>↗</span></a>
+              <button type="button" class="inline-action" id="agentDispatch" data-cursor="DISPATCH"><i></i>Dispatch a task</button>
+            </div>
+          </div>
+          <div class="project-art art-agents">
+            <div class="agents-stage">
+              <svg class="agents-svg" viewBox="0 0 700 760" aria-hidden="true">
+                <g class="agent-edges">
+                  <path d="M350 380 L170 220"/><path d="M350 380 L530 210"/><path d="M350 380 L520 550"/><path d="M350 380 L180 560"/>
+                  <path d="M170 220 L60 140"/><path d="M530 210 L640 130"/><path d="M520 550 L640 650"/><path d="M180 560 L70 670"/>
+                </g>
+                <g class="agent-dots">
+                  <circle class="packet p1" cx="170" cy="220" r="4"/><circle class="packet p2" cx="530" cy="210" r="4"/><circle class="packet p3" cx="520" cy="550" r="4"/>
+                </g>
+                <g class="agent-core"><circle cx="350" cy="380" r="54"/><circle cx="350" cy="380" r="78"/></g>
+                <g class="agent-node"><circle cx="170" cy="220" r="20"/><circle cx="530" cy="210" r="20"/><circle cx="520" cy="550" r="20"/><circle cx="180" cy="560" r="20"/></g>
+                <g class="agent-label"><text x="350" y="386">PLANNER</text><text x="170" y="198">INVOICE</text><text x="530" y="188">CONTENT</text><text x="520" y="582">FILE</text><text x="180" y="592">GATEWAY</text></g>
+              </svg>
+              <div class="agents-console" id="agentConsole">
+                <div class="console-bar"><span></span><span></span><span></span><b>hermes_daemon</b></div>
+                <div class="console-lines" id="agentLines">
+                  <p><i>›</i> Gateway active. Listening for tasks.</p>
+                  <p><i>›</i> Planner ready. 3 agents online.</p>
+                  <p class="console-muted">Waiting for dispatch…</p>
+                </div>
+              </div>
+              <div class="art-label"><span>MULTI-AGENT ORCHESTRATION</span><span>SCHEMATIC</span></div>
+            </div>
+          </div>
+        </article>
+
+        <!-- 05 Invoice -->
+        <article class="project project-invoice" data-category="EDGE ARCHITECTURE" data-project-index="4">
+          <div class="project-copy">
+            <div class="project-kicker"><span>05</span><span>Internal Tool · Cloudflare Edge</span></div>
+            <h3 class="project-title">Invoicing <span>Engine</span></h3>
+            <p class="project-sub">Billing at the edge,<br><em>without the drag.</em></p>
+            <p class="project-body">A custom billing platform engineered for DevXMedia operations. Cloudflare Workers and D1 distributed SQLite provide low-latency global sync. Vector PDF invoices are generated dynamically and dispatched through a WhatsApp Business bot.</p>
+            <div class="project-facts">
+              <div><strong>D1</strong><span>Distributed SQLite</span></div>
+              <div><strong>2</strong><span>Channels</span></div>
+              <div><strong>Edge</strong><span>Global compute</span></div>
+            </div>
+            <div class="project-tags"><span>Cloudflare Workers</span><span>Cloudflare D1</span><span>WhatsApp API</span><span>REST CRUD</span><span>PDF Generator</span></div>
+            <a class="project-link" href="https://github.com/hanennkam" target="_blank" rel="noopener" data-cursor="GITHUB">View architecture <span>↗</span></a>
+          </div>
+          <div class="project-art art-invoice">
+            <div class="invoice-stage">
+              <div class="invoice-diagram" id="invoiceDiagram">
+                <button type="button" class="arch-node arch-app" data-arch="app"><span>01</span><b>WEB APP</b><em>invoice input</em></button>
+                <button type="button" class="arch-node arch-worker" data-arch="worker"><span>02</span><b>WORKER</b><em>edge logic</em></button>
+                <button type="button" class="arch-node arch-db" data-arch="db"><span>03</span><b>D1</b><em>distributed SQL</em></button>
+                <button type="button" class="arch-node arch-pdf" data-arch="pdf"><span>04</span><b>PDF</b><em>vector output</em></button>
+                <button type="button" class="arch-node arch-wa" data-arch="wa"><span>05</span><b>WHATSAPP</b><em>dispatch</em></button>
+                <svg class="arch-wires" viewBox="0 0 700 760" aria-hidden="true">
+                  <path d="M190 220 C310 220 300 320 390 330"/>
+                  <path d="M390 330 C500 330 500 220 570 220"/>
+                  <path d="M390 330 C500 330 520 520 570 520"/>
+                  <path d="M190 220 C220 420 300 520 390 540"/>
+                  <path d="M390 540 C500 540 500 650 570 650"/>
+                </svg>
+                <div class="arch-packet"></div>
+              </div>
+              <div class="invoice-info">
+                <span>SELECT A NODE</span>
+                <p id="archText">Cloudflare Workers route requests at the edge; D1 keeps invoice data close to the user.</p>
+              </div>
+              <div class="art-label"><span>EDGE ARCHITECTURE</span><span>SCHEMATIC</span></div>
+            </div>
+          </div>
+        </article>
+
+        <!-- 06 XAUUSD -->
+        <article class="project project-gold" data-category="QUANT SYSTEMS" data-project-index="5">
+          <div class="project-copy">
+            <div class="project-kicker"><span>06</span><span>Algorithmic Trading</span></div>
+            <h3 class="project-title">XAU<span>USD</span></h3>
+            <p class="project-sub">Discipline,<br><em>encoded.</em></p>
+            <p class="project-body">An algorithmic trading engine for gold. Real-time signals on an EMA 9/21 cross, filtered by RSI thresholds and London/New York session boundaries. A strict fail-closed news calendar suppresses trades during unpredictable macro events.</p>
+            <div class="project-facts">
+              <div><strong>9/21</strong><span>EMA strategy</span></div>
+              <div><strong>38</strong><span>Unit tests</span></div>
+              <div><strong>Fail-closed</strong><span>News guard</span></div>
+            </div>
+            <div class="project-tags"><span>Python</span><span>TwelveData</span><span>Telegram</span><span>CSV Backtesting</span><span>PyTest</span></div>
+            <div class="project-actions">
+              <a class="project-link" href="https://github.com/hanennkam" target="_blank" rel="noopener" data-cursor="GITHUB">View engine <span>↗</span></a>
+              <button type="button" class="inline-action is-on" id="newsGuard" aria-pressed="true" data-cursor="TOGGLE"><i></i>News guard: on</button>
+            </div>
+          </div>
+          <div class="project-art art-gold">
+            <div class="gold-stage">
+              <div class="gold-head"><span>XAUUSD · H1</span><span id="goldMode">NEWS GUARD / CLEAR</span></div>
+              <svg class="gold-chart" id="goldChart" viewBox="0 0 700 760" aria-hidden="true"></svg>
+              <div class="gold-legend"><span class="leg-ema9">EMA 9</span><span class="leg-ema21">EMA 21</span><span class="leg-rsi">RSI 58.4</span></div>
+              <div class="art-label"><span>STRATEGY SCHEMATIC</span><span>NOT LIVE DATA</span></div>
+            </div>
+          </div>
+        </article>
+
       </div>
 
-      <div class="projects-stack">
-        <!-- Project 1: HistoScan-AI -->
-        <article class="project-feature-card interactive-card gsap-reveal" data-category="ai">
-          <div class="card-spotlight"></div>
-          <div>
-            <span class="project-pill-label">Final Year Project • Computer Vision</span>
-            <h3 class="project-title">HistoScan-AI: Breast Cancer Detection</h3>
-            <p class="project-body">
-              End-to-end computer vision pipeline classifying BreaKHis biopsy histology slides as benign or malignant. Engineered an EfficientNetV2-S backbone enhanced with a Convolutional Block Attention Module (CBAM) on a strict patient-level split to prevent data leakage. Computes Grad-CAM heatmaps to visually ground model decisions for clinical explainability.
-            </p>
-            <div class="project-stats-grid">
-              <div class="stat-chip"><span class="label">Recall:</span> 96.5% Malignant</div>
-              <div class="stat-chip"><span class="label">AUC-ROC:</span> 0.874</div>
-              <div class="stat-chip"><span class="label">Threshold:</span> 0.51 Calibrated</div>
-            </div>
-            <div class="project-tech-chips">
-              <span class="tech-chip">PyTorch</span>
-              <span class="tech-chip">EfficientNetV2-S</span>
-              <span class="tech-chip">CBAM Attention</span>
-              <span class="tech-chip">Grad-CAM</span>
-              <span class="tech-chip">FastAPI</span>
-              <span class="tech-chip">Streamlit</span>
-            </div>
-            <div class="project-btns-row">
-              <a href="https://github.com/hanennkam" target="_blank" rel="noopener" class="btn-card-action magnetic-target">
-                <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
-                <span>Code on GitHub</span>
-              </a>
-            </div>
-          </div>
-          <div class="project-visual-preview">
-            <div class="code-console">
-              <div class="console-bar">
-                <span class="bar-dot dot-red"></span>
-                <span class="bar-dot dot-amber"></span>
-                <span class="bar-dot dot-emerald"></span>
-                <span style="font-family: var(--font-mono); font-size: 11px; color: var(--text-tertiary); margin-left: 8px;">histology_pipeline.py</span>
-              </div>
-              <div class="console-text">
-                <div><span class="c-kw">model</span> = EfficientNetV2_CBAM()</div>
-                <div><span class="c-kw">inference</span> = model.predict(slide_patch)</div>
-                <div style="color: #64748b;"># Grad-CAM Attention Saliency</div>
-                <div><span class="c-fn">generate_saliency_map</span>(slide, cam_overlay=<span class="c-kw">True</span>)</div>
-                <div style="margin-top: 8px; color: var(--accent-cyan);">> Class: MALIGNANT (p=0.978)</div>
-                <div style="color: #86efac;">> Recall: 96.5% | Patient-Split Safe</div>
-              </div>
-            </div>
-          </div>
-        </article>
-
-        <!-- Project 2: Duits -->
-        <article class="project-feature-card interactive-card gsap-reveal" data-category="fullstack">
-          <div class="card-spotlight"></div>
-          <div>
-            <span class="project-pill-label">Deployed Production PWA • Multimodal AI</span>
-            <h3 class="project-title">Duits: Receipt-to-Expense Tracker</h3>
-            <p class="project-body">
-              Eliminating manual expense logging. Duits takes receipt photos, bank screenshots, or simple text notes and parses merchant, total amount, taxes, and categories using Claude Vision. Persists in Supabase behind authenticated per-user Row Level Security.
-            </p>
-            <div class="project-stats-grid">
-              <div class="stat-chip"><span class="label">Platform:</span> iPhone-first PWA</div>
-              <div class="stat-chip"><span class="label">Vision AI:</span> Claude Multimodal</div>
-              <div class="stat-chip"><span class="label">Security:</span> Supabase RLS</div>
-            </div>
-            <div class="project-tech-chips">
-              <span class="tech-chip">FastAPI</span>
-              <span class="tech-chip">Claude 3.5 Sonnet Vision</span>
-              <span class="tech-chip">Supabase / PostgreSQL</span>
-              <span class="tech-chip">PWA</span>
-              <span class="tech-chip">Docker</span>
-              <span class="tech-chip">Render</span>
-            </div>
-            <div class="project-btns-row">
-              <a href="https://duits-money-tracking.onrender.com" target="_blank" rel="noopener" class="btn-card-action highlight magnetic-target">
-                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
-                <span>Live App Demo</span>
-              </a>
-              <a href="https://github.com/hanennkam" target="_blank" rel="noopener" class="btn-card-action magnetic-target">
-                <span>Repository</span>
-              </a>
-            </div>
-          </div>
-          <div class="project-visual-preview">
-            <div class="code-console">
-              <div class="console-bar">
-                <span class="bar-dot dot-red"></span>
-                <span class="bar-dot dot-amber"></span>
-                <span class="bar-dot dot-emerald"></span>
-                <span style="font-family: var(--font-mono); font-size: 11px; color: var(--text-tertiary); margin-left: 8px;">duits_ocr.py</span>
-              </div>
-              <div class="console-text">
-                <div><span class="c-kw">POST</span> /api/v1/receipts/parse</div>
-                <div><span class="c-fn">claude_vision</span>.extract(image_buffer)</div>
-                <div style="color: #86efac;">{</div>
-                <div style="padding-left: 14px; color: #cbd5e1;">"merchant": <span class="c-str">"Lotus's Hypermarket"</span>,</div>
-                <div style="padding-left: 14px; color: #cbd5e1;">"total_amount": <span class="c-num">142.50</span>,</div>
-                <div style="padding-left: 14px; color: #cbd5e1;">"category": <span class="c-str">"Groceries"</span></div>
-                <div style="color: #86efac;">}</div>
-                <div style="margin-top: 6px; color: var(--accent-cyan);">> Committed to Supabase DB (200 OK)</div>
-              </div>
-            </div>
-          </div>
-        </article>
-
-        <!-- Project 3: Waspada Banjir -->
-        <article class="project-feature-card interactive-card gsap-reveal" data-category="fullstack">
-          <div class="card-spotlight"></div>
-          <div>
-            <span class="project-pill-label">International Award Winner • Mobile App</span>
-            <h3 class="project-title">Waspada Banjir: Early Warning Mobile App</h3>
-            <p class="project-body">
-              Real-time regional flood risk assessment and disaster alert mobile application designed for Malaysian communities. Provides interactive hydrological map overlays, emergency notification dispatching, and community reporting.
-            </p>
-            <div class="project-stats-grid">
-              <div class="stat-chip"><span class="label">Silver Medal:</span> DICE 3.0 (ASEAN Level)</div>
-              <div class="stat-chip"><span class="label">Bronze Award:</span> CITREX 2026</div>
-            </div>
-            <div class="project-tech-chips">
-              <span class="tech-chip">Mobile Application</span>
-              <span class="tech-chip">Hydrological Telemetry</span>
-              <span class="tech-chip">Geolocation APIs</span>
-              <span class="tech-chip">Push Dispatch</span>
-            </div>
-            <div class="project-btns-row">
-              <a href="#experience" class="btn-card-action magnetic-target">
-                <span>View Recognition</span>
-              </a>
-            </div>
-          </div>
-          <div class="project-visual-preview">
-            <div style="text-align: center; padding: 20px;">
-              <div style="display: inline-flex; align-items: center; justify-content: center; width: 68px; height: 68px; border-radius: 50%; background: rgba(56, 189, 248, 0.1); color: var(--accent-cyan); margin-bottom: 14px; box-shadow: 0 0 20px rgba(56, 189, 248, 0.2);">
-                <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"></path></svg>
-              </div>
-              <div style="font-family: var(--font-display); font-size: 17px; font-weight: 700; color: #ffffff;">Waspada Banjir Mobile</div>
-              <div style="font-size: 13.5px; color: var(--text-secondary); margin-top: 4px;">ASEAN Level DICE 3.0 Medalist</div>
-            </div>
-          </div>
-        </article>
-
-        <!-- Project 4: Autonomous Agent Systems -->
-        <article class="project-feature-card interactive-card gsap-reveal" data-category="ai">
-          <div class="card-spotlight"></div>
-          <div>
-            <span class="project-pill-label">Agentic AI • Distributed Automation</span>
-            <h3 class="project-title">Autonomous Agent Systems in Python</h3>
-            <p class="project-body">
-              Modular multi-agent architectures designed for enterprise automation. Features specialized File, Invoice, and Content intelligence agents orchestrated through a centralized planner. Interacts with Claude 3.5 Haiku via Anthropic API and local models via Ollama. Includes Hermes, an autonomous agent daemon running as a macOS launchd service with a Telegram gateway.
-            </p>
-            <div class="project-stats-grid">
-              <div class="stat-chip"><span class="label">Orchestration:</span> Multi-Agent Planner</div>
-              <div class="stat-chip"><span class="label">Local Inference:</span> Ollama Gateway</div>
-              <div class="stat-chip"><span class="label">Daemon:</span> macOS launchd + Telegram</div>
-            </div>
-            <div class="project-tech-chips">
-              <span class="tech-chip">Python</span>
-              <span class="tech-chip">Anthropic API</span>
-              <span class="tech-chip">Ollama</span>
-              <span class="tech-chip">ReportLab</span>
-              <span class="tech-chip">Telegram Bot API</span>
-              <span class="tech-chip">launchd</span>
-            </div>
-            <div class="project-btns-row">
-              <a href="https://github.com/hanennkam" target="_blank" rel="noopener" class="btn-card-action magnetic-target">
-                <span>View on GitHub</span>
-              </a>
-            </div>
-          </div>
-          <div class="project-visual-preview">
-            <div class="code-console">
-              <div class="console-bar">
-                <span class="bar-dot dot-red"></span>
-                <span class="bar-dot dot-amber"></span>
-                <span class="bar-dot dot-emerald"></span>
-                <span style="font-family: var(--font-mono); font-size: 11px; color: var(--text-tertiary); margin-left: 8px;">hermes_daemon.sh</span>
-              </div>
-              <div class="console-text">
-                <div>[Hermes Agent Gateway: ACTIVE]</div>
-                <div><span class="c-fn">TelegramService</span>: Polling updates...</div>
-                <div><span class="c-kw">AgentRouter</span>: Delegated task to InvoiceAgent</div>
-                <div><span class="c-fn">ReportLabEngine</span>: Generated signed PDF (0.42s)</div>
-                <div style="color: #86efac;">> Dispatched output via encrypted channel</div>
-              </div>
-            </div>
-          </div>
-        </article>
-
-        <!-- Project 5: DevXMedia Invoicing Engine -->
-        <article class="project-feature-card interactive-card gsap-reveal" data-category="systems">
-          <div class="card-spotlight"></div>
-          <div>
-            <span class="project-pill-label">Cloudflare Edge Architecture • Internal Tool</span>
-            <h3 class="project-title">DevXMedia Invoicing Engine</h3>
-            <p class="project-body">
-              Custom edge billing platform engineered for DevXMedia business operations. Architected on Cloudflare Workers and Cloudflare D1 distributed SQLite database for global low-latency synchronization. Generates vector PDF invoices dynamically and connects with a WhatsApp Business bot for automated quotation dispatching.
-            </p>
-            <div class="project-stats-grid">
-              <div class="stat-chip"><span class="label">Edge DB:</span> Cloudflare D1 SQL</div>
-              <div class="stat-chip"><span class="label">Channels:</span> Web App + WhatsApp Bot</div>
-            </div>
-            <div class="project-tech-chips">
-              <span class="tech-chip">Cloudflare Workers</span>
-              <span class="tech-chip">Cloudflare D1</span>
-              <span class="tech-chip">WhatsApp API</span>
-              <span class="tech-chip">REST CRUD</span>
-              <span class="tech-chip">PDF Generator</span>
-            </div>
-            <div class="project-btns-row">
-              <a href="https://github.com/hanennkam" target="_blank" rel="noopener" class="btn-card-action magnetic-target">
-                <span>View Architecture</span>
-              </a>
-            </div>
-          </div>
-          <div class="project-visual-preview">
-            <div class="code-console">
-              <div class="console-bar">
-                <span class="bar-dot dot-red"></span>
-                <span class="bar-dot dot-amber"></span>
-                <span class="bar-dot dot-emerald"></span>
-                <span style="font-family: var(--font-mono); font-size: 11px; color: var(--text-tertiary); margin-left: 8px;">worker.ts (Cloudflare D1)</span>
-              </div>
-              <div class="console-text">
-                <div><span class="c-kw">export default</span> {</div>
-                <div>&nbsp;&nbsp;<span class="c-kw">async</span> fetch(request, env) {</div>
-                <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="c-kw">const</span> db = env.DB_INVOICES;</div>
-                <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="c-kw">await</span> db.prepare(<span class="c-str">"INSERT INTO invoices..."</span>).run();</div>
-                <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="c-kw">return</span> Response.json({ success: <span class="c-kw">true</span> });</div>
-                <div>&nbsp;&nbsp;}</div>
-                <div>}</div>
-              </div>
-            </div>
-          </div>
-        </article>
-
-        <!-- Project 6: XAUUSD Quantitative Signal Bot -->
-        <article class="project-feature-card interactive-card gsap-reveal" data-category="systems">
-          <div class="card-spotlight"></div>
-          <div>
-            <span class="project-pill-label">Algorithmic Trading • Quantitative Finance</span>
-            <h3 class="project-title">XAUUSD Quantitative Signal Bot</h3>
-            <p class="project-body">
-              Algorithmic trading engine for gold (XAUUSD) prices. Computes real-time signals on an EMA 9/21 cross, filtered by RSI thresholds and London/NY market session boundaries. Engineered with a strict fail-closed economic news calendar filter that suppresses trades during unpredictable macroeconomic events. Supported by 38 comprehensive unit tests.
-            </p>
-            <div class="project-stats-grid">
-              <div class="stat-chip"><span class="label">Strategy:</span> EMA 9/21 + RSI Filter</div>
-              <div class="stat-chip"><span class="label">Safety:</span> Fail-Closed News Guard</div>
-              <div class="stat-chip"><span class="label">Coverage:</span> 38 Unit Tests</div>
-            </div>
-            <div class="project-tech-chips">
-              <span class="tech-chip">Python</span>
-              <span class="tech-chip">TwelveData API</span>
-              <span class="tech-chip">Telegram Gateway</span>
-              <span class="tech-chip">CSV Backtesting</span>
-              <span class="tech-chip">PyTest</span>
-            </div>
-            <div class="project-btns-row">
-              <a href="https://github.com/hanennkam" target="_blank" rel="noopener" class="btn-card-action magnetic-target">
-                <span>View Engine</span>
-              </a>
-            </div>
-          </div>
-          <div class="project-visual-preview">
-            <div class="code-console">
-              <div class="console-bar">
-                <span class="bar-dot dot-red"></span>
-                <span class="bar-dot dot-amber"></span>
-                <span class="bar-dot dot-emerald"></span>
-                <span style="font-family: var(--font-mono); font-size: 11px; color: var(--text-tertiary); margin-left: 8px;">signal_engine.py</span>
-              </div>
-              <div class="console-text">
-                <div>[Market Status: London Session OPEN]</div>
-                <div>EMA 9: <span class="c-num">2645.20</span> | EMA 21: <span class="c-num">2642.10</span></div>
-                <div>RSI (14): <span class="c-num">58.4</span> -> Momentum Confirmed</div>
-                <div style="color: #64748b;"># Economic Calendar News Check</div>
-                <div style="color: var(--accent-cyan);">NewsFilter.status: CLEAR (No high-impact events)</div>
-                <div style="color: #86efac;">> SIGNAL DISPATCHED: LONG XAUUSD</div>
-              </div>
-            </div>
-          </div>
-        </article>
+      <div class="work-nav">
+        <button type="button" class="work-arrow" id="workPrev" aria-label="Previous project" data-cursor="PREV">
+          <svg viewBox="0 0 24 24"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>
+        </button>
+        <div class="work-dots" id="workDots" role="group" aria-label="Project index">
+          <button type="button" data-project="0" class="is-active" aria-label="HistoScan-AI"><span>01</span></button>
+          <button type="button" data-project="1" aria-label="Duits"><span>02</span></button>
+          <button type="button" data-project="2" aria-label="Waspada Banjir"><span>03</span></button>
+          <button type="button" data-project="3" aria-label="Agent Systems"><span>04</span></button>
+          <button type="button" data-project="4" aria-label="Invoicing Engine"><span>05</span></button>
+          <button type="button" data-project="5" aria-label="XAUUSD"><span>06</span></button>
+        </div>
+        <button type="button" class="work-arrow" id="workNext" aria-label="Next project" data-cursor="NEXT">
+          <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </button>
       </div>
     </div>
   </section>
 
-  <!-- EXPERIENCE & ACHIEVEMENTS -->
-  <section class="section-block" id="experience">
-    <div class="container">
-      <div class="section-head gsap-reveal">
-        <span class="section-numeral">// 04. Background &amp; Honors</span>
-        <h2 class="section-h2">Credentials &amp; Milestones.</h2>
-        <p class="section-paragraph">
-          Official recognition, professional certifications, and academic track record.
-        </p>
+  <!-- =====================================================================
+       04 — WORLDS
+       ===================================================================== -->
+  <section class="worlds" id="worlds" data-chapter="04" data-chapter-name="WORLDS" data-theme="dark">
+    <header class="worlds-cover">
+      <div class="worlds-cover-top"><span class="eyebrow">04 / WORLDS</span><span>FIVE BRANDS · ONE OPERATOR</span></div>
+      <h2>Different worlds.<br><em>Same standard.</em></h2>
+      <p>Every venture has its own visual identity, its own audience, its own operating logic. What they share is a refusal to ship anything generic.</p>
+      <div class="worlds-cover-index" aria-hidden="true">
+        <span>01 HANNENKAM</span><span>02 DEVXMEDIA</span><span>03 SEJENAK</span><span>04 TINTA</span><span>05 BVRCODE</span>
       </div>
+    </header>
 
-      <div class="experience-layout">
-        <div class="timeline-column-box interactive-card gsap-reveal">
-          <div class="card-spotlight"></div>
-          <div class="box-title-row">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--accent-cyan)" stroke-width="2"><circle cx="12" cy="8" r="7"></circle><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline></svg>
-            <span>Honors &amp; Recognition</span>
+    <!-- WORLD 01 — Hannenkam Rise Ventures -->
+    <article class="world world-hannenkam" data-world="hannenkam">
+      <div class="world-bg" aria-hidden="true"><div class="hannenkam-orbit"></div></div>
+      <div class="world-inner">
+        <div class="world-kicker"><span>WORLD 01 / PARENT ECOSYSTEM</span><span>REGISTERED SOLE PROPRIETORSHIP</span></div>
+        <div class="hannenkam-layout">
+          <div class="world-copy">
+            <h3 class="world-title">Hannenkam<br><em>Rise Ventures</em></h3>
+            <p class="world-body">The parent holding entity for digital platforms, manufacturing and creative media. A single operating ecosystem connecting software, events, film and apparel.</p>
+            <div class="world-facts"><span>Digital platforms</span><span>Manufacturing</span><span>Creative media</span></div>
+            <p class="world-note">Five brands. One registered business ecosystem.</p>
           </div>
+          <div class="ecosystem" aria-label="Hannenkam ecosystem map">
+            <div class="eco-center"><span>HRV</span><b>HANNENKAM<br>RISE VENTURES</b></div>
+            <div class="eco-ring eco-ring-1"></div>
+            <div class="eco-ring eco-ring-2"></div>
+            <button type="button" class="eco-node eco-devx" data-jump-world="devxmedia"><span>01</span>DevXMedia</button>
+            <button type="button" class="eco-node eco-sejenak" data-jump-world="sejenak"><span>02</span>Sejenak</button>
+            <button type="button" class="eco-node eco-tinta" data-jump-world="tinta"><span>03</span>Tinta Visuals</button>
+            <button type="button" class="eco-node eco-bvr" data-jump-world="bvrcode"><span>04</span>BVRCODE</button>
+          </div>
+        </div>
+        <div class="world-index"><span>01 — 05</span><span>ECOSYSTEM / ENTITY</span></div>
+      </div>
+    </article>
 
-          <div class="timeline-track">
-            <div class="timeline-event">
-              <div class="event-title">Silver Medal — DICE 3.0 (ASEAN Level)</div>
-              <div class="event-description">Waspada Banjir mobile application recognized at Southeast Asian regional innovation competition.</div>
-              <span class="event-date">September 2025</span>
+    <!-- WORLD 02 — DevXMedia -->
+    <article class="world world-devx" data-world="devxmedia">
+      <div class="world-bg" aria-hidden="true"><div class="devx-grid"></div><div class="devx-glow"></div></div>
+      <div class="world-inner">
+        <div class="world-kicker"><span>WORLD 02 / DIGITAL TECHNOLOGY</span><span>EST. SEPT 2023 · TEAM OF 4</span></div>
+        <div class="devx-layout">
+          <div class="world-copy">
+            <h3 class="world-title devx-title">DevX<span>Media</span></h3>
+            <p class="world-body">A full-spectrum software agency delivering responsive web platforms, bespoke business automation, internal tooling and digital transformation for SMEs.</p>
+            <div class="world-facts"><span>Custom web engineering</span><span>Automation bots</span><span>SaaS prototyping</span><span>Cloud tooling</span></div>
+            <div class="world-cta-row">
+              <a class="world-link" href="#work" data-jump-project="4" data-cursor="WORK">View the invoicing engine <span>↗</span></a>
+              <a class="world-link world-link-muted" href="#contact" data-cursor="TALK">Start a build <span>↗</span></a>
             </div>
-
-            <div class="timeline-event">
-              <div class="event-title">Bronze Award — CITREX 2026</div>
-              <div class="event-description">Creation, Innovation, Technology &amp; Research Exposition for Waspada Banjir disaster telemetry system.</div>
-              <span class="event-date">May 2026</span>
+          </div>
+          <div class="devx-terminal" aria-label="Interactive DevXMedia terminal demo">
+            <div class="terminal-top"><span><i></i><i></i><i></i></span><b>devxmedia — shell</b><span>zsh</span></div>
+            <div class="terminal-body" id="devxTerminal">
+              <p><span class="t-prompt">devx@studio ~ %</span> agency --status</p>
+              <p class="t-out">Full-spectrum software · 4-person team</p>
+              <p class="t-out">Web / automation / internal tools / cloud</p>
+              <p><span class="t-prompt">devx@studio ~ %</span> <span class="t-cursor"></span></p>
             </div>
-
-            <div class="timeline-event amber">
-              <div class="event-title">Top 10 Finalist — UMPSA Innovatech Challenge</div>
-              <div class="event-description">AI Photobooth (Terabooth) interactive image synthesis system selected among top institutional innovations.</div>
-              <span class="event-date">June 2025</span>
-            </div>
-
-            <div class="timeline-event violet">
-              <div class="event-title">Ikon Keusahawanan Award</div>
-              <div class="event-description">Faculty of Computing, UMPSA. Awarded for exemplary student entrepreneurship and venture leadership.</div>
-              <span class="event-date">December 2025</span>
-            </div>
-
-            <div class="timeline-event">
-              <div class="event-title">Dean's List Award</div>
-              <div class="event-description">Faculty of Computing, Universiti Malaysia Pahang Al-Sultan Abdullah (UMPSA).</div>
-              <span class="event-date">August 2026</span>
-            </div>
-
-            <div class="timeline-event violet">
-              <div class="event-title">Adobe Certified Professional (ACP)</div>
-              <div class="event-description">Visual Design specialization: Adobe Illustrator &amp; Adobe Photoshop verified credentials.</div>
-              <span class="event-date">Professional Certification</span>
+            <div class="terminal-actions" role="group" aria-label="Terminal commands">
+              <button type="button" data-cmd="deploy">deploy</button>
+              <button type="button" data-cmd="automate">automate</button>
+              <button type="button" data-cmd="prototype">prototype</button>
             </div>
           </div>
         </div>
+        <div class="world-index"><span>02 — 05</span><span>AGENCY / DIGITAL</span></div>
+      </div>
+    </article>
 
-        <div class="timeline-column-box interactive-card gsap-reveal">
-          <div class="card-spotlight"></div>
-          <div class="box-title-row">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--accent-violet)" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"></path><path d="M6 12v5c3 3 9 3 12 0v-5"></path></svg>
-            <span>Academic Background</span>
-          </div>
-
-          <div class="timeline-track">
-            <div class="timeline-event">
-              <div class="event-title">Universiti Malaysia Pahang Al-Sultan Abdullah (UMPSA)</div>
-              <div class="event-description">Bachelor of Computer Science (Graphic &amp; Multimedia Technology). Currently in 3rd Year. Pekan, Pahang.</div>
-              <span class="event-date">2023 — Present</span>
-            </div>
-
-            <div class="timeline-event">
-              <div class="event-title">Kolej Matrikulasi Perak (KMPk)</div>
-              <div class="event-description">Science / Pre-University Matriculation Programme. Graduated with <strong>CGPA 3.50</strong>.</div>
-              <span class="event-date">Completed</span>
-            </div>
-
-            <div class="timeline-event">
-              <div class="event-title">MRSM Tun Ghafar Baba (Jasin)</div>
-              <div class="event-description">Sijil Pelajaran Malaysia (SPM): <strong>4A 4B 1C</strong>. Strong foundation in STEM and mathematics.</div>
-              <span class="event-date">Secondary Education</span>
+    <!-- WORLD 03 — Sejenak -->
+    <article class="world world-sejenak" data-world="sejenak">
+      <div class="world-bg" aria-hidden="true"><div class="sejenak-flash"></div><div class="sejenak-grid"></div></div>
+      <div class="world-inner">
+        <div class="world-kicker"><span>WORLD 03 / INTERACTIVE EVENTS</span><span>TOP 10 · UMPSA INNOVATECH</span></div>
+        <div class="sejenak-layout">
+          <div class="world-copy">
+            <h3 class="world-title sejenak-title">Sejenak<span>®</span></h3>
+            <p class="world-sub">Photobooth &amp; Terabooth</p>
+            <p class="world-body">Interactive physical event photobooths combined with experimental AI image generation software. Instant printing, custom rigging and experiences built to make people stay a little longer.</p>
+            <div class="world-facts"><span>Event photobooths</span><span>AI image transformation</span><span>Instant printing</span><span>Interactive rigging</span></div>
+            <div class="world-cta-row">
+              <a class="world-link" href="#contact" data-cursor="BOOK">Book an activation <span>↗</span></a>
+              <a class="world-link world-link-muted" href="https://github.com/hanennkam" target="_blank" rel="noopener" data-cursor="GITHUB">Terabooth recognition <span>↗</span></a>
             </div>
           </div>
-
-          <div class="internship-highlight-card">
-            <div class="internship-head">
-              <span class="brand-status-dot"></span>
-              <span>Internship Window</span>
+          <div class="sejenak-booth">
+            <div class="booth-head"><span>SEJENAK / TERABOOTH</span><span id="boothCount">0 FRAMES</span></div>
+            <div class="booth-strip" id="boothStrip">
+              <div class="booth-frame frame-a"><span>01</span><i></i><b>STAY<br>A WHILE</b></div>
+              <div class="booth-frame frame-b"><span>02</span><i></i><b>KEEP<br>THE MOMENT</b></div>
+              <div class="booth-frame frame-c"><span>03</span><i></i><b>MAKE<br>IT STRANGE</b></div>
             </div>
-            <p class="internship-body">
-              Available for full-time Software Engineering / AI internship starting from the <strong>end of February 2027</strong>. Open to on-site (Malaysia / Singapore) or remote global engineering roles.
-            </p>
+            <div class="booth-controls">
+              <button type="button" class="shutter" id="boothShutter" data-cursor="SNAP"><span></span>Take a frame</button>
+              <span class="booth-hint">INTERACTIVE DEMO</span>
+            </div>
           </div>
         </div>
+        <div class="world-index"><span>03 — 05</span><span>EVENTS / EXPERIENCE</span></div>
+      </div>
+    </article>
+
+    <!-- WORLD 04 — Tinta Visuals -->
+    <article class="world world-tinta" data-world="tinta">
+      <div class="world-bg" aria-hidden="true"><div class="tinta-glow"></div><div class="tinta-grain"></div></div>
+      <div class="world-inner">
+        <div class="world-kicker"><span>WORLD 04 / CINEMATIC MEDIA</span><span>PRODUCTION STUDIO</span></div>
+        <div class="tinta-layout">
+          <div class="tinta-heading">
+            <h3 class="world-title tinta-title">Tinta<br><em>Visuals</em></h3>
+            <p class="world-body">A creative media studio for corporate event cinematography, commercial product photography, brand identity systems and high-impact visual storytelling.</p>
+            <div class="world-facts"><span>Commercial video</span><span>Event coverage</span><span>Brand identity</span><span>Colour grading</span></div>
+            <div class="world-cta-row">
+              <a class="world-link" href="#contact" data-cursor="INQUIRE">Inquire about coverage <span>↗</span></a>
+            </div>
+          </div>
+          <div class="tinta-stage">
+            <div class="tinta-viewport">
+              <div class="tinta-still still-1 is-active" data-still="0"><div class="still-shape s1"></div><div class="still-shape s2"></div><div class="still-shape s3"></div><span class="still-label">FRAME 01 / EVENT</span></div>
+              <div class="tinta-still still-2" data-still="1"><div class="still-shape s1"></div><div class="still-shape s2"></div><div class="still-shape s3"></div><span class="still-label">FRAME 02 / PRODUCT</span></div>
+              <div class="tinta-still still-3" data-still="2"><div class="still-shape s1"></div><div class="still-shape s2"></div><div class="still-shape s3"></div><span class="still-label">FRAME 03 / IDENTITY</span></div>
+              <div class="tinta-frame-line"></div>
+              <div class="tinta-caption"><span>TINTA / VISUAL STUDIES</span><span>SELECT A FRAME</span></div>
+            </div>
+            <div class="filmstrip" id="filmstrip" role="group" aria-label="Select a visual study">
+              <button type="button" class="film-cell is-active" data-frame="0" data-cursor="VIEW"><span>01</span><i class="mini-a"></i></button>
+              <button type="button" class="film-cell" data-frame="1" data-cursor="VIEW"><span>02</span><i class="mini-b"></i></button>
+              <button type="button" class="film-cell" data-frame="2" data-cursor="VIEW"><span>03</span><i class="mini-c"></i></button>
+              <button type="button" class="film-cell film-cell-ghost" aria-hidden="true" tabindex="-1"><span>04</span><i></i></button>
+            </div>
+          </div>
+        </div>
+        <div class="world-index"><span>04 — 05</span><span>FILM / IMAGE</span></div>
+      </div>
+    </article>
+
+    <!-- WORLD 05 — BVRCODE -->
+    <article class="world world-bvrcode" data-world="bvrcode">
+      <div class="world-bg" aria-hidden="true"><div class="bvr-lines"></div><div class="bvr-glow"></div></div>
+      <div class="world-inner">
+        <div class="world-kicker"><span>WORLD 05 / TEXTILE &amp; APPAREL</span><span>SUPPLYING SINCE 2024</span></div>
+        <div class="bvr-layout">
+          <div class="world-copy">
+            <h3 class="world-title bvr-title">BVR<span>CODE</span></h3>
+            <p class="world-sub">Apparel / Sublimation</p>
+            <p class="world-body">Custom athletic jersey manufacturing and sublimation print production. Premium teamwear and corporate identity apparel, built around a 5-piece minimum order quantity.</p>
+            <div class="world-facts"><span>Full sublimation</span><span>Custom teamwear</span><span>Corporate orders</span><span>Vector design</span></div>
+            <div class="world-cta-row">
+              <a class="world-link" href="https://bvrcodeapparel.com" target="_blank" rel="noopener" data-cursor="VISIT">bvrcodeapparel.com <span>↗</span></a>
+              <a class="world-link world-link-muted" href="#contact" data-cursor="ORDER">Place an order <span>↗</span></a>
+            </div>
+          </div>
+          <div class="bvr-studio">
+            <div class="bvr-jersey" id="bvrJersey">
+              <svg viewBox="0 0 400 480" aria-hidden="true">
+                <defs>
+                  <clipPath id="jerseyClip">
+                    <path d="M130 42 L166 22 L234 22 L270 42 L352 98 L316 156 L284 136 L284 438 L116 438 L116 136 L84 156 L48 98 Z"/>
+                  </clipPath>
+                  <pattern id="jerseyGrid" width="26" height="26" patternUnits="userSpaceOnUse">
+                    <rect width="26" height="26" fill="#f5ead7"/>
+                    <path d="M26 0H0V26" fill="none" stroke="#100b06" stroke-width="1.4" opacity=".65"/>
+                  </pattern>
+                  <pattern id="jerseyCamo" width="48" height="48" patternUnits="userSpaceOnUse">
+                    <rect width="48" height="48" fill="#f5ead7"/>
+                    <path d="M4 8c10-8 18 4 27 0s12 10 4 15-6 15-18 11S2 28 8 22 10 12 4 8Z" fill="#100b06" opacity=".18"/>
+                    <circle cx="37" cy="34" r="7" fill="#100b06" opacity=".15"/>
+                    <circle cx="15" cy="40" r="4" fill="#ff5a00" opacity=".45"/>
+                  </pattern>
+                </defs>
+                <path class="jersey-body" d="M130 42 L166 22 L234 22 L270 42 L352 98 L316 156 L284 136 L284 438 L116 438 L116 136 L84 156 L48 98 Z"/>
+                <rect class="jersey-grid-fill" x="40" y="18" width="320" height="424" fill="url(#jerseyGrid)" clip-path="url(#jerseyClip)" opacity="0"/>
+                <rect class="jersey-camo-fill" x="40" y="18" width="320" height="424" fill="url(#jerseyCamo)" clip-path="url(#jerseyClip)" opacity="0"/>
+                <path class="jersey-panel" d="M166 22 L200 92 L234 22"/>
+                <path class="jersey-stripe" d="M116 250 L284 250"/>
+                <path class="jersey-line" d="M116 136 L116 438 M284 136 L284 438"/>
+                <text x="200" y="320" text-anchor="middle" class="jersey-code">BVR</text>
+                <text x="200" y="352" text-anchor="middle" class="jersey-small">05 / APPAREL</text>
+              </svg>
+            </div>
+            <div class="bvr-controls">
+              <span class="bvr-label">PATTERN /</span>
+              <div role="group" aria-label="Jersey pattern">
+                <button type="button" class="bvr-swatch is-active" data-pattern="stripe" data-cursor="APPLY"><i class="sw-stripe"></i>Stripe</button>
+                <button type="button" class="bvr-swatch" data-pattern="grid" data-cursor="APPLY"><i class="sw-grid"></i>Grid</button>
+                <button type="button" class="bvr-swatch" data-pattern="camo" data-cursor="APPLY"><i class="sw-camo"></i>Camo</button>
+              </div>
+              <span class="bvr-hint">5 PCS MOQ · FULL SUBLIMATION</span>
+            </div>
+          </div>
+        </div>
+        <div class="world-index"><span>05 — 05</span><span>TEXTILE / MANUFACTURE</span></div>
+      </div>
+    </article>
+  </section>
+
+  <!-- =====================================================================
+       05 — RECORD
+       ===================================================================== -->
+  <section class="record" id="record" data-chapter="05" data-chapter-name="RECORD" data-theme="bone">
+    <div class="record-head">
+      <span class="eyebrow">05 / THE RECORD</span>
+      <h2>Proof,<br><em>not promises.</em></h2>
+      <div class="record-head-meta">
+        <p>Recognition, academic track and the current availability window.</p>
+        <span>UMPSA / FACULTY OF COMPUTING</span>
+      </div>
+    </div>
+
+    <div class="record-grid">
+      <div class="record-column">
+        <div class="record-column-head"><span>HONOURS &amp; RECOGNITION</span><span>06</span></div>
+        <article class="record-row">
+          <span class="record-year">2025.09</span>
+          <div><h3>Silver Medal — DICE 3.0</h3><p>Waspada Banjir recognised at the ASEAN-level innovation competition.</p></div>
+          <span class="record-tag">ASEAN</span>
+        </article>
+        <article class="record-row">
+          <span class="record-year">2026.05</span>
+          <div><h3>Bronze Award — CITREX 2026</h3><p>Creation, Innovation, Technology &amp; Research Exposition for the flood telemetry system.</p></div>
+          <span class="record-tag">NATIONAL</span>
+        </article>
+        <article class="record-row">
+          <span class="record-year">2025.06</span>
+          <div><h3>Top 10 — UMPSA Innovatech</h3><p>Terabooth AI photobooth selected among top institutional innovations.</p></div>
+          <span class="record-tag">TOP 10</span>
+        </article>
+        <article class="record-row">
+          <span class="record-year">2025.12</span>
+          <div><h3>Ikon Keusahawanan</h3><p>Faculty of Computing award for student entrepreneurship and venture leadership.</p></div>
+          <span class="record-tag">FOUNDER</span>
+        </article>
+        <article class="record-row">
+          <span class="record-year">2026.08</span>
+          <div><h3>Dean’s List Award</h3><p>Faculty of Computing, Universiti Malaysia Pahang Al-Sultan Abdullah.</p></div>
+          <span class="record-tag">ACADEMIC</span>
+        </article>
+        <article class="record-row">
+          <span class="record-year">CERT</span>
+          <div><h3>Adobe Certified Professional</h3><p>Visual Design specialisation — Adobe Illustrator and Adobe Photoshop.</p></div>
+          <span class="record-tag">ADOBE</span>
+        </article>
+      </div>
+
+      <div class="record-column record-column-edu">
+        <div class="record-column-head"><span>ACADEMIC TRACK</span><span>03</span></div>
+        <article class="record-row">
+          <span class="record-year">2023 —</span>
+          <div><h3>Universiti Malaysia Pahang Al-Sultan Abdullah</h3><p>Bachelor of Computer Science (Graphic &amp; Multimedia Technology). Currently in 3rd year. Pekan, Pahang.</p></div>
+          <span class="record-tag">ACTIVE</span>
+        </article>
+        <article class="record-row">
+          <span class="record-year">DONE</span>
+          <div><h3>Kolej Matrikulasi Perak</h3><p>Science / Pre-University Matriculation Programme. Graduated with CGPA 3.50.</p></div>
+          <span class="record-tag">CGPA 3.50</span>
+        </article>
+        <article class="record-row">
+          <span class="record-year">SPM</span>
+          <div><h3>MRSM Tun Ghafar Baba</h3><p>4A 4B 1C. A strong foundation in STEM and mathematics.</p></div>
+          <span class="record-tag">4A 4B 1C</span>
+        </article>
+
+        <aside class="availability-card">
+          <div class="availability-top"><span class="status-dot"></span><span>INTERNSHIP WINDOW</span><span>OPEN</span></div>
+          <h3>Available from<br><em>end February 2027.</em></h3>
+          <p>Full-time Software Engineering / AI internship. Open to on-site roles in Malaysia or Singapore, and remote engineering teams worldwide.</p>
+          <a href="mailto:suhaibhamidun@gmail.com" class="availability-link" data-cursor="EMAIL">Discuss a role <span>↗</span></a>
+        </aside>
       </div>
     </div>
   </section>
 
-  <!-- CONTACT SECTION — CLOSING EDITORIAL HERO -->
-  <section class="section-block" id="contact">
-    <div class="container">
-      <div class="closing-editorial-banner interactive-card gsap-reveal">
-        <div class="card-spotlight"></div>
-        <span class="section-numeral">// Let's Connect</span>
-        <h2 class="closing-h2">Let's build something exceptional together.</h2>
-        <p class="closing-p">
-          Whether you have a software engineering role, a high-impact AI project, or want to collaborate with my digital studio DevXMedia — my inbox is always open.
-        </p>
+  <!-- =====================================================================
+       06 — TRANSMIT
+       ===================================================================== -->
+  <section class="contact" id="contact" data-chapter="06" data-chapter-name="TRANSMIT" data-theme="dark">
+    <div class="contact-bg" aria-hidden="true"><div class="contact-aura"></div><div class="contact-grid"></div></div>
+    <div class="contact-inner">
+      <div class="contact-top">
+        <span class="eyebrow">06 / TRANSMIT</span>
+        <span class="contact-local"><span class="status-dot"></span><span id="contactClock">--:--:--</span> KUL · IPOH, MY</span>
+      </div>
 
-        <div class="closing-action-buttons">
-          <button type="button" class="btn-email-primary magnetic-target" id="copyEmailBtn">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
-            <span id="copyEmailText">suhaibhamidun@gmail.com</span>
-          </button>
-
-          <a href="https://github.com/hanennkam" target="_blank" rel="noopener" class="btn-github-pill magnetic-target">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
-            <span>GitHub: @hanennkam</span>
+      <div class="contact-main">
+        <p class="contact-kicker">Have a system to build, a story to tell, or a role to fill?</p>
+        <h2 class="contact-title"><span>LET’S</span><span><em>BUILD</em></span></h2>
+        <div class="contact-actions">
+          <a class="email-button" id="copyEmail" href="mailto:suhaibhamidun@gmail.com" data-cursor="COPY">
+            <span class="email-button-label">WRITE TO</span>
+            <span class="email-button-value">suhaibhamidun@gmail.com</span>
+            <span class="email-button-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="8" y="8" width="12" height="12" rx="1"/><path d="M16 8V5a1 1 0 0 0-1-1H5a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h3"/></svg></span>
           </a>
+          <a class="ghost-button" href="https://github.com/hanennkam" target="_blank" rel="noopener" data-cursor="GITHUB">GitHub @hanennkam <span>↗</span></a>
         </div>
+      </div>
 
-        <div class="closing-availability-tag">
-          <span class="brand-status-dot"></span>
-          <span>Open for internship from February 2027</span>
+      <div class="contact-bottom">
+        <div class="contact-signal"><span class="signal-orbit"></span><span class="signal-orbit signal-orbit-2"></span><span class="signal-core"></span><p>OPEN TO<br>THE NEXT<br>SIGNAL</p></div>
+        <div class="contact-footer-info">
+          <div><span>LOCATION</span><p>Ipoh, Perak<br>Malaysia</p></div>
+          <div><span>STATUS</span><p>Available for internship<br>from end Feb 2027</p></div>
+          <div><span>ECOSYSTEM</span><p>DevXMedia · Sejenak<br>Tinta Visuals · BVRCODE</p></div>
         </div>
       </div>
     </div>
   </section>
 </main>
 
-<!-- FOOTER -->
 <footer class="site-footer">
-  <div class="container footer-inner">
-    <div class="footer-brand">
-      <span>Ahmad Suhaib</span>
-      <span style="color: var(--text-tertiary); margin-inline: 8px;">/</span>
-      <span style="color: var(--text-tertiary); font-weight: 400;">Hannenkamm Rise Ventures</span>
-    </div>
-
-    <div class="footer-credits">
-      Apple-inspired aesthetics &bull; Creative Technologist Architecture &bull; 2026
-    </div>
-
-    <a href="#hero" class="footer-top-link magnetic-target">
-      <span>Back to top</span>
-      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="18 15 12 9 6 15"></polyline></svg>
-    </a>
-  </div>
+  <div class="footer-left"><span>© MMXXVI AHMAD SUHAIB</span><span>HANNENKAM RISE VENTURES</span></div>
+  <div class="footer-center">DESIGNED &amp; ENGINEERED IN IPOH, MALAYSIA</div>
+  <div class="footer-right"><a href="#intro" data-cursor="TOP">BACK TO TOP <span>↑</span></a></div>
 </footer>
 
-<!-- Toast Notification -->
-<div class="toast-bar" id="toastBar" role="alert" aria-live="polite">
-  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent-cyan)" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
-  <span id="toastMsg">Email copied to clipboard!</span>
-</div>
-
-<!-- ==========================================================================
-     INTERACTIVE JAVASCRIPT: LENIS, GSAP, THREE.JS UNIVERSE SCULPTURE & CURSOR
-     ========================================================================== -->
-<script>
-(function() {
-  'use strict';
-
-  // 1. Lenis Smooth Scrolling Engine linked with GSAP ScrollTrigger
-  let lenisInstance = null;
-  if (typeof Lenis !== 'undefined') {
-    lenisInstance = new Lenis({
-      duration: 1.2,
-      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-      smoothWheel: true,
-      smoothTouch: false
-    });
-
-    if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
-      gsap.registerPlugin(ScrollTrigger);
-
-      lenisInstance.on('scroll', ScrollTrigger.update);
-
-      gsap.ticker.add((time) => {
-        lenisInstance.raf(time * 1000);
-      });
-
-      gsap.ticker.lagSmoothing(0);
-    } else {
-      function raf(time) {
-        lenisInstance.raf(time);
-        requestAnimationFrame(raf);
-      }
-      requestAnimationFrame(raf);
-    }
-  }
-
-  // 2. Scroll Progress Line & Nav Active Tracking
-  const scrollProgressBar = document.getElementById('scrollProgress');
-  window.addEventListener('scroll', () => {
-    const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
-    if (totalHeight > 0) {
-      const progress = (window.scrollY / totalHeight) * 100;
-      if (scrollProgressBar) {
-        scrollProgressBar.style.width = progress + '%';
-      }
-    }
-  }, { passive: true });
-
-  // 3. Custom Dot + Ring Cursor with Magnetic Pull
-  const cursorDot = document.getElementById('cursorDot');
-  const cursorRing = document.getElementById('cursorRing');
-  let mouseX = -100, mouseY = -100;
-  let ringX = -100, ringY = -100;
-  let isCursorVisible = false;
-
-  window.addEventListener('mousemove', (e) => {
-    mouseX = e.clientX;
-    mouseY = e.clientY;
-
-    if (!isCursorVisible) {
-      isCursorVisible = true;
-      if (cursorDot) cursorDot.style.opacity = '1';
-      if (cursorRing) cursorRing.style.opacity = '1';
-    }
-
-    if (cursorDot) {
-      cursorDot.style.transform = `translate(${mouseX}px, ${mouseY}px)`;
-    }
-  });
-
-  window.addEventListener('mouseleave', () => {
-    isCursorVisible = false;
-    if (cursorDot) cursorDot.style.opacity = '0';
-    if (cursorRing) cursorRing.style.opacity = '0';
-  });
-
-  function animateRing() {
-    ringX += (mouseX - ringX) * 0.15;
-    ringY += (mouseY - ringY) * 0.15;
-
-    if (cursorRing) {
-      cursorRing.style.transform = `translate(${ringX - 18}px, ${ringY - 18}px)`;
-    }
-    requestAnimationFrame(animateRing);
-  }
-  animateRing();
-
-  // Magnetic Button / Link Snapping
-  const magnetics = document.querySelectorAll('.magnetic-target, a, button, .interactive-card');
-  magnetics.forEach(el => {
-    el.addEventListener('mouseenter', () => {
-      document.body.classList.add('cursor-hover');
-    });
-    el.addEventListener('mouseleave', () => {
-      document.body.classList.remove('cursor-hover');
-    });
-  });
-
-  // 4. GSAP ScrollTrigger Entrance Animations
-  if (typeof gsap !== 'undefined') {
-    // Hero Elements Reveal
-    gsap.from('.gsap-hero-reveal', {
-      duration: 1.2,
-      y: 40,
-      opacity: 0,
-      stagger: 0.12,
-      ease: 'power3.out',
-      delay: 0.2
-    });
-
-    // Section Content Reveals on Scroll
-    if (typeof ScrollTrigger !== 'undefined') {
-      const revealElements = document.querySelectorAll('.gsap-reveal');
-      revealElements.forEach(el => {
-        gsap.from(el, {
-          scrollTrigger: {
-            trigger: el,
-            start: 'top 85%',
-            toggleActions: 'play none none none'
-          },
-          duration: 1.0,
-          y: 35,
-          opacity: 0,
-          ease: 'power3.out'
-        });
-      });
-    }
-  }
-
-  // 5. Mobile Drawer Toggle
-  const mobileBtn = document.getElementById('mobileMenuBtn');
-  const mobileDrawer = document.getElementById('mobileDrawer');
-  const mobileItems = document.querySelectorAll('.mobile-item');
-
-  if (mobileBtn && mobileDrawer) {
-    mobileBtn.addEventListener('click', () => {
-      mobileDrawer.classList.toggle('open');
-    });
-
-    mobileItems.forEach(item => {
-      item.addEventListener('click', () => {
-        mobileDrawer.classList.remove('open');
-      });
-    });
-  }
-
-  // 6. Live Clock (Asia/Kuala_Lumpur)
-  const navClock = document.getElementById('navClock');
-  function tickClock() {
-    if (!navClock) return;
-    try {
-      const now = new Date();
-      const timeStr = new Intl.DateTimeFormat('en-US', {
-        timeZone: 'Asia/Kuala_Lumpur',
-        hour: '2-digit',
-        minute: '2-digit',
-        second: '2-digit',
-        hour12: true
-      }).format(now);
-      navClock.textContent = timeStr;
-    } catch (e) {
-      navClock.textContent = new Date().toLocaleTimeString();
-    }
-  }
-  tickClock();
-  setInterval(tickClock, 1000);
-
-  // 7. Email Copy Action with Spring Toast
-  const copyBtn = document.getElementById('copyEmailBtn');
-  const toastBar = document.getElementById('toastBar');
-  const emailStr = 'suhaibhamidun@gmail.com';
-
-  function triggerToast(text) {
-    if (!toastBar) return;
-    document.getElementById('toastMsg').textContent = text;
-    toastBar.classList.add('show');
-    setTimeout(() => {
-      toastBar.classList.remove('show');
-    }, 2800);
-  }
-
-  if (copyBtn) {
-    copyBtn.addEventListener('click', async () => {
-      try {
-        await navigator.clipboard.writeText(emailStr);
-        triggerToast('Copied to clipboard: ' + emailStr);
-      } catch (err) {
-        window.location.href = 'mailto:' + emailStr;
-      }
-    });
-  }
-
-  // 8. Card Spotlight Tracking on MouseMove & 3D Tilt
-  const interactiveCards = document.querySelectorAll('.interactive-card');
-  interactiveCards.forEach(c => {
-    c.addEventListener('mousemove', e => {
-      const rect = c.getBoundingClientRect();
-      const x = e.clientX - rect.left;
-      const y = e.clientY - rect.top;
-      c.style.setProperty('--mouse-x', `${x}px`);
-      c.style.setProperty('--mouse-y', `${y}px`);
-
-      // Gentle 3D perspective tilt
-      const centerX = rect.width / 2;
-      const centerY = rect.height / 2;
-      const tiltX = (y - centerY) / centerY * -4;
-      const tiltY = (x - centerX) / centerX * 4;
-      c.style.transform = `perspective(1000px) rotateX(${tiltX}deg) rotateY(${tiltY}deg) translateY(-4px)`;
-    });
-
-    c.addEventListener('mouseleave', () => {
-      c.style.transform = '';
-    });
-  });
-
-  // 9. Category Filter for Projects
-  const filterBtns = document.querySelectorAll('.filter-btn');
-  const projectCards = document.querySelectorAll('.project-feature-card');
-
-  filterBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-      filterBtns.forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      const catVal = btn.getAttribute('data-filter');
-
-      projectCards.forEach(card => {
-        const itemCat = card.getAttribute('data-category');
-        if (catVal === 'all' || itemCat === catVal) {
-          card.style.display = 'grid';
-          card.style.opacity = '0';
-          setTimeout(() => { card.style.opacity = '1'; }, 30);
-        } else {
-          card.style.display = 'none';
-        }
-      });
-      if (typeof ScrollTrigger !== 'undefined') {
-        ScrollTrigger.refresh();
-      }
-    });
-  });
-
-  // 10. Advanced Three.js 3D Celestial Universe & Morphing Torus Knot Sculpture
-  const canvas = document.getElementById('canvas-3d');
-  const wrapper = document.getElementById('heroCanvasWrapper');
-
-  if (canvas && wrapper && typeof THREE !== 'undefined') {
-    let renderer, scene, camera;
-    let sculptureCore, sculptureWire, particleCosmos, accentRings;
-    let targetX = 0, targetY = 0;
-    let curX = 0, curY = 0;
-    let isDragging = false;
-    let prevMouseX = 0, prevMouseY = 0;
-
-    try {
-      scene = new THREE.Scene();
-
-      let width = wrapper.clientWidth || window.innerWidth;
-      let height = wrapper.clientHeight || window.innerHeight;
-
-      camera = new THREE.PerspectiveCamera(45, width / height, 0.1, 100);
-      camera.position.set(0, 0, 5.2);
-
-      renderer = new THREE.WebGLRenderer({
-        canvas: canvas,
-        alpha: true,
-        antialias: true,
-        powerPreference: 'high-performance'
-      });
-      renderer.setSize(width, height);
-      renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-
-      // Studio Overhead & Prismatic Lighting
-      const ambientLight = new THREE.AmbientLight(0xffffff, 0.8);
-      scene.add(ambientLight);
-
-      const topKeyLight = new THREE.DirectionalLight(0xffffff, 3.2);
-      topKeyLight.position.set(3, 7, 5);
-      scene.add(topKeyLight);
-
-      const cyanRimLight = new THREE.DirectionalLight(0x38bdf8, 2.5);
-      cyanRimLight.position.set(-6, -3, -2);
-      scene.add(cyanRimLight);
-
-      const violetFill = new THREE.PointLight(0xa855f7, 3.0, 25);
-      violetFill.position.set(5, -2, 3);
-      scene.add(violetFill);
-
-      const bluePoint = new THREE.PointLight(0x3b82f6, 2.5, 25);
-      bluePoint.position.set(-4, 3, 2);
-      scene.add(bluePoint);
-
-      // Sculpture: Procedural Torus Knot with Metallic-Glass Finish
-      const knotGeo = new THREE.TorusKnotGeometry(1.25, 0.36, 140, 28, 2, 3);
-      
-      const coreMat = new THREE.MeshPhysicalMaterial({
-        color: 0x0a101d,
-        emissive: 0x050810,
-        roughness: 0.1,
-        metalness: 0.92,
-        clearcoat: 1.0,
-        clearcoatRoughness: 0.05,
-        reflectivity: 0.98,
-        wireframe: false
-      });
-
-      sculptureCore = new THREE.Mesh(knotGeo, coreMat);
-      scene.add(sculptureCore);
-
-      // Outer Wireframe Hologram Cage
-      const wireMat = new THREE.MeshBasicMaterial({
-        color: 0x38bdf8,
-        wireframe: true,
-        transparent: true,
-        opacity: 0.15
-      });
-      sculptureWire = new THREE.Mesh(knotGeo, wireMat);
-      sculptureWire.scale.set(1.025, 1.025, 1.025);
-      scene.add(sculptureWire);
-
-      // Celestial Orbiting Accent Ring
-      const ringGeo = new THREE.TorusGeometry(2.3, 0.015, 16, 100);
-      const ringMat = new THREE.MeshBasicMaterial({
-        color: 0x818cf8,
-        transparent: true,
-        opacity: 0.35
-      });
-      accentRings = new THREE.Mesh(ringGeo, ringMat);
-      accentRings.rotation.x = Math.PI / 2.8;
-      scene.add(accentRings);
-
-      // 400 Floating Particle Cosmos Field
-      const particleTotal = 400;
-      const cosmosGeo = new THREE.BufferGeometry();
-      const posArray = new Float32Array(particleTotal * 3);
-      const colorArray = new Float32Array(particleTotal * 3);
-
-      const color1 = new THREE.Color(0x38bdf8);
-      const color2 = new THREE.Color(0x818cf8);
-
-      for (let i = 0; i < particleTotal * 3; i += 3) {
-        posArray[i] = (Math.random() - 0.5) * 14;
-        posArray[i + 1] = (Math.random() - 0.5) * 14;
-        posArray[i + 2] = (Math.random() - 0.5) * 10;
-
-        const mixed = color1.clone().lerp(color2, Math.random());
-        colorArray[i] = mixed.r;
-        colorArray[i + 1] = mixed.g;
-        colorArray[i + 2] = mixed.b;
-      }
-
-      cosmosGeo.setAttribute('position', new THREE.BufferAttribute(posArray, 3));
-      cosmosGeo.setAttribute('color', new THREE.BufferAttribute(colorArray, 3));
-
-      const cosmosMat = new THREE.PointsMaterial({
-        size: 0.038,
-        vertexColors: true,
-        transparent: true,
-        opacity: 0.55
-      });
-
-      particleCosmos = new THREE.Points(cosmosGeo, cosmosMat);
-      scene.add(particleCosmos);
-
-      // Mouse Parallax
-      window.addEventListener('mousemove', e => {
-        const x = (e.clientX / window.innerWidth) * 2 - 1;
-        const y = -(e.clientY / window.innerHeight) * 2 + 1;
-        targetX = x * 0.7;
-        targetY = y * 0.5;
-      });
-
-      // Canvas Drag to Rotate
-      canvas.addEventListener('mousedown', e => {
-        isDragging = true;
-        prevMouseX = e.clientX;
-        prevMouseY = e.clientY;
-      });
-
-      window.addEventListener('mouseup', () => { isDragging = false; });
-
-      window.addEventListener('mousemove', e => {
-        if (!isDragging) return;
-        const dx = e.clientX - prevMouseX;
-        const dy = e.clientY - prevMouseY;
-
-        sculptureCore.rotation.y += dx * 0.008;
-        sculptureCore.rotation.x += dy * 0.008;
-        sculptureWire.rotation.y = sculptureCore.rotation.y;
-        sculptureWire.rotation.x = sculptureCore.rotation.x;
-
-        prevMouseX = e.clientX;
-        prevMouseY = e.clientY;
-      });
-
-      // Mobile Touch Support
-      canvas.addEventListener('touchstart', e => {
-        if (e.touches.length === 1) {
-          isDragging = true;
-          prevMouseX = e.touches[0].clientX;
-          prevMouseY = e.touches[0].clientY;
-        }
-      }, { passive: true });
-
-      canvas.addEventListener('touchmove', e => {
-        if (!isDragging || e.touches.length !== 1) return;
-        const dx = e.touches[0].clientX - prevMouseX;
-        const dy = e.touches[0].clientY - prevMouseY;
-
-        sculptureCore.rotation.y += dx * 0.008;
-        sculptureCore.rotation.x += dy * 0.008;
-        sculptureWire.rotation.y = sculptureCore.rotation.y;
-        sculptureWire.rotation.x = sculptureCore.rotation.x;
-
-        prevMouseX = e.touches[0].clientX;
-        prevMouseY = e.touches[0].clientY;
-      }, { passive: true });
-
-      window.addEventListener('touchend', () => { isDragging = false; });
-
-      // Window Resize Handler
-      window.addEventListener('resize', () => {
-        width = wrapper.clientWidth || window.innerWidth;
-        height = wrapper.clientHeight || window.innerHeight;
-        camera.aspect = width / height;
-        camera.updateProjectionMatrix();
-        renderer.setSize(width, height);
-      });
-
-      // Render Loop
-      const clock = new THREE.Clock();
-
-      function renderFrame() {
-        requestAnimationFrame(renderFrame);
-        const elapsedTime = clock.getElapsedTime();
-
-        curX += (targetX - curX) * 0.05;
-        curY += (targetY - curY) * 0.05;
-
-        if (!isDragging) {
-          sculptureCore.rotation.y = elapsedTime * 0.2 + curX * 0.6;
-          sculptureCore.rotation.x = Math.sin(elapsedTime * 0.3) * 0.25 + curY * 0.4;
-          sculptureWire.rotation.y = sculptureCore.rotation.y;
-          sculptureWire.rotation.x = sculptureCore.rotation.x;
-        }
-
-        // Float Levitation
-        sculptureCore.position.y = Math.sin(elapsedTime * 0.8) * 0.12;
-        sculptureWire.position.y = sculptureCore.position.y;
-
-        accentRings.rotation.z = elapsedTime * 0.08;
-        particleCosmos.rotation.y = elapsedTime * 0.03;
-        particleCosmos.rotation.x = Math.sin(elapsedTime * 0.02) * 0.1;
-
-        // Dynamic light follow
-        cyanRimLight.position.x = -6 + curX * 4;
-        violetFill.position.x = 5 + curX * 3;
-        violetFill.position.y = -2 + curY * 3;
-
-        renderer.render(scene, camera);
-      }
-
-      renderFrame();
-
-    } catch (e) {
-      console.warn('Three.js initialization gracefully handled:', e);
-    }
-  }
-
-})();
-</script>
+<div class="toast" id="toast" role="status" aria-live="polite"><span class="status-dot"></span><span id="toastText">Email copied</span></div>
+
+<noscript>
+  <style>
+    .boot,.cursor,.chapter-rail,.scroll-line,.work-hud-center,.work-hud-right,.work-nav,.contact-signal,.grain,.menu-toggle,.mobile-menu{display:none!important}
+    #introCanvas,#universeCanvas{display:none!important}
+    .intro{min-height:100svh}.intro-bg{opacity:.45}.intro-static{display:grid!important}
+    .universe-fallback{display:grid!important}
+    .work-pin{height:auto!important;overflow:visible!important}.work-track{display:block!important;width:100%!important;transform:none!important}.project{width:100%!important;height:auto!important;min-height:100svh}
+  </style>
+</noscript>
+
+<!-- Libraries -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+<script src="https://unpkg.com/lenis@1.1.14/dist/lenis.min.js" defer></script>
+<script src="main.js" defer></script>
 </body>
 </html>

@@ -3,6 +3,7 @@
 
 # design reference material (local only)
 reference/
+journey-website/
 
 # editor / tooling
 .vscode/
