@@ -4,3 +4,8 @@ journey-website/
 assets/brands/**/source/
 assets/brands/_inbox/
 tools/
+
+# Never ship local credentials or Vercel link metadata
+.env*
+.vercel
+.vercel/
