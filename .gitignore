@@ -10,18 +10,20 @@ __pycache__/
 *.pyc
 tools/assets/previews/
 
+# brand asset sources — recovery package, inbox and preserved originals
+# (optimised derivatives under assets/brands/**/photos|logo are committed)
+public/
+assets/brands/_inbox/*
+!assets/brands/_inbox/README.md
+assets/brands/**/source/
+
 # editor / tooling
 .vscode/
 .idea/
 *.swp
 
-# env & secrets
+# env & secrets / Vercel link metadata
 .env
 .env.*
-
-# Brand asset inbox and preserved source originals (optimised derivatives are committed)
-assets/brands/_inbox/*
-!assets/brands/_inbox/README.md
-assets/brands/**/source/
 .vercel
-.env*
+.vercel/

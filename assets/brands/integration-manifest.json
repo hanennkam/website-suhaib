@@ -1,0 +1,400 @@
+{
+  "phase": "2 \u2014 verified brand asset integration",
+  "generatedAt": "2026-11-06T23:01:38.297242+00:00",
+  "recoveryPackage": "public/assets/brands/ (unchanged)",
+  "notDeployed": true,
+  "brands": {
+    "bvrcode-apparel": {
+      "name": "BVRCODE Apparel",
+      "logoStatus": "full official logo",
+      "logo": [
+        {
+          "path": "assets/brands/bvrcode-apparel/logo/logo-bvrcode-transparent.png",
+          "role": "primary logo",
+          "source": "https://bvrcodeapparel.com/logo-bvrcode.png",
+          "sourceType": "official website",
+          "width": 700,
+          "height": 406
+        },
+        {
+          "path": "assets/brands/bvrcode-apparel/logo/logo-bvrcode-original.png",
+          "role": "original logo source",
+          "source": "https://bvrcodeapparel.com/logo-bvrcode.png",
+          "sourceType": "official website"
+        }
+      ],
+      "tokens": {
+        "primary": "#000000",
+        "secondary": "#f2ede0",
+        "accent": "#c9a66b",
+        "background": "#0e0f0a",
+        "text": "#f2ede0",
+        "border": "rgba(242,237,224,0.24)",
+        "surface": "rgba(22,24,15,0.9)"
+      },
+      "paletteNote": "Black/white mark from the official logo; olive/gold/cream from the official BVRCODE website palette.",
+      "assets": [
+        {
+          "path": "assets/brands/bvrcode-apparel/photos/bvr-archive-checker-700.jpg",
+          "role": "archive product photo",
+          "source": "https://www.instagram.com/bvrcode.apparel/p/Cvztq1FhhYw/",
+          "sourceType": "instagram",
+          "width": 700,
+          "height": 875
+        },
+        {
+          "path": "assets/brands/bvrcode-apparel/photos/bvr-archive-cream-700.jpg",
+          "role": "archive product photo",
+          "source": "https://www.instagram.com/bvrcode.apparel/p/Cvztyd0BnaL/",
+          "sourceType": "instagram",
+          "width": 700,
+          "height": 700
+        },
+        {
+          "path": "assets/brands/bvrcode-apparel/photos/bvr-archive-blue-700.jpg",
+          "role": "archive product photo",
+          "source": "https://www.instagram.com/bvrcode.apparel/p/CukI67sSd3P/",
+          "sourceType": "instagram",
+          "width": 700,
+          "height": 700
+        },
+        {
+          "path": "assets/brands/bvrcode-apparel/photos/bvr-archive-charcoal-700.jpg",
+          "role": "archive product photo",
+          "source": "https://www.instagram.com/bvrcode.apparel/p/Cvzsnd-havv/",
+          "sourceType": "instagram",
+          "width": 700,
+          "height": 700
+        },
+        {
+          "path": "assets/brands/bvrcode-apparel/photos/bvr-archive-team-700.jpg",
+          "role": "team delivery photo",
+          "source": "https://www.instagram.com/bvrcode.apparel/p/CvztqzYhlOn/",
+          "sourceType": "instagram",
+          "width": 700,
+          "height": 700
+        },
+        {
+          "path": "assets/brands/bvrcode-apparel/photos/bvr-archive-portrait-700.jpg",
+          "role": "archive product photo",
+          "source": "https://www.instagram.com/bvrcode.apparel/p/CukOJR1yX6m/",
+          "sourceType": "instagram",
+          "width": 700,
+          "height": 682
+        },
+        {
+          "path": "assets/brands/bvrcode-apparel/photos/workshop-white-700.jpg",
+          "role": "workshop product photo",
+          "source": "https://bvrcodeapparel.com/images/3.png",
+          "sourceType": "official website",
+          "width": 700,
+          "height": 873
+        },
+        {
+          "path": "assets/brands/bvrcode-apparel/photos/teamkit-green-700.jpg",
+          "role": "team kit photo",
+          "source": "https://bvrcodeapparel.com/images/1.png",
+          "sourceType": "official website",
+          "width": 700,
+          "height": 861
+        },
+        {
+          "path": "assets/brands/bvrcode-apparel/photos/asphalt-blue-700.jpg",
+          "role": "blue kit photo",
+          "source": "https://bvrcodeapparel.com/images/5.png",
+          "sourceType": "official website",
+          "width": 700,
+          "height": 867
+        }
+      ],
+      "missing": [
+        "Optional vector SVG logo",
+        "Additional production photography (optional)"
+      ]
+    },
+    "duits": {
+      "name": "Duits",
+      "logoStatus": "full official logo",
+      "logo": [
+        {
+          "path": "assets/brands/duits/logo/duits-logo-transparent.png",
+          "role": "primary logo",
+          "source": "https://duits-money-tracking.onrender.com/logo.png",
+          "sourceType": "official product",
+          "width": 180,
+          "height": 180
+        }
+      ],
+      "tokens": {
+        "primary": "#6fa6f2",
+        "secondary": "#bed8fb",
+        "accent": "#2f65d3",
+        "background": "#f1f7ff",
+        "text": "#0b1a33",
+        "border": "rgba(47,101,211,0.22)",
+        "surface": "rgba(255,255,255,0.62)"
+      },
+      "paletteNote": "Sampled from the official Duits wallet mark; glass surfaces use white translucency.",
+      "assets": [
+        {
+          "path": "assets/brands/duits/screenshots/duits-live-signin-430.jpg",
+          "role": "public product screenshot",
+          "source": "https://duits-money-tracking.onrender.com/",
+          "sourceType": "live product",
+          "width": 430,
+          "height": 932
+        }
+      ],
+      "missing": [
+        "Approved post-login dashboard screenshot(s)",
+        "Optional additional official logo lockups"
+      ]
+    },
+    "sejenak-photobooth": {
+      "name": "Sejenak Photobooth",
+      "logoStatus": "temporary official avatar only; full-resolution logo MISSING",
+      "logo": [
+        {
+          "path": "assets/brands/sejenak-photobooth/logo/profile-avatar-150-LOW-RES.jpg",
+          "role": "temporary small avatar",
+          "source": "https://www.instagram.com/sejenakphotobooth/",
+          "sourceType": "official Instagram",
+          "width": 150,
+          "height": 150
+        }
+      ],
+      "tokens": {
+        "primary": "#0e4adc",
+        "secondary": "#d2e6fb",
+        "accent": "#074af0",
+        "background": "#e8f0ff",
+        "text": "#071a4a",
+        "border": "rgba(14,74,220,0.24)",
+        "surface": "rgba(255,255,255,0.68)"
+      },
+      "paletteNote": "Sampled from the official 150x150 profile avatar; provisional until full logo supplies final values.",
+      "assets": [
+        {
+          "path": "assets/brands/sejenak-photobooth/photos/sejenak-event-stage-700.jpg",
+          "role": "hero event photo",
+          "source": "https://www.instagram.com/sejenakphotobooth/p/DSHeDZZEwRp/",
+          "sourceType": "instagram",
+          "width": 700,
+          "height": 700
+        },
+        {
+          "path": "assets/brands/sejenak-photobooth/photos/sejenak-print-detail-700.jpg",
+          "role": "print detail",
+          "source": "https://www.instagram.com/sejenakphotobooth/p/DSHd4jwk3dw/",
+          "sourceType": "instagram",
+          "width": 700,
+          "height": 700
+        },
+        {
+          "path": "assets/brands/sejenak-photobooth/photos/sejenak-guest-portrait-700.jpg",
+          "role": "gallery photo",
+          "source": "https://www.instagram.com/sejenakphotobooth/p/DYewGbynTfe/",
+          "sourceType": "instagram",
+          "width": 700,
+          "height": 875
+        },
+        {
+          "path": "assets/brands/sejenak-photobooth/photos/sejenak-guest-strips-700.jpg",
+          "role": "gallery photo",
+          "source": "https://www.instagram.com/sejenakphotobooth/p/DYevAs5nfu9/",
+          "sourceType": "instagram",
+          "width": 700,
+          "height": 875
+        },
+        {
+          "path": "assets/brands/sejenak-photobooth/photos/sejenak-booth-guests-700.jpg",
+          "role": "gallery photo",
+          "source": "https://www.instagram.com/sejenakphotobooth/p/DSHdtdOExZK/",
+          "sourceType": "instagram",
+          "width": 700,
+          "height": 700
+        },
+        {
+          "path": "assets/brands/sejenak-photobooth/photos/sejenak-strip-wall-700.jpg",
+          "role": "gallery photo",
+          "source": "https://www.instagram.com/sejenakphotobooth/p/DSHeHWsEw95/",
+          "sourceType": "instagram",
+          "width": 700,
+          "height": 700
+        },
+        {
+          "path": "assets/brands/sejenak-photobooth/photos/sejenak-prints-hand-700.jpg",
+          "role": "gallery photo",
+          "source": "https://www.instagram.com/sejenakphotobooth/p/DYaH4KFHUsh/",
+          "sourceType": "instagram",
+          "width": 700,
+          "height": 875
+        },
+        {
+          "path": "assets/brands/sejenak-photobooth/photos/sejenak-reel-poster-600.jpg",
+          "role": "reel poster only \u2014 not playable",
+          "source": "https://www.instagram.com/sejenakphotobooth/reel/DSHe30UgHxv/",
+          "sourceType": "instagram",
+          "width": 600,
+          "height": 400
+        }
+      ],
+      "missing": [
+        "Full-resolution or vector official logo",
+        "Original MP4 export for the two Reels"
+      ]
+    },
+    "dev-x-media": {
+      "name": "Dev X Media",
+      "logoStatus": "temporary official avatar only; full-resolution logo MISSING",
+      "logo": [
+        {
+          "path": "assets/brands/dev-x-media/logo/profile-avatar-150-LOW-RES.jpg",
+          "role": "temporary small avatar",
+          "source": "https://www.instagram.com/devx.media/",
+          "sourceType": "official Instagram",
+          "width": 150,
+          "height": 150
+        }
+      ],
+      "tokens": {
+        "primary": "#b50631",
+        "secondary": "#0d0d0d",
+        "accent": "#ffffff",
+        "background": "#070506",
+        "text": "#f6eef0",
+        "border": "rgba(181,6,49,0.34)",
+        "surface": "rgba(18,8,12,0.94)"
+      },
+      "paletteNote": "Red/black/white sampled from the official profile avatar. Full logo pending.",
+      "assets": [
+        {
+          "path": "assets/brands/dev-x-media/photos/devx-event-team-700.jpg",
+          "role": "hero activity photo",
+          "source": "https://www.instagram.com/devx.media/p/DLFZ3XITUv4/",
+          "sourceType": "instagram",
+          "width": 700,
+          "height": 700
+        },
+        {
+          "path": "assets/brands/dev-x-media/photos/devx-event-speaker-700.jpg",
+          "role": "activity photo",
+          "source": "https://www.instagram.com/devx.media/p/DLFZ3XITUv4/",
+          "sourceType": "instagram",
+          "width": 700,
+          "height": 700
+        },
+        {
+          "path": "assets/brands/dev-x-media/photos/devx-event-closing-700.jpg",
+          "role": "gallery photo",
+          "source": "https://www.instagram.com/devx.media/p/DLFZ3XITUv4/",
+          "sourceType": "instagram",
+          "width": 700,
+          "height": 700
+        },
+        {
+          "path": "assets/brands/dev-x-media/photos/devx-event-certificate-700.jpg",
+          "role": "gallery photo",
+          "source": "https://www.instagram.com/devx.media/p/DLFZ3XITUv4/",
+          "sourceType": "instagram",
+          "width": 700,
+          "height": 700
+        },
+        {
+          "path": "assets/brands/dev-x-media/photos/devx-services-poster-700.jpg",
+          "role": "official service index graphic",
+          "source": "https://www.instagram.com/devx.media/p/DJbgxirTy0K/",
+          "sourceType": "instagram",
+          "width": 700,
+          "height": 845
+        },
+        {
+          "path": "assets/brands/dev-x-media/photos/devx-combat-2025-500.jpg",
+          "role": "reel poster",
+          "source": "https://www.instagram.com/reel/DKAROWSgwPW/",
+          "sourceType": "instagram reel",
+          "width": 500,
+          "height": 889
+        }
+      ],
+      "missing": [
+        "Full-resolution or vector official logo",
+        "Original MP4 exports for the three Reels"
+      ]
+    },
+    "tinta-visuals": {
+      "name": "Tinta Visuals",
+      "logoStatus": "temporary official avatar only; full-resolution logo MISSING",
+      "logo": [
+        {
+          "path": "assets/brands/tinta-visuals/logo/profile-avatar-150-LOW-RES.jpg",
+          "role": "temporary small avatar",
+          "source": "https://www.instagram.com/tintavisuals/",
+          "sourceType": "official Instagram",
+          "width": 150,
+          "height": 150
+        }
+      ],
+      "tokens": {
+        "primary": "#5d2f1f",
+        "secondary": "#c5b1a8",
+        "accent": "#e6d4c4",
+        "background": "#150b07",
+        "text": "#f2e8dc",
+        "border": "rgba(197,177,168,0.22)",
+        "surface": "rgba(65,34,22,0.46)"
+      },
+      "paletteNote": "Brown/cream sampled from the official profile avatar; provisional until full logo supplied.",
+      "assets": [],
+      "missing": [
+        "Full-resolution or vector official logo",
+        "Verified owned photography/video (none recovered; the one profile post is owned by @vnaisuu)",
+        "Original Reels/BTS if available"
+      ]
+    },
+    "hannenkam-rise-ventures": {
+      "name": "Hannenkam Rise Ventures",
+      "logoStatus": "MISSING",
+      "logo": [],
+      "tokens": null,
+      "paletteNote": "No palette invented; existing neutral section retained.",
+      "assets": [],
+      "missing": [
+        "Official logo (transparent SVG/PNG)",
+        "Brand guidelines / verified palette",
+        "Official Instagram URL if one exists"
+      ]
+    }
+  },
+  "recoveryPackageUntouched": true,
+  "validation": {
+    "localAssetReferences": 75,
+    "missingLocalAssets": 0,
+    "consoleErrors": 0,
+    "failedRequests": 0,
+    "testedViewports": [
+      "1440x1000",
+      "390x844"
+    ],
+    "horizontalOverflow": false,
+    "tintaFilmstripInteraction": "passed",
+    "lighthouse": {
+      "accessibility": 1.0,
+      "best-practices": 1.0,
+      "seo": 1.0
+    },
+    "unrelatedAccountMediaAssigned": false,
+    "playableVideoClaims": false,
+    "finalVisualQA": {
+      "viewports": [
+        "1440x1000",
+        "768x1024",
+        "390x844"
+      ],
+      "allImagesLoaded": true,
+      "noHorizontalOverflow": true,
+      "interactions": "passed",
+      "devxReelAffordance": "external-open-only"
+    }
+  }
+}

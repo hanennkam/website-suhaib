@@ -1526,6 +1526,7 @@
       ".ledger-head", ".ledger-row", ".ops-metrics",
       ".worlds-cover h2", ".worlds-cover > p", ".worlds-cover-index",
       ".world-copy", ".ecosystem", ".devx-terminal", ".sejenak-booth", ".tinta-stage", ".bvr-studio", ".duits-world-visual",
+      ".brand-gallery", ".duits-capture-strip",
       ".record-head", ".record-column", ".availability-card",
       ".contact-kicker", ".contact-title", ".contact-actions", ".contact-bottom"
     ];

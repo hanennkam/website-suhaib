@@ -9,3 +9,6 @@ tools/
 .env*
 .vercel
 .vercel/
+
+# Local recovery package of brand sources — not part of the public site
+public/

@@ -1,3 +1,5 @@
+> **Phase 2 integration — 2026-11-07.** Verified recovered media has now been integrated into the live portfolio. See [`BRAND-INTEGRATION.md`](../../BRAND-INTEGRATION.md) and [`assets/brands/integration-manifest.json`](integration-manifest.json) for the selected assets, source links and remaining gaps. The access-status table below documents the earlier recovery pipeline and is retained for history.
+
 # Brand asset library
 
 This directory holds official business assets separately from the site's licensed stock context photography.

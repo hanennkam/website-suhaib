@@ -423,17 +423,7 @@
   background-position: center;
 }
 
-.mini-a {
-  background-image: url("assets/photos/tinta-set-800.jpg");
-}
-
-.mini-b {
-  background-image: url("assets/photos/tinta-rig-800.jpg");
-}
-
-.mini-c {
-  background-image: url("assets/photos/tinta-field-700.jpg");
-}
+/* Tinta filmstrip uses brand-native gradients; no stock imagery is assigned to Tinta. */
 
 /* ==========================================================================
    BVRCODE — production, product reference, and the existing customizer
