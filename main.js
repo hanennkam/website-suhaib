@@ -1564,12 +1564,6 @@
         ease: "none",
         scrollTrigger: { trigger: introSection, start: "top top", end: "bottom top", scrub: true }
       });
-      window.gsap.to(".intro-bg", {
-        scale: 1.08,
-        opacity: 0.55,
-        ease: "none",
-        scrollTrigger: { trigger: introSection, start: "top top", end: "bottom top", scrub: true }
-      });
     }
 
     // Editorial photography: subtle scroll depth + reveal
@@ -1603,11 +1597,6 @@
           end: "center 40%",
           scrub: 0.6
         }
-      });
-      window.gsap.to(".operator-watermark", {
-        yPercent: 8,
-        ease: "none",
-        scrollTrigger: { trigger: ".operator-stage", start: "top bottom", end: "bottom top", scrub: 1 }
       });
     }
 
