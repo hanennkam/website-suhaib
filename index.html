@@ -28,6 +28,7 @@
 <link rel="stylesheet" href="photos.css?v=phase2-20261107" media="print" onload="this.media='all'">
 <link rel="stylesheet" href="brands.css?v=phase2-20261107d" media="print" onload="this.media='all'">
 <link rel="stylesheet" href="phase-a.css">
+<link rel="stylesheet" href="phase-c.css">
 <noscript>
   <link rel="stylesheet" href="photos.css?v=phase2-20261107">
   <link rel="stylesheet" href="brands.css?v=phase2-20261107d">
@@ -232,9 +233,9 @@
         <h3>Systems that hold up.</h3>
         <p>Production backends, edge architecture and product engineering — designed to ship, not to demo.</p>
         <div class="u-panel-links">
-          <a href="#work" data-jump-project="1">Duits <span>↗</span></a>
-          <a href="#work" data-jump-project="4">DevXMedia Invoicing <span>↗</span></a>
-          <a href="#work" data-jump-project="5">XAUUSD Engine <span>↗</span></a>
+          <a href="#project-duits">Duits <span>↗</span></a>
+          <a href="#more-work">DevXMedia Invoicing <span>↗</span></a>
+          <a href="#more-work">XAUUSD Engine <span>↗</span></a>
         </div>
       </div>
     </div>
@@ -243,137 +244,194 @@
   <!-- =====================================================================
        03 — SELECTED WORK
        ===================================================================== -->
-  <section class="work" id="work" data-chapter="03" data-chapter-name="Selected work" data-bg="#000000">
-    <h2 class="sr-only">Selected work</h2>
-    <div class="work-pin" id="workPin">
-
-
-      <div class="work-track" id="workTrack">
-
-        <!-- 01 HistoScan -->
-        <article class="project project-histo" data-category="COMPUTER VISION" data-project-index="0">
-          <div class="project-copy">
-            <div class="project-kicker"><span>01</span><span>Final Year Project · Deep Learning</span></div>
-            <h3 class="project-title">HistoScan<span>-AI</span></h3>
-            <p class="project-sub">Breast cancer detection,<br><em>grounded in evidence.</em></p>
-            <p class="project-body">An end-to-end computer vision pipeline classifying BreaKHis biopsy slides as benign or malignant. EfficientNetV2-S with a CBAM attention module on a strict patient-level split, plus Grad-CAM heatmaps for clinical explainability.</p>
-            <div class="project-facts">
-              <div><strong>96.5%</strong><span>Malignant recall</span></div>
-              <div><strong>0.874</strong><span>AUC-ROC</span></div>
-              <div><strong>0.51</strong><span>Calibrated threshold</span></div>
-            </div>
-            <div class="project-tags"><span>PyTorch</span><span>EfficientNetV2-S</span><span>CBAM</span><span>Grad-CAM</span><span>FastAPI</span><span>Streamlit</span></div>
-            <a class="project-link" href="https://github.com/hanennkam" target="_blank" rel="noopener" data-cursor="GITHUB">View code <span>↗</span></a>
-          </div>
-
-        </article>
-
-        <!-- 02 Duits -->
-        <article class="project project-duits" data-category="LIVE PRODUCT" data-project-index="1" data-brand="duits">
-          <div class="project-copy">
-            <div class="project-kicker"><span>02</span><span>LIVE PRODUCT · INVITE-ONLY</span><span class="project-live-pill"><i></i>LIVE</span></div>
-            <div class="duits-project-brand">
-              <img src="assets/brands/duits/logo/duits-logo-transparent.png" alt="Duits official wallet logo" width="64" height="64">
-              <span>Official product</span>
-            </div>
-            <h3 class="project-title">Duits</h3>
-            <p class="project-sub">Receipts in.<br><em>Expenses out.</em></p>
-            <p class="project-body">A receipt-to-expense tracker that turns photos, bank screenshots or plain text into structured spending data. Claude Vision parses merchant, total, tax and category; Supabase stores it behind authenticated per-user Row Level Security.</p>
-            <div class="project-facts">
-              <div><strong>LIVE</strong><span>Invite-only PWA</span></div>
-              <div><strong>RLS</strong><span>Supabase security</span></div>
-              <div><strong>Vision</strong><span>Claude multimodal</span></div>
-            </div>
-            <div class="project-tags"><span>FastAPI</span><span>Claude 3.5 Sonnet</span><span>Supabase</span><span>PostgreSQL</span><span>Docker</span><span>Render</span></div>
-            <div class="project-actions">
-              <a class="project-link" href="https://duits-money-tracking.onrender.com" target="_blank" rel="noopener" data-cursor="LIVE">Open live product <span>↗</span></a>
-            </div>
-          </div>
-
-        </article>
-
-        <!-- 03 Waspada Banjir -->
-        <article class="project project-banjir" data-category="CIVIC TECH" data-project-index="2">
-          <div class="project-copy">
-            <div class="project-kicker"><span>03</span><span>International Award Winner</span></div>
-            <h3 class="project-title">Waspada <span>Banjir</span></h3>
-            <p class="project-sub">Flood intelligence for the people<br><em>who need it first.</em></p>
-            <p class="project-body">A real-time regional flood-risk assessment and disaster alert mobile application for Malaysian communities. Interactive hydrological map overlays, emergency notification dispatch and community reporting.</p>
-            <div class="project-facts">
-              <div><strong>Silver</strong><span>DICE 3.0 — ASEAN</span></div>
-              <div><strong>Bronze</strong><span>CITREX 2026</span></div>
-              <div><strong>Mobile</strong><span>Community-first</span></div>
-            </div>
-            <div class="project-tags"><span>Mobile Application</span><span>Hydrological Telemetry</span><span>Geolocation</span><span>Push Dispatch</span></div>
-            <div class="project-actions">
-              <a class="project-link" href="#record" data-cursor="AWARD">View recognition <span>↗</span></a>
-            </div>
-          </div>
-
-        </article>
-
-        <!-- 04 Agents -->
-        <article class="project project-agents" data-category="AGENTIC AI" data-project-index="3">
-          <div class="project-copy">
-            <div class="project-kicker"><span>04</span><span>Distributed Automation</span></div>
-            <h3 class="project-title">Agent <span>Systems</span></h3>
-            <p class="project-sub">A team of agents,<br><em>running the boring work.</em></p>
-            <p class="project-body">Modular multi-agent architectures for enterprise automation. Specialised File, Invoice and Content intelligence agents orchestrated by a central planner, with Claude 3.5 Haiku in the cloud and local models via Ollama. Hermes runs as a macOS launchd daemon with a Telegram gateway.</p>
-            <div class="project-facts">
-              <div><strong>3</strong><span>Specialist agents</span></div>
-              <div><strong>Ollama</strong><span>Local inference</span></div>
-              <div><strong>24/7</strong><span>Daemon runtime</span></div>
-            </div>
-            <div class="project-tags"><span>Python</span><span>Anthropic API</span><span>Ollama</span><span>ReportLab</span><span>Telegram</span><span>launchd</span></div>
-            <div class="project-actions">
-              <a class="project-link" href="https://github.com/hanennkam" target="_blank" rel="noopener" data-cursor="GITHUB">View on GitHub <span>↗</span></a>
-            </div>
-          </div>
-
-        </article>
-
-        <!-- 05 Invoice -->
-        <article class="project project-invoice" data-category="EDGE ARCHITECTURE" data-project-index="4">
-          <div class="project-copy">
-            <div class="project-kicker"><span>05</span><span>Internal Tool · Cloudflare Edge</span></div>
-            <h3 class="project-title">Invoicing <span>Engine</span></h3>
-            <p class="project-sub">Billing at the edge,<br><em>without the drag.</em></p>
-            <p class="project-body">A custom billing platform engineered for DevXMedia operations. Cloudflare Workers and D1 distributed SQLite provide low-latency global sync. Vector PDF invoices are generated dynamically and dispatched through a WhatsApp Business bot.</p>
-            <div class="project-facts">
-              <div><strong>D1</strong><span>Distributed SQLite</span></div>
-              <div><strong>2</strong><span>Channels</span></div>
-              <div><strong>Edge</strong><span>Global compute</span></div>
-            </div>
-            <div class="project-tags"><span>Cloudflare Workers</span><span>Cloudflare D1</span><span>WhatsApp API</span><span>REST CRUD</span><span>PDF Generator</span></div>
-            <a class="project-link" href="https://github.com/hanennkam" target="_blank" rel="noopener" data-cursor="GITHUB">View architecture <span>↗</span></a>
-          </div>
-
-        </article>
-
-        <!-- 06 XAUUSD -->
-        <article class="project project-gold" data-category="QUANT SYSTEMS" data-project-index="5">
-          <div class="project-copy">
-            <div class="project-kicker"><span>06</span><span>Algorithmic Trading</span></div>
-            <h3 class="project-title">XAU<span>USD</span></h3>
-            <p class="project-sub">Discipline,<br><em>encoded.</em></p>
-            <p class="project-body">An algorithmic trading engine for gold. Real-time signals on an EMA 9/21 cross, filtered by RSI thresholds and London/New York session boundaries. A strict fail-closed news calendar suppresses trades during unpredictable macro events.</p>
-            <div class="project-facts">
-              <div><strong>9/21</strong><span>EMA strategy</span></div>
-              <div><strong>38</strong><span>Unit tests</span></div>
-              <div><strong>Fail-closed</strong><span>News guard</span></div>
-            </div>
-            <div class="project-tags"><span>Python</span><span>TwelveData</span><span>Telegram</span><span>CSV Backtesting</span><span>PyTest</span></div>
-            <div class="project-actions">
-              <a class="project-link" href="https://github.com/hanennkam" target="_blank" rel="noopener" data-cursor="GITHUB">View engine <span>↗</span></a>
-            </div>
-          </div>
-
-        </article>
-
+  <section class="work" id="work" data-chapter="03" data-chapter-name="Selected work" data-tone="light">
+    <header class="work-intro" data-bg="#ffffff">
+      <div class="work-intro-inner">
+        <h2>Selected work</h2>
+        <p>Four systems, each built to ship.</p>
       </div>
+    </header>
 
+    <!-- 01 HistoScan-AI -->
+    <section class="project-panel project-panel--gray" id="project-histoscan" data-bg="#f5f5f7" aria-labelledby="project-histoscan-title">
+      <div class="project-inner">
+        <div class="project-text">
+          <span class="project-category">Computer vision</span>
+          <h2 class="project-name" id="project-histoscan-title">HistoScan-AI</h2>
+          <p class="project-description">Breast cancer detection, grounded in evidence.</p>
+          <p class="project-context">An end-to-end computer vision pipeline classifying BreaKHis biopsy slides as benign or malignant. EfficientNetV2-S with a CBAM attention module on a strict patient-level split, plus Grad-CAM heatmaps for clinical explainability.</p>
+          <div class="project-stats" aria-label="HistoScan-AI results">
+            <div class="stat"><strong data-count="96.5" data-decimals="1" data-suffix="%">96.5%</strong><span>Malignant recall</span></div>
+            <div class="stat"><strong data-count="0.874" data-decimals="3">0.874</strong><span>AUC-ROC</span></div>
+            <div class="stat"><strong data-count="0.51" data-decimals="2">0.51</strong><span>Calibrated threshold</span></div>
+          </div>
+          <div class="project-links">
+            <a class="button button--primary" href="https://github.com/hanennkam" target="_blank" rel="noopener">View code <span aria-hidden="true">↗</span></a>
+            <a class="button button--secondary" href="#more-work">More work <span aria-hidden="true">↗</span></a>
+          </div>
+          <p class="project-tech">PyTorch · EfficientNetV2-S · CBAM · Grad-CAM · FastAPI</p>
+          <p class="sr-only">Full stack: PyTorch, EfficientNetV2-S, CBAM, Grad-CAM, FastAPI, Streamlit.</p>
+        </div>
 
-    </div>
+        <div class="project-demo" data-demo="histoscan">
+          <div class="demo-card demo-histoscann">
+            <div class="demo-head"><span>Result preview</span><span class="demo-tag">Illustrative</span></div>
+            <div class="histo-preview" aria-hidden="true">
+              <span class="histo-heat"></span>
+              <span class="histo-roi"></span>
+            </div>
+            <div class="demo-result-row">
+              <span class="demo-label">Classification</span>
+              <strong class="demo-big">Malignant</strong>
+            </div>
+            <p class="demo-note">Illustrative Grad-CAM interface study. Not live diagnostic output.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 02 Duits -->
+    <section class="project-panel project-panel--white project-panel--reverse" id="project-duits" data-bg="#ffffff" aria-labelledby="project-duits-title">
+      <div class="project-inner">
+        <div class="project-text">
+          <span class="project-category">Live product</span>
+          <h2 class="project-name" id="project-duits-title">Duits</h2>
+          <p class="project-description">Receipts in. Expenses out.</p>
+          <p class="project-context">A receipt-to-expense tracker that turns photos, bank screenshots or plain text into structured spending data. Claude Vision parses merchant, total, tax and category; Supabase stores it behind authenticated per-user Row Level Security.</p>
+          <div class="project-stats" aria-label="Duits facts">
+            <div class="stat"><strong>Live</strong><span>Invite-only PWA</span></div>
+            <div class="stat"><strong>RLS</strong><span>Supabase security</span></div>
+            <div class="stat"><strong>Vision</strong><span>Claude multimodal</span></div>
+          </div>
+          <div class="project-links">
+            <a class="button button--primary" href="https://duits-money-tracking.onrender.com" target="_blank" rel="noopener">Open live product <span aria-hidden="true">↗</span></a>
+            <a class="button button--secondary" href="#more-work">More work <span aria-hidden="true">↗</span></a>
+          </div>
+          <p class="project-tech">FastAPI · Claude 3.5 Sonnet · Supabase · PostgreSQL · Docker</p>
+          <p class="sr-only">Full stack: FastAPI, Claude 3.5 Sonnet, Supabase, PostgreSQL, Docker, Render.</p>
+        </div>
+
+        <div class="project-demo" data-demo="duits">
+          <div class="demo-card demo-duits">
+            <div class="receipt-demo">
+              <div class="demo-head"><span>Receipt parser</span><span class="demo-status" id="duitsStatus">Ready</span></div>
+              <span class="sr-only" id="duitsAnnounce" role="status" aria-live="polite"></span>
+              <div class="receipt-rows">
+                <div><span>Merchant</span><b data-receipt="merchant">—</b></div>
+                <div><span>Total</span><b data-receipt="total">—</b></div>
+                <div><span>Tax</span><b data-receipt="tax">—</b></div>
+                <div><span>Category</span><b data-receipt="category">—</b></div>
+              </div>
+              <button class="demo-control" id="duitsParse" type="button">Parse a receipt</button>
+              <p class="demo-note">Sample values from the existing prototype. No account data.</p>
+            </div>
+            <figure class="demo-shot">
+              <picture>
+                <source type="image/webp" srcset="assets/brands/duits/screenshots/duits-live-signin-430.webp 430w, assets/brands/duits/screenshots/duits-live-signin-860.webp 860w" sizes="140px">
+                <img src="assets/brands/duits/screenshots/duits-live-signin-430.jpg"
+                     srcset="assets/brands/duits/screenshots/duits-live-signin-430.jpg 430w, assets/brands/duits/screenshots/duits-live-signin-860.jpg 860w"
+                     sizes="140px" width="430" height="932" loading="lazy" decoding="async"
+                     alt="Verified Duits sign-in screen from the live product.">
+              </picture>
+              <figcaption>Verified sign-in</figcaption>
+            </figure>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 03 Waspada Banjir -->
+    <section class="project-panel project-panel--gray" id="project-banjir" data-bg="#f5f5f7" aria-labelledby="project-banjir-title">
+      <div class="project-inner">
+        <div class="project-text">
+          <span class="project-category">Civic technology</span>
+          <h2 class="project-name" id="project-banjir-title">Waspada Banjir</h2>
+          <p class="project-description">Flood intelligence for the people who need it first.</p>
+          <p class="project-context">A real-time regional flood-risk assessment and disaster alert mobile application for Malaysian communities. Interactive hydrological map overlays, emergency notification dispatch and community reporting.</p>
+          <div class="project-stats" aria-label="Waspada Banjir recognition">
+            <div class="stat"><strong>Silver</strong><span>DICE 3.0 — ASEAN</span></div>
+            <div class="stat"><strong>Bronze</strong><span>CITREX 2026</span></div>
+            <div class="stat"><strong>Mobile</strong><span>Community-first</span></div>
+          </div>
+          <div class="project-links">
+            <a class="button button--primary" href="#record">View recognition <span aria-hidden="true">↗</span></a>
+            <a class="button button--secondary" href="#more-work">More work <span aria-hidden="true">↗</span></a>
+          </div>
+          <p class="project-tech">Mobile application · Hydrological telemetry · Geolocation · Push dispatch</p>
+        </div>
+
+        <div class="project-demo" data-demo="banjir">
+          <div class="demo-card demo-banjir">
+            <div class="demo-head"><span>Alert simulation</span><span class="demo-tag">Simulated</span></div>
+            <div class="banjir-readout" aria-live="polite">
+              <span class="demo-label">Current status</span>
+              <strong class="demo-big" id="banjirStatus">Standby</strong>
+            </div>
+            <button class="demo-control" id="banjirToggle" type="button" aria-pressed="false">Raise alert state</button>
+            <p class="demo-note">Interface state simulation. Not live telemetry.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 04 Agent Systems -->
+    <section class="project-panel project-panel--white project-panel--reverse" id="project-agents" data-bg="#ffffff" aria-labelledby="project-agents-title">
+      <div class="project-inner">
+        <div class="project-text">
+          <span class="project-category">Agentic AI</span>
+          <h2 class="project-name" id="project-agents-title">Agent Systems</h2>
+          <p class="project-description">A team of agents, running the boring work.</p>
+          <p class="project-context">Modular multi-agent architectures for enterprise automation. Specialised File, Invoice and Content intelligence agents orchestrated by a central planner, with Claude 3.5 Haiku in the cloud and local models via Ollama. Hermes runs as a macOS launchd daemon with a Telegram gateway.</p>
+          <div class="project-stats" aria-label="Agent Systems facts">
+            <div class="stat"><strong data-count="3" data-decimals="0">3</strong><span>Specialist agents</span></div>
+            <div class="stat"><strong>Ollama</strong><span>Local inference</span></div>
+            <div class="stat"><strong>24/7</strong><span>Daemon runtime</span></div>
+          </div>
+          <div class="project-links">
+            <a class="button button--primary" href="https://github.com/hanennkam" target="_blank" rel="noopener">View on GitHub <span aria-hidden="true">↗</span></a>
+            <a class="button button--secondary" href="#more-work">More work <span aria-hidden="true">↗</span></a>
+          </div>
+          <p class="project-tech">Python · Anthropic API · Ollama · ReportLab · Telegram</p>
+          <p class="sr-only">Full stack: Python, Anthropic API, Ollama, ReportLab, Telegram, launchd.</p>
+        </div>
+
+        <div class="project-demo" data-demo="agents">
+          <div class="demo-card demo-agents">
+            <div class="demo-head"><span>Task dispatch</span><span class="demo-status" id="agentStatus">Ready</span></div>
+            <div class="agent-output" id="agentLines" aria-live="polite">
+              <p class="agent-line is-placeholder">Waiting for dispatch.</p>
+            </div>
+            <button class="demo-control" id="agentDispatch" type="button">Dispatch a task</button>
+            <p class="demo-note">Interface study using the existing agent task flow.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- More work -->
+    <section class="more-work" id="more-work" data-bg="#f5f5f7" aria-labelledby="more-work-title">
+      <div class="more-work-inner">
+        <h2 id="more-work-title">More work</h2>
+        <div class="more-work-list">
+          <a class="more-work-row" href="https://github.com/hanennkam" target="_blank" rel="noopener">
+            <span class="more-work-copy">
+              <h3>Invoicing Engine</h3>
+              <p>Billing at the edge, without the drag.</p>
+            </span>
+            <span class="more-work-facts">D1 · Edge · 2 channels</span>
+            <span class="more-work-arrow" aria-hidden="true">↗</span>
+          </a>
+          <a class="more-work-row" href="https://github.com/hanennkam" target="_blank" rel="noopener">
+            <span class="more-work-copy">
+              <h3>XAUUSD</h3>
+              <p>Discipline, encoded.</p>
+            </span>
+            <span class="more-work-facts">EMA 9/21 · 38 tests · Fail-closed</span>
+            <span class="more-work-arrow" aria-hidden="true">↗</span>
+          </a>
+        </div>
+      </div>
+    </section>
   </section>
 
   <!-- =====================================================================
@@ -432,7 +490,7 @@
             <p class="world-body">A full-spectrum software agency delivering responsive web platforms, bespoke business automation, internal tooling and digital transformation for SMEs.</p>
             <div class="world-facts"><span>Custom web engineering</span><span>Automation bots</span><span>SaaS prototyping</span><span>Cloud tooling</span></div>
             <div class="world-cta-row">
-              <a class="world-link" href="#work" data-jump-project="4" data-cursor="WORK">View the invoicing engine <span>↗</span></a>
+              <a class="world-link" href="#more-work" data-cursor="WORK">View the invoicing engine <span>↗</span></a>
               <a class="world-link" href="https://www.instagram.com/devx.media/" target="_blank" rel="noopener" data-cursor="INSTAGRAM">Official Instagram <span>↗</span></a>
               <a class="world-link world-link-muted" href="#contact" data-cursor="TALK">Start a build <span>↗</span></a>
             </div>
@@ -793,7 +851,7 @@
             <div class="world-facts"><span>Live PWA</span><span>Receipt → expense</span><span>Claude Vision</span><span>Supabase RLS</span></div>
             <div class="world-cta-row">
               <a class="world-link" href="https://duits-money-tracking.onrender.com" target="_blank" rel="noopener" data-cursor="OPEN">Open live app <span>↗</span></a>
-              <a class="world-link world-link-muted" href="#work" data-jump-project="1" data-cursor="BUILD">Read the build <span>↗</span></a>
+              <a class="world-link world-link-muted" href="#project-duits" data-cursor="BUILD">Read the build <span>↗</span></a>
             </div>
             <p class="world-note">Live, invite-only build. Product screenshots are from the public sign-in screen; no account data is shown.</p>
           </div>
@@ -965,9 +1023,6 @@
 <noscript>
   <style>
     .menu-toggle,.mobile-menu{display:none!important}
-    .work-pin{height:auto!important;overflow:visible!important}
-    .work-track{display:block!important;width:100%!important;transform:none!important}
-    .project{width:100%!important;height:auto!important;min-height:100svh}
   </style>
 </noscript>
 
@@ -978,5 +1033,6 @@
 <script src="main.js" defer></script>
 <script src="stage3d.js" defer></script>
 <script src="hero3d.js" defer></script>
+<script src="work.js" defer></script>
 </body>
 </html>
