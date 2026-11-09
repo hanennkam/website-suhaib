@@ -28,7 +28,8 @@
 
   function clamp(v, a, b) { return Math.max(a, Math.min(b, v)); }
   function lerp(a, b, t) { return a + (b - a) * t; }
-  function isDesktopWork() { return window.innerWidth > 1100 && !reduced; }
+  // Phase A: keep the work chapter as a vertical stack. The pinned reel returns in Phase C.
+  function isDesktopWork() { return false; }
   function scrollToY(y, duration) {
     if (lenis && !reduced) {
       lenis.scrollTo(y, { duration: duration || 1.35 });
@@ -210,7 +211,6 @@
     });
   }
   updateClocks();
-  setInterval(updateClocks, 1000);
 
   /* =======================================================================
      NAVIGATION / CHAPTER / TONE
@@ -1029,8 +1029,7 @@
         var wr = workSection.getBoundingClientRect();
         var inView = wr.top <= window.innerHeight * 0.55 && wr.bottom > window.innerHeight * 0.3;
         if (inView) {
-          var tone = workPanels[activeProject].classList.contains("project-histo") || workPanels[activeProject].classList.contains("project-duits") ? "light" : "dark";
-          setTone(tone);
+          setTone("dark");
         }
       }
       var hint = $("#workHint");
@@ -1697,11 +1696,67 @@
   }
 
   /* =======================================================================
+     PAGE BACKGROUND — scroll-tied light/dark transition
+     ======================================================================= */
+  function initPageBackground() {
+    var bg = $(".page-bg");
+    var sections = $$("[data-bg]");
+    if (!bg || !sections.length) return;
+
+    function rgb(hex) {
+      var n = parseInt(hex.replace("#", ""), 16);
+      return [(n >> 16) & 255, (n >> 8) & 255, n & 255];
+    }
+
+    function mix(a, b, t) {
+      var ca = rgb(a), cb = rgb(b);
+      return "rgb(" + Math.round(lerp(ca[0], cb[0], t)) + "," +
+        Math.round(lerp(ca[1], cb[1], t)) + "," +
+        Math.round(lerp(ca[2], cb[2], t)) + ")";
+    }
+
+    function update() {
+      var vh = window.innerHeight;
+      var y = window.pageYOffset;
+      var color = sections[0].getAttribute("data-bg");
+
+      for (var i = 1; i < sections.length; i++) {
+        var boundary = sections[i].offsetTop;
+        if (y >= boundary) {
+          color = sections[i].getAttribute("data-bg");
+          continue;
+        }
+        if (!reduced) {
+          var start = boundary - vh * 0.2;
+          var end = boundary;
+          if (y > start && y < end) {
+            color = mix(sections[i - 1].getAttribute("data-bg"), sections[i].getAttribute("data-bg"), (y - start) / (end - start));
+          }
+        }
+        break;
+      }
+
+      bg.style.backgroundColor = color;
+    }
+
+    var queued = false;
+    function queue() {
+      if (queued) return;
+      queued = true;
+      requestAnimationFrame(function () { queued = false; update(); });
+    }
+
+    window.addEventListener("scroll", queue, { passive: true });
+    window.addEventListener("resize", debounce(update, 150));
+    update();
+  }
+
+  /* =======================================================================
      BOOTSTRAP
      ======================================================================= */
   // Tone map used by the fixed header and chapter rail.
   var toneMap = [
-    ["#intro", "dark"], ["#operator", "light"], ["#universe", "dark"],
+    ["#intro", "light"], ["#operator", "light"], ["#universe", "light"],
     ["#work", "dark"], ["#worlds", "dark"], ["#record", "light"], ["#contact", "dark"]
   ];
   toneMap.forEach(function (pair) {
@@ -1709,16 +1764,16 @@
     if (el) el.setAttribute("data-tone", pair[1]);
   });
   $$(".world").forEach(function (el) {
-    el.setAttribute("data-tone", el.classList.contains("world-sejenak") || el.classList.contains("world-duits") ? "light" : "dark");
+    el.setAttribute("data-tone", "dark");
   });
   workPanels = $$(".project");
   projectCount = workPanels.length;
   workPanels.forEach(function (el) {
-    el.setAttribute("data-tone", el.classList.contains("project-histo") || el.classList.contains("project-duits") ? "light" : "dark");
+    el.setAttribute("data-tone", "dark");
   });
 
+  initPageBackground();
   initIntroScene();
-  initUniverse();
   setupWork();
   initHisto();
   initGoldChart();

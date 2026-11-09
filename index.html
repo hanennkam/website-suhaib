@@ -3,83 +3,53 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Ahmad Suhaib — The Signal Archive</title>
-<meta name="description" content="Ahmad Suhaib — Software Engineer, Creative Technologist and Founder. An interactive archive of AI systems, product engineering, creative media, five ventures and the live Duits product.">
-<meta name="theme-color" content="#070707">
+<title>Ahmad Suhaib — Software Engineer, Creative Technologist & Founder</title>
+<meta name="description" content="Ahmad Suhaib — software engineer, creative technologist and founder. AI systems, digital products and the ventures around them. Available for internship from end February 2027.">
+<meta name="theme-color" content="#f5f5f7">
 <link rel="canonical" href="https://website-suhaib.vercel.app/">
 <meta property="og:url" content="https://website-suhaib.vercel.app/">
 <meta property="og:type" content="website">
-<meta property="og:site_name" content="Ahmad Suhaib — The Signal Archive">
-<meta property="og:title" content="Ahmad Suhaib — The Signal Archive">
-<meta property="og:description" content="An interactive archive of AI systems, product engineering, creative media, five ventures and the live Duits product. Built at the intersection of technology, design and business.">
+<meta property="og:site_name" content="Ahmad Suhaib">
+<meta property="og:title" content="Ahmad Suhaib — Software Engineer, Creative Technologist & Founder">
+<meta property="og:description" content="AI systems, digital products and the ventures around them. Available for internship from end February 2027.">
 <meta property="og:image" content="og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Ahmad Suhaib — The Signal Archive. A crystalline monolith and editorial typography.">
+<meta property="og:image:alt" content="Ahmad Suhaib — software engineer, creative technologist and founder.">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Ahmad Suhaib — The Signal Archive">
-<meta name="twitter:description" content="An interactive archive of AI systems, product engineering, creative media, five ventures and the live Duits product.">
+<meta name="twitter:title" content="Ahmad Suhaib — Software Engineer, Creative Technologist & Founder">
+<meta name="twitter:description" content="AI systems, digital products and the ventures around them. Available for internship from end February 2027.">
 <meta name="twitter:image" content="og-image.png">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23070707'/%3E%3Cpath d='M20 44L32 18L44 44M24 37H40' stroke='%23ff5a2a' stroke-width='4' stroke-linecap='round' stroke-linejoin='round' fill='none'/%3E%3Ccircle cx='32' cy='18' r='3' fill='%23bdefff'/%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23000000'/%3E%3Cpath d='M20 44L32 18L44 44M24 37H40' stroke='%23ff5a2a' stroke-width='4' stroke-linecap='round' stroke-linejoin='round' fill='none'/%3E%3Ccircle cx='32' cy='18' r='3' fill='%23ff5a2a'/%3E%3C/svg%3E">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,100..900;1,62..125,100..900&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400..700&display=swap" rel="stylesheet">
 
 <link rel="stylesheet" href="styles.css">
-<link rel="stylesheet" href="artefacts.css">
 <link rel="stylesheet" href="photos.css?v=phase2-20261107">
 <link rel="stylesheet" href="brands.css?v=phase2-20261107d">
+<link rel="stylesheet" href="phase-a.css">
 <script>document.documentElement.classList.remove('no-js');document.documentElement.classList.add('js');</script>
 </head>
 <body>
 
 <a class="skip-link" href="#operator">Skip to content</a>
 
-<div class="grain" aria-hidden="true"></div>
-<div class="scroll-line" aria-hidden="true"><span id="scrollLine"></span></div>
-
-<!-- Cursor -->
-<div class="cursor" id="cursor" aria-hidden="true">
-  <span class="cursor-dot"></span>
-  <span class="cursor-ring"><span class="cursor-label" id="cursorLabel"></span></span>
-</div>
-
-<!-- Boot / cinematic calibration -->
-<div class="boot" id="boot">
-  <div class="boot-top">
-    <span>AHMAD SUHAIB</span>
-    <span>THE SIGNAL ARCHIVE / 2026</span>
-  </div>
-  <div class="boot-center">
-    <div class="boot-mark">AS<span>®</span></div>
-    <div class="boot-counter"><span id="bootCount">000</span><i>%</i></div>
-  </div>
-  <div class="boot-bottom">
-    <div class="boot-status"><span class="status-dot"></span><span id="bootStatus">CALIBRATING SIGNAL</span></div>
-    <button type="button" class="boot-skip" id="bootSkip">SKIP INTRO</button>
-  </div>
-  <div class="boot-track"><span id="bootBar"></span></div>
-</div>
+<div class="page-bg" aria-hidden="true"></div>
 
 <!-- Header -->
 <header class="site-header" id="siteHeader">
-  <a class="brand" href="#intro" data-cursor="TOP">
-    <span class="brand-mark">AS<span>®</span></span>
-    <span class="brand-text"><b>Ahmad Suhaib</b><em>Signal Archive</em></span>
+  <a class="brand" href="#intro" aria-label="Ahmad Suhaib — home">
+    <span class="brand-name">Ahmad Suhaib</span>
   </a>
-  <div class="header-chapter" aria-hidden="true">
-    <span id="headerChapter">00</span>
-    <span class="header-slash">/</span>
-    <span id="headerChapterName">ARRIVAL</span>
-  </div>
   <nav class="header-nav" aria-label="Primary">
-    <a href="#universe" data-cursor="EXPLORE">Universe</a>
-    <a href="#work" data-cursor="VIEW">Work</a>
-    <a href="#worlds" data-cursor="ENTER">Worlds</a>
-    <a href="#record" data-cursor="READ">Record</a>
+    <a href="#operator">About</a>
+    <a href="#work">Work</a>
+    <a href="#worlds">Ventures</a>
+    <a href="#record">Recognition</a>
   </nav>
-  <a class="header-cta" href="#contact" data-cursor="TALK"><span>Start a conversation</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+  <a class="header-cta" href="#contact"><span>Contact</span></a>
   <button type="button" class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
     <span></span><span></span>
   </button>
@@ -88,99 +58,56 @@
 <!-- Mobile menu -->
 <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
   <div class="mobile-menu-top">
-    <span>INDEX / 2026</span>
+    <span>Ahmad Suhaib</span>
     <button type="button" class="mobile-menu-close" id="menuClose" aria-label="Close menu">Close</button>
   </div>
   <nav class="mobile-menu-nav" aria-label="Mobile primary">
-    <a href="#intro" data-menu-link><span>00</span>Arrival</a>
-    <a href="#operator" data-menu-link><span>01</span>Operator</a>
-    <a href="#universe" data-menu-link><span>02</span>Universe</a>
-    <a href="#work" data-menu-link><span>03</span>Selected Work</a>
-    <a href="#worlds" data-menu-link><span>04</span>Worlds</a>
-    <a href="#record" data-menu-link><span>05</span>Record</a>
-    <a href="#contact" data-menu-link><span>06</span>Transmit</a>
+    <a href="#intro" data-menu-link>Home</a>
+    <a href="#operator" data-menu-link>About</a>
+    <a href="#work" data-menu-link>Work</a>
+    <a href="#worlds" data-menu-link>Ventures</a>
+    <a href="#record" data-menu-link>Recognition</a>
+    <a href="#contact" data-menu-link>Contact</a>
   </nav>
   <div class="mobile-menu-foot">
-    <p>Ipoh, Perak, Malaysia<br><span id="mobileClock">--:--:--</span> KUL</p>
+    <p>Ipoh, Perak, Malaysia</p>
     <a href="mailto:suhaibhamidun@gmail.com">suhaibhamidun@gmail.com</a>
   </div>
 </div>
 
-<!-- Chapter rail -->
-<nav class="chapter-rail" aria-label="Chapters">
-  <a href="#intro" data-rail="intro"><span>00</span><i></i><b>Arrival</b></a>
-  <a href="#operator" data-rail="operator"><span>01</span><i></i><b>Operator</b></a>
-  <a href="#universe" data-rail="universe"><span>02</span><i></i><b>Universe</b></a>
-  <a href="#work" data-rail="work"><span>03</span><i></i><b>Work</b></a>
-  <a href="#worlds" data-rail="worlds"><span>04</span><i></i><b>Worlds</b></a>
-  <a href="#record" data-rail="record"><span>05</span><i></i><b>Record</b></a>
-  <a href="#contact" data-rail="contact"><span>06</span><i></i><b>Transmit</b></a>
-</nav>
-
 <main id="main">
 
   <!-- =====================================================================
-       00 — ARRIVAL
+       00 — HERO
        ===================================================================== -->
-  <section class="intro" id="intro" data-chapter="00" data-chapter-name="ARRIVAL" data-theme="dark">
-    <div class="intro-bg" aria-hidden="true">
-      <div class="intro-aura"></div>
-      <div class="intro-horizon"></div>
-      <canvas id="introCanvas"></canvas>
-      <div class="intro-vignette"></div>
-    </div>
-
-    <div class="intro-static" aria-hidden="true">
-      <div class="static-monolith"><span></span></div>
-    </div>
-
+  <section class="intro" id="intro" data-chapter="00" data-chapter-name="Introduction" data-bg="#f5f5f7">
     <div class="intro-content">
       <div class="intro-kicker">
-        <span class="status-pill"><span class="status-dot"></span>Available for internship · End Feb 2027</span>
-        <span class="intro-coord">03°09′N / 101°35′E</span>
+        <span class="status-pill"><span class="status-dot"></span>Available for internship · Feb 2027</span>
       </div>
 
       <h1 class="intro-title" aria-label="Ahmad Suhaib">
-        <span class="intro-line"><span class="intro-word" data-word="AHMAD">AHMAD</span></span>
-        <span class="intro-line intro-line-offset"><span class="intro-word intro-word-outline" data-word="SUHAIB">SUHAIB</span><span class="intro-reg">®</span></span>
+        <span class="intro-line"><span class="intro-word">Ahmad</span></span>
+        <span class="intro-line"><span class="intro-word">Suhaib</span></span>
       </h1>
 
       <div class="intro-lower">
-        <div class="intro-roles">
-          <p>Software Engineer</p>
-          <p>Creative Technologist</p>
-          <p>Founder</p>
-        </div>
-        <p class="intro-bio">I build at the intersection of <em>technology</em>, <em>design</em> and <em>business</em> — engineering AI systems, digital products and multidisciplinary ventures from concept to revenue.</p>
-        <a class="scroll-cue" href="#operator" data-cursor="ENTER">
-          <span class="scroll-cue-label">Enter the archive</span>
+        <p class="intro-roles">Software Engineer · Creative Technologist · Founder</p>
+        <p class="intro-bio">I build AI products and the ventures around them — from first prototype to revenue.</p>
+        <a class="scroll-cue" href="#work">
+          <span class="scroll-cue-label">See the work</span>
           <span class="scroll-cue-ring"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v15M6 13l6 6 6-6"/></svg></span>
         </a>
       </div>
-
-      <div class="intro-side" aria-hidden="true">
-        <span>Technology</span><i></i><span>AI</span><i></i><span>Creative</span><i></i><span>Enterprise</span>
-      </div>
-    </div>
-
-    <div class="intro-foot">
-      <span>Portfolio / MMXXVI</span>
-      <span class="intro-foot-mid"><i></i> SIGNAL ACQUIRED</span>
-      <span>Ipoh, Perak, Malaysia</span>
     </div>
   </section>
 
   <!-- =====================================================================
-       01 — OPERATOR / MANIFESTO
+       01 — ABOUT
        ===================================================================== -->
-  <section class="operator" id="operator" data-chapter="01" data-chapter-name="OPERATOR" data-theme="bone">
-    <h2 class="sr-only">Operator — a working philosophy</h2>
+  <section class="operator" id="operator" data-chapter="01" data-chapter-name="About" data-bg="#ffffff">
+    <h2 class="sr-only">About Ahmad Suhaib</h2>
     <div class="operator-stage">
-      <div class="stage-meta">
-        <span>01 / OPERATOR</span>
-        <span>A working philosophy</span>
-      </div>
-
       <div class="manifesto" id="manifesto">
         <p class="sr-only">I don’t just write software — I engineer products from concept to revenue, and build creative ventures that scale. Computer Science student at UMPSA, specialising in Graphic &amp; Multimedia Technology.</p>
         <p class="manifesto-text" aria-hidden="true">
@@ -203,37 +130,12 @@
 
       <div class="manifesto-foot">
         <p>Computer Science student at UMPSA — specialising in Graphic &amp; Multimedia Technology. I bridge deep technical systems with visual craft and commercial execution.</p>
-        <div class="manifesto-ticker" aria-hidden="true">
-          <span>Technology</span><i></i><span>Design</span><i></i><span>Business</span><i></i>
-          <span>Technology</span><i></i><span>Design</span><i></i><span>Business</span>
-        </div>
       </div>
-
-      <figure class="op-collage" aria-label="Creative studio context imagery">
-        <div class="op-photo op-photo-main" data-parallax="0.09">
-          <img src="assets/photos/operator-mood-800.jpg"
-               srcset="assets/photos/operator-mood-400.jpg 400w, assets/photos/operator-mood-800.jpg 800w"
-               sizes="(max-width: 760px) 74vw, 24vw"
-               width="800" height="800" loading="lazy" decoding="async"
-               alt="Moodboard, notes and studio materials on a desk — representative context image">
-          <span class="photo-tag">STUDIO CONTEXT / STOCK</span>
-        </div>
-        <div class="op-photo op-photo-detail" data-parallax="0.16">
-          <img src="assets/photos/operator-shelf-500.jpg"
-               srcset="assets/photos/operator-shelf-500.jpg 500w, assets/photos/operator-shelf-1000.jpg 1000w"
-               sizes="(max-width: 760px) 40vw, 12vw"
-               width="500" height="625" loading="lazy" decoding="async"
-               alt="Studio shelf with art supplies and camera — representative context image">
-        </div>
-        <figcaption><span>PLATE 01 — THE STUDIO AS A SYSTEM</span><span>LICENSED CONTEXT</span></figcaption>
-      </figure>
-
-      <div class="operator-watermark" aria-hidden="true">01</div>
     </div>
 
     <div class="ledger">
       <div class="ledger-head">
-        <span class="eyebrow">THE OPERATING SYSTEM</span>
+        <span class="eyebrow">How I work</span>
         <h2>Three disciplines.<br><em>One output.</em></h2>
         <p>Not separate skillsets — a single feedback loop between engineering, visual systems and business.</p>
       </div>
@@ -241,19 +143,19 @@
       <div class="ledger-rows">
         <article class="ledger-row">
           <span class="ledger-num">01</span>
-          <div class="ledger-title"><h3>Backend &amp; AI systems</h3><span>ENGINEERING</span></div>
+          <div class="ledger-title"><h3>Backend &amp; AI systems</h3><span>Engineering</span></div>
           <p>FastAPI microservices, Anthropic &amp; Ollama agent architectures, Cloudflare edge compute, and PyTorch deep neural networks.</p>
           <span class="ledger-arrow" aria-hidden="true">↗</span>
         </article>
         <article class="ledger-row">
           <span class="ledger-num">02</span>
-          <div class="ledger-title"><h3>Creative technology</h3><span>DESIGN</span></div>
+          <div class="ledger-title"><h3>Creative technology</h3><span>Design</span></div>
           <p>Graphic &amp; multimedia systems, Adobe Certified Professional in Visual Design, UI/UX craft and 3D web experiences.</p>
           <span class="ledger-arrow" aria-hidden="true">↗</span>
         </article>
         <article class="ledger-row">
           <span class="ledger-num">03</span>
-          <div class="ledger-title"><h3>Entrepreneurship</h3><span>BUSINESS</span></div>
+          <div class="ledger-title"><h3>Entrepreneurship</h3><span>Business</span></div>
           <p>Ikon Keusahawanan awardee. Managing cross-functional teams, supply chains and production delivery across five brands.</p>
           <span class="ledger-arrow" aria-hidden="true">↗</span>
         </article>
@@ -269,68 +171,47 @@
   </section>
 
   <!-- =====================================================================
-       02 — UNIVERSE
+       02 — CAPABILITIES
        ===================================================================== -->
-  <section class="universe" id="universe" data-chapter="02" data-chapter-name="UNIVERSE" data-theme="dark">
+  <section class="universe" id="universe" data-chapter="02" data-chapter-name="Capabilities" data-bg="#f5f5f7">
     <div class="universe-stage">
-      <canvas id="universeCanvas" aria-hidden="true"></canvas>
-      <div class="universe-aura" aria-hidden="true"></div>
-      <div class="universe-grid" aria-hidden="true"></div>
-
       <div class="universe-head">
-        <span class="eyebrow">02 / THE UNIVERSE</span>
+        <span class="eyebrow">Capabilities</span>
         <h2>Four domains.<br><em>One operator.</em></h2>
-        <p>Select a node to explore the work behind it.</p>
+        <p>I work across the full stack of a product — the systems behind it, the intelligence inside it, the design people see, and the business that makes it sustainable.</p>
       </div>
 
-      <div class="universe-nodes" role="group" aria-label="Explore domains">
-        <button type="button" class="u-node u-node-code is-active" data-domain="code" aria-pressed="true" data-cursor="SELECT">
-          <span class="u-node-index">01</span>
+      <div class="universe-nodes">
+        <article class="u-node u-node-code">
           <span class="u-node-name">Code</span>
           <span class="u-node-sub">Systems / Product</span>
-          <i></i>
-        </button>
-        <button type="button" class="u-node u-node-ai" data-domain="ai" aria-pressed="false" data-cursor="SELECT">
-          <span class="u-node-index">02</span>
+          <p>Production backends, edge architecture and product engineering.</p>
+        </article>
+        <article class="u-node u-node-ai">
           <span class="u-node-name">AI</span>
           <span class="u-node-sub">Models / Agents</span>
-          <i></i>
-        </button>
-        <button type="button" class="u-node u-node-creative" data-domain="creative" aria-pressed="false" data-cursor="SELECT">
-          <span class="u-node-index">03</span>
+          <p>Computer vision, multimodal parsing and agentic automation.</p>
+        </article>
+        <article class="u-node u-node-creative">
           <span class="u-node-name">Creative</span>
           <span class="u-node-sub">Image / Motion</span>
-          <i></i>
-        </button>
-        <button type="button" class="u-node u-node-enterprise" data-domain="enterprise" aria-pressed="false" data-cursor="SELECT">
-          <span class="u-node-index">04</span>
+          <p>Visual systems, brand identity and 3D web experiences.</p>
+        </article>
+        <article class="u-node u-node-enterprise">
           <span class="u-node-name">Enterprise</span>
           <span class="u-node-sub">Brands / Revenue</span>
-          <i></i>
-        </button>
+          <p>Ventures, teams and production systems built to ship.</p>
+        </article>
       </div>
 
-      <div class="universe-panel" id="universePanel" aria-live="polite">
-        <div class="u-panel-top">
-          <span id="uPanelIndex">01 / CODE</span>
-          <span class="u-panel-status"><i></i>LINKED</span>
-        </div>
-        <h3 id="uPanelTitle">Systems that hold up.</h3>
-        <p id="uPanelBody">Production backends, edge architecture and product engineering — designed to ship, not to demo.</p>
-        <div class="u-panel-links" id="uPanelLinks">
+      <div class="universe-panel">
+        <h3>Systems that hold up.</h3>
+        <p>Production backends, edge architecture and product engineering — designed to ship, not to demo.</p>
+        <div class="u-panel-links">
           <a href="#work" data-jump-project="1">Duits <span>↗</span></a>
           <a href="#work" data-jump-project="4">DevXMedia Invoicing <span>↗</span></a>
           <a href="#work" data-jump-project="5">XAUUSD Engine <span>↗</span></a>
         </div>
-      </div>
-
-      <div class="universe-foot">
-        <span class="u-drag"><i></i>Drag to orbit · Select a domain</span>
-        <span class="u-coord" id="uCoord">X — · Y — · Z —</span>
-      </div>
-
-      <div class="universe-fallback" aria-hidden="true">
-        <div class="fallback-core">AS</div>
       </div>
     </div>
   </section>
@@ -338,22 +219,10 @@
   <!-- =====================================================================
        03 — SELECTED WORK
        ===================================================================== -->
-  <section class="work" id="work" data-chapter="03" data-chapter-name="SELECTED WORK" data-theme="dark">
+  <section class="work" id="work" data-chapter="03" data-chapter-name="Selected work" data-bg="#000000">
     <h2 class="sr-only">Selected work</h2>
     <div class="work-pin" id="workPin">
-      <div class="work-hud">
-        <div class="work-hud-left">
-          <span class="eyebrow">03 / SELECTED WORK</span>
-          <span class="work-hud-index"><b id="workIndex">01</b><i>/</i>06</span>
-        </div>
-        <div class="work-hud-center">
-          <span id="workCategory">COMPUTER VISION</span>
-        </div>
-        <div class="work-hud-right">
-          <span class="work-hud-hint" id="workHint">Scroll to traverse</span>
-          <span class="work-hud-progress"><i id="workProgress"></i></span>
-        </div>
-      </div>
+
 
       <div class="work-track" id="workTrack">
 
@@ -372,27 +241,7 @@
             <div class="project-tags"><span>PyTorch</span><span>EfficientNetV2-S</span><span>CBAM</span><span>Grad-CAM</span><span>FastAPI</span><span>Streamlit</span></div>
             <a class="project-link" href="https://github.com/hanennkam" target="_blank" rel="noopener" data-cursor="GITHUB">View code <span>↗</span></a>
           </div>
-          <div class="project-art art-histo" aria-label="Illustrative histology and Grad-CAM visualisation">
-            <div class="histo-frame">
-              <canvas id="histoCanvas" width="620" height="760"></canvas>
-              <div class="histo-scan" aria-hidden="true"></div>
-              <div class="histo-roi" aria-hidden="true"></div>
-              <div class="histo-crosshair" aria-hidden="true"></div>
-              <div class="art-label"><span>GRAD-CAM / ATTENTION</span><span>ILLUSTRATIVE</span></div>
-              <div class="histo-readout"><span>CLASS</span><strong>MALIGNANT</strong><span>p = 0.978</span></div>
-            </div>
-            <div class="histo-meta">
-              <span>PATIENT-LEVEL SPLIT</span><span>·</span><span>NO DATA LEAKAGE</span><span>·</span><span>EXPLAINABLE</span>
-            </div>
-            <figure class="context-photo context-lab">
-              <img src="assets/photos/histo-lab-600.jpg"
-                   srcset="assets/photos/histo-lab-600.jpg 600w, assets/photos/histo-lab-1200.jpg 1200w"
-                   sizes="(max-width: 760px) 30vw, 15vw"
-                   width="600" height="450" loading="lazy" decoding="async"
-                   alt="Scientist working with a microscope — representative pathology context">
-              <figcaption>PATHOLOGY CONTEXT / STOCK</figcaption>
-            </figure>
-          </div>
+
         </article>
 
         <!-- 02 Duits -->
@@ -401,7 +250,7 @@
             <div class="project-kicker"><span>02</span><span>LIVE PRODUCT · INVITE-ONLY</span><span class="project-live-pill"><i></i>LIVE</span></div>
             <div class="duits-project-brand">
               <img src="assets/brands/duits/logo/duits-logo-transparent.png" alt="Duits official wallet logo" width="64" height="64">
-              <span>OFFICIAL PRODUCT</span>
+              <span>Official product</span>
             </div>
             <h3 class="project-title">Duits</h3>
             <p class="project-sub">Receipts in.<br><em>Expenses out.</em></p>
@@ -414,33 +263,9 @@
             <div class="project-tags"><span>FastAPI</span><span>Claude 3.5 Sonnet</span><span>Supabase</span><span>PostgreSQL</span><span>Docker</span><span>Render</span></div>
             <div class="project-actions">
               <a class="project-link" href="https://duits-money-tracking.onrender.com" target="_blank" rel="noopener" data-cursor="LIVE">Open live product <span>↗</span></a>
-              <button type="button" class="inline-action" id="duitsScan" data-cursor="SCAN"><i></i>Parse a receipt</button>
             </div>
           </div>
-          <div class="project-art art-duits">
-            <div class="duits-stage">
-              <div class="duits-phone">
-                <div class="duits-notch"></div>
-                <div class="duits-app-top"><span>DUITS <i class="duits-app-live">LIVE</i></span><span>− RM 142.50</span></div>
-                <div class="duits-app-body">
-                  <div class="duits-bar"><span></span></div>
-                  <div class="duits-bars"><i style="height:28%"></i><i style="height:54%"></i><i style="height:39%"></i><i style="height:72%"></i><i style="height:58%"></i><i style="height:88%"></i><i style="height:66%"></i></div>
-                  <div class="duits-cats"><span>Groceries</span><span>Transport</span><span>Bills</span></div>
-                </div>
-                <div class="duits-home"></div>
-              </div>
-              <div class="duits-receipt" id="duitsReceipt">
-                <div class="receipt-head"><span>RECEIPT</span><span>SCAN_01</span></div>
-                <div class="receipt-line"><span>MERCHANT</span><b data-receipt="merchant">—</b></div>
-                <div class="receipt-line"><span>TOTAL</span><b data-receipt="total">—</b></div>
-                <div class="receipt-line"><span>TAX</span><b data-receipt="tax">—</b></div>
-                <div class="receipt-line"><span>CATEGORY</span><b data-receipt="category">—</b></div>
-                <div class="receipt-bar" aria-hidden="true"><span></span></div>
-                <div class="receipt-foot"><span>CLAUDE VISION</span><span>200 OK</span></div>
-              </div>
-              <div class="art-label"><span>LIVE PRODUCT / RECEIPT → STRUCTURE</span><span>INTERFACE STUDY</span></div>
-            </div>
-          </div>
+
         </article>
 
         <!-- 03 Waspada Banjir -->
@@ -458,42 +283,9 @@
             <div class="project-tags"><span>Mobile Application</span><span>Hydrological Telemetry</span><span>Geolocation</span><span>Push Dispatch</span></div>
             <div class="project-actions">
               <a class="project-link" href="#record" data-cursor="AWARD">View recognition <span>↗</span></a>
-              <button type="button" class="inline-action" id="banjirToggle" data-cursor="SIMULATE"><i></i>Raise alert state</button>
             </div>
           </div>
-          <div class="project-art art-banjir">
-            <div class="banjir-map" aria-hidden="true">
-              <svg viewBox="0 0 700 760" preserveAspectRatio="xMidYMid slice">
-                <g class="contours">
-                  <path d="M-40 610C80 520 150 590 240 520S420 410 520 470s160 120 240 70"/>
-                  <path d="M-40 660C80 570 160 630 250 570S430 470 530 520s150 110 230 80"/>
-                  <path d="M-40 710C90 620 170 670 270 620S440 530 540 570s140 100 220 90"/>
-                  <path d="M-40 560C70 470 140 540 230 470S410 360 510 420s170 120 250 50"/>
-                  <path d="M-40 510C60 420 130 490 220 420S400 310 500 370s180 130 260 40"/>
-                  <path d="M-40 460C50 370 120 440 210 370S390 260 490 320s190 140 270 30"/>
-                  <path d="M-40 410C40 320 110 390 200 320S380 210 480 270s200 150 280 20"/>
-                  <path d="M-40 360C30 270 100 340 190 270S370 160 470 220s210 160 290 10"/>
-                </g>
-                <g class="river">
-                  <path d="M330 -40C300 120 430 210 380 340S260 470 340 600s100 140 90 220"/>
-                  <path d="M330 -40C300 120 430 210 380 340S260 470 340 600s100 140 90 220" class="river-glow"/>
-                </g>
-                <g class="radar">
-                  <circle cx="360" cy="390" r="70"/><circle cx="360" cy="390" r="150"/><circle cx="360" cy="390" r="240"/>
-                </g>
-                <g class="map-pins">
-                  <circle cx="280" cy="280" r="6"/><circle cx="460" cy="340" r="6"/><circle cx="330" cy="520" r="6"/><circle cx="500" cy="590" r="6"/>
-                </g>
-              </svg>
-              <div class="banjir-readout">
-                <span>SIMULATED STATUS</span>
-                <strong id="banjirStatus">STANDBY</strong>
-                <i><b></b></i>
-              </div>
-              <div class="art-label"><span>HYDROLOGICAL OVERLAY</span><span>INTERFACE STUDY</span></div>
-            </div>
-            <div class="banjir-coords" aria-hidden="true">03°09′N / 101°35′E · TELEMETRY · 24H</div>
-          </div>
+
         </article>
 
         <!-- 04 Agents -->
@@ -511,42 +303,9 @@
             <div class="project-tags"><span>Python</span><span>Anthropic API</span><span>Ollama</span><span>ReportLab</span><span>Telegram</span><span>launchd</span></div>
             <div class="project-actions">
               <a class="project-link" href="https://github.com/hanennkam" target="_blank" rel="noopener" data-cursor="GITHUB">View on GitHub <span>↗</span></a>
-              <button type="button" class="inline-action" id="agentDispatch" data-cursor="DISPATCH"><i></i>Dispatch a task</button>
             </div>
           </div>
-          <div class="project-art art-agents">
-            <div class="agents-stage">
-              <svg class="agents-svg" viewBox="0 0 700 760" aria-hidden="true">
-                <g class="agent-edges">
-                  <path d="M350 380 L170 220"/><path d="M350 380 L530 210"/><path d="M350 380 L520 550"/><path d="M350 380 L180 560"/>
-                  <path d="M170 220 L60 140"/><path d="M530 210 L640 130"/><path d="M520 550 L640 650"/><path d="M180 560 L70 670"/>
-                </g>
-                <g class="agent-dots">
-                  <circle class="packet p1" cx="170" cy="220" r="4"/><circle class="packet p2" cx="530" cy="210" r="4"/><circle class="packet p3" cx="520" cy="550" r="4"/>
-                </g>
-                <g class="agent-core"><circle cx="350" cy="380" r="54"/><circle cx="350" cy="380" r="78"/></g>
-                <g class="agent-node"><circle cx="170" cy="220" r="20"/><circle cx="530" cy="210" r="20"/><circle cx="520" cy="550" r="20"/><circle cx="180" cy="560" r="20"/></g>
-                <g class="agent-label"><text x="350" y="386">PLANNER</text><text x="170" y="198">INVOICE</text><text x="530" y="188">CONTENT</text><text x="520" y="582">FILE</text><text x="180" y="592">GATEWAY</text></g>
-              </svg>
-              <div class="agents-console" id="agentConsole">
-                <div class="console-bar"><span></span><span></span><span></span><b>hermes_daemon</b></div>
-                <div class="console-lines" id="agentLines">
-                  <p><i>›</i> Gateway active. Listening for tasks.</p>
-                  <p><i>›</i> Planner ready. 3 agents online.</p>
-                  <p class="console-muted">Waiting for dispatch…</p>
-                </div>
-              </div>
-              <div class="art-label"><span>MULTI-AGENT ORCHESTRATION</span><span>SCHEMATIC</span></div>
-            </div>
-            <figure class="context-photo context-agents">
-              <img src="assets/photos/agents-desk-500.jpg"
-                   srcset="assets/photos/agents-desk-500.jpg 500w, assets/photos/agents-desk-1000.jpg 1000w"
-                   sizes="(max-width: 760px) 24vw, 12vw"
-                   width="500" height="625" loading="lazy" decoding="async"
-                   alt="Developer working at a multi-monitor setup — representative workspace context">
-              <figcaption>WORKSPACE CONTEXT / STOCK</figcaption>
-            </figure>
-          </div>
+
         </article>
 
         <!-- 05 Invoice -->
@@ -564,30 +323,7 @@
             <div class="project-tags"><span>Cloudflare Workers</span><span>Cloudflare D1</span><span>WhatsApp API</span><span>REST CRUD</span><span>PDF Generator</span></div>
             <a class="project-link" href="https://github.com/hanennkam" target="_blank" rel="noopener" data-cursor="GITHUB">View architecture <span>↗</span></a>
           </div>
-          <div class="project-art art-invoice">
-            <div class="invoice-stage">
-              <div class="invoice-diagram" id="invoiceDiagram">
-                <button type="button" class="arch-node arch-app" data-arch="app"><span>01</span><b>WEB APP</b><em>invoice input</em></button>
-                <button type="button" class="arch-node arch-worker" data-arch="worker"><span>02</span><b>WORKER</b><em>edge logic</em></button>
-                <button type="button" class="arch-node arch-db" data-arch="db"><span>03</span><b>D1</b><em>distributed SQL</em></button>
-                <button type="button" class="arch-node arch-pdf" data-arch="pdf"><span>04</span><b>PDF</b><em>vector output</em></button>
-                <button type="button" class="arch-node arch-wa" data-arch="wa"><span>05</span><b>WHATSAPP</b><em>dispatch</em></button>
-                <svg class="arch-wires" viewBox="0 0 700 760" aria-hidden="true">
-                  <path d="M190 220 C310 220 300 320 390 330"/>
-                  <path d="M390 330 C500 330 500 220 570 220"/>
-                  <path d="M390 330 C500 330 520 520 570 520"/>
-                  <path d="M190 220 C220 420 300 520 390 540"/>
-                  <path d="M390 540 C500 540 500 650 570 650"/>
-                </svg>
-                <div class="arch-packet"></div>
-              </div>
-              <div class="invoice-info">
-                <span>SELECT A NODE</span>
-                <p id="archText">Cloudflare Workers route requests at the edge; D1 keeps invoice data close to the user.</p>
-              </div>
-              <div class="art-label"><span>EDGE ARCHITECTURE</span><span>SCHEMATIC</span></div>
-            </div>
-          </div>
+
         </article>
 
         <!-- 06 XAUUSD -->
@@ -605,44 +341,21 @@
             <div class="project-tags"><span>Python</span><span>TwelveData</span><span>Telegram</span><span>CSV Backtesting</span><span>PyTest</span></div>
             <div class="project-actions">
               <a class="project-link" href="https://github.com/hanennkam" target="_blank" rel="noopener" data-cursor="GITHUB">View engine <span>↗</span></a>
-              <button type="button" class="inline-action is-on" id="newsGuard" aria-pressed="true" data-cursor="TOGGLE"><i></i>News guard: on</button>
             </div>
           </div>
-          <div class="project-art art-gold">
-            <div class="gold-stage">
-              <div class="gold-head"><span>XAUUSD · H1</span><span id="goldMode">NEWS GUARD / CLEAR</span></div>
-              <svg class="gold-chart" id="goldChart" viewBox="0 0 700 760" aria-hidden="true"></svg>
-              <div class="gold-legend"><span class="leg-ema9">EMA 9</span><span class="leg-ema21">EMA 21</span><span class="leg-rsi">RSI 58.4</span></div>
-              <div class="art-label"><span>STRATEGY SCHEMATIC</span><span>NOT LIVE DATA</span></div>
-            </div>
-          </div>
+
         </article>
 
       </div>
 
-      <div class="work-nav">
-        <button type="button" class="work-arrow" id="workPrev" aria-label="Previous project" data-cursor="PREV">
-          <svg viewBox="0 0 24 24"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>
-        </button>
-        <div class="work-dots" id="workDots" role="group" aria-label="Project index">
-          <button type="button" data-project="0" class="is-active" aria-label="HistoScan-AI"><span>01</span></button>
-          <button type="button" data-project="1" aria-label="Duits"><span>02</span></button>
-          <button type="button" data-project="2" aria-label="Waspada Banjir"><span>03</span></button>
-          <button type="button" data-project="3" aria-label="Agent Systems"><span>04</span></button>
-          <button type="button" data-project="4" aria-label="Invoicing Engine"><span>05</span></button>
-          <button type="button" data-project="5" aria-label="XAUUSD"><span>06</span></button>
-        </div>
-        <button type="button" class="work-arrow" id="workNext" aria-label="Next project" data-cursor="NEXT">
-          <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-        </button>
-      </div>
+
     </div>
   </section>
 
   <!-- =====================================================================
-       04 — WORLDS
+       04 — VENTURES
        ===================================================================== -->
-  <section class="worlds" id="worlds" data-chapter="04" data-chapter-name="WORLDS" data-theme="dark">
+  <section class="worlds" id="worlds" data-chapter="04" data-chapter-name="Ventures" data-bg="#000000">
     <header class="worlds-cover">
       <div class="worlds-cover-top"><span class="eyebrow">04 / WORLDS</span><span>SIX IDENTITIES · ONE OPERATOR</span></div>
       <h2>Different worlds.<br><em>Same standard.</em></h2>
@@ -650,45 +363,6 @@
       <div class="worlds-cover-index" aria-hidden="true">
         <span>01 HANNENKAM</span><span>02 DEVXMEDIA</span><span>03 SEJENAK</span><span>04 TINTA</span><span>05 BVRCODE</span><span>06 DUITS</span>
       </div>
-
-      <nav class="worlds-strip" aria-label="World context index">
-        <span class="worlds-strip-note">FIELD NOTES / OFFICIAL ASSETS + EXPLICIT PENDING SLOTS <i>SEE CREDITS</i></span>
-        <a class="worlds-strip-card worlds-strip-card--hannenkam" href="#worlds" data-jump-world="hannenkam">
-          <div class="hannenkam-strip-mark" aria-hidden="true"><span>OFFICIAL MARK</span><small>LOGO PENDING</small></div>
-          <span>01 / HANNENKAM</span>
-        </a>
-        <a class="worlds-strip-card" href="#worlds" data-jump-world="devxmedia" aria-label="02 / DevXMedia — jump to the DevXMedia world">
-          <picture>
-            <source type="image/webp" srcset="assets/brands/dev-x-media/photos/devx-event-team-700.webp 700w, assets/brands/dev-x-media/photos/devx-event-team-1400.webp 1400w" sizes="(max-width: 1100px) 42vw, 18vw">
-            <img src="assets/brands/dev-x-media/photos/devx-event-team-700.jpg" srcset="assets/brands/dev-x-media/photos/devx-event-team-700.jpg 700w, assets/brands/dev-x-media/photos/devx-event-team-1400.jpg 1400w" sizes="(max-width: 1100px) 42vw, 18vw" width="1440" height="1440" loading="lazy" decoding="async" alt="Dev X Media team at the UMPSA Innovatech Challenge closing ceremony">
-          </picture>
-          <span>02 / DEVXMEDIA</span>
-        </a>
-        <a class="worlds-strip-card" href="#worlds" data-jump-world="sejenak" aria-label="03 / Sejenak — jump to the Sejenak Photobooth world">
-          <picture>
-            <source type="image/webp" srcset="assets/brands/sejenak-photobooth/photos/sejenak-event-stage-700.webp 700w, assets/brands/sejenak-photobooth/photos/sejenak-event-stage-1080.webp 1080w" sizes="(max-width: 1100px) 42vw, 18vw">
-            <img src="assets/brands/sejenak-photobooth/photos/sejenak-event-stage-700.jpg" srcset="assets/brands/sejenak-photobooth/photos/sejenak-event-stage-700.jpg 700w, assets/brands/sejenak-photobooth/photos/sejenak-event-stage-1080.jpg 1080w" sizes="(max-width: 1100px) 42vw, 18vw" width="1080" height="1080" loading="lazy" decoding="async" alt="Sejenak Photobooth event night with guests and the photobooth kiosk">
-          </picture>
-          <span>03 / SEJENAK</span>
-        </a>
-        <a class="worlds-strip-card worlds-strip-card--tinta" href="#worlds" data-jump-world="tinta">
-          <div class="tinta-strip-mark" aria-hidden="true"><b>TINTA</b><small>MEDIA PENDING</small></div>
-          <span>04 / TINTA</span>
-        </a>
-        <a class="worlds-strip-card" href="#worlds" data-jump-world="bvrcode" aria-label="05 / BVRCODE — jump to the BVRCODE Apparel world">
-          <picture>
-            <source type="image/webp" srcset="assets/brands/bvrcode-apparel/photos/asphalt-blue-700.webp 700w, assets/brands/bvrcode-apparel/photos/asphalt-blue-1400.webp 1400w" sizes="(max-width: 1100px) 42vw, 18vw">
-            <img src="assets/brands/bvrcode-apparel/photos/asphalt-blue-700.jpg" srcset="assets/brands/bvrcode-apparel/photos/asphalt-blue-700.jpg 700w, assets/brands/bvrcode-apparel/photos/asphalt-blue-1400.jpg 1400w" sizes="(max-width: 1100px) 42vw, 18vw" width="1856" height="2300" loading="lazy" decoding="async" alt="BVRCODE custom blue jersey product photography">
-          </picture>
-          <span>05 / BVRCODE</span>
-        </a>
-        <a class="worlds-strip-card worlds-strip-card--duits" href="#worlds" data-jump-world="duits" aria-label="06 / Duits — jump to the Duits live product world">
-          <div class="duits-strip-mark">
-            <img src="assets/brands/duits/logo/duits-logo-transparent.png" width="180" height="180" loading="lazy" decoding="async" alt="Duits official wallet logo">
-          </div>
-          <span>06 / DUITS</span>
-        </a>
-      </nav>
     </header>
 
     <!-- WORLD 01 — Hannenkam Rise Ventures -->
@@ -701,14 +375,11 @@
             <h3 class="world-title">Hannenkam<br><em>Rise Ventures</em></h3>
             <p class="world-body">The parent holding entity for digital platforms, manufacturing and creative media. A single operating ecosystem connecting software, events, film and apparel.</p>
             <div class="world-facts"><span>Digital platforms</span><span>Manufacturing</span><span>Creative media</span></div>
-            <div class="hannenkam-logo-slot" role="note" aria-label="Official Hannenkam Rise Ventures logo slot, awaiting source file">
-              <span class="hannenkam-logo-frame" aria-hidden="true">LOGO</span>
-              <span><b>OFFICIAL MARK</b><small>AWAITING SOURCE / NO SUBSTITUTE</small></span>
-            </div>
+
             <p class="world-note">Five ventures. One live product. One registered ecosystem.</p>
           </div>
           <div class="ecosystem" aria-label="Hannenkam ecosystem map">
-            <div class="eco-center eco-center--pending"><span class="eco-center-slot">LOGO<br>SLOT</span><b>OFFICIAL MARK<br>AWAITING SOURCE</b></div>
+            <div class="eco-center"><b>HANNENKAM</b></div>
             <div class="eco-ring eco-ring-1"></div>
             <div class="eco-ring eco-ring-2"></div>
             <button type="button" class="eco-node eco-devx" data-jump-world="devxmedia"><span>01</span>DevXMedia</button>
@@ -730,8 +401,8 @@
         <div class="devx-layout">
           <div class="world-copy">
             <div class="brand-stamp brand-stamp--devx">
-              <span class="brand-stamp-avatar"><img src="assets/brands/dev-x-media/logo/profile-avatar-150-LOW-RES.jpg" width="150" height="150" loading="lazy" decoding="async" alt="Dev X Media temporary official profile avatar"></span>
-              <span class="brand-stamp-copy"><b>DEV X MEDIA</b><small>TEMPORARY PROFILE AVATAR · FULL-RES LOGO PENDING</small></span>
+              <span class="brand-stamp-avatar"><img src="assets/brands/dev-x-media/logo/profile-avatar-150-LOW-RES.jpg" width="150" height="150" loading="lazy" decoding="async" alt="Dev X Media logo"></span>
+              <span class="brand-stamp-copy"><b>Dev X Media</b></span>
             </div>
             <h3 class="world-title devx-title">DevX<span>Media</span></h3>
             <p class="world-body">A full-spectrum software agency delivering responsive web platforms, bespoke business automation, internal tooling and digital transformation for SMEs.</p>
@@ -782,7 +453,7 @@
         <div class="brand-gallery brand-gallery--devx">
           <div class="brand-gallery-head">
             <span>FIELD RECORD / 2025 · REAL ACTIVITY PHOTOGRAPHS</span>
-            <a href="https://www.instagram.com/devx.media/" target="_blank" rel="noopener">OFFICIAL INSTAGRAM ↗</a>
+            <a href="https://www.instagram.com/devx.media/" target="_blank" rel="noopener">Instagram ↗</a>
           </div>
           <div class="brand-gallery-grid">
             <a class="brand-gallery-item g-devx-closing" href="https://www.instagram.com/devx.media/p/DLFZ3XITUv4/" target="_blank" rel="noopener">
@@ -820,8 +491,8 @@
         <div class="sejenak-layout">
           <div class="world-copy">
             <div class="brand-stamp brand-stamp--sejenak">
-              <span class="brand-stamp-avatar"><img src="assets/brands/sejenak-photobooth/logo/profile-avatar-150-LOW-RES.jpg" width="150" height="150" loading="lazy" decoding="async" alt="Sejenak Photobooth temporary official profile avatar"></span>
-              <span class="brand-stamp-copy"><b>SEJENAK PHOTOBOOTH</b><small>TEMPORARY PROFILE AVATAR · FULL-RES LOGO PENDING</small></span>
+              <span class="brand-stamp-avatar"><img src="assets/brands/sejenak-photobooth/logo/profile-avatar-150-LOW-RES.jpg" width="150" height="150" loading="lazy" decoding="async" alt="Sejenak Photobooth logo"></span>
+              <span class="brand-stamp-copy"><b>Sejenak Photobooth</b></span>
             </div>
             <h3 class="world-title sejenak-title">Sejenak<span>®</span></h3>
             <p class="world-sub">Photobooth &amp; Terabooth</p>
@@ -831,7 +502,6 @@
               <a class="world-link" href="#contact" data-cursor="BOOK">Book an activation <span>↗</span></a>
               <a class="world-link" href="https://www.instagram.com/sejenakphotobooth/" target="_blank" rel="noopener" data-cursor="INSTAGRAM">Official Instagram <span>↗</span></a>
               <a class="world-link world-link-muted" href="https://github.com/hanennkam" target="_blank" rel="noopener" data-cursor="GITHUB">Terabooth recognition <span>↗</span></a>
-              <button type="button" class="world-link" data-artefact-jump="photobooth" data-cursor="INSPECT">Inspect the kiosk in 3D <span>↗</span></button>
             </div>
           </div>
           <div class="sejenak-visual">
@@ -867,7 +537,7 @@
         <div class="brand-gallery brand-gallery--sejenak">
           <div class="brand-gallery-head">
             <span>EVENT RECORD / REAL SEJENAK PHOTOGRAPHS</span>
-            <a href="https://www.instagram.com/sejenakphotobooth/" target="_blank" rel="noopener">OFFICIAL INSTAGRAM ↗</a>
+            <a href="https://www.instagram.com/sejenakphotobooth/" target="_blank" rel="noopener">Instagram ↗</a>
           </div>
           <div class="brand-gallery-grid">
             <a class="brand-gallery-item g-sejenak-portrait" href="https://www.instagram.com/sejenakphotobooth/p/DYewGbynTfe/" target="_blank" rel="noopener">
@@ -926,8 +596,8 @@
         <div class="tinta-layout">
           <div class="tinta-heading">
             <div class="brand-stamp brand-stamp--tinta">
-              <span class="brand-stamp-avatar"><img src="assets/brands/tinta-visuals/logo/profile-avatar-150-LOW-RES.jpg" width="150" height="150" loading="lazy" decoding="async" alt="Tinta Visuals temporary official profile avatar"></span>
-              <span class="brand-stamp-copy"><b>TINTA VISUALS</b><small>TEMPORARY PROFILE AVATAR · FULL-RES LOGO PENDING</small></span>
+              <span class="brand-stamp-avatar"><img src="assets/brands/tinta-visuals/logo/profile-avatar-150-LOW-RES.jpg" width="150" height="150" loading="lazy" decoding="async" alt="Tinta Visuals logo"></span>
+              <span class="brand-stamp-copy"><b>Tinta Visuals</b></span>
             </div>
             <h3 class="world-title tinta-title">Tinta<br><em>Visuals</em></h3>
             <p class="world-body">A creative media studio for corporate event cinematography, commercial product photography, brand identity systems and high-impact visual storytelling.</p>
@@ -935,34 +605,9 @@
             <div class="world-cta-row">
               <a class="world-link" href="#contact" data-cursor="INQUIRE">Inquire about coverage <span>↗</span></a>
               <a class="world-link" href="https://www.instagram.com/tintavisuals/" target="_blank" rel="noopener" data-cursor="INSTAGRAM">Official Instagram <span>↗</span></a>
-              <button type="button" class="world-link" data-artefact-jump="camera" data-cursor="INSPECT">Inspect the camera in 3D <span>↗</span></button>
             </div>
           </div>
-          <div class="tinta-stage">
-            <div class="tinta-viewport">
-              <div class="tinta-still still-1 is-active" data-still="0">
-                <span class="still-label">SLOT 01 / AWAITING ORIGINAL</span>
-                <span class="still-shape s1"></span><span class="still-shape s2"></span><span class="still-shape s3"></span>
-              </div>
-              <div class="tinta-still still-2" data-still="1">
-                <span class="still-label">SLOT 02 / AWAITING ORIGINAL</span>
-                <span class="still-shape s1"></span><span class="still-shape s2"></span><span class="still-shape s3"></span>
-              </div>
-              <div class="tinta-still still-3" data-still="2">
-                <span class="still-label">SLOT 03 / AWAITING ORIGINAL</span>
-                <span class="still-shape s1"></span><span class="still-shape s2"></span><span class="still-shape s3"></span>
-              </div>
-              <div class="tinta-frame-line"></div>
-              <div class="tinta-caption"><span>TINTA / MEDIA VAULT</span><span>NO VERIFIED ORIGINALS</span></div>
-            </div>
-            <div class="filmstrip" id="filmstrip" role="group" aria-label="Select a media slot">
-              <button type="button" class="film-cell is-active" data-frame="0" data-cursor="VIEW" aria-label="Slot 01 — awaiting verified Tinta media"><span>01</span><i class="mini-a"></i></button>
-              <button type="button" class="film-cell" data-frame="1" data-cursor="VIEW" aria-label="Slot 02 — awaiting verified Tinta media"><span>02</span><i class="mini-b"></i></button>
-              <button type="button" class="film-cell" data-frame="2" data-cursor="VIEW" aria-label="Slot 03 — awaiting verified Tinta media"><span>03</span><i class="mini-c"></i></button>
-              <button type="button" class="film-cell film-cell-ghost" aria-hidden="true" tabindex="-1"><span>04</span><i></i></button>
-            </div>
-            <p class="tinta-pending-note">No verified owned media has been supplied for Tinta yet. These frames are empty design slots — no stock photograph or unrelated account content is presented as Tinta work.</p>
-          </div>
+
         </div>
         <div class="world-index"><span>04 — 06</span><span>FILM / IMAGE</span></div>
       </div>
@@ -977,7 +622,7 @@
           <div class="world-copy">
             <div class="bvr-brandline">
               <span class="bvr-logo-plaque"><img src="assets/brands/bvrcode-apparel/logo/logo-bvrcode-black.png" alt="BVRCODE Apparel official logo" width="220" height="128"></span>
-              <span>OFFICIAL BRAND / SINCE 2024</span>
+              <span>Official brand / Since 2024</span>
             </div>
             <h3 class="world-title bvr-title">BVR<span>CODE</span></h3>
             <p class="world-sub">Apparel / Sublimation</p>
@@ -987,7 +632,6 @@
               <a class="world-link" href="https://bvrcodeapparel.com" target="_blank" rel="noopener" data-cursor="VISIT">bvrcodeapparel.com <span>↗</span></a>
               <a class="world-link" href="https://www.instagram.com/bvrcode.apparel/" target="_blank" rel="noopener" data-cursor="INSTAGRAM">Official Instagram <span>↗</span></a>
               <a class="world-link world-link-muted" href="#contact" data-cursor="ORDER">Place an order <span>↗</span></a>
-              <button type="button" class="world-link" data-artefact-jump="jersey" data-cursor="INSPECT">Inspect the jersey in 3D <span>↗</span></button>
             </div>
           </div>
           <div class="bvr-studio">
@@ -1000,7 +644,7 @@
                      width="1848" height="2304" loading="lazy" decoding="async"
                      alt="BVRCODE custom sublimated jersey hanging in the production workshop">
               </picture>
-              <figcaption><span>BVRCODE / SUBLIMATED TEAMWEAR</span><span>OFFICIAL PRODUCT</span></figcaption>
+              <figcaption><span>BVRCODE / SUBLIMATED TEAMWEAR</span><span>Official product</span></figcaption>
             </figure>
             <figure class="bvr-photo bvr-photo-jersey" data-parallax="0.12">
               <picture>
@@ -1056,7 +700,7 @@
         <div class="brand-gallery brand-gallery--bvr">
           <div class="brand-gallery-head">
             <span>BVRCODE / FIELD ARCHIVE · REAL PRODUCT PHOTOGRAPHY</span>
-            <a href="https://www.instagram.com/bvrcode.apparel/" target="_blank" rel="noopener">OFFICIAL INSTAGRAM ↗</a>
+            <a href="https://www.instagram.com/bvrcode.apparel/" target="_blank" rel="noopener">Instagram ↗</a>
           </div>
           <div class="brand-gallery-grid">
             <a class="brand-gallery-item g-bvr-checker" href="https://www.instagram.com/bvrcode.apparel/p/Cvztq1FhhYw/" target="_blank" rel="noopener">
@@ -1117,12 +761,12 @@
           <div class="world-copy">
             <div class="duits-brandline">
               <span class="duits-live-pill"><i></i>LIVE PRODUCT</span>
-              <span class="duits-brand-note">OFFICIAL WALLET MARK</span>
+              <span class="duits-brand-note">Official wallet mark</span>
             </div>
             <h3 class="world-title duits-world-title">Duits</h3>
             <p class="world-sub">Personal finance, parsed.</p>
             <p class="world-body">Duits turns receipt photos, bank screenshots and plain text into structured spending data. Claude Vision extracts the merchant, total, tax and category; Supabase keeps each account behind per-user Row Level Security.</p>
-            <div class="world-facts"><span>LIVE PWA</span><span>Receipt → expense</span><span>Claude Vision</span><span>Supabase RLS</span></div>
+            <div class="world-facts"><span>Live PWA</span><span>Receipt → expense</span><span>Claude Vision</span><span>Supabase RLS</span></div>
             <div class="world-cta-row">
               <a class="world-link" href="https://duits-money-tracking.onrender.com" target="_blank" rel="noopener" data-cursor="OPEN">Open live app <span>↗</span></a>
               <a class="world-link world-link-muted" href="#work" data-jump-project="1" data-cursor="BUILD">Read the build <span>↗</span></a>
@@ -1145,7 +789,7 @@
                      width="430" height="932" loading="lazy" decoding="async"
                      alt="Live Duits app sign-in screen from the public product">
               </picture>
-              <figcaption><span>LIVE BUILD</span><span>INVITE-ONLY SIGN-IN</span></figcaption>
+              <figcaption><span>Live build</span><span>Invite-only sign-in</span></figcaption>
             </figure>
 
             <div class="duits-status-card">
@@ -1159,7 +803,7 @@
         <div class="duits-capture-strip">
           <div class="brand-gallery-head">
             <span>PRODUCT SURFACE / VERIFIED SCREENSHOTS</span>
-            <a href="https://duits-money-tracking.onrender.com" target="_blank" rel="noopener">OPEN LIVE BUILD ↗</a>
+            <a href="https://duits-money-tracking.onrender.com" target="_blank" rel="noopener">Open live build ↗</a>
           </div>
           <div class="duits-capture-grid">
             <figure class="duits-capture is-real">
@@ -1169,10 +813,7 @@
                    alt="Public Duits app sign-in screen documenting the live product surface">
               <figcaption><span>01 / SIGN-IN</span><span>PUBLIC</span></figcaption>
             </figure>
-            <div class="duits-capture is-pending" role="note" aria-label="Dashboard screenshot slot awaiting an approved capture">
-              <span class="duits-pending-mark">02</span>
-              <span class="duits-pending-copy"><b>DASHBOARD CAPTURE</b><small>AWAITING APPROVED SCREENSHOT</small></span>
-            </div>
+
             <div class="duits-capture-note">
               <span>ONLY THE PUBLIC SIGN-IN SURFACE IS DOCUMENTED.</span>
               <span>NO ACCOUNT DATA / NO INVENTED FEATURES</span>
@@ -1182,81 +823,14 @@
         <div class="world-index"><span>06 — 06</span><span>PRODUCT / FINANCE</span></div>
       </div>
     </article>
-
-    <!-- 04 / ARTEFACTS — studio objects modelled + lit in Blender, exported as glTF -->
-    <div class="artefacts" id="artefacts" aria-labelledby="artefactsTitle">
-      <div class="artefacts-kicker">
-        <span>04 / ARTEFACTS</span>
-        <span>BLENDER &rarr; GLTF · REAL GEOMETRY · PBR</span>
-      </div>
-      <div class="artefacts-head">
-        <div>
-          <span class="eyebrow">STUDIO OBJECTS</span>
-          <h2 id="artefactsTitle">Objects from<br><em>the workshop.</em></h2>
-        </div>
-        <p>The kit behind the ecosystem &mdash; the Sejenak kiosk, a mirrorless body and a BVRCODE jersey. Each is an authored object study: built in Blender, lit as a studio exhibit and exported as glTF. <b>Drag to orbit. Scroll to zoom.</b> Beside the viewer, a real gear reference grounds the digital object in the physical studio.</p>
-      </div>
-
-      <div class="artefacts-exhibit">
-        <div class="artefacts-stage is-loading" id="artefactStage">
-          <canvas id="artefactCanvas" role="img" aria-label="Interactive 3D model viewer"></canvas>
-          <div class="artefacts-fallback" id="artefactFallback" hidden>
-            <img id="artefactFallbackImg" src="assets/models/photobooth.jpg" alt="Blender render of the photobooth kiosk" width="760" height="760">
-            <span>AUTHORED RENDER / 3D UNAVAILABLE</span>
-          </div>
-          <div class="artefacts-loader" id="artefactLoader"><span>LOADING GEOMETRY</span><i></i></div>
-          <span class="artefacts-corner">REALTIME / WEBGL</span>
-          <div class="artefacts-hud">
-            <span id="artefactIndex">01 / 03</span>
-            <span id="artefactSpec">KIOSK · 25K TRIS · EMISSIVE UI</span>
-            <span>DRAG TO ORBIT</span>
-          </div>
-        </div>
-        <figure class="artefacts-photo" data-parallax="0.05">
-          <img src="assets/photos/artefacts-gear-600.jpg"
-               srcset="assets/photos/artefacts-gear-600.jpg 600w, assets/photos/artefacts-gear-1200.jpg 1200w"
-               sizes="(max-width: 1100px) 86vw, 20vw"
-               width="1200" height="800" loading="lazy" decoding="async"
-               alt="Camera bodies and lenses arranged as a flat lay — representative studio gear reference">
-          <figcaption><span>WORKSHOP REFERENCE</span><span>LICENSED STOCK</span></figcaption>
-        </figure>
-      </div>
-
-      <div class="artefacts-tabs" role="tablist" aria-label="Studio objects">
-        <button type="button" class="artefacts-tab" role="tab" data-artefact="photobooth" aria-selected="true" tabindex="0">
-          <span class="tab-num">01</span>
-          <span class="tab-name">Photobooth kiosk</span>
-          <span class="tab-sub">Sejenak / Terabooth</span>
-        </button>
-        <button type="button" class="artefacts-tab" role="tab" data-artefact="camera" aria-selected="false" tabindex="-1">
-          <span class="tab-num">02</span>
-          <span class="tab-name">Mirrorless camera</span>
-          <span class="tab-sub">Body &amp; 35 mm prime</span>
-        </button>
-        <button type="button" class="artefacts-tab" role="tab" data-artefact="jersey" aria-selected="false" tabindex="-1">
-          <span class="tab-num">03</span>
-          <span class="tab-name">Sports jersey</span>
-          <span class="tab-sub">BVRCODE sublimation</span>
-        </button>
-      </div>
-
-      <dl class="artefacts-specs">
-        <div><dt>Object</dt><dd data-spec="object">Mirrorless camera + 35 mm prime</dd></div>
-        <div><dt>Build</dt><dd data-spec="build">Modelled in Blender 5.2</dd></div>
-        <div><dt>Geometry</dt><dd data-spec="geometry">41,966 triangles · 1.2 MB glTF</dd></div>
-        <div><dt>Materials</dt><dd data-spec="materials">Anodised alloy, rubber, chrome, coated glass</dd></div>
-      </dl>
-
-      <p class="artefacts-note">ORIGINAL 3D ARTEFACTS /&nbsp; These models were generated for this site. They are not photographs of equipment, premises, clients or events, and they do not depict real people.</p>
-    </div>
-  </section>
+</section>
 
   <!-- =====================================================================
-       05 — RECORD
+       05 — RECOGNITION
        ===================================================================== -->
-  <section class="record" id="record" data-chapter="05" data-chapter-name="RECORD" data-theme="bone">
+  <section class="record" id="record" data-chapter="05" data-chapter-name="Recognition" data-bg="#f5f5f7">
     <div class="record-head">
-      <span class="eyebrow">05 / THE RECORD</span>
+      <span class="eyebrow">Recognition</span>
       <h2>Proof,<br><em>not promises.</em></h2>
       <div class="record-head-meta">
         <p>Recognition, academic track and the current availability window.</p>
@@ -1266,7 +840,7 @@
 
     <div class="record-grid">
       <div class="record-column">
-        <div class="record-column-head"><span>HONOURS &amp; RECOGNITION</span><span>06</span></div>
+        <div class="record-column-head"><span>Honours &amp; recognition</span><span>06</span></div>
         <article class="record-row">
           <span class="record-year">2025.09</span>
           <div><h3>Silver Medal — DICE 3.0</h3><p>Waspada Banjir recognised at the ASEAN-level innovation competition.</p></div>
@@ -1293,21 +867,21 @@
           <span class="record-tag">ACADEMIC</span>
         </article>
         <article class="record-row">
-          <span class="record-year">CERT</span>
+          <span class="record-year">Cert</span>
           <div><h3>Adobe Certified Professional</h3><p>Visual Design specialisation — Adobe Illustrator and Adobe Photoshop.</p></div>
           <span class="record-tag">ADOBE</span>
         </article>
       </div>
 
       <div class="record-column record-column-edu">
-        <div class="record-column-head"><span>ACADEMIC TRACK</span><span>03</span></div>
+        <div class="record-column-head"><span>Academic track</span><span>03</span></div>
         <article class="record-row">
           <span class="record-year">2023 —</span>
           <div><h3>Universiti Malaysia Pahang Al-Sultan Abdullah</h3><p>Bachelor of Computer Science (Graphic &amp; Multimedia Technology). Currently in 3rd year. Pekan, Pahang.</p></div>
           <span class="record-tag">ACTIVE</span>
         </article>
         <article class="record-row">
-          <span class="record-year">DONE</span>
+          <span class="record-year">Done</span>
           <div><h3>Kolej Matrikulasi Perak</h3><p>Science / Pre-University Matriculation Programme. Graduated with CGPA 3.50.</p></div>
           <span class="record-tag">CGPA 3.50</span>
         </article>
@@ -1318,7 +892,7 @@
         </article>
 
         <aside class="availability-card">
-          <div class="availability-top"><span class="status-dot"></span><span>INTERNSHIP WINDOW</span><span>OPEN</span></div>
+          <div class="availability-top"><span class="status-dot"></span><span>Internship window</span><span>Open</span></div>
           <h3>Available from<br><em>end February 2027.</em></h3>
           <p>Full-time Software Engineering / AI internship. Open to on-site roles in Malaysia or Singapore, and remote engineering teams worldwide.</p>
           <a href="mailto:suhaibhamidun@gmail.com" class="availability-link" data-cursor="EMAIL">Discuss a role <span>↗</span></a>
@@ -1328,22 +902,16 @@
   </section>
 
   <!-- =====================================================================
-       06 — TRANSMIT
+       06 — CONTACT
        ===================================================================== -->
-  <section class="contact" id="contact" data-chapter="06" data-chapter-name="TRANSMIT" data-theme="dark">
-    <div class="contact-bg" aria-hidden="true"><div class="contact-aura"></div><div class="contact-grid"></div></div>
+  <section class="contact" id="contact" data-chapter="06" data-chapter-name="Contact" data-bg="#000000">
     <div class="contact-inner">
-      <div class="contact-top">
-        <span class="eyebrow">06 / TRANSMIT</span>
-        <span class="contact-local"><span class="status-dot"></span><span id="contactClock">--:--:--</span> KUL · IPOH, MY</span>
-      </div>
-
       <div class="contact-main">
-        <p class="contact-kicker">Have a system to build, a story to tell, or a role to fill?</p>
-        <h2 class="contact-title"><span>LET’S</span><span><em>BUILD</em></span></h2>
+        <p class="contact-kicker">Have a project, a role, or an idea?</p>
+        <h2 class="contact-title"><span>Let’s</span><span><em>build.</em></span></h2>
         <div class="contact-actions">
           <a class="email-button" id="copyEmail" href="mailto:suhaibhamidun@gmail.com" data-cursor="COPY">
-            <span class="email-button-label">WRITE TO</span>
+            <span class="email-button-label">Email</span>
             <span class="email-button-value">suhaibhamidun@gmail.com</span>
             <span class="email-button-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="8" y="8" width="12" height="12" rx="1"/><path d="M16 8V5a1 1 0 0 0-1-1H5a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h3"/></svg></span>
           </a>
@@ -1352,11 +920,10 @@
       </div>
 
       <div class="contact-bottom">
-        <div class="contact-signal"><span class="signal-orbit"></span><span class="signal-orbit signal-orbit-2"></span><span class="signal-core"></span><p>OPEN TO<br>THE NEXT<br>SIGNAL</p></div>
         <div class="contact-footer-info">
-          <div><span>LOCATION</span><p>Ipoh, Perak<br>Malaysia</p></div>
-          <div><span>STATUS</span><p>Available for internship<br>from end Feb 2027</p></div>
-          <div><span>ECOSYSTEM</span><p>DevXMedia · Sejenak<br>Tinta Visuals · BVRCODE · Duits</p></div>
+          <div><span>Location</span><p>Ipoh, Perak<br>Malaysia</p></div>
+          <div><span>Status</span><p>Available for internship<br>from end Feb 2027</p></div>
+          <div><span>Ecosystem</span><p>DevXMedia · Sejenak<br>Tinta Visuals · BVRCODE · Duits</p></div>
         </div>
       </div>
     </div>
@@ -1364,33 +931,26 @@
 </main>
 
 <footer class="site-footer">
-  <div class="footer-left"><span>© MMXXVI AHMAD SUHAIB</span><span>HANNENKAM RISE VENTURES</span></div>
-  <div class="footer-center">DESIGNED &amp; ENGINEERED IN IPOH, MALAYSIA<a class="footer-context" href="https://www.pexels.com/license/" target="_blank" rel="noopener">CONTEXT PHOTOGRAPHY / PEXELS LICENSE</a></div>
-  <div class="footer-right"><a href="#intro" data-cursor="TOP">BACK TO TOP <span>↑</span></a></div>
+  <div class="footer-left"><span>© 2026 Ahmad Suhaib</span><span>Hannenkam Rise Ventures</span></div>
+  <div class="footer-center">Designed and engineered in Ipoh, Malaysia<span class="footer-context">Photography: official brand records</span></div>
+  <div class="footer-right"><a href="#intro">Back to top <span>↑</span></a></div>
 </footer>
 
 <div class="toast" id="toast" role="status" aria-live="polite"><span class="status-dot"></span><span id="toastText">Email copied</span></div>
 
 <noscript>
   <style>
-    .boot,.cursor,.chapter-rail,.scroll-line,.work-hud-center,.work-hud-right,.work-nav,.contact-signal,.grain,.menu-toggle,.mobile-menu{display:none!important}
-    #introCanvas,#universeCanvas,#artefactCanvas{display:none!important}
-    .intro{min-height:100svh}.intro-bg{opacity:.45}.intro-static{display:grid!important}
-    .universe-fallback{display:grid!important}
-    .artefacts-loader,.artefacts-corner,.artefacts-hud{display:none!important}
-    .artefacts-fallback,.artefacts-fallback[hidden]{display:flex!important;position:absolute!important;inset:0!important}
-    .work-pin{height:auto!important;overflow:visible!important}.work-track{display:block!important;width:100%!important;transform:none!important}.project{width:100%!important;height:auto!important;min-height:100svh}
+    .menu-toggle,.mobile-menu{display:none!important}
+    .work-pin{height:auto!important;overflow:visible!important}
+    .work-track{display:block!important;width:100%!important;transform:none!important}
+    .project{width:100%!important;height:auto!important;min-height:100svh}
   </style>
 </noscript>
 
 <!-- Libraries -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" defer></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
 <script src="https://unpkg.com/lenis@1.1.14/dist/lenis.min.js" defer></script>
-<script src="https://unpkg.com/three@0.128.0/examples/js/loaders/GLTFLoader.js" defer></script>
-<script src="https://unpkg.com/three@0.128.0/examples/js/controls/OrbitControls.js" defer></script>
 <script src="main.js" defer></script>
-<script src="artefacts.js" defer></script>
 </body>
 </html>
