@@ -253,7 +253,7 @@
       bindPointer();
       bindVisibility();
 
-      state.stage.loadModel("camera", "assets/models/camera.glb", { targetSize: 2.9 }).then(function () {
+      state.stage.loadModel("camera", "assets/models/camera.glb", { targetSize: 3.65 }).then(function () {
         state.stage.setState("camera", {
           rotation: { x: BASE_X, y: BASE_Y, z: 0 },
           scale: 0.92,
