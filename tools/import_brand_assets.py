@@ -33,7 +33,7 @@ INBOX = BRANDS / "_inbox"
 MANIFEST = BRANDS / "manifest.json"
 
 BRAND_SLUGS = {
-    "hannenkam-rise-ventures",
+    "hanennkam-rise-ventures",
     "dev-x-media",
     "sejenak-photobooth",
     "tinta-visuals",

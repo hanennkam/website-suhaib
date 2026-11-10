@@ -13,8 +13,8 @@
     "secrets": "No access tokens or credentials are stored in the repository. If Instagram Graph API access is added later, use server-side environment variables only."
   },
   "brands": {
-    "hannenkam-rise-ventures": {
-      "officialName": "Hannenkam Rise Ventures",
+    "hanennkam-rise-ventures": {
+      "officialName": "Hanennkam Rise Ventures",
       "officialInstagram": null,
       "paletteStatus": "provisional \u2014 current site palette; no official logo supplied",
       "logo": null,

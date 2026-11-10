@@ -26,7 +26,7 @@ No credentials, cookies or private endpoints were used. No live Instagram feed i
 - Added BVRCODE official logo, real product photography, WebP/JPEG derivatives and the verified official site palette.
 - Added a dedicated **Duits** live-product world and updated the Duits work-reel scene with a LIVE status, official wallet logo and light-blue glass identity.
 - Added a real DevXMedia Instagram reel poster linking to the original COMBAT 2025 reel.
-- Added Duits to the Hannenkam ecosystem map, worlds cover index and photographic strip.
+- Added Duits to the Hanennkam ecosystem map, worlds cover index and photographic strip.
 - Added a local brand-asset library, manifest, credits and a non-destructive importer: `tools/import_brand_assets.py`.
 - Preserved all existing interactions, chapter structure, navigation and typography.
 
@@ -39,14 +39,14 @@ No credentials, cookies or private endpoints were used. No live Instagram feed i
 | Dev X Media | Provisional only | Existing section palette; no official logo supplied. |
 | Sejenak Photobooth | Provisional only | Existing lime identity; no official logo supplied. |
 | Tinta Visuals | Provisional only | Existing crimson identity; no official logo supplied. |
-| Hannenkam Rise Ventures | Provisional only | Existing champagne identity; no official logo supplied. |
+| Hanennkam Rise Ventures | Provisional only | Existing champagne identity; no official logo supplied. |
 
 ## Still missing
 
 - DevXMedia official logo / profile mark and original work media.
 - Sejenak official logo, event photos, print/equipment details and reels.
 - Tinta official logo, original photography / videography and BTS media.
-- Hannenkam official logo, guidelines and Instagram URL.
+- Hanennkam official logo, guidelines and Instagram URL.
 - Duits Instagram URL (not supplied); optional post-login dashboard screenshots.
 - Optional BVRCODE vector logo and extra production photos.
 

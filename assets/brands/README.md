@@ -31,7 +31,7 @@ assets/brands/<brand>/
 
 Brand slugs:
 
-- `hannenkam-rise-ventures`
+- `hanennkam-rise-ventures`
 - `dev-x-media`
 - `sejenak-photobooth`
 - `tinta-visuals`
@@ -83,7 +83,7 @@ Never commit these values. `.gitignore` already ignores `.env` and `.env.*`.
 
 ## Missing assets to send
 
-### Hannenkam Rise Ventures
+### Hanennkam Rise Ventures
 - Official logo (SVG / transparent PNG)
 - Brand colours / guidelines
 - Official Instagram URL (none was supplied)

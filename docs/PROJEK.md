@@ -33,7 +33,7 @@ Membina semula portfolio sebagai pengalaman produk gaya Apple: satu mesej setiap
 - About: satu statement besar dan tiga baris capability.
 - Selected work: empat projek (HistoScan-AI, Duits, Waspada Banjir, Agent Systems) dengan satu interaksi setiap projek, demo dimuat secara lazy, dan indeks More work (Invoicing Engine, XAUUSD).
 - Objects: satu section pinned 3D untuk Sejenak Photobooth, BVRCODE Apparel dan Tinta Visuals; objek bergerak mengikut scroll, drag yaw manual, progress dot dan salinan yang bertukar.
-- Ventures: dua baris ringkas Hannenkam Rise Ventures dan DevXMedia.
+- Ventures: dua baris ringkas Hanennkam Rise Ventures dan DevXMedia.
 - Recognition: enam baris anugerah, Dean's List, pendidikan dan pensijilan.
 - Contact: mesej besar, status internship, salin emel ke papan klip dan pautan GitHub.
 - Fallback statik untuk `<1024px`, pointer kasar, reduced motion, `deviceMemory < 4`, WebGL gagal atau tiada IntersectionObserver; fallback tanpa JavaScript juga tersedia.

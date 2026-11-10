@@ -63,7 +63,7 @@ The recovery package at `public/assets/brands/` remains untouched.
 - The section now has an explicit `TINTA / MEDIA VAULT` with three empty media slots, working filmstrip controls and a clear note that no stock or unrelated-account media is presented as Tinta work.
 - No Tinta portfolio work was invented.
 
-### Hannenkam Rise Ventures — logo slot only
+### Hanennkam Rise Ventures — logo slot only
 
 - No logo, monogram, substitute mark or invented palette.
 - Added a visible dashed `OFFICIAL MARK / AWAITING SOURCE` slot in the copy and replaced the HRV monogram in the ecosystem centre with a `LOGO SLOT` state.
@@ -74,7 +74,7 @@ The recovery package at `public/assets/brands/` remains untouched.
 - Sejenak: full-resolution/vector logo; original MP4 exports for two Reels.
 - Dev X Media: full-resolution/vector logo; original MP4 exports for three Reels.
 - Tinta Visuals: full-resolution/vector logo; verified owned photography/video. The only public profile item is owned by `@vnaisuu` and is deliberately excluded.
-- Hannenkam Rise Ventures: official logo, verified palette/guidelines, Instagram URL if one exists.
+- Hanennkam Rise Ventures: official logo, verified palette/guidelines, Instagram URL if one exists.
 - Duits: approved post-login dashboard screenshot(s); optional additional logo lockups.
 - BVRCODE: optional SVG logo and optional additional production photography.
 
@@ -103,7 +103,7 @@ Reviewed every world at **1440 px, 768 px and 390 px**:
 - No horizontal overflow, unloaded images, failed requests or console errors.
 - BVRCODE, Sejenak and Dev X galleries crop cleanly; logo/avatar sizes and alignments hold at all three widths.
 - Duits’s mark → live device → status → screenshot archive hierarchy remains clear.
-- Tinta’s media vault and Hannenkam’s logo-slot states read as explicit pending states, not broken media.
+- Tinta’s media vault and Hanennkam’s logo-slot states read as explicit pending states, not broken media.
 - Gallery reveal, Tinta filmstrip switching, BVRCODE pattern switching and the Sejenak shutter demo all work.
 - The only visual QA adjustment was the Dev X Reel card: the ambiguous play triangle was changed to an external-open arrow and the caption now says “POSTER”, so a poster frame is not presented as a playable local video.
 - No spacing, logo, image-cropping, colour or layout changes were required beyond that affordance correction.

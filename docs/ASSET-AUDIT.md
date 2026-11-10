@@ -88,8 +88,8 @@ Move the unused deployed files into `archive/` and add `archive/` to `.vercelign
 | `assets/brands/duits/logo/duits-logo-transparent.png` | 11 KB | no |
 | `assets/brands/duits/promotional/.gitkeep` | 0 KB | no |
 | `assets/brands/duits/screenshots/duits-live-signin-original.png` | 46 KB | no |
-| `assets/brands/hannenkam-rise-ventures/logo/.gitkeep` | 0 KB | no |
-| `assets/brands/hannenkam-rise-ventures/photos/.gitkeep` | 0 KB | no |
+| `assets/brands/hanennkam-rise-ventures/logo/.gitkeep` | 0 KB | no |
+| `assets/brands/hanennkam-rise-ventures/photos/.gitkeep` | 0 KB | no |
 | `assets/brands/integration-manifest.json` | 14 KB | no |
 | `assets/brands/manifest.json` | 7 KB | no |
 | `assets/brands/sejenak-photobooth/logo/.gitkeep` | 0 KB | no |
