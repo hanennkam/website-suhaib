@@ -265,6 +265,7 @@
 }
 
 .contact-inner {
+  width: 100%;
   max-width: var(--content-max);
   min-height: calc(100vh - var(--section-pad) - 48px);
   min-height: calc(100svh - var(--section-pad) - 48px);
@@ -324,6 +325,8 @@
   gap: 16px;
   flex-wrap: wrap;
   margin-top: 40px;
+  padding-top: 0;
+  border-top: 0;
 }
 
 .email-button {
@@ -348,6 +351,8 @@
   font-size: 15px;
   font-weight: 500;
   line-height: 1;
+  letter-spacing: 0;
+  text-transform: none;
   text-decoration: none;
   transition: border-color 300ms var(--ease), background-color 300ms var(--ease);
 }
@@ -358,6 +363,7 @@
 }
 
 .contact-bottom {
+  display: block;
   margin-top: auto;
   padding-top: 96px;
 }
@@ -411,4 +417,132 @@
   line-height: 1.5;
   text-align: center;
   color: #a1a1a6;
+}
+
+/* --------------------------------------------------------------------------
+   NAVIGATION
+   -------------------------------------------------------------------------- */
+.header-nav a {
+  opacity: 0.62;
+}
+
+.header-nav a::after {
+  display: none;
+}
+
+.header-nav a:hover,
+.header-nav a.is-active {
+  opacity: 1;
+}
+
+.header-nav a.is-active {
+  color: #1d1d1f;
+}
+
+body[data-tone="dark"] .header-nav a.is-active {
+  color: #f5f5f7;
+}
+
+.mobile-menu-nav a.is-active {
+  color: var(--accent-text);
+}
+
+body[data-tone="dark"] :focus-visible {
+  outline-color: var(--accent-dark);
+}
+
+main:focus,
+section:focus,
+[tabindex="-1"]:focus {
+  outline: none;
+}
+
+.eyebrow {
+  font-size: 14px;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+/* --------------------------------------------------------------------------
+   ABOUT
+   -------------------------------------------------------------------------- */
+.operator {
+  background: #fff !important;
+}
+
+.operator-stage {
+  max-width: var(--content-max);
+}
+
+.ledger {
+  padding-top: 0;
+}
+
+.ledger-head--simple {
+  display: block;
+  margin-bottom: 32px;
+}
+
+.ledger-head--simple .eyebrow {
+  display: block;
+}
+
+/* --------------------------------------------------------------------------
+   CONTACT BUTTONS
+   -------------------------------------------------------------------------- */
+.email-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 24px;
+  min-height: 52px;
+  background: #f5f5f7;
+  color: #1d1d1f;
+  border: 0;
+  border-radius: var(--radius-pill);
+  box-shadow: none;
+  text-decoration: none;
+}
+
+.email-button:hover {
+  background: #fff;
+}
+
+.email-button-label {
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 0;
+  color: #6e6e73;
+}
+
+.email-button-value {
+  font-size: var(--text-body);
+  font-weight: 500;
+  color: #1d1d1f;
+  border-bottom: 0;
+  padding-bottom: 0;
+}
+
+.mobile-menu-close {
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+@media (max-width: 760px) {
+  :root {
+    --header-h: 70px;
+  }
+
+  .site-header {
+    grid-template-columns: auto 1fr auto;
+  }
+
+  .menu-toggle {
+    justify-self: end;
+  }
+
+  .manifesto-text {
+    font-size: clamp(30px, 8.5vw, 44px);
+    line-height: 1.08;
+  }
 }

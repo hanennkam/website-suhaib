@@ -213,21 +213,84 @@
   var menuClose = $("#menuClose");
   var menuOpen = false;
 
+  var lastMenuFocus = null;
+
+  function menuFocusables() {
+    if (!mobileMenu) return [];
+    return $$('a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])', mobileMenu)
+      .filter(function (el) { return el.offsetParent !== null; });
+  }
+
   function setMenu(open) {
     if (!mobileMenu || !menuToggle) return;
+    if (open && !menuOpen) {
+      var active = document.activeElement;
+      lastMenuFocus = active && active !== document.body && active !== document.documentElement
+        ? active
+        : menuToggle;
+    }
     menuOpen = open;
-    mobileMenu.classList.toggle("is-open", open);
-    mobileMenu.setAttribute("aria-hidden", open ? "false" : "true");
-    menuToggle.setAttribute("aria-expanded", open ? "true" : "false");
-    menuToggle.setAttribute("aria-label", open ? "Close menu" : "Open menu");
-    body.classList.toggle("menu-open", open);
-    if (lenis) { if (open) lenis.stop(); else lenis.start(); }
-    if (open) { var first = $("a", mobileMenu); first && first.focus({ preventScroll: true }); }
+
+    if (open) {
+      mobileMenu.classList.add("is-open");
+      mobileMenu.setAttribute("aria-hidden", "false");
+      if ("inert" in mobileMenu) mobileMenu.inert = false;
+      else mobileMenu.removeAttribute("inert");
+      menuToggle.setAttribute("aria-expanded", "true");
+      menuToggle.setAttribute("aria-label", "Close menu");
+      body.classList.add("menu-open");
+      if (lenis) lenis.stop();
+      window.requestAnimationFrame(function () {
+        var first = menuFocusables()[0];
+        if (first) first.focus({ preventScroll: true });
+      });
+      return;
+    }
+
+    // Make the header visible again before returning focus to its toggle.
+    body.classList.remove("menu-open");
+    if (mobileMenu.contains(document.activeElement)) {
+      var restore = lastMenuFocus &&
+        lastMenuFocus !== document.body &&
+        lastMenuFocus !== document.documentElement &&
+        document.body.contains(lastMenuFocus) &&
+        !mobileMenu.contains(lastMenuFocus)
+        ? lastMenuFocus
+        : menuToggle;
+      restore.focus({ preventScroll: true });
+    }
+
+    mobileMenu.classList.remove("is-open");
+    mobileMenu.setAttribute("aria-hidden", "true");
+    if ("inert" in mobileMenu) mobileMenu.inert = true;
+    else mobileMenu.setAttribute("inert", "");
+    menuToggle.setAttribute("aria-expanded", "false");
+    menuToggle.setAttribute("aria-label", "Open menu");
+    if (lenis) lenis.start();
   }
+
   menuToggle && menuToggle.addEventListener("click", function () { setMenu(!menuOpen); });
   menuClose && menuClose.addEventListener("click", function () { setMenu(false); });
   $$("[data-menu-link]").forEach(function (a) { a.addEventListener("click", function () { setMenu(false); }); });
-  document.addEventListener("keydown", function (e) { if (e.key === "Escape" && menuOpen) setMenu(false); });
+
+  mobileMenu && mobileMenu.addEventListener("keydown", function (e) {
+    if (e.key !== "Tab" || !menuOpen) return;
+    var focusables = menuFocusables();
+    if (!focusables.length) return;
+    var first = focusables[0];
+    var last = focusables[focusables.length - 1];
+    if (e.shiftKey && document.activeElement === first) {
+      e.preventDefault();
+      last.focus();
+    } else if (!e.shiftKey && document.activeElement === last) {
+      e.preventDefault();
+      first.focus();
+    }
+  });
+
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape" && menuOpen) setMenu(false);
+  });
 
   var chapterEls = $$("[data-chapter]");
   var railLinks = $$("[data-rail]");
@@ -242,6 +305,16 @@
     var el = document.elementFromPoint(Math.floor(window.innerWidth / 2), Math.floor(window.innerHeight / 2));
     var toneEl = el && el.closest ? el.closest("[data-tone]") : null;
     if (toneEl) setTone(toneEl.getAttribute("data-tone"));
+  }
+
+  function syncNav(currentId) {
+    var selector = ".header-nav a[href^='#'], .mobile-menu-nav a[href^='#']";
+    $$(selector).forEach(function (link) {
+      var active = link.getAttribute("href") === "#" + currentId;
+      link.classList.toggle("is-active", active);
+      if (active) link.setAttribute("aria-current", "location");
+      else link.removeAttribute("aria-current");
+    });
   }
 
   function updateScrollUI() {
@@ -266,6 +339,7 @@
         railLinks.forEach(function (link) {
           link.classList.toggle("is-active", link.getAttribute("data-rail") === current.id);
         });
+        syncNav(current.id);
       }
     }
     if (!toneRaf) {
@@ -281,6 +355,11 @@
   updateScrollUI();
 
   // Anchor navigation
+  var headerEl = $("#siteHeader");
+  var headerOffset = function () {
+    return (headerEl ? headerEl.offsetHeight : 52) + 12;
+  };
+
   $$('a[href^="#"]').forEach(function (a) {
     a.addEventListener("click", function (e) {
       var href = a.getAttribute("href");
@@ -288,7 +367,11 @@
       var target = document.querySelector(href);
       if (!target) return;
       e.preventDefault();
-      scrollToEl(target, 0);
+      var offset = target.id === "main" ? 0 : headerOffset();
+      scrollToEl(target, offset);
+      if (!target.hasAttribute("tabindex")) target.setAttribute("tabindex", "-1");
+      target.focus({ preventScroll: true });
+      if (window.history && window.history.pushState) window.history.pushState(null, "", href);
     });
   });
 
@@ -356,12 +439,6 @@
         }
       });
     }
-
-    // universe depth on entry
-    window.gsap.from(".universe-head > *", {
-      y: 24, opacity: 0, stagger: 0.1, duration: 1,
-      scrollTrigger: { trigger: ".universe", start: "top 68%", toggleActions: "play none none none" }
-    });
 
     // record rows
     $$(".record-row").forEach(function (row, i) {
@@ -487,7 +564,7 @@
      ======================================================================= */
   // Tone map used by the fixed header.
   var toneMap = [
-    ["#intro", "light"], ["#operator", "light"], ["#universe", "light"],
+    ["#intro", "light"], ["#operator", "light"],
     ["#work", "light"], ["#pinned", "dark"], ["#record", "light"], ["#contact", "dark"]
   ];
   toneMap.forEach(function (pair) {
