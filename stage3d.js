@@ -102,25 +102,33 @@
     });
   }
 
-  function setGroupOpacity(group, opacity) {
+  function setGroupOpacity(group, opacity, materials) {
     var value = Math.max(0, Math.min(1, opacity));
-    group.traverse(function (obj) {
-      if (!obj.isMesh || !obj.material) return;
-      var list = Array.isArray(obj.material) ? obj.material : [obj.material];
-      list.forEach(function (mat) {
-        if (!mat) return;
-        var original = mat.userData && mat.userData.__stageOpacity;
-        if (value >= 0.999) {
-          mat.opacity = original === undefined ? 1 : original;
-          mat.transparent = mat.userData && mat.userData.__stageTransparent;
-          mat.depthWrite = mat.userData ? mat.userData.__stageDepthWrite : true;
-        } else {
-          mat.transparent = true;
-          mat.opacity = value * (original === undefined ? 1 : original);
-          mat.depthWrite = false;
-        }
-        mat.needsUpdate = true;
+    var list = materials;
+    if (!list) {
+      list = [];
+      group.traverse(function (obj) {
+        if (!obj.isMesh || !obj.material) return;
+        (Array.isArray(obj.material) ? obj.material : [obj.material]).forEach(function (mat) {
+          if (mat) list.push(mat);
+        });
       });
+    }
+    list.forEach(function (mat) {
+      if (!mat) return;
+      var original = mat.userData && mat.userData.__stageOpacity;
+      var targetOpacity = value >= 0.999
+        ? (original === undefined ? 1 : original)
+        : value * (original === undefined ? 1 : original);
+      var targetTransparent = value >= 0.999
+        ? (mat.userData ? mat.userData.__stageTransparent : false)
+        : true;
+      var targetDepthWrite = mat.userData ? mat.userData.__stageDepthWrite : true;
+      var shaderChange = mat.transparent !== targetTransparent || mat.depthWrite !== targetDepthWrite;
+      if (mat.opacity !== targetOpacity) mat.opacity = targetOpacity;
+      if (mat.transparent !== targetTransparent) mat.transparent = targetTransparent;
+      if (mat.depthWrite !== targetDepthWrite) mat.depthWrite = targetDepthWrite;
+      if (shaderChange) mat.needsUpdate = true;
     });
   }
 
@@ -195,10 +203,19 @@
           group.add(model);
           modelRoot.add(group);
 
+          var materials = [];
+          model.traverse(function (obj) {
+            if (!obj.isMesh || !obj.material) return;
+            (Array.isArray(obj.material) ? obj.material : [obj.material]).forEach(function (mat) {
+              if (mat && materials.indexOf(mat) === -1) materials.push(mat);
+            });
+          });
+
           var item = {
             id: id,
             group: group,
             model: model,
+            materials: materials,
             baseScale: scale,
             height: size.y * scale
           };
@@ -234,7 +251,7 @@
         next.position.z || 0
       );
     }
-    if (next.opacity !== undefined) setGroupOpacity(group, next.opacity);
+    if (next.opacity !== undefined) setGroupOpacity(group, next.opacity, item.materials);
     group.visible = next.opacity === undefined ? true : next.opacity > 0.001;
     if (next.opacity !== undefined && next.opacity > 0.001) activeId = id;
     return true;
@@ -331,6 +348,12 @@
     frameCallback = typeof fn === "function" ? fn : null;
   }
 
+  function setCameraZ(value) {
+    if (!camera) return;
+    camera.position.z = value;
+    camera.lookAt(0, -0.05, 0);
+  }
+
   function snapshot(type, imageQuality) {
     if (!initialized) return "";
     renderOnce();
@@ -383,6 +406,7 @@
     resize: resize,
     setContainer: setContainer,
     setFrameCallback: setFrameCallback,
+    setCameraZ: setCameraZ,
     snapshot: snapshot,
     dispose: dispose,
     isSupported: function () {

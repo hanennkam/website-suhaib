@@ -1,7 +1,7 @@
 /* ==========================================================================
    AHMAD SUHAIB — THE SIGNAL ARCHIVE
-   Experience engine: navigation, smooth scroll, page background, worlds and
-   progressive enhancements. Hero and work live in their own modules.
+   Experience engine: navigation, smooth scroll, page background and
+   progressive enhancements. Hero, work and objects live in their own modules.
    ========================================================================== */
 (function () {
   "use strict";
@@ -287,123 +287,8 @@
       if (!href || href === "#") return;
       var target = document.querySelector(href);
       if (!target) return;
-      // world jumps are handled separately
-      if (a.hasAttribute("data-jump-world")) return;
       e.preventDefault();
       scrollToEl(target, 0);
-    });
-  });
-
-  /* =======================================================================
-     WORLD JUMPS
-     ======================================================================= */
-  function bindWorldJumps() {
-    $$("[data-jump-world]").forEach(function (el) {
-      if (el.dataset.bound) return;
-      el.dataset.bound = "1";
-      el.addEventListener("click", function (e) {
-        e.preventDefault();
-        var world = document.querySelector('.world[data-world="' + el.getAttribute("data-jump-world") + '"]');
-        if (world) scrollToEl(world, 82);
-      });
-    });
-  }
-
-  /* =======================================================================
-     WORLDS INTERACTIONS
-     ======================================================================= */
-  // DevX terminal
-  var terminal = $("#devxTerminal");
-  var cmdOutputs = {
-    deploy: ["> git push origin main", "Edge deploy queued · 14 files uploaded", "Live in 8.2s · status 200"],
-    automate: ["> run automation --pipeline invoices", "OCR → validate → PDF → WhatsApp", "Pipeline complete · 0 manual steps"],
-    prototype: ["> scaffold saas --stack edge", "Auth + D1 + dashboard generated", "Prototype ready for user testing"]
-  };
-  $$(".terminal-actions button").forEach(function (btn) {
-    btn.addEventListener("click", function () {
-      if (!terminal) return;
-      var cmd = btn.getAttribute("data-cmd");
-      var lines = cmdOutputs[cmd] || [];
-      var p = document.createElement("p");
-      p.innerHTML = '<span class="t-prompt">devx@studio ~ %</span> ' + cmd;
-      terminal.appendChild(p);
-      lines.forEach(function (line, i) {
-        setTimeout(function () {
-          var out = document.createElement("p");
-          out.className = "t-out";
-          out.textContent = line;
-          terminal.appendChild(out);
-          while (terminal.children.length > 9) terminal.removeChild(terminal.firstElementChild);
-        }, 160 + i * 260);
-      });
-      var cursorP = document.createElement("p");
-      cursorP.innerHTML = '<span class="t-prompt">devx@studio ~ %</span> <span class="t-cursor"></span>';
-      setTimeout(function () {
-        terminal.appendChild(cursorP);
-        while (terminal.children.length > 9) terminal.removeChild(terminal.firstElementChild);
-      }, 980);
-    });
-  });
-
-  // Sejenak photobooth
-  var shutter = $("#boothShutter");
-  if (shutter) {
-    var boothCount = 0;
-    var boothCountEl = $("#boothCount");
-    var flash = $(".sejenak-flash");
-    var frames = $$(".booth-frame");
-    var captions = [
-      ["STAY", "A WHILE"],
-      ["KEEP", "THE MOMENT"],
-      ["MAKE", "IT STRANGE"],
-      ["SNAP", "AGAIN"],
-      ["ONE", "MORE TIME"]
-    ];
-    shutter.addEventListener("click", function () {
-      boothCount++;
-      if (boothCountEl) boothCountEl.textContent = boothCount + (boothCount === 1 ? " FRAME" : " FRAMES");
-      if (flash) {
-        flash.classList.remove("is-flashing");
-        void flash.offsetWidth;
-        flash.classList.add("is-flashing");
-      }
-      var frame = frames[(boothCount - 1) % frames.length];
-      var cap = captions[(boothCount + 1) % captions.length];
-      var b = frame.querySelector("b");
-      if (b) b.innerHTML = cap[0] + "<br>" + cap[1];
-      var face = frame.querySelector("i");
-      if (face) {
-        face.style.transform = "rotate(" + ((boothCount * 13) % 30 - 15) + "deg) scale(" + (0.86 + (boothCount % 4) * 0.07) + ")";
-        face.style.borderRadius = (boothCount % 2 ? "38% 46% 42% 36%" : "45% 45% 40% 40%");
-      }
-      frame.classList.remove("is-new");
-      void frame.offsetWidth;
-      frame.classList.add("is-new");
-      frame.style.transform = "rotate(" + ((boothCount % 5) - 2) * 1.4 + "deg)";
-      setTimeout(function () { frame.style.transform = ""; }, 650);
-    });
-  }
-
-  // Tinta filmstrip
-  var filmCells = $$(".film-cell");
-  var stills = $$(".tinta-still");
-  filmCells.forEach(function (cell) {
-    cell.addEventListener("click", function () {
-      var idx = parseInt(cell.getAttribute("data-frame"), 10);
-      if (isNaN(idx)) return;
-      filmCells.forEach(function (c) { c.classList.toggle("is-active", c === cell); });
-      stills.forEach(function (s) { s.classList.toggle("is-active", parseInt(s.getAttribute("data-still"), 10) === idx); });
-    });
-  });
-
-  // BVR pattern
-  $$(".bvr-swatch").forEach(function (sw) {
-    sw.addEventListener("click", function () {
-      var jersey = $("#bvrJersey");
-      if (!jersey) return;
-      $$(".bvr-swatch").forEach(function (s) { s.classList.remove("is-active"); });
-      sw.classList.add("is-active");
-      jersey.setAttribute("data-pattern", sw.getAttribute("data-pattern"));
     });
   });
 
@@ -414,9 +299,6 @@
   function markReveals() {
     var selectors = [
       ".ledger-head", ".ledger-row", ".ops-metrics",
-      ".worlds-cover h2", ".worlds-cover > p", ".worlds-cover-index",
-      ".world-copy", ".ecosystem", ".devx-terminal", ".sejenak-booth", ".tinta-stage", ".bvr-studio", ".duits-world-visual",
-      ".brand-gallery", ".duits-capture-strip",
       ".record-head", ".record-column", ".availability-card",
       ".contact-kicker", ".contact-title", ".contact-actions", ".contact-bottom"
     ];
@@ -457,22 +339,6 @@
       });
     }
 
-    // Editorial photography: subtle scroll depth + reveal
-    $$("[data-parallax]").forEach(function (el) {
-      var speed = parseFloat(el.getAttribute("data-parallax")) || 0.06;
-      window.gsap.fromTo(el, { y: -speed * 120 }, {
-        y: speed * 120,
-        ease: "none",
-        scrollTrigger: { trigger: el, start: "top bottom", end: "bottom top", scrub: 0.9 }
-      });
-      window.gsap.from(el, {
-        opacity: 0,
-        duration: 0.9,
-        ease: "power2.out",
-        scrollTrigger: { trigger: el, start: "top 92%", toggleActions: "play none none none" }
-      });
-    });
-
     // Manifesto word reveal
     var manifesto = $("#manifesto");
     if (manifesto) {
@@ -495,12 +361,6 @@
     window.gsap.from(".universe-head > *", {
       y: 24, opacity: 0, stagger: 0.1, duration: 1,
       scrollTrigger: { trigger: ".universe", start: "top 68%", toggleActions: "play none none none" }
-    });
-
-    // worlds cover
-    window.gsap.from(".worlds-cover h2", {
-      y: 50, opacity: 0, duration: 1.2, ease: "power4.out",
-      scrollTrigger: { trigger: ".worlds-cover", start: "top 72%", toggleActions: "play none none none" }
     });
 
     // record rows
@@ -625,20 +485,16 @@
   /* =======================================================================
      BOOTSTRAP
      ======================================================================= */
-  // Tone map used by the fixed header and chapter rail.
+  // Tone map used by the fixed header.
   var toneMap = [
     ["#intro", "light"], ["#operator", "light"], ["#universe", "light"],
-    ["#work", "light"], ["#worlds", "dark"], ["#record", "light"], ["#contact", "dark"]
+    ["#work", "light"], ["#pinned", "dark"], ["#record", "light"], ["#contact", "dark"]
   ];
   toneMap.forEach(function (pair) {
     var el = $(pair[0]);
     if (el) el.setAttribute("data-tone", pair[1]);
   });
-  $$(".world").forEach(function (el) {
-    el.setAttribute("data-tone", "dark");
-  });
   initPageBackground();
-  bindWorldJumps();
 
   // Failsafe: if work.js fails to load, keep the selected work readable.
   window.setTimeout(function () {

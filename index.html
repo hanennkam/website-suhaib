@@ -25,13 +25,15 @@
 <link rel="preload" href="assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
 
 <link rel="stylesheet" href="styles.css">
-<link rel="stylesheet" href="photos.css?v=phase2-20261107" media="print" onload="this.media='all'">
-<link rel="stylesheet" href="brands.css?v=phase2-20261107d" media="print" onload="this.media='all'">
 <link rel="stylesheet" href="phase-a.css">
 <link rel="stylesheet" href="phase-c.css">
+<link rel="stylesheet" href="phase-d.css">
 <noscript>
-  <link rel="stylesheet" href="photos.css?v=phase2-20261107">
-  <link rel="stylesheet" href="brands.css?v=phase2-20261107d">
+  <style>
+    .pinned-desktop { display: none !important; }
+    .pinned-static-cards { display: grid !important; }
+    .pinned-a11y { display: none !important; }
+  </style>
 </noscript>
 <script>document.documentElement.classList.remove('no-js');document.documentElement.classList.add('js');</script>
 </head>
@@ -49,7 +51,7 @@
   <nav class="header-nav" aria-label="Primary">
     <a href="#operator">About</a>
     <a href="#work">Work</a>
-    <a href="#worlds">Ventures</a>
+    <a href="#pinned">Ventures</a>
     <a href="#record">Recognition</a>
   </nav>
   <a class="header-cta" href="#contact"><span>Contact</span></a>
@@ -68,7 +70,7 @@
     <a href="#intro" data-menu-link>Home</a>
     <a href="#operator" data-menu-link>About</a>
     <a href="#work" data-menu-link>Work</a>
-    <a href="#worlds" data-menu-link>Ventures</a>
+    <a href="#pinned" data-menu-link>Ventures</a>
     <a href="#record" data-menu-link>Recognition</a>
     <a href="#contact" data-menu-link>Contact</a>
   </nav>
@@ -435,477 +437,111 @@
   </section>
 
   <!-- =====================================================================
-       04 — VENTURES
+       04 — OBJECTS / PINNED 3D
        ===================================================================== -->
-  <section class="worlds" id="worlds" data-chapter="04" data-chapter-name="Ventures" data-bg="#000000">
-    <header class="worlds-cover">
-      <div class="worlds-cover-top"><span class="eyebrow">04 / WORLDS</span><span>SIX IDENTITIES · ONE OPERATOR</span></div>
-      <h2>Different worlds.<br><em>Same standard.</em></h2>
-      <p>Every venture and product has its own visual identity, its own audience, its own operating logic. What they share is a refusal to ship anything generic.</p>
-      <div class="worlds-cover-index" aria-hidden="true">
-        <span>01 HANNENKAM</span><span>02 DEVXMEDIA</span><span>03 SEJENAK</span><span>04 TINTA</span><span>05 BVRCODE</span><span>06 DUITS</span>
-      </div>
+  <section class="pinned" id="pinned" data-chapter="04" data-chapter-name="Objects" data-bg="#000000" data-tone="dark">
+    <header class="pinned-intro">
+      <span class="pinned-eyebrow">Objects</span>
+      <h2>Studio objects.</h2>
+      <p>Three pieces of the work, seen from every angle.</p>
     </header>
 
-    <!-- WORLD 01 — Hannenkam Rise Ventures -->
-    <article class="world world-hannenkam" data-world="hannenkam">
-      <div class="world-bg" aria-hidden="true"><div class="hannenkam-orbit"></div></div>
-      <div class="world-inner">
-        <div class="world-kicker"><span>WORLD 01 / PARENT ECOSYSTEM</span><span>REGISTERED SOLE PROPRIETORSHIP</span></div>
-        <div class="hannenkam-layout">
-          <div class="world-copy">
-            <h3 class="world-title">Hannenkam<br><em>Rise Ventures</em></h3>
-            <p class="world-body">The parent holding entity for digital platforms, manufacturing and creative media. A single operating ecosystem connecting software, events, film and apparel.</p>
-            <div class="world-facts"><span>Digital platforms</span><span>Manufacturing</span><span>Creative media</span></div>
+    <div class="pinned-desktop">
+      <div class="pinned-track" id="pinnedTrack">
+        <div class="pinned-stage" id="pinnedStage">
+          <div class="pinned-spotlight" aria-hidden="true"></div>
+          <div class="pinned-grid">
+            <div class="pinned-copy">
+              <article class="pinned-copy-item is-active" data-stage="0">
+                <span class="pinned-brand">Sejenak Photobooth</span>
+                <h2>Stay a while.</h2>
+                <p class="pinned-description">Interactive physical event photobooths with instant printing, custom rigging and experiences built to make people stay a little longer.</p>
+                <p class="pinned-facts">Event photobooth · Instant print · Custom rigging</p>
+                <a class="pinned-link" href="https://www.instagram.com/sejenakphotobooth/" target="_blank" rel="noopener">Instagram <span aria-hidden="true">↗</span></a>
+              </article>
+              <article class="pinned-copy-item" data-stage="1" aria-hidden="true" inert>
+                <span class="pinned-brand">BVRCODE Apparel</span>
+                <h2>Made to be worn.</h2>
+                <p class="pinned-description">Custom athletic jersey manufacturing and sublimation print production, built around a 5-piece minimum order quantity.</p>
+                <p class="pinned-facts">Full sublimation · Custom teamwear · 5-piece MOQ</p>
+                <a class="pinned-link" href="https://bvrcodeapparel.com" target="_blank" rel="noopener">bvrcodeapparel.com <span aria-hidden="true">↗</span></a>
+              </article>
+              <article class="pinned-copy-item" data-stage="2" aria-hidden="true" inert>
+                <span class="pinned-brand">Tinta Visuals</span>
+                <h2>Every frame, considered.</h2>
+                <p class="pinned-description">A creative media studio for corporate event cinematography, commercial product photography and high-impact visual storytelling.</p>
+                <p class="pinned-facts">Commercial video · Event coverage · Colour grading</p>
+                <a class="pinned-link" href="https://www.instagram.com/tintavisuals/" target="_blank" rel="noopener">Instagram <span aria-hidden="true">↗</span></a>
+              </article>
+            </div>
 
-            <p class="world-note">Five ventures. One live product. One registered ecosystem.</p>
-          </div>
-          <div class="ecosystem" aria-label="Hannenkam ecosystem map">
-            <div class="eco-center"><b>HANNENKAM</b></div>
-            <div class="eco-ring eco-ring-1"></div>
-            <div class="eco-ring eco-ring-2"></div>
-            <button type="button" class="eco-node eco-devx" data-jump-world="devxmedia"><span>01</span>DevXMedia</button>
-            <button type="button" class="eco-node eco-sejenak" data-jump-world="sejenak"><span>02</span>Sejenak</button>
-            <button type="button" class="eco-node eco-tinta" data-jump-world="tinta"><span>03</span>Tinta Visuals</button>
-            <button type="button" class="eco-node eco-bvr" data-jump-world="bvrcode"><span>04</span>BVRCODE</button>
-            <button type="button" class="eco-node eco-duits" data-jump-world="duits"><span>05</span>Duits <em>LIVE</em></button>
+            <div class="pinned-visual" id="pinnedVisual">
+              <div class="pinned-canvas-mount" id="pinnedCanvasMount"></div>
+              <img class="pinned-fallback is-visible" id="pinnedFallback"
+                   src="assets/models/photobooth.jpg" width="760" height="760" loading="lazy" decoding="async"
+                   alt="Studio render of the Sejenak Photobooth kiosk.">
+              <div class="pinned-progress" aria-hidden="true"><i class="is-active"></i><i></i><i></i></div>
+              <span class="pinned-hint">Drag to orbit</span>
+            </div>
           </div>
         </div>
-        <div class="world-index"><span>01 — 06</span><span>ECOSYSTEM / ENTITY</span></div>
       </div>
-    </article>
+    </div>
 
-    <!-- WORLD 02 — DevXMedia -->
-    <article class="world world-devx" data-world="devxmedia">
-      <div class="world-bg" aria-hidden="true"><div class="devx-grid"></div><div class="devx-glow"></div></div>
-      <div class="world-inner">
-        <div class="world-kicker"><span>WORLD 02 / DIGITAL TECHNOLOGY</span><span>EST. SEPT 2023 · TEAM OF 4</span></div>
-        <div class="devx-layout">
-          <div class="world-copy">
-            <div class="brand-stamp brand-stamp--devx">
-              <span class="brand-stamp-avatar"><img src="assets/brands/dev-x-media/logo/profile-avatar-150-LOW-RES.jpg" width="150" height="150" loading="lazy" decoding="async" alt="Dev X Media logo"></span>
-              <span class="brand-stamp-copy"><b>Dev X Media</b></span>
-            </div>
-            <h3 class="world-title devx-title">DevX<span>Media</span></h3>
-            <p class="world-body">A full-spectrum software agency delivering responsive web platforms, bespoke business automation, internal tooling and digital transformation for SMEs.</p>
-            <div class="world-facts"><span>Custom web engineering</span><span>Automation bots</span><span>SaaS prototyping</span><span>Cloud tooling</span></div>
-            <div class="world-cta-row">
-              <a class="world-link" href="#more-work" data-cursor="WORK">View the invoicing engine <span>↗</span></a>
-              <a class="world-link" href="https://www.instagram.com/devx.media/" target="_blank" rel="noopener" data-cursor="INSTAGRAM">Official Instagram <span>↗</span></a>
-              <a class="world-link world-link-muted" href="#contact" data-cursor="TALK">Start a build <span>↗</span></a>
-            </div>
-          </div>
-          <div class="devx-visual">
-            <figure class="devx-photo devx-photo-main" data-parallax="0.07">
-              <img src="assets/brands/dev-x-media/photos/devx-event-team-700.jpg"
-                   srcset="assets/brands/dev-x-media/photos/devx-event-team-700.jpg 700w, assets/brands/dev-x-media/photos/devx-event-team-1400.jpg 1400w"
-                   sizes="(max-width: 1100px) 86vw, 34vw"
-                   width="1440" height="1440" loading="lazy" decoding="async"
-                   alt="Dev X Media team at the UMPSA Innovatech Challenge closing ceremony">
-              <figcaption><span>DEV X MEDIA / TEAM RECORD</span><span>UMPSA INNOVATECH 2025</span></figcaption>
-            </figure>
-            <a class="devx-photo devx-photo-detail devx-reel-card" href="https://www.instagram.com/reel/DKAROWSgwPW/" target="_blank" rel="noopener" data-parallax="0.13" data-cursor="OPEN" aria-label="Open the COMBAT 2025 reel by Dev X Media on Instagram; poster frame shown here">
-              <picture>
-                <source type="image/webp" srcset="assets/brands/dev-x-media/photos/devx-combat-2025-500.webp 500w, assets/brands/dev-x-media/photos/devx-combat-2025-1000.webp 1000w" sizes="(max-width: 1100px) 34vw, 12vw">
-                <img src="assets/brands/dev-x-media/photos/devx-combat-2025-500.jpg"
-                     srcset="assets/brands/dev-x-media/photos/devx-combat-2025-500.jpg 500w, assets/brands/dev-x-media/photos/devx-combat-2025-1000.jpg 1000w"
-                     sizes="(max-width: 1100px) 34vw, 12vw"
-                     width="640" height="1138" loading="lazy" decoding="async"
-                     alt="COMBAT 2025 event-film title card by Dev X Media">
-              </picture>
-              <span class="devx-reel-play" aria-hidden="true">↗</span>
-              <span class="devx-reel-meta">INSTAGRAM REEL / COMBAT 2025 · POSTER</span>
-            </a>
-            <div class="devx-terminal" aria-label="Interactive DevXMedia terminal demo">
-              <div class="terminal-top"><span><i></i><i></i><i></i></span><b>devxmedia — shell</b><span>zsh</span></div>
-              <div class="terminal-body" id="devxTerminal">
-                <p><span class="t-prompt">devx@studio ~ %</span> agency --status</p>
-                <p class="t-out">Full-spectrum software · 4-person team</p>
-                <p class="t-out">Web / automation / internal tools / cloud</p>
-                <p><span class="t-prompt">devx@studio ~ %</span> <span class="t-cursor"></span></p>
-              </div>
-              <div class="terminal-actions" role="group" aria-label="Terminal commands">
-                <button type="button" data-cmd="deploy">deploy</button>
-                <button type="button" data-cmd="automate">automate</button>
-                <button type="button" data-cmd="prototype">prototype</button>
-              </div>
-            </div>
-          </div>
+    <div class="pinned-static-cards">
+      <article class="pinned-card">
+        <figure><img src="assets/models/photobooth.jpg" width="760" height="760" loading="lazy" decoding="async" alt="Studio render of the Sejenak Photobooth kiosk."></figure>
+        <div class="pinned-card-copy">
+          <span class="pinned-brand">Sejenak Photobooth</span>
+          <h3>Stay a while.</h3>
+          <p class="pinned-description">Interactive physical event photobooths with instant printing, custom rigging and experiences built to make people stay a little longer.</p>
+          <p class="pinned-facts">Event photobooth · Instant print · Custom rigging</p>
+          <a class="pinned-link" href="https://www.instagram.com/sejenakphotobooth/" target="_blank" rel="noopener">Instagram <span aria-hidden="true">↗</span></a>
         </div>
-        <div class="brand-gallery brand-gallery--devx">
-          <div class="brand-gallery-head">
-            <span>FIELD RECORD / 2025 · REAL ACTIVITY PHOTOGRAPHS</span>
-            <a href="https://www.instagram.com/devx.media/" target="_blank" rel="noopener">Instagram ↗</a>
-          </div>
-          <div class="brand-gallery-grid">
-            <a class="brand-gallery-item g-devx-closing" href="https://www.instagram.com/devx.media/p/DLFZ3XITUv4/" target="_blank" rel="noopener">
-              <img src="assets/brands/dev-x-media/photos/devx-event-closing-700.jpg"
-                   srcset="assets/brands/dev-x-media/photos/devx-event-closing-700.jpg 700w, assets/brands/dev-x-media/photos/devx-event-closing-1400.jpg 1400w"
-                   sizes="(max-width: 760px) 46vw, 24vw" width="1440" height="1440" loading="lazy" decoding="async"
-                   alt="Dev X Media team at the UMPSA Innovatech Challenge closing ceremony">
-              <span class="gallery-caption"><span>CLOSING CEREMONY</span><span>02 / 2025</span></span>
-            </a>
-            <a class="brand-gallery-item g-devx-certificate" href="https://www.instagram.com/devx.media/p/DLFZ3XITUv4/" target="_blank" rel="noopener">
-              <img src="assets/brands/dev-x-media/photos/devx-event-certificate-700.jpg"
-                   srcset="assets/brands/dev-x-media/photos/devx-event-certificate-700.jpg 700w, assets/brands/dev-x-media/photos/devx-event-certificate-1400.jpg 1400w"
-                   sizes="(max-width: 760px) 46vw, 20vw" width="1440" height="1440" loading="lazy" decoding="async"
-                   alt="Printed UMPSA Innovatech award certificate photographed by Dev X Media">
-              <span class="gallery-caption"><span>AWARD RECORD</span><span>03 / 2025</span></span>
-            </a>
-            <a class="brand-gallery-item g-devx-services" href="https://www.instagram.com/devx.media/p/DJbgxirTy0K/" target="_blank" rel="noopener">
-              <img src="assets/brands/dev-x-media/photos/devx-services-poster-700.jpg"
-                   srcset="assets/brands/dev-x-media/photos/devx-services-poster-700.jpg 700w, assets/brands/dev-x-media/photos/devx-services-poster-1400.jpg 1400w"
-                   sizes="(max-width: 760px) 46vw, 30vw" width="1440" height="1739" loading="lazy" decoding="async"
-                   alt="Dev X Media graphic listing graphic design, event collaborations, photography, video editing, videography and web design services">
-              <span class="gallery-caption"><span>SERVICE INDEX</span><span>04 / 2025</span></span>
-            </a>
-          </div>
+      </article>
+      <article class="pinned-card">
+        <figure><img src="assets/models/jersey.jpg" width="760" height="760" loading="lazy" decoding="async" alt="Studio render of the BVRCODE sublimated jersey."></figure>
+        <div class="pinned-card-copy">
+          <span class="pinned-brand">BVRCODE Apparel</span>
+          <h3>Made to be worn.</h3>
+          <p class="pinned-description">Custom athletic jersey manufacturing and sublimation print production, built around a 5-piece minimum order quantity.</p>
+          <p class="pinned-facts">Full sublimation · Custom teamwear · 5-piece MOQ</p>
+          <a class="pinned-link" href="https://bvrcodeapparel.com" target="_blank" rel="noopener">bvrcodeapparel.com <span aria-hidden="true">↗</span></a>
         </div>
-        <div class="world-index"><span>02 — 06</span><span>AGENCY / DIGITAL</span></div>
-      </div>
-    </article>
-
-    <!-- WORLD 03 — Sejenak -->
-    <article class="world world-sejenak" data-world="sejenak">
-      <div class="world-bg" aria-hidden="true"><div class="sejenak-flash"></div><div class="sejenak-grid"></div></div>
-      <div class="world-inner">
-        <div class="world-kicker"><span>WORLD 03 / INTERACTIVE EVENTS</span><span>TOP 10 · UMPSA INNOVATECH</span></div>
-        <div class="sejenak-layout">
-          <div class="world-copy">
-            <div class="brand-stamp brand-stamp--sejenak">
-              <span class="brand-stamp-avatar"><img src="assets/brands/sejenak-photobooth/logo/profile-avatar-150-LOW-RES.jpg" width="150" height="150" loading="lazy" decoding="async" alt="Sejenak Photobooth logo"></span>
-              <span class="brand-stamp-copy"><b>Sejenak Photobooth</b></span>
-            </div>
-            <h3 class="world-title sejenak-title">Sejenak<span>®</span></h3>
-            <p class="world-sub">Photobooth &amp; Terabooth</p>
-            <p class="world-body">Interactive physical event photobooths combined with experimental AI image generation software. Instant printing, custom rigging and experiences built to make people stay a little longer.</p>
-            <div class="world-facts"><span>Event photobooths</span><span>AI image transformation</span><span>Instant printing</span><span>Interactive rigging</span></div>
-            <div class="world-cta-row">
-              <a class="world-link" href="#contact" data-cursor="BOOK">Book an activation <span>↗</span></a>
-              <a class="world-link" href="https://www.instagram.com/sejenakphotobooth/" target="_blank" rel="noopener" data-cursor="INSTAGRAM">Official Instagram <span>↗</span></a>
-              <a class="world-link world-link-muted" href="https://github.com/hanennkam" target="_blank" rel="noopener" data-cursor="GITHUB">Terabooth recognition <span>↗</span></a>
-            </div>
-          </div>
-          <div class="sejenak-visual">
-            <figure class="sejenak-photo" data-parallax="0.055">
-              <img src="assets/brands/sejenak-photobooth/photos/sejenak-event-stage-700.jpg"
-                   srcset="assets/brands/sejenak-photobooth/photos/sejenak-event-stage-700.jpg 700w, assets/brands/sejenak-photobooth/photos/sejenak-event-stage-1080.jpg 1080w"
-                   sizes="(max-width: 1100px) 86vw, 32vw"
-                   width="1080" height="1080" loading="lazy" decoding="async"
-                   alt="Sejenak Photobooth event stage with guests and the photobooth kiosk at night">
-              <figcaption><span>SEJENAK / LIVE EVENT RECORD</span><span>PASAR GADIS 3.0</span></figcaption>
-            </figure>
-            <figure class="sejenak-photo-detail" data-parallax="0.1">
-              <img src="assets/brands/sejenak-photobooth/photos/sejenak-print-detail-700.jpg"
-                   srcset="assets/brands/sejenak-photobooth/photos/sejenak-print-detail-700.jpg 700w, assets/brands/sejenak-photobooth/photos/sejenak-print-detail-1080.jpg 1080w"
-                   sizes="(max-width: 1100px) 40vw, 13vw"
-                   width="1080" height="1080" loading="lazy" decoding="async"
-                   alt="Close-up of a Sejenak Photobooth print strip held by a guest">
-            </figure>
-            <div class="sejenak-booth">
-              <div class="booth-head"><span>SEJENAK / TERABOOTH</span><span id="boothCount">0 FRAMES</span></div>
-              <div class="booth-strip" id="boothStrip">
-                <div class="booth-frame frame-a"><span>01</span><i></i><b>STAY<br>A WHILE</b></div>
-                <div class="booth-frame frame-b"><span>02</span><i></i><b>KEEP<br>THE MOMENT</b></div>
-                <div class="booth-frame frame-c"><span>03</span><i></i><b>MAKE<br>IT STRANGE</b></div>
-              </div>
-              <div class="booth-controls">
-                <button type="button" class="shutter" id="boothShutter" data-cursor="SNAP"><span></span>Take a frame</button>
-                <span class="booth-hint">INTERACTIVE DEMO</span>
-              </div>
-            </div>
-          </div>
+      </article>
+      <article class="pinned-card">
+        <figure><img src="assets/models/camera.jpg" width="760" height="760" loading="lazy" decoding="async" alt="Studio render of a mirrorless camera with a 35 mm prime lens."></figure>
+        <div class="pinned-card-copy">
+          <span class="pinned-brand">Tinta Visuals</span>
+          <h3>Every frame, considered.</h3>
+          <p class="pinned-description">A creative media studio for corporate event cinematography, commercial product photography and high-impact visual storytelling.</p>
+          <p class="pinned-facts">Commercial video · Event coverage · Colour grading</p>
+          <a class="pinned-link" href="https://www.instagram.com/tintavisuals/" target="_blank" rel="noopener">Instagram <span aria-hidden="true">↗</span></a>
         </div>
-        <div class="brand-gallery brand-gallery--sejenak">
-          <div class="brand-gallery-head">
-            <span>EVENT RECORD / REAL SEJENAK PHOTOGRAPHS</span>
-            <a href="https://www.instagram.com/sejenakphotobooth/" target="_blank" rel="noopener">Instagram ↗</a>
-          </div>
-          <div class="brand-gallery-grid">
-            <a class="brand-gallery-item g-sejenak-portrait" href="https://www.instagram.com/sejenakphotobooth/p/DYewGbynTfe/" target="_blank" rel="noopener">
-              <img src="assets/brands/sejenak-photobooth/photos/sejenak-guest-portrait-700.jpg"
-                   srcset="assets/brands/sejenak-photobooth/photos/sejenak-guest-portrait-700.jpg 700w, assets/brands/sejenak-photobooth/photos/sejenak-guest-portrait-1080.jpg 1080w"
-                   sizes="(max-width: 760px) 46vw, 24vw" width="1080" height="1350" loading="lazy" decoding="async"
-                   alt="Sejenak Photobooth guests smiling together in a photobooth portrait">
-              <span class="gallery-caption"><span>GUEST PORTRAIT</span><span>PASAR GADIS / 05</span></span>
-            </a>
-            <a class="brand-gallery-item g-sejenak-strips" href="https://www.instagram.com/sejenakphotobooth/p/DYevAs5nfu9/" target="_blank" rel="noopener">
-              <img src="assets/brands/sejenak-photobooth/photos/sejenak-guest-strips-700.jpg"
-                   srcset="assets/brands/sejenak-photobooth/photos/sejenak-guest-strips-700.jpg 700w, assets/brands/sejenak-photobooth/photos/sejenak-guest-strips-1080.jpg 1080w"
-                   sizes="(max-width: 760px) 46vw, 18vw" width="1080" height="1350" loading="lazy" decoding="async"
-                   alt="Sejenak Photobooth guests holding their printed photo strips">
-              <span class="gallery-caption"><span>PRINT STRIPS</span><span>PASAR GADIS / 04</span></span>
-            </a>
-            <a class="brand-gallery-item g-sejenak-booth" href="https://www.instagram.com/sejenakphotobooth/p/DSHdtdOExZK/" target="_blank" rel="noopener">
-              <img src="assets/brands/sejenak-photobooth/photos/sejenak-booth-guests-700.jpg"
-                   srcset="assets/brands/sejenak-photobooth/photos/sejenak-booth-guests-700.jpg 700w, assets/brands/sejenak-photobooth/photos/sejenak-booth-guests-1080.jpg 1080w"
-                   sizes="(max-width: 760px) 46vw, 22vw" width="1080" height="1080" loading="lazy" decoding="async"
-                   alt="Two Sejenak Photobooth guests beside the white photobooth kiosk">
-              <span class="gallery-caption"><span>KIOSK + GUESTS</span><span>EVENT RECORD</span></span>
-            </a>
-            <a class="brand-gallery-item g-sejenak-wall" href="https://www.instagram.com/sejenakphotobooth/p/DSHeHWsEw95/" target="_blank" rel="noopener">
-              <img src="assets/brands/sejenak-photobooth/photos/sejenak-strip-wall-700.jpg"
-                   srcset="assets/brands/sejenak-photobooth/photos/sejenak-strip-wall-700.jpg 700w, assets/brands/sejenak-photobooth/photos/sejenak-strip-wall-1080.jpg 1080w"
-                   sizes="(max-width: 760px) 46vw, 22vw" width="1080" height="1080" loading="lazy" decoding="async"
-                   alt="Grid of Sejenak Photobooth photo strips showing event guests">
-              <span class="gallery-caption"><span>PRINT WALL</span><span>EVENT RECORD</span></span>
-            </a>
-            <a class="brand-gallery-item g-sejenak-hands" href="https://www.instagram.com/sejenakphotobooth/p/DYaH4KFHUsh/" target="_blank" rel="noopener">
-              <img src="assets/brands/sejenak-photobooth/photos/sejenak-prints-hand-700.jpg"
-                   srcset="assets/brands/sejenak-photobooth/photos/sejenak-prints-hand-700.jpg 700w, assets/brands/sejenak-photobooth/photos/sejenak-prints-hand-1080.jpg 1080w"
-                   sizes="(max-width: 760px) 46vw, 22vw" width="1080" height="1350" loading="lazy" decoding="async"
-                   alt="Hand holding a fan of freshly printed Sejenak Photobooth strips">
-              <span class="gallery-caption"><span>PRINT DETAIL</span><span>PASAR GADIS / 03</span></span>
-            </a>
-            <a class="brand-gallery-item g-sejenak-reel" href="https://www.instagram.com/sejenakphotobooth/reel/DSHe30UgHxv/" target="_blank" rel="noopener">
-              <img src="assets/brands/sejenak-photobooth/photos/sejenak-reel-poster-600.jpg"
-                   srcset="assets/brands/sejenak-photobooth/photos/sejenak-reel-poster-600.jpg 600w"
-                   sizes="(max-width: 760px) 46vw, 28vw" width="600" height="400" loading="lazy" decoding="async"
-                   alt="Poster frame from a Sejenak Photobooth Instagram reel">
-              <span class="gallery-caption"><span>REEL POSTER / SOURCE LINK</span><span>NOT PLAYABLE HERE</span></span>
-            </a>
-          </div>
-        </div>
-        <div class="world-index"><span>03 — 06</span><span>EVENTS / EXPERIENCE</span></div>
-      </div>
-    </article>
+      </article>
+    </div>
 
-    <!-- WORLD 04 — Tinta Visuals -->
-    <article class="world world-tinta" data-world="tinta">
-      <div class="world-bg" aria-hidden="true"><div class="tinta-glow"></div><div class="tinta-grain"></div></div>
-      <div class="world-inner">
-        <div class="world-kicker"><span>WORLD 04 / CINEMATIC MEDIA</span><span>PRODUCTION STUDIO</span></div>
-        <div class="tinta-layout">
-          <div class="tinta-heading">
-            <div class="brand-stamp brand-stamp--tinta">
-              <span class="brand-stamp-avatar"><img src="assets/brands/tinta-visuals/logo/profile-avatar-150-LOW-RES.jpg" width="150" height="150" loading="lazy" decoding="async" alt="Tinta Visuals logo"></span>
-              <span class="brand-stamp-copy"><b>Tinta Visuals</b></span>
-            </div>
-            <h3 class="world-title tinta-title">Tinta<br><em>Visuals</em></h3>
-            <p class="world-body">A creative media studio for corporate event cinematography, commercial product photography, brand identity systems and high-impact visual storytelling.</p>
-            <div class="world-facts"><span>Commercial video</span><span>Event coverage</span><span>Brand identity</span><span>Colour grading</span></div>
-            <div class="world-cta-row">
-              <a class="world-link" href="#contact" data-cursor="INQUIRE">Inquire about coverage <span>↗</span></a>
-              <a class="world-link" href="https://www.instagram.com/tintavisuals/" target="_blank" rel="noopener" data-cursor="INSTAGRAM">Official Instagram <span>↗</span></a>
-            </div>
-          </div>
+    <nav class="pinned-ecosystem" aria-label="Ecosystem">
+      <span>Hannenkam</span>
+      <i aria-hidden="true">·</i>
+      <a href="https://www.instagram.com/devx.media/" target="_blank" rel="noopener">DevXMedia</a>
+      <i aria-hidden="true">·</i>
+      <a href="https://www.instagram.com/sejenakphotobooth/" target="_blank" rel="noopener">Sejenak</a>
+      <i aria-hidden="true">·</i>
+      <a href="https://www.instagram.com/tintavisuals/" target="_blank" rel="noopener">Tinta</a>
+      <i aria-hidden="true">·</i>
+      <a href="https://www.instagram.com/bvrcode.apparel/" target="_blank" rel="noopener">BVRCODE</a>
+      <i aria-hidden="true">·</i>
+      <a href="https://duits-money-tracking.onrender.com" target="_blank" rel="noopener">Duits</a>
+    </nav>
 
-        </div>
-        <div class="world-index"><span>04 — 06</span><span>FILM / IMAGE</span></div>
-      </div>
-    </article>
-
-    <!-- WORLD 05 — BVRCODE -->
-    <article class="world world-bvrcode" data-world="bvrcode" data-brand="bvrcode-apparel">
-      <div class="world-bg" aria-hidden="true"><div class="bvr-lines"></div><div class="bvr-glow"></div></div>
-      <div class="world-inner">
-        <div class="world-kicker"><span>WORLD 05 / TEXTILE &amp; APPAREL</span><span>SUPPLYING SINCE 2024</span></div>
-        <div class="bvr-layout">
-          <div class="world-copy">
-            <div class="bvr-brandline">
-              <span class="bvr-logo-plaque"><img src="assets/brands/bvrcode-apparel/logo/logo-bvrcode-black.png" alt="BVRCODE Apparel official logo" width="220" height="128"></span>
-              <span>Official brand / Since 2024</span>
-            </div>
-            <h3 class="world-title bvr-title">BVR<span>CODE</span></h3>
-            <p class="world-sub">Apparel / Sublimation</p>
-            <p class="world-body">Custom athletic jersey manufacturing and sublimation print production. Premium teamwear and corporate identity apparel, built around a 5-piece minimum order quantity.</p>
-            <div class="world-facts"><span>Full sublimation</span><span>Custom teamwear</span><span>Corporate orders</span><span>Vector design</span></div>
-            <div class="world-cta-row">
-              <a class="world-link" href="https://bvrcodeapparel.com" target="_blank" rel="noopener" data-cursor="VISIT">bvrcodeapparel.com <span>↗</span></a>
-              <a class="world-link" href="https://www.instagram.com/bvrcode.apparel/" target="_blank" rel="noopener" data-cursor="INSTAGRAM">Official Instagram <span>↗</span></a>
-              <a class="world-link world-link-muted" href="#contact" data-cursor="ORDER">Place an order <span>↗</span></a>
-            </div>
-          </div>
-          <div class="bvr-studio">
-            <figure class="bvr-photo bvr-photo-print" data-parallax="0.06">
-              <picture>
-                <source type="image/webp" srcset="assets/brands/bvrcode-apparel/photos/workshop-white-700.webp 700w, assets/brands/bvrcode-apparel/photos/workshop-white-1400.webp 1400w" sizes="(max-width: 1100px) 82vw, 33vw">
-                <img src="assets/brands/bvrcode-apparel/photos/workshop-white-700.jpg"
-                     srcset="assets/brands/bvrcode-apparel/photos/workshop-white-700.jpg 700w, assets/brands/bvrcode-apparel/photos/workshop-white-1400.jpg 1400w"
-                     sizes="(max-width: 1100px) 82vw, 33vw"
-                     width="1848" height="2304" loading="lazy" decoding="async"
-                     alt="BVRCODE custom sublimated jersey hanging in the production workshop">
-              </picture>
-              <figcaption><span>BVRCODE / SUBLIMATED TEAMWEAR</span><span>Official product</span></figcaption>
-            </figure>
-            <figure class="bvr-photo bvr-photo-jersey" data-parallax="0.12">
-              <picture>
-                <source type="image/webp" srcset="assets/brands/bvrcode-apparel/photos/teamkit-green-700.webp 700w, assets/brands/bvrcode-apparel/photos/teamkit-green-1400.webp 1400w" sizes="(max-width: 1100px) 34vw, 12vw">
-                <img src="assets/brands/bvrcode-apparel/photos/teamkit-green-700.jpg"
-                     srcset="assets/brands/bvrcode-apparel/photos/teamkit-green-700.jpg 700w, assets/brands/bvrcode-apparel/photos/teamkit-green-1400.jpg 1400w"
-                     sizes="(max-width: 1100px) 34vw, 12vw"
-                     width="833" height="1024" loading="lazy" decoding="async"
-                     alt="BVRCODE green custom sublimated team jersey">
-              </picture>
-              <figcaption>CUSTOM TEAM KIT / BVRCODE</figcaption>
-            </figure>
-            <div class="bvr-customizer">
-              <div class="bvr-jersey" id="bvrJersey">
-                <svg viewBox="0 0 400 480" aria-hidden="true">
-                  <defs>
-                    <clipPath id="jerseyClip">
-                      <path d="M130 42 L166 22 L234 22 L270 42 L352 98 L316 156 L284 136 L284 438 L116 438 L116 136 L84 156 L48 98 Z"/>
-                    </clipPath>
-                    <pattern id="jerseyGrid" width="26" height="26" patternUnits="userSpaceOnUse">
-                      <rect width="26" height="26" fill="#f5ead7"/>
-                      <path d="M26 0H0V26" fill="none" stroke="#100b06" stroke-width="1.4" opacity=".65"/>
-                    </pattern>
-                    <pattern id="jerseyCamo" width="48" height="48" patternUnits="userSpaceOnUse">
-                      <rect width="48" height="48" fill="#f5ead7"/>
-                      <path d="M4 8c10-8 18 4 27 0s12 10 4 15-6 15-18 11S2 28 8 22 10 12 4 8Z" fill="#100b06" opacity=".18"/>
-                      <circle cx="37" cy="34" r="7" fill="#100b06" opacity=".15"/>
-                      <circle cx="15" cy="40" r="4" fill="#c9a66b" opacity=".55"/>
-                    </pattern>
-                  </defs>
-                  <path class="jersey-body" d="M130 42 L166 22 L234 22 L270 42 L352 98 L316 156 L284 136 L284 438 L116 438 L116 136 L84 156 L48 98 Z"/>
-                  <rect class="jersey-grid-fill" x="40" y="18" width="320" height="424" fill="url(#jerseyGrid)" clip-path="url(#jerseyClip)" opacity="0"/>
-                  <rect class="jersey-camo-fill" x="40" y="18" width="320" height="424" fill="url(#jerseyCamo)" clip-path="url(#jerseyClip)" opacity="0"/>
-                  <path class="jersey-panel" d="M166 22 L200 92 L234 22"/>
-                  <path class="jersey-stripe" d="M116 250 L284 250"/>
-                  <path class="jersey-line" d="M116 136 L116 438 M284 136 L284 438"/>
-                  <text x="200" y="320" text-anchor="middle" class="jersey-code">BVR</text>
-                  <text x="200" y="352" text-anchor="middle" class="jersey-small">05 / APPAREL</text>
-                </svg>
-              </div>
-              <div class="bvr-controls">
-                <span class="bvr-label">PATTERN STUDY /</span>
-                <div role="group" aria-label="Jersey pattern">
-                  <button type="button" class="bvr-swatch is-active" data-pattern="stripe" data-cursor="APPLY"><i class="sw-stripe"></i>Stripe</button>
-                  <button type="button" class="bvr-swatch" data-pattern="grid" data-cursor="APPLY"><i class="sw-grid"></i>Grid</button>
-                  <button type="button" class="bvr-swatch" data-pattern="camo" data-cursor="APPLY"><i class="sw-camo"></i>Camo</button>
-                </div>
-                <span class="bvr-hint">5 PCS MOQ · FULL SUBLIMATION</span>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="brand-gallery brand-gallery--bvr">
-          <div class="brand-gallery-head">
-            <span>BVRCODE / FIELD ARCHIVE · REAL PRODUCT PHOTOGRAPHY</span>
-            <a href="https://www.instagram.com/bvrcode.apparel/" target="_blank" rel="noopener">Instagram ↗</a>
-          </div>
-          <div class="brand-gallery-grid">
-            <a class="brand-gallery-item g-bvr-checker" href="https://www.instagram.com/bvrcode.apparel/p/Cvztq1FhhYw/" target="_blank" rel="noopener">
-              <img src="assets/brands/bvrcode-apparel/photos/bvr-archive-checker-700.jpg"
-                   srcset="assets/brands/bvrcode-apparel/photos/bvr-archive-checker-700.jpg 700w, assets/brands/bvrcode-apparel/photos/bvr-archive-checker-1400.jpg 1400w"
-                   sizes="(max-width: 760px) 46vw, 25vw" width="1440" height="1800" loading="lazy" decoding="async"
-                   alt="BVRCODE pink and blue checkerboard custom jersey set photographed on grass">
-              <span class="gallery-caption"><span>CHECKERBOARD KIT</span><span>CUSTOM / 2023</span></span>
-            </a>
-            <a class="brand-gallery-item g-bvr-cream" href="https://www.instagram.com/bvrcode.apparel/p/Cvztyd0BnaL/" target="_blank" rel="noopener">
-              <img src="assets/brands/bvrcode-apparel/photos/bvr-archive-cream-700.jpg"
-                   srcset="assets/brands/bvrcode-apparel/photos/bvr-archive-cream-700.jpg 700w, assets/brands/bvrcode-apparel/photos/bvr-archive-cream-1280.jpg 1280w"
-                   sizes="(max-width: 760px) 46vw, 14vw" width="1280" height="1280" loading="lazy" decoding="async"
-                   alt="BVRCODE cream patterned jersey front and back on grass">
-              <span class="gallery-caption"><span>CREAM PATTERN</span><span>KMPK / 2023</span></span>
-            </a>
-            <a class="brand-gallery-item g-bvr-blue" href="https://www.instagram.com/bvrcode.apparel/p/CukI67sSd3P/" target="_blank" rel="noopener">
-              <img src="assets/brands/bvrcode-apparel/photos/bvr-archive-blue-700.jpg"
-                   srcset="assets/brands/bvrcode-apparel/photos/bvr-archive-blue-700.jpg 700w, assets/brands/bvrcode-apparel/photos/bvr-archive-blue-1400.jpg 1400w"
-                   sizes="(max-width: 760px) 46vw, 20vw" width="1440" height="1440" loading="lazy" decoding="async"
-                   alt="BVRCODE blue and white custom jersey with the number 23">
-              <span class="gallery-caption"><span>BLUE 23</span><span>CUSTOM / 2023</span></span>
-            </a>
-            <a class="brand-gallery-item g-bvr-charcoal" href="https://www.instagram.com/bvrcode.apparel/p/Cvzsnd-havv/" target="_blank" rel="noopener">
-              <img src="assets/brands/bvrcode-apparel/photos/bvr-archive-charcoal-700.jpg"
-                   srcset="assets/brands/bvrcode-apparel/photos/bvr-archive-charcoal-700.jpg 700w, assets/brands/bvrcode-apparel/photos/bvr-archive-charcoal-1280.jpg 1280w"
-                   sizes="(max-width: 760px) 46vw, 20vw" width="1280" height="1280" loading="lazy" decoding="async"
-                   alt="BVRCODE charcoal custom jersey with tonal pattern on grass">
-              <span class="gallery-caption"><span>CHARCOAL PATTERN</span><span>CUSTOM / 2023</span></span>
-            </a>
-            <a class="brand-gallery-item g-bvr-team" href="https://www.instagram.com/bvrcode.apparel/p/CvztqzYhlOn/" target="_blank" rel="noopener">
-              <img src="assets/brands/bvrcode-apparel/photos/bvr-archive-team-700.jpg"
-                   srcset="assets/brands/bvrcode-apparel/photos/bvr-archive-team-700.jpg 700w, assets/brands/bvrcode-apparel/photos/bvr-archive-team-1080.jpg 1080w"
-                   sizes="(max-width: 760px) 46vw, 25vw" width="1080" height="1080" loading="lazy" decoding="async"
-                   alt="BVRCODE team wearing matching custom jerseys at a delivery handover">
-              <span class="gallery-caption"><span>TEAM DELIVERY</span><span>REAL ORDER / 2023</span></span>
-            </a>
-            <a class="brand-gallery-item g-bvr-portrait" href="https://www.instagram.com/bvrcode.apparel/p/CukOJR1yX6m/" target="_blank" rel="noopener">
-              <img src="assets/brands/bvrcode-apparel/photos/bvr-archive-portrait-700.jpg"
-                   srcset="assets/brands/bvrcode-apparel/photos/bvr-archive-portrait-700.jpg 700w, assets/brands/bvrcode-apparel/photos/bvr-archive-portrait-1400.jpg 1400w"
-                   sizes="(max-width: 760px) 46vw, 14vw" width="1440" height="1403" loading="lazy" decoding="async"
-                   alt="BVRCODE dark jersey with a portrait print, laid on grass">
-              <span class="gallery-caption"><span>PORTRAIT PRINT</span><span>CUSTOM / 2023</span></span>
-            </a>
-          </div>
-        </div>
-        <div class="world-index"><span>05 — 06</span><span>TEXTILE / MANUFACTURE</span></div>
-      </div>
-    </article>
-
-
-    <!-- WORLD 06 — Duits, live product -->
-    <article class="world world-duits" data-world="duits" data-brand="duits">
-      <div class="world-bg" aria-hidden="true"><div class="duits-world-orb"></div><div class="duits-world-grid"></div></div>
-      <div class="world-inner">
-        <div class="world-kicker"><span>WORLD 06 / LIVE PRODUCT</span><span>INVITE-ONLY · LIVE</span></div>
-        <div class="duits-world-layout">
-          <div class="world-copy">
-            <div class="duits-brandline">
-              <span class="duits-live-pill"><i></i>LIVE PRODUCT</span>
-              <span class="duits-brand-note">Official wallet mark</span>
-            </div>
-            <h3 class="world-title duits-world-title">Duits</h3>
-            <p class="world-sub">Personal finance, parsed.</p>
-            <p class="world-body">Duits turns receipt photos, bank screenshots and plain text into structured spending data. Claude Vision extracts the merchant, total, tax and category; Supabase keeps each account behind per-user Row Level Security.</p>
-            <div class="world-facts"><span>Live PWA</span><span>Receipt → expense</span><span>Claude Vision</span><span>Supabase RLS</span></div>
-            <div class="world-cta-row">
-              <a class="world-link" href="https://duits-money-tracking.onrender.com" target="_blank" rel="noopener" data-cursor="OPEN">Open live app <span>↗</span></a>
-              <a class="world-link world-link-muted" href="#project-duits" data-cursor="BUILD">Read the build <span>↗</span></a>
-            </div>
-            <p class="world-note">Live, invite-only build. Product screenshots are from the public sign-in screen; no account data is shown.</p>
-          </div>
-
-          <div class="duits-world-visual">
-            <div class="duits-mark-card">
-              <img src="assets/brands/duits/logo/duits-logo-transparent.png" alt="Duits official light-blue glassmorphism wallet logo" width="180" height="180" loading="lazy" decoding="async">
-              <span>DUITS / OFFICIAL MARK</span>
-            </div>
-
-            <figure class="duits-device">
-              <picture>
-                <source type="image/webp" srcset="assets/brands/duits/screenshots/duits-live-signin-430.webp 430w, assets/brands/duits/screenshots/duits-live-signin-860.webp 860w" sizes="(max-width: 1100px) 46vw, 22vw">
-                <img src="assets/brands/duits/screenshots/duits-live-signin-430.jpg"
-                     srcset="assets/brands/duits/screenshots/duits-live-signin-430.jpg 430w, assets/brands/duits/screenshots/duits-live-signin-860.jpg 860w"
-                     sizes="(max-width: 1100px) 46vw, 22vw"
-                     width="430" height="932" loading="lazy" decoding="async"
-                     alt="Live Duits app sign-in screen from the public product">
-              </picture>
-              <figcaption><span>Live build</span><span>Invite-only sign-in</span></figcaption>
-            </figure>
-
-            <div class="duits-status-card">
-              <div class="duits-status-head"><span class="duits-status-dot"></span><span>LIVE NOW</span><span>INVITE ONLY</span></div>
-              <strong>Receipts in.<br>Clarity out.</strong>
-              <p>One home for personal and business expenses, with AI parsing and per-user security.</p>
-              <a href="https://duits-money-tracking.onrender.com" target="_blank" rel="noopener" data-cursor="OPEN">Open duits <span>↗</span></a>
-            </div>
-          </div>
-        </div>
-        <div class="duits-capture-strip">
-          <div class="brand-gallery-head">
-            <span>PRODUCT SURFACE / VERIFIED SCREENSHOTS</span>
-            <a href="https://duits-money-tracking.onrender.com" target="_blank" rel="noopener">Open live build ↗</a>
-          </div>
-          <div class="duits-capture-grid">
-            <figure class="duits-capture is-real">
-              <img src="assets/brands/duits/screenshots/duits-live-signin-430.jpg"
-                   srcset="assets/brands/duits/screenshots/duits-live-signin-430.jpg 430w, assets/brands/duits/screenshots/duits-live-signin-860.jpg 860w"
-                   sizes="(max-width: 760px) 30vw, 9vw" width="430" height="932" loading="lazy" decoding="async"
-                   alt="Public Duits app sign-in screen documenting the live product surface">
-              <figcaption><span>01 / SIGN-IN</span><span>PUBLIC</span></figcaption>
-            </figure>
-
-            <div class="duits-capture-note">
-              <span>ONLY THE PUBLIC SIGN-IN SURFACE IS DOCUMENTED.</span>
-              <span>NO ACCOUNT DATA / NO INVENTED FEATURES</span>
-            </div>
-          </div>
-        </div>
-        <div class="world-index"><span>06 — 06</span><span>PRODUCT / FINANCE</span></div>
-      </div>
-    </article>
-</section>
+    <div class="pinned-a11y sr-only">
+      <h2>Studio objects</h2>
+      <p>Sejenak Photobooth. Stay a while. Event photobooth, instant print, custom rigging.</p>
+      <p>BVRCODE Apparel. Made to be worn. Full sublimation, custom teamwear, 5-piece MOQ.</p>
+      <p>Tinta Visuals. Every frame, considered. Commercial video, event coverage, colour grading.</p>
+    </div>
+  </section>
 
   <!-- =====================================================================
        05 — RECOGNITION
@@ -1034,5 +670,6 @@
 <script src="stage3d.js" defer></script>
 <script src="hero3d.js" defer></script>
 <script src="work.js" defer></script>
+<script src="pinned3d.js" defer></script>
 </body>
 </html>

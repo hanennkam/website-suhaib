@@ -37,6 +37,9 @@
   var BASE_Y = -25 * Math.PI / 180;
 
   function clamp(v, min, max) { return Math.max(min, Math.min(max, v)); }
+  function ownsStage() {
+    return document.documentElement.dataset.stageOwner !== "pinned";
+  }
   function easeOutQuint(t) { return 1 - Math.pow(1 - t, 5); }
 
   // Text is visible immediately; the reveal is a line-by-line enhancement.
@@ -53,6 +56,7 @@
 
   function showPoster() {
     state.failed = true;
+    document.dispatchEvent(new CustomEvent("hero3d:failed"));
     stageEl.classList.add("is-poster");
     stageEl.classList.remove("is-ready");
     canvas.style.visibility = "hidden";
@@ -166,7 +170,7 @@
 
   function setScroll(value) {
     state.scroll = clamp(value, 0, 1);
-    if (!state.stage || state.failed) return;
+    if (!state.stage || state.failed || !ownsStage()) return;
     if (state.scroll >= 0.995) {
       state.stage.pause();
       canvas.style.visibility = "hidden";
@@ -216,7 +220,7 @@
     if ("IntersectionObserver" in window) {
       var observer = new IntersectionObserver(function (entries) {
         state.inView = entries[0].isIntersecting;
-        if (!state.stage || state.failed) return;
+        if (!state.stage || state.failed || !ownsStage()) return;
         if (state.inView && !document.hidden) {
           canvas.style.visibility = "visible";
           state.stage.setVisibilityPaused(false);
@@ -229,7 +233,7 @@
     }
 
     document.addEventListener("visibilitychange", function () {
-      if (!state.stage || state.failed) return;
+      if (!state.stage || state.failed || !ownsStage()) return;
       state.stage.setVisibilityPaused(document.hidden || !state.inView);
     });
   }
@@ -264,6 +268,7 @@
         state.entranceStart = window.performance.now();
         state.ready = true;
         state.failed = false;
+        document.dispatchEvent(new CustomEvent("hero3d:ready"));
         if (state.inView && !document.hidden) {
           stageEl.classList.add("is-ready");
           stageEl.classList.remove("is-poster");
@@ -277,6 +282,17 @@
       showPoster();
     }
   }
+
+  window.Hero3D = {
+    onFrame: onFrame,
+    isReady: function () { return state.ready && !state.failed; },
+    isInView: function () { return state.inView; },
+    getStage: function () { return state.stage; },
+    getCanvas: function () { return canvas; },
+    getHero: function () { return hero; },
+    getStageEl: function () { return stageEl; },
+    getScroll: function () { return state.scroll; }
+  };
 
   scheduleHero(function () {
     ensureVendor().then(start).catch(showPoster);
