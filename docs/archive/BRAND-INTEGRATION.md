@@ -1,3 +1,5 @@
+> **Pra-redesign archive.** This document is kept for historical reference only and does not describe the current site.
+
 # Brand integration — Phase 2
 
 **Scope:** integrate the verified brand recovery package into the existing Signal Archive. No recovery assets were modified. No deployment has been made.

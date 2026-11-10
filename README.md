@@ -1,105 +1,62 @@
-# Ahmad Suhaib — The Signal Archive
+# Ahmad Suhaib — Portfolio
 
-An immersive, single-page portfolio for **Ahmad Suhaib** — software engineer, creative technologist, and founder. The experience is built as a sequence of visual chapters rather than a conventional hero → about → ventures → contact page.
+A single-page portfolio for **Ahmad Suhaib**, a software engineer, creative technologist and founder. The site presents four selected products, three studio objects in a pinned 3D sequence, the ventures around them, recognition and a contact point.
 
-The three concept directions considered, and the reasoning behind the selected direction, are documented in [`CONCEPTS.md`](CONCEPTS.md).
+**Production:** https://website-suhaib.vercel.app/
 
-## The experience
+## Stack
 
-| Chapter | What happens |
-| --- | --- |
-| **00 — Arrival** | A cinematic boot sequence, then a custom WebGL monolith assembles from orbital shards while the name reveals. The scene responds to the cursor and can be dragged. |
-| **01 — Operator** | A scroll-driven manifesto reveals word by word, followed by the capability ledger and operating metrics. |
-| **02 — The Universe** | A real interactive Three.js domain map. Four distinct node sculptures (Code, AI, Creative, Enterprise) can be selected by click, touch, or the accessible controls. Each domain opens linked portfolio content. |
-| **03 — Selected Work** | A pinned horizontal film of six full-screen project scenes. Every project has its own palette, layout, and interactive schematic. |
-| **04 — Worlds** | Six brand/product environments: Hannenkam Rise Ventures, DevXMedia, Sejenak Photobooth & Terabooth, Tinta Visuals, BVRCODE Apparel, and the live **Duits** product. BVRCODE and Duits use official brand assets. |
-| **05 — Record** | Honours, education, and the internship availability window as an editorial ledger. |
-| **06 — Transmit** | A typographic finale with a copy-to-clipboard email action, local time, and ecosystem links. |
-
-## Architecture
-
-No framework, no build step. A static site with authored HTML, CSS and JS:
-
-```
-index.html       semantic markup and content
-styles.css       design system, chapter layouts, responsive rules, fallbacks
-photos.css       editorial photography layer, layered compositions, masks
-brands.css       official brand palettes + BVRCODE/Duits live-product styles
-main.js          intro monolith, universe map, horizontal work film, interactions
-artefacts.css    object-study exhibit layout
-artefacts.js     lazy glTF viewer (camera / kiosk / jersey)
-og-image.png     1200 × 630 social preview
-assets/grain.png generated film-grain texture (original asset)
-assets/photos/   local, optimised context photography
-assets/brands/   official logos, products, screenshots + manifest
-assets/models/   authored glTF objects + fallback renders
-assets/CREDITS.md   photo sources and licensing
-tools/import_brand_assets.py  manual brand-asset importer
-```
-
-### Libraries
-
-- **Three.js r128** — intro monolith, universe map and the lazy glTF artefacts viewer (GLTFLoader + OrbitControls).
-- **GSAP 3.12 + ScrollTrigger** — pinned horizontal work, manifesto reveal, section choreography.
-- **Lenis** — smooth scroll, integrated with ScrollTrigger.
-- **Google Fonts** — Archivo, Instrument Serif, JetBrains Mono (open-source licences).
-- **Pexels photography** — locally hosted context imagery under the Pexels License. It is used as editorial context only, never as documentation of actual clients, teams, premises or events. See [`assets/CREDITS.md`](assets/CREDITS.md).
-- **Official brand assets** — BVRCODE official logo + product photography from bvrcodeapparel.com; Duits official wallet logo + public live-app screenshot. Source, usage and licence notes are in [`assets/brands/manifest.json`](assets/brands/manifest.json) and [`assets/brands/README.md`](assets/brands/README.md).
-- Project and venture diagrams remain procedural; no invented project screenshots.
-
-### Interaction inventory
-
-- Cinematic intro with calibration boot, name reveal, draggable crystal, cursor parallax, orbital shards, and particle field.
-- Universe: click/touch raycasting, drag-to-orbit, accessible domain buttons, camera pulse, linked content panel.
-- Work: scroll-driven horizontal reel, snap alignment, project index, keyboard/button navigation, and one interaction per project:
-  - Duits receipt parsing
-  - Waspada Banjir alert-state simulation
-  - Agent task dispatch log
-  - Invoicing architecture node explorer
-  - XAUUSD news-guard toggle
-- Worlds: official Instagram links for DevXMedia, Sejenak, Tinta and BVRCODE; DevXMedia's COMBAT 2025 reel card; real BVRCODE product photography and official logo; a live Duits product world with official wallet logo, live screenshot and a light-blue glass identity; Sejenak shutter, Tinta filmstrip, BVRCODE pattern customiser, Hannenkam ecosystem jump links, and a six-identity world index.
-- Editorial photography: subtle scroll parallax, layered cards, clipped masks, hover zooms, and explicit stock-context captions. Official brand assets are kept separate from licensed context imagery.
-- Artefacts: lazy glTF viewer with orbit, zoom, keyboard tabs, fallback renders, and a real workshop-gear reference image.
-- Contact: clipboard copy with toast and fallback.
-- Custom cursor labels, chapter rail, live Kuala Lumpur clock, and mobile index menu.
-
-### Performance and resilience
-
-- Three WebGL scenes (intro, universe, artefacts), all paused when off-screen and on hidden tabs; the glTF viewer boots only when approached.
-- Device-pixel ratio capped; particle/instance counts reduced on small screens.
-- Context and brand images are locally hosted with responsive `srcset`, intrinsic dimensions and `loading="lazy"`; BVRCODE assets include WebP + JPEG fallbacks.
-- Instagram media is not embedded as a live feed. The public DevXMedia reel still is a local poster; video playback links out to Instagram.
-- `prefers-reduced-motion` alternative: static monolith, no 3D canvases, accessible static universe, vertical project stack, no autoplay motion.
-- No-WebGL fallback: CSS monolith and static universe content.
-- No-JavaScript fallback: all content remains readable, and the work reel becomes a vertical stack.
-- Work reel becomes a vertical stack below 1100 px; venture copy and visual stacks reflow below 1280 px so photography keeps its breathing room.
-- Lighthouse: **100 accessibility / 100 best practices / 100 SEO**.
+- Static HTML, CSS and JavaScript — no framework and no build step.
+- **Three.js r128** with GLTFLoader for the hero and objects scenes.
+- **GSAP 3.12.5** and **ScrollTrigger 3.12.5** for the scroll choreography.
+- **Lenis 1.1.14** for smooth scrolling, integrated with ScrollTrigger.
+- **Inter** (local WOFF2) as the only typeface.
+- **Vercel** for hosting, compression and cache headers.
 
 ## Run locally
-
-No build step:
 
 ```bash
 python3 -m http.server 8080
 # open http://localhost:8080
 ```
 
-## Deploy
+No install or build step is required.
 
-Static hosting — Cloudflare Pages, GitHub Pages, Netlify, or any static file server. Deploy the repository root.
+## Structure
 
-## Brand assets and access
+```
+index.html          page content, metadata and JSON-LD
+styles.css          reset, tokens, header, shared foundations
+phase-a.css         hero, About, navigation and typography layer
+phase-c.css         selected work and More work
+phase-d.css         pinned Objects stage and static cards
+phase-e.css         Ventures, Recognition, Contact, footer and final polish
+main.js             navigation, scroll-spy, tone, page background, email copy
+stage3d.js          shared Three.js renderer
+hero3d.js           hero camera stage
+pinned3d.js         pinned Objects sequence and canvas handover
+work.js             work reveals, counters and lazy demo loader
+work-demos.js       selected work demo interactions
+assets/             fonts, models, images and brand records
+vendor/             local Three.js and GLTFLoader
+docs/               internal notes and historical archive
+```
 
-- **Official sources used:** [BVRCODE Apparel website](https://bvrcodeapparel.com/) (logo + real products), [Duits live app](https://duits-money-tracking.onrender.com/) (logo + public sign-in screenshot), and the public [Instagram reel](https://www.instagram.com/reel/DKAROWSgwPW/) from Dev X Media.
-- **Instagram access:** the four public profiles are linked, but Instagram places profile media behind a login wall. No login, session cookies, private endpoints or credentials were used. No live Instagram feed is embedded.
-- **Still needed from Ahmad:** official logos and original media for DevXMedia, Sejenak, Tinta and Hannenkam; a Duits Instagram URL if one exists; optional post-login Duits dashboard screenshots. See the missing list in [`assets/brands/README.md`](assets/brands/README.md).
-- **Manual import:** drop originals in `assets/brands/_inbox/` and run `python3 tools/import_brand_assets.py --dry-run`, then without `--dry-run`. The importer preserves originals, creates WebP/JPEG derivatives and updates the manifest.
-- **Brand colours:** Duits palette is sampled from the official wallet logo; BVRCODE uses its black/white logo plus the verified official site palette (ink, olive, cream, gold). Palettes for brands without official logos remain visibly labelled as provisional rather than guessed.
+## Performance and resilience
 
-## Notes
+Measured with Lighthouse against a gzip-enabled local server:
 
-- Content is factual and drawn from the existing portfolio.
-- Diagrams on project scenes are explicitly labelled as illustrative, schematics, or interface studies; they are not presented as live data or project screenshots.
-- Stock photography is context imagery only and is labelled as such. It is not a photograph of Ahmad Suhaib, his team, clients, premises or events.
-- The design audit is documented in [`AUDIT.md`](AUDIT.md). The brand-source audit and asset status are documented in [`BRAND_UPDATE.md`](BRAND_UPDATE.md).
-- The `journey-website/` and `reference/` folders are source material and are not used by the site.
+| Mode | Performance | Accessibility | Best Practices | SEO |
+|---|---:|---:|---:|---:|
+| Mobile | 100 | 100 | 100 | 100 |
+| Desktop | 100 | 100 | 100 | 100 |
+
+Mobile: LCP 1.8s, TBT 0–10ms, CLS 0, about 200 KiB transferred. Desktop: LCP 0.4s, TBT 0ms, CLS 0. The page keeps around 500 DOM elements. The pinned sequence was measured at 60fps in headless Chromium; verify on the target device.
+
+The hero is poster-first. The 3D camera loads after idle, and the Objects section loads its models progressively. One WebGL renderer is shared between the hero and the pinned stage. On mobile, coarse pointers, reduced motion, low-memory devices or WebGL failure, the Objects section becomes three static product cards with no pin and no 3D. A no-JavaScript fallback also exposes the static content.
+
+## Design notes
+
+The design follows Apple product-page principles: one message per section, large type, generous space, a single warm accent (`#ff5a2a` graphics, `#c2410c` on light, `#ff8a5f` on dark), and no decorative UI noise. Content is limited to facts already present in the project record — no invented clients, screenshots or metrics. The 3D is used as product photography, not as a gimmick: the camera opens the page, the pinned objects give three ventures a physical presence, and every 3D path has a static equivalent.
+
+Internal notes in Bahasa Malaysia are in [`docs/PROJEK.md`](docs/PROJEK.md). The pre-redesign audit and brand integration notes are kept in [`docs/archive/`](docs/archive/).
