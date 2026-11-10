@@ -1,0 +1,119 @@
+/* ==========================================================================
+   PHASE E — FINAL POLISH
+   Ventures, recognition, contact and navigation refinements.
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   VENTURES (inside the pinned dark section)
+   -------------------------------------------------------------------------- */
+.pinned-ecosystem {
+  padding-bottom: 0;
+}
+
+.ventures {
+  padding: clamp(64px, 10vh, 120px) var(--pad) var(--section-pad);
+  color: #f5f5f7;
+}
+
+.ventures-inner {
+  max-width: var(--content-max);
+  margin: 0 auto;
+}
+
+.ventures-head {
+  padding-top: 36px;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.ventures-head .eyebrow {
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0;
+  text-transform: none;
+  color: #a1a1a6;
+}
+
+.ventures-list {
+  margin-top: 24px;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.venture-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 32px;
+  align-items: center;
+  padding: 32px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.venture-main {
+  min-width: 0;
+}
+
+.venture-row h3 {
+  font-size: clamp(28px, 3vw, 32px);
+  font-weight: 600;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: #f5f5f7;
+}
+
+.venture-description {
+  max-width: 760px;
+  margin-top: 10px;
+  font-size: 21px;
+  line-height: 1.45;
+  color: #a1a1a6;
+}
+
+.venture-facts {
+  margin-top: 14px;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #a1a1a6;
+}
+
+.venture-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  align-self: center;
+  padding: 11px 18px;
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  border-radius: var(--radius-pill);
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1;
+  color: #f5f5f7;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: border-color 300ms var(--ease), background-color 300ms var(--ease);
+}
+
+.venture-link:hover {
+  border-color: #f5f5f7;
+  background: rgba(255, 255, 255, 0.06);
+}
+
+@media (max-width: 760px) {
+  .ventures {
+    padding-top: 56px;
+  }
+
+  .venture-row {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 20px;
+    align-items: start;
+    padding: 28px 0;
+  }
+
+  .venture-link {
+    justify-self: start;
+  }
+
+  .venture-description {
+    font-size: 19px;
+  }
+}
