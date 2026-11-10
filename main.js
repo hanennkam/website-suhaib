@@ -9,7 +9,6 @@
   var $ = function (sel, ctx) { return (ctx || document).querySelector(sel); };
   var $$ = function (sel, ctx) { return Array.prototype.slice.call((ctx || document).querySelectorAll(sel)); };
   var reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  var touch = window.matchMedia("(hover: none)").matches;
   var root = document.documentElement;
   var body = document.body;
   var hasGSAP = typeof window.gsap !== "undefined";
@@ -64,150 +63,8 @@
   }
 
   /* =======================================================================
-     CURSOR
-     ======================================================================= */
-  var cursor = $("#cursor");
-  var cursorLabel = $("#cursorLabel");
-  if (cursor && !touch) {
-    var dotEl = $(".cursor-dot", cursor);
-    var ringEl = $(".cursor-ring", cursor);
-    var mx = window.innerWidth / 2, my = window.innerHeight / 2;
-    var rx = mx, ry = my;
-    var cursorVisible = false;
-
-    window.addEventListener("mousemove", function (e) {
-      mx = e.clientX; my = e.clientY;
-      if (!cursorVisible) {
-        cursorVisible = true;
-        cursor.style.opacity = "1";
-      }
-      if (dotEl) dotEl.style.transform = "translate(" + mx + "px," + my + "px) translate(-50%,-50%)";
-    }, { passive: true });
-
-    window.addEventListener("mouseleave", function () {
-      cursorVisible = false;
-      cursor.style.opacity = "0";
-    });
-
-    (function cursorLoop() {
-      rx = lerp(rx, mx, 0.16);
-      ry = lerp(ry, my, 0.16);
-      if (ringEl) ringEl.style.transform = "translate(" + rx + "px," + ry + "px) translate(-50%,-50%)";
-      requestAnimationFrame(cursorLoop);
-    })();
-
-    document.addEventListener("pointerover", function (e) {
-      var target = e.target.closest ? e.target.closest("[data-cursor]") : null;
-      if (target) {
-        body.classList.add("cursor-hover");
-        if (cursorLabel) cursorLabel.textContent = target.getAttribute("data-cursor") || "";
-      }
-    });
-    document.addEventListener("pointerout", function (e) {
-      var target = e.target.closest ? e.target.closest("[data-cursor]") : null;
-      if (target && (!e.relatedTarget || !target.contains(e.relatedTarget))) {
-        body.classList.remove("cursor-hover");
-      }
-    });
-  }
-
-  /* =======================================================================
-     BOOT SEQUENCE
-     ======================================================================= */
-  var boot = $("#boot");
-  var bootCount = $("#bootCount");
-  var bootBar = $("#bootBar");
-  var bootStatus = $("#bootStatus");
-  var bootSkip = $("#bootSkip");
-  var bootFinished = false;
-  var bootStart = 0;
-  var bootDuration = reduced ? 120 : 1650;
-  var bootMessages = ["CALIBRATING SIGNAL", "MAPPING DOMAINS", "ASSEMBLING ARCHIVE", "SIGNAL ACQUIRED"];
-
-  function finishBoot(skip) {
-    if (bootFinished) return;
-    bootFinished = true;
-    if (boot) boot.classList.add("is-done");
-    body.classList.remove("is-booting");
-    if (bootCount) bootCount.textContent = "100";
-    if (bootBar) bootBar.style.width = "100%";
-    runIntroReveal(!skip);
-    setTimeout(syncTone, 120);
-    setTimeout(syncTone, 1250);
-    if (hasST) setTimeout(function () { window.ScrollTrigger.refresh(); }, 300);
-  }
-
-  function tickBoot(now) {
-    if (!bootStart) bootStart = now;
-    var t = clamp((now - bootStart) / bootDuration, 0, 1);
-    var eased = 1 - Math.pow(1 - t, 3);
-    var count = Math.round(eased * 100);
-    if (bootCount) bootCount.textContent = String(count).padStart(3, "0");
-    if (bootBar) bootBar.style.width = (eased * 100) + "%";
-    if (bootStatus) {
-      var idx = Math.min(bootMessages.length - 1, Math.floor(t * bootMessages.length));
-      bootStatus.textContent = bootMessages[idx];
-    }
-    if (t < 1) {
-      requestAnimationFrame(tickBoot);
-    } else {
-      setTimeout(function () { finishBoot(false); }, 180);
-    }
-  }
-
-  if (boot) {
-    body.classList.add("is-booting");
-    bootSkip && bootSkip.addEventListener("click", function () { finishBoot(true); });
-    if (reduced) {
-      setTimeout(function () { finishBoot(true); }, 80);
-    } else {
-      requestAnimationFrame(tickBoot);
-    }
-  }
-
-  /* =======================================================================
-     INTRO REVEAL
-     ======================================================================= */
-  var introRevealDone = false;
-  function runIntroReveal(animated) {
-    if (introRevealDone) return;
-    introRevealDone = true;
-    var words = $$(".intro-word");
-    var targets = $$(".intro-kicker, .intro-lower, .intro-foot");
-    if (!hasGSAP || !animated || reduced) return;
-    var tl = window.gsap.timeline({ defaults: { ease: "power4.out" } });
-    tl.fromTo(".intro-kicker", { y: 12, opacity: 0 }, { y: 0, opacity: 1, duration: 0.9 }, 0.1)
-      .fromTo(words, { yPercent: 118, rotate: 2 }, { yPercent: 0, rotate: 0, duration: 1.45, stagger: 0.1 }, 0.15)
-      .fromTo(".intro-lower", { y: 26, opacity: 0 }, { y: 0, opacity: 1, duration: 1.1 }, 0.6)
-      .fromTo(".intro-foot", { opacity: 0 }, { opacity: 1, duration: 0.9 }, 0.9);
-    window.setTimeout(function () { if (hasST) window.ScrollTrigger.refresh(); }, 1800);
-  }
-
-  /* =======================================================================
-     CLOCK
-     ======================================================================= */
-  function updateClocks() {
-    var now = new Date();
-    var time = "--:--:--";
-    try {
-      time = new Intl.DateTimeFormat("en-GB", {
-        timeZone: "Asia/Kuala_Lumpur", hour: "2-digit", minute: "2-digit", second: "2-digit", hour12: false
-      }).format(now);
-    } catch (err) {
-      time = now.toLocaleTimeString();
-    }
-    ["#navClock", "#mobileClock", "#contactClock"].forEach(function (sel) {
-      var el = $(sel);
-      if (el) el.textContent = time;
-    });
-  }
-  updateClocks();
-
-  /* =======================================================================
      NAVIGATION / CHAPTER / TONE
      ======================================================================= */
-  var headerChapter = $("#headerChapter");
-  var headerChapterName = $("#headerChapterName");
   var mobileMenu = $("#mobileMenu");
   var menuToggle = $("#menuToggle");
   var menuClose = $("#menuClose");
@@ -293,7 +150,6 @@
   });
 
   var chapterEls = $$("[data-chapter]");
-  var railLinks = $$("[data-rail]");
   var lastChapter = "";
   var toneRaf = 0;
 
@@ -318,11 +174,6 @@
   }
 
   function updateScrollUI() {
-    var docH = document.documentElement.scrollHeight - window.innerHeight;
-    var progress = docH > 0 ? clamp(window.pageYOffset / docH, 0, 1) : 0;
-    var line = $("#scrollLine");
-    if (line) line.style.width = (progress * 100).toFixed(2) + "%";
-
     var center = window.innerHeight * 0.5;
     var current = null;
     for (var i = 0; i < chapterEls.length; i++) {
@@ -334,11 +185,6 @@
       var name = current.getAttribute("data-chapter-name") || "";
       if (ch !== lastChapter) {
         lastChapter = ch;
-        if (headerChapter) headerChapter.textContent = ch;
-        if (headerChapterName) headerChapterName.textContent = name;
-        railLinks.forEach(function (link) {
-          link.classList.toggle("is-active", link.getAttribute("data-rail") === current.id);
-        });
         syncNav(current.id);
       }
     }
@@ -580,6 +426,12 @@
       el.classList.add("is-visible");
     });
   }, 2500);
+
+  // Intro title failsafe (hero3d normally reveals it first).
+  window.setTimeout(function () {
+    var title = $(".intro-title");
+    if (title && !title.classList.contains("is-revealed")) title.classList.add("is-revealed");
+  }, 1200);
 
   // initial tone
   setTimeout(syncTone, 60);
