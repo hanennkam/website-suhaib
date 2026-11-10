@@ -755,6 +755,7 @@ html:not(.js) .boot {
    ========================================================================== */
 .intro {
   position: relative;
+  min-height: 100vh;
   min-height: 100svh;
   overflow: hidden;
   background:
@@ -1092,6 +1093,7 @@ html:not(.js) .boot {
 }
 
 .operator-stage {
+  min-height: 100vh;
   min-height: 100svh;
   padding: calc(var(--header-h) + 5vh) var(--pad) 34px;
   display: flex;

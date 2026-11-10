@@ -226,6 +226,7 @@ body[data-tone="light"] .site-header {
    HERO
    -------------------------------------------------------------------------- */
 .intro {
+  min-height: 100vh;
   min-height: 100svh;
   background: transparent !important;
   color: #1d1d1f;
@@ -240,6 +241,7 @@ body[data-tone="light"] .site-header {
   padding: calc(var(--header-h) + 10vh) var(--pad) 10vh;
   display: flex;
   flex-direction: column;
+  min-height: 100vh;
   min-height: 100svh;
   position: relative;
   z-index: 2;

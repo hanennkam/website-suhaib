@@ -405,7 +405,7 @@
 .site-footer {
   background: #000 !important;
   color: #a1a1a6;
-  padding: 24px var(--pad) max(24px, env(safe-area-inset-bottom));
+  padding: 24px max(var(--pad), env(safe-area-inset-right)) max(24px, env(safe-area-inset-bottom)) max(var(--pad), env(safe-area-inset-left));
   border-top: 1px solid rgba(255, 255, 255, 0.12);
   display: block;
 }
@@ -530,11 +530,20 @@ section:focus,
 
 @media (max-width: 760px) {
   :root {
-    --header-h: 70px;
+    --header-h: calc(70px + env(safe-area-inset-top));
   }
 
   .site-header {
     grid-template-columns: auto 1fr auto;
+    padding-left: max(var(--pad), env(safe-area-inset-left));
+    padding-right: max(var(--pad), env(safe-area-inset-right));
+  }
+
+  .mobile-menu {
+    padding-top: max(24px, env(safe-area-inset-top));
+    padding-right: max(var(--pad), env(safe-area-inset-right));
+    padding-bottom: max(40px, env(safe-area-inset-bottom));
+    padding-left: max(var(--pad), env(safe-area-inset-left));
   }
 
   .menu-toggle {
@@ -545,4 +554,14 @@ section:focus,
     font-size: clamp(30px, 8.5vw, 44px);
     line-height: 1.08;
   }
+}
+
+/* Safe-area refinements for fixed UI. */
+.skip-link {
+  top: max(12px, env(safe-area-inset-top));
+  left: max(12px, env(safe-area-inset-left));
+}
+
+.toast {
+  bottom: max(28px, env(safe-area-inset-bottom));
 }

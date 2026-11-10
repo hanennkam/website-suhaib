@@ -9,6 +9,7 @@
 }
 
 .pinned-intro {
+  min-height: 100vh;
   min-height: 100svh;
   max-width: var(--hero-max);
   margin: 0 auto;
@@ -50,6 +51,7 @@
 
 .pinned-stage {
   position: relative;
+  height: 100vh;
   height: 100svh;
   min-height: 640px;
   padding: calc(var(--header-h) + 4vh) var(--pad) 8vh;
@@ -399,6 +401,7 @@ html.js .pinned.is-reveal-ready .pinned-card.is-visible:nth-child(3) {
 }
 
 .pinned.is-static .pinned-intro {
+  min-height: 70vh;
   min-height: 70svh;
 }
 
@@ -423,6 +426,7 @@ html.js .pinned.is-reveal-ready .pinned-card.is-visible:nth-child(3) {
   }
 
   .pinned-intro {
+    min-height: 70vh;
     min-height: 70svh;
     padding: calc(var(--section-pad) * 0.8) var(--pad);
   }

@@ -83,10 +83,8 @@
       var test = document.createElement("canvas");
       var gl = test.getContext("webgl") || test.getContext("experimental-webgl");
       webglOk = !!gl;
-      if (gl) {
-        var lose = gl.getExtension("WEBGL_lose_context");
-        if (lose) lose.loseContext();
-      }
+      test.width = 0;
+      test.height = 0;
     } catch (err) {
       webglOk = false;
     }
