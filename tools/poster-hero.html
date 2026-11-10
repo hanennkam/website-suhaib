@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hero poster generator</title>
+<style>
+  html, body { margin: 0; background: transparent; }
+  #stage { position: relative; width: 1320px; height: 1320px; }
+  #stage canvas { display: block; width: 100%; height: 100%; }
+</style>
+</head>
+<body>
+<div id="stage" aria-hidden="true"><canvas id="posterCanvas"></canvas></div>
+<script src="../vendor/three.min.js"></script>
+<script src="../vendor/GLTFLoader.min.js"></script>
+<script src="../stage3d.js"></script>
+<script>
+(function () {
+  var stageEl = document.getElementById("stage");
+  var canvas = document.getElementById("posterCanvas");
+  var stage = Stage3D.init({
+    canvas: canvas,
+    container: stageEl,
+    quality: "desktop",
+    preserveDrawingBuffer: true
+  });
+  stage.pause();
+
+  stage.loadModel("camera", "../assets/models/camera.glb", { targetSize: 3.65 }).then(function () {
+    stage.setState("camera", {
+      rotation: { x: 8 * Math.PI / 180, y: -25 * Math.PI / 180, z: 0 },
+      scale: 0.92,
+      position: { x: 0, y: 0, z: 0 },
+      opacity: 1
+    });
+    stage.renderOnce();
+    window.__posterReady = true;
+    window.__posterSnapshot = function (size) {
+      stageEl.style.width = size + "px";
+      stageEl.style.height = size + "px";
+      stage.resize();
+      stage.renderOnce();
+      return stage.snapshot("image/png");
+    };
+  }).catch(function () {
+    window.__posterError = true;
+  });
+})();
+</script>
+</body>
+</html>

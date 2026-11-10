@@ -1,3 +1,5 @@
+> **Pra-redesign archive.** This document is kept for historical reference only and does not describe the current site.
+
 # Visual Refinement Audit — The Signal Archive
 
 ## 1. Strengths to preserve

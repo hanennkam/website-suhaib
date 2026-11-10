@@ -15,7 +15,7 @@ Filename format:
 
 Valid brands:
 
-- `hannenkam-rise-ventures`
+- `hanennkam-rise-ventures`
 - `dev-x-media`
 - `sejenak-photobooth`
 - `tinta-visuals`
